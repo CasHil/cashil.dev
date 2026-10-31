@@ -5,14 +5,12 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const translationsPath = path.join(__dirname, "..", "src", "i18n", "translations.ts");
+const i18nDir = path.join(__dirname, "..", "src", "i18n");
 
-if (!fs.existsSync(translationsPath)) {
-  console.error(`Error: Translations file not found at ${translationsPath}`);
+if (!fs.existsSync(i18nDir)) {
+  console.error(`Error: i18n directory not found at ${i18nDir}`);
   process.exit(1);
 }
-
-const content = fs.readFileSync(translationsPath, "utf-8");
 
 // Banned generic AI buzzwords and superficial filler
 const BANNED_PATTERNS = [
@@ -39,31 +37,51 @@ const BANNED_PATTERNS = [
   /\bever[- ]evolving\b/i,
 ];
 
-const lines = content.split("\n");
+function getAllTsFiles(dir) {
+  let results = [];
+  const list = fs.readdirSync(dir);
+  list.forEach((file) => {
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
+    if (stat && stat.isDirectory()) {
+      results = results.concat(getAllTsFiles(fullPath));
+    } else if (file.endsWith(".ts")) {
+      results.push(fullPath);
+    }
+  });
+  return results;
+}
+
+const files = getAllTsFiles(i18nDir);
 let violations = 0;
 
-lines.forEach((line, index) => {
-  // Skip comment lines
-  const trimmed = line.trim();
-  if (trimmed.startsWith("//") || trimmed.startsWith("*")) return;
+files.forEach((filePath) => {
+  const content = fs.readFileSync(filePath, "utf-8");
+  const relativePath = path.relative(path.join(__dirname, ".."), filePath);
+  const lines = content.split("\n");
 
-  for (const pattern of BANNED_PATTERNS) {
-    const match = line.match(pattern);
-    if (match) {
-      console.error(
-        `[Copy Guardrail Violation] Line ${index + 1}: Found banned AI buzzword "${match[0]}"`
-      );
-      console.error(`  > ${line.trim()}`);
-      violations++;
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("//") || trimmed.startsWith("*")) return;
+
+    for (const pattern of BANNED_PATTERNS) {
+      const match = line.match(pattern);
+      if (match) {
+        console.error(
+          `[Copy Guardrail Violation] ${relativePath}:${index + 1}: Found banned AI buzzword "${match[0]}"`
+        );
+        console.error(`  > ${line.trim()}`);
+        violations++;
+      }
     }
-  }
+  });
 });
 
 if (violations > 0) {
-  console.error(`\nFound ${violations} banned buzzword violation(s) in translations.ts.`);
+  console.error(`\nFound ${violations} banned buzzword violation(s) across i18n files.`);
   console.error("Please replace them with concrete, direct engineering language.");
   process.exit(1);
 } else {
-  console.log("✓ Copy guardrail passed: Zero banned AI buzzwords found in translations.ts");
+  console.log(`✓ Copy guardrail passed: Zero banned AI buzzwords found across ${files.length} i18n files`);
   process.exit(0);
 }

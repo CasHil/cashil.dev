@@ -3,7 +3,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Intro from "../Intro/Intro";
 import Education from "../Education/Education";
 import WorkExperience from "../WorkExperience/WorkExperience";
-import About from "../About/About";
 import Cv from "../Cv/Cv";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -33,7 +32,6 @@ export default function Body() {
           <Route path="/cv" element={wrapMotionDiv(<Cv />)} />
           <Route path="/work-experience" element={wrapMotionDiv(<WorkExperience />)} />
           <Route path="/education" element={wrapMotionDiv(<Education />)} />
-          <Route path="/about" element={wrapMotionDiv(<About />)} />
         </Routes>
       </AnimatePresence>
     </main>
