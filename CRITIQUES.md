@@ -116,3 +116,51 @@ Conducted after the initial typography cleanup to eliminate subtle AI tells, pru
   - Elevated the Selected Work items from flat text blocks into tactile editorial panels (`bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/80 dark:border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)]`).
   - Calibrated a warmer, richer canvas token (`#faf8f5` light / `#0b0d0c` dark) with warm obsidian and bone surfaces.
   - Added double-ring photographic frame to the avatar and tapered gradient section dividers.
+
+---
+
+## 5. Round 3: Ruthless Recruiter Conversion, Anti-AI Purge & Matt Pocock Architecture
+
+Conducted by three specialized subagents: **Tier-1 Executive Recruiter & VP of Eng**, **Principal Designer & Anti-AI Critic**, and **Staff Software Architect (Matt Pocock / Ousterhout Lens)**.
+
+### 5.1 Recruiter Alignment & Identity Crisis Resolved
+- **Criticism**:
+  - The site had an identity crisis: 531 lines of code dedicated to an offline academic paper about student MOOC dropouts (`DataExplorer.tsx`) gave recruiters the impression Casper wanted to be an EdTech researcher rather than a high-throughput payment systems engineer at Tikkie.
+  - The `/about` route was an unnecessary duplicate click (repeating the exact 3-paragraph bio as the homepage).
+  - 11 resume items hoarded 8-week summer internships (Muziekweb 2020) and 3 separate high schools.
+  - Harvest bullet ("Completed hands-on training modules...") read like an entry-level intern description.
+- **Fix**:
+  - **Ejected `DataExplorer`**: Replaced with a prestigious, concise Master's Thesis Publication Card under Education with direct link to the TU Delft repository.
+  - **Eliminated `/about`**: Consolidated navigation into 4 razor-sharp destinations (`Overview`, `CV`, `Work Experience`, `Education`). Personal ethos and outside pursuits (Electric Bass Guitar & Chess) are seamlessly folded into the primary narrative.
+  - **Pruned Resume Clutter**: Dropped 8-week student internships and consolidated high school teaching under the TU Delft MSc Science Education degree.
+  - **Elevated Harvest Copy**: Rephrased to "Engineering Fellow participating in advanced distributed systems and event-driven architecture track parallel to high-throughput production delivery at Tikkie."
+
+### 5.2 Eradication of "Portfolio Theater" & AI Slop
+- **Criticism**:
+  - The online status pill / provenance tag with the green dot (`bg-emerald-600 rounded-full`) was the #1 hallmark of AI portfolio generators.
+  - The fake macOS terminal window chrome (rose/amber/emerald dots) with a `setTimeout(550)` mock test runner simulating `IsolatedWorker` execution was pure stage magic that insulted real engineering.
+  - The `/01`–`/04` SaaS "Signals" matrix was 100% redundant with the featured cards below it.
+  - The 4-button Tikkie tab switcher with an `INTERACTIVE` badge hid single-sentence descriptions behind needless button clicks.
+  - Decorative SVG bezier contour lines and blurred mesh gradients created visual mud.
+  - Heavy `rounded-full` pill obsession across every button, chip, and badge.
+- **Fix**:
+  - **Eliminated all green dots and status pills**: Replaced with a quiet, authoritative typographic kicker.
+  - **Killed fake code runner**: Replaced with an authentic systems breakdown of Bitsized's browser execution architecture (Web Worker isolation, deterministic watchdogs, and AST evaluation).
+  - **Full-Visibility Systems Pipeline**: Replaced the toy 4-button Tikkie switcher with a static 4-stage horizontal pipeline diagram where all architectural stages are visible simultaneously.
+  - **Serene Editorial Canvas**: Removed wavy background curves and ambient radial blur overlays.
+  - **Standardized Button Geometry**: Replaced `rounded-full` pill buttons with crisp `rounded-lg` styling and high-contrast monochromatic hover states.
+
+### 5.3 Matt Pocock & John Ousterhout Modular Architecture
+- **Criticism**:
+  - Monolithic `translations.ts` (1,167 lines) coupled all domains and triggered change amplification across callers.
+  - Monster component files (`Intro.tsx` at 444 lines, `DataExplorer.tsx` at 531 lines) trapped complex subsystems.
+  - Shallow modules (`Heading.tsx` at 67 lines with dead CSS) failed the Deletion Test.
+  - Duplicated markdown regex parsing across callers.
+- **Fix**:
+  - **Modularized i18n**: Decomposed `translations.ts` into strongly typed domain modules (`nav.ts`, `sidebar.ts`, `cv.ts`, `intro.ts`, `experience.ts`, `education.ts`, `outreach.ts`) across `src/i18n/locales/en/` and `src/i18n/locales/nl/`. Barrel file `translations.ts` dropped from 1,167 lines to 18 lines while preserving 100% bilingual parity.
+  - **Enhanced Copy Guardrail**: Updated `scripts/lint-copy.js` to recursively scan all 18 i18n files, verifying zero banned AI buzzwords.
+  - **Decomposed Intro**: `Intro.tsx` dropped from 444 lines to 44 lines, orchestrating modular components: `HeroSection.tsx`, `TikkieShowcase.tsx`, `BitsizedShowcase.tsx`, and `EngineeringEthos.tsx`.
+  - **Decomposed App Shell**: Extracted `Masthead.tsx` and `Footer.tsx` from `App.tsx` (dropping from 210 lines to 48 lines).
+  - **Shared Component Utility**: Created `FormattedBullet.tsx` to eliminate duplicated markdown regex parsing.
+  - **Deleted Dead Code**: Deleted `Heading.tsx`, `Heading.css`, `Intro.css`, and empty zombie folders.
+

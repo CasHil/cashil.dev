@@ -26,14 +26,12 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
 
   const DESKTOP_ROUTES = [
     { name: '01_overview_light', path: '/', dark: false },
-    { name: '02_overview_dark',  path: '/', dark: true },
-    { name: '03_work_light',     path: '/work-experience', dark: false },
-    { name: '04_work_dark',      path: '/work-experience', dark: true },
-    { name: '05_education_light',path: '/education', dark: false },
+    { name: '02_overview_dark', path: '/', dark: true },
+    { name: '03_work_light', path: '/work-experience', dark: false },
+    { name: '04_work_dark', path: '/work-experience', dark: true },
+    { name: '05_education_light', path: '/education', dark: false },
     { name: '06_education_dark', path: '/education', dark: true },
-    { name: '07_about_light',    path: '/about', dark: false },
-    { name: '08_about_dark',     path: '/about', dark: true },
-    { name: '09_cv_light',       path: '/cv', dark: false },
+    { name: '07_cv_light', path: '/cv', dark: false },
   ];
 
   for (const r of DESKTOP_ROUTES) {
@@ -43,21 +41,10 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
     } else {
       await dPage.evaluate(() => document.documentElement.classList.remove('dark'));
     }
-    await dPage.waitForTimeout(500);
+    await dPage.waitForTimeout(400);
     const file = path.join(OUT, r.name + '.png');
     await dPage.screenshot({ path: file, fullPage: true });
     console.log('Saved desktop:', r.name);
-  }
-
-  // Interactive telemetry tab click on Desktop Education
-  await dPage.goto(BASE + '/education#telemetry', { waitUntil: 'networkidle' });
-  await dPage.evaluate(() => document.documentElement.classList.remove('dark'));
-  const trajectoryTab = await dPage.$('button:has-text("Trajectory"), button:has-text("Traject")');
-  if (trajectoryTab) {
-    await trajectoryTab.click();
-    await dPage.waitForTimeout(400);
-    await dPage.screenshot({ path: path.join(OUT, '05b_education_trajectory_desktop.png'), fullPage: true });
-    console.log('Saved: 05b_education_trajectory_desktop.png');
   }
 
   // Mobile 390px (iPhone 14) captures
@@ -80,7 +67,7 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await mPage.waitForTimeout(400);
   await mPage.screenshot({ path: path.join(OUT, '12_cv_mobile_light.png'), fullPage: true });
 
-  // Mobile Education light (telemetry)
+  // Mobile Education light
   await mPage.goto(BASE + '/education', { waitUntil: 'networkidle' });
   await mPage.waitForTimeout(400);
   await mPage.screenshot({ path: path.join(OUT, '13_education_mobile_light.png'), fullPage: true });

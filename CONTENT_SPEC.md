@@ -24,8 +24,8 @@
   - *Typographic Rule*: Use `font-sans` for language labels (`EN`, `NL`), matching top-level navigation aesthetics.
 
 ### 1.2 Primary Navigation
-- **Routes**: `Overview` (`/`), `CV` (`/cv`), `Work Experience` (`/work-experience`), `Education` (`/education`), `About` (`/about`).
-- *Goal*: Direct access to specialized views without burying any credentials.
+- **Routes**: `Overview` (`/`), `CV` (`/cv`), `Work Experience` (`/work-experience`), `Education` (`/education`).
+- *Goal*: Direct access to specialized views without burying any credentials or repeating bio copy.
 
 ---
 
@@ -67,18 +67,18 @@
 To prevent cognitive overload while remaining 100% complete, experience is structured into core visibility and accessible disclosure drawers:
 - **Core Engineering (Always Visible)**:
   - **Tikkie (ABN AMRO)**: Merchant infrastructure, idempotency, webhook reliability, React/Node.js/AWS.
-  - **Harvest Talent Program**: Advanced cloud architecture, event-driven design, and system reliability alongside Tikkie.
+  - **Harvest**: Engineering Fellow participating in advanced distributed systems and event-driven architecture track parallel to production at Tikkie.
   - **Bitsized**: In-browser execution sandboxing, AST evaluation, education tooling.
   - **Netcompany**: Enterprise data migration (ETL) and energy simulation tooling in C#/.NET and SQL Server.
 - **Foundational Engineering Drawer (Progressive Disclosure)**:
-  - *Trigger*: `Show prior engineering roles (2)`
-  - *Summary*: Foundational software development and data pipelines at Bexter and Muziekweb (2019–2021).
-  - *Items*: TrackOnline (Bexter) and Muziekweb.
+  - *Trigger*: `Show foundational engineering (1)`
+  - *Summary*: Backend services, asset logistics APIs, and web modernization at Bexter (2019–2021).
+  - *Items*: TrackOnline (Bexter).
 - **Academic & Teaching Drawer (Progressive Disclosure)**:
-  - *Trigger*: `Show academic & leadership timeline (5)`
-  - *Badge*: `5 Positions · 2018–2025`
-  - *Summary*: Computer science pedagogy across secondary education, undergraduate algorithms instruction at TU Delft, and curriculum quality governance on the BSc CS&E Board of Studies.
-  - *Items*: CSG De Lage Waard, Stanislascollege, TU Delft Board of Studies, TU Delft Algorithms TA, TU Delft Foundations TA.
+  - *Trigger*: `Show academic & didactics timeline`
+  - *Badge*: `Pedagogy · 2018 – 2025`
+  - *Summary*: Computer science pedagogy across secondary education, undergraduate algorithms instruction at TU Delft, and curriculum governance on the BSc CS&E Board of Studies.
+  - *Items*: CS Instruction & TU Delft Academic Governance.
 
 ### 3.3 Semantic & Typographic Hierarchy
 - *Job Titles*: Must be semantically coded as `<h3>` nested under the `<h2>` section headers.
@@ -89,30 +89,29 @@ To prevent cognitive overload while remaining 100% complete, experience is struc
 ## 4. Education & Research Page (`/education`)
 
 ### 4.1 Layout Architecture
-- *Goal*: Connect the academic credentials with the tangible research output.
-- **Component 1: Research & Telemetry (`DataExplorer`)**:
-  - *Goal*: Surface the interactive research visualization (gender motivations, k-means clusters across 174,988 learners) prominently, directly reachable via deep-link from the Overview page (`#telemetry`).
-  - *Data Presentation*: Behavioral cluster names and descriptions use grounded plain language (e.g. `Drop-off after week 1`, `Consistent weekly submissions`, `Video lectures only, no submissions`) rather than academic buzzword jargon.
-- **Section 2: Academic Degrees**:
+- *Goal*: Connect formal academic credentials with tangible research output.
+- **Section 1: Academic Degrees**:
   - *MSc Computer Science (Data Science)* · TU Delft
   - *MSc Science Education & Communication* · TU Delft (First-degree teaching qualification)
   - *Exchange Studies in CS* · KTH Stockholm (Machine learning & HCI)
   - *BSc Computer Science & Engineering* · TU Delft
+- **Section 2: Research Publication Card**:
+  - *Goal*: Highlight Casper's published master's thesis (*Debugging the Divide*, analyzing 174,988 learners and 14 course runs) with dataset metrics and direct external link to the TU Delft Education Repository.
 
 ---
 
-## 5. About Page (`/about`)
+## 5. Engineering Force Multiplier & Authentic Ethos (Overview Section 3)
 
 ### 5.1 Technical Ethos & Differentiation
-- *Goal*: Do **not** repeat the homepage bio. Instead, explain how the combination of Computer Science + Science Education acts as a force multiplier on engineering teams:
-  - Treating API design as a communication problem.
-  - Prioritizing strong type boundaries, documentation, and RFCs.
-  - Mentoring junior and mid-level engineers.
+- *Goal*: Highlight how the combination of Computer Science + Science Education acts as a force multiplier on engineering teams:
+  - Treating API design as a human communication interface with clear contracts.
+  - Enforcing strict type boundaries, documentation, and RFC-driven development.
+  - Mentoring junior and mid-level engineers to accelerate team velocity.
 
-### 5.2 Outside of Work ("Outside the Terminal")
-- *Goal*: Authentic personal grounding.
-- *Strict Whitelist*: Electric Bass Guitar and Chess.
-- *Strict Blacklist*: Synthesizers and electronic music production are strictly forbidden.
+### 5.2 Outside the Codebase
+- *Goal*: Authentic personal grounding without fluff.
+- *Strict Whitelist*: Electric Bass Guitar (groove, rhythm, harmonic precision) and Chess (tactical calculation, positional strategy).
+- *Strict Blacklist*: Synthesizers, electronic music production, and generic hobbies are strictly forbidden.
 
 ---
 
@@ -120,3 +119,4 @@ To prevent cognitive overload while remaining 100% complete, experience is struc
 
 - *Goal*: Provide instant in-browser viewing and 1-click download of the 1-page ATS-compliant PDF resume.
 - *Rule*: Subtitle must cleanly state professional credentials (`Full-Stack Software Engineer · Amsterdam, Netherlands`), avoiding self-referential resume-compliance jargon like "Single-Page ATS Format". Zero green dots on CTA buttons.
+
