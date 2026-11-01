@@ -11,4 +11,5 @@ export const nlNav: NavTranslations = {
   quickActions: "Snelle acties",
   preferences: "Voorkeuren",
   swipeNav: "Veeg om van pagina te wisselen",
+  downloadCv: "Download CV (PDF)",
 };

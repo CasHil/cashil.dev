@@ -69,22 +69,10 @@ export default function MobileBottomNav({
               }`
             }
           >
-            {({ isActive }) => (
-              <>
-                <span className="relative">
-                  {item.icon}
-                  {isActive && (
-                    <span
-                      className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"
-                      aria-hidden="true"
-                    />
-                  )}
-                </span>
-                <span className="mt-0.5 tracking-tight truncate max-w-[58px] text-center">
-                  {item.label}
-                </span>
-              </>
-            )}
+            {item.icon}
+            <span className="mt-0.5 tracking-tight truncate max-w-[58px] text-center">
+              {item.label}
+            </span>
           </NavLink>
         ))}
 

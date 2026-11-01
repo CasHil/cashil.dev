@@ -160,10 +160,27 @@ test("opens and closes mobile action drawer with quick actions", () => {
   expect(dialog).toBeInTheDocument();
   expect(dialog).toHaveTextContent(/casperhildebrand@gmail.com/i);
 
-  // Close drawer via close button
-  const closeButton = screen.getByRole("button", { name: /close|sluiten/i });
-  fireEvent.click(closeButton);
+  // Close drawer via Escape key
+  fireEvent.keyDown(window, { key: "Escape" });
   expect(menuButton).toHaveAttribute("aria-expanded", "false");
+});
+
+test("mobile action drawer provides single CV download tailored to active language", () => {
+  localStorage.setItem("lang", "en");
+  render(<App />);
+  const menuButton = screen.getByRole("button", { name: /menu/i });
+  fireEvent.click(menuButton);
+
+  const cvLink = screen.getByRole("link", { name: /download cv \(pdf\)/i });
+  expect(cvLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+  expect(cvLink).toHaveAttribute("download", "Casper_Hildebrand_CV.pdf");
+
+  // Switch language to Dutch in drawer
+  const nlButton = screen.getByRole("button", { name: /^nederlands$/i });
+  fireEvent.click(nlButton);
+
+  expect(cvLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+  expect(cvLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
 });
 
 test("renders swipeable card carousels with peek affordance for showcases", () => {
