@@ -11,4 +11,5 @@ export const enNav: NavTranslations = {
   quickActions: "Quick Actions",
   preferences: "Preferences",
   swipeNav: "Swipe to switch pages",
+  downloadCv: "Download CV (PDF)",
 };

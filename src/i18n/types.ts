@@ -11,6 +11,7 @@ export interface NavTranslations {
   quickActions: string;
   preferences: string;
   swipeNav: string;
+  downloadCv: string;
 }
 
 export interface SidebarTranslations {
