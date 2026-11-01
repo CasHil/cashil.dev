@@ -29,6 +29,9 @@ export interface CvTranslations {
   downloadPdf: string;
   mobilePrompt: string;
   viewFullscreen: string;
+  pdfLanguageLabel: string;
+  englishPdf: string;
+  dutchPdf: string;
 }
 
 export interface ArchPipelineStage {

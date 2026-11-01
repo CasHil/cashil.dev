@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import FormattedBullet from "../common/FormattedBullet";
 
 export default function Cv() {
   const { t, language } = useLanguage();
   const [viewMode, setViewMode] = useState<"sheet" | "pdf">("sheet");
+  const [pdfLang, setPdfLang] = useState<"en" | "nl">(language);
 
   const isNl = language === "nl";
+
+  useEffect(() => {
+    setPdfLang(language);
+  }, [language]);
+
+  const pdfUrl =
+    pdfLang === "nl"
+      ? "/cv/Casper_Hildebrand_CV_NL.pdf"
+      : "/cv/Casper_Hildebrand_CV.pdf";
+
+  const pdfFileName =
+    pdfLang === "nl"
+      ? "Casper_Hildebrand_CV_NL.pdf"
+      : "Casper_Hildebrand_CV.pdf";
+
+  const pdfTitle =
+    pdfLang === "nl"
+      ? "Casper Hildebrand Curriculum Vitae (Nederlands)"
+      : "Casper Hildebrand Curriculum Vitae (English)";
 
   const competencies = [
     {
@@ -75,22 +95,59 @@ export default function Cv() {
             </button>
           </div>
 
+          {/* PDF Language Switcher */}
+          <div
+            role="group"
+            aria-label={t.cv.pdfLanguageLabel}
+            className="inline-flex items-center text-xs font-medium rounded-lg bg-zinc-100 dark:bg-zinc-800/80 p-0.5 border border-zinc-200/80 dark:border-white/10"
+          >
+            <button
+              type="button"
+              onClick={() => setPdfLang("en")}
+              className={`px-2.5 py-1.5 rounded-md transition-colors ${
+                pdfLang === "en"
+                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
+                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+              }`}
+              aria-pressed={pdfLang === "en"}
+              aria-label={t.cv.englishPdf}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => setPdfLang("nl")}
+              className={`px-2.5 py-1.5 rounded-md transition-colors ${
+                pdfLang === "nl"
+                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
+                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+              }`}
+              aria-pressed={pdfLang === "nl"}
+              aria-label={t.cv.dutchPdf}
+            >
+              NL
+            </button>
+          </div>
+
           <a
-            href="/cv/Casper_Hildebrand_CV.pdf"
-            download="Casper_Hildebrand_CV.pdf"
+            href={pdfUrl}
+            download={pdfFileName}
             className="group inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[34px]"
+            aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
+            <span className="font-mono text-xs opacity-75 uppercase">({pdfLang})</span>
             <span className="font-mono opacity-70 group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
               ↓
             </span>
           </a>
 
           <a
-            href="/cv/Casper_Hildebrand_CV.pdf"
+            href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[34px]"
+            aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
             <span className="font-mono text-zinc-400 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
@@ -270,34 +327,38 @@ export default function Cv() {
           <div className="sm:hidden p-4 bg-zinc-100 dark:bg-zinc-800/80 border-b border-zinc-200 dark:border-white/10 text-xs text-zinc-700 dark:text-zinc-300 flex flex-col gap-3">
             <span className="leading-relaxed">{t.cv.mobilePrompt}</span>
             <a
-              href="/cv/Casper_Hildebrand_CV.pdf"
+              href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[44px] w-full"
             >
               <span>{t.cv.viewFullscreen}</span>
+              <span className="font-mono text-xs opacity-75 uppercase">({pdfLang})</span>
               <span className="font-mono" aria-hidden="true">↗</span>
             </a>
           </div>
 
           <div className="w-full h-[700px] sm:h-[880px] lg:h-[960px]">
             <object
-              data="/cv/Casper_Hildebrand_CV.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+              key={pdfUrl}
+              data={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
               type="application/pdf"
               className="w-full h-full"
-              aria-label="Casper Hildebrand Curriculum Vitae PDF"
+              aria-label={pdfTitle}
             >
               <iframe
-                src="/cv/Casper_Hildebrand_CV.pdf#view=FitH"
-                title="Casper Hildebrand Curriculum Vitae"
+                src={`${pdfUrl}#view=FitH`}
+                title={pdfTitle}
                 className="w-full h-full border-0"
               >
                 <div className="p-8 text-center space-y-3">
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                    Your browser does not support embedded PDF viewing.
+                    {isNl
+                      ? "Je browser ondersteunt geen ingesloten PDF-weergave."
+                      : "Your browser does not support embedded PDF viewing."}
                   </p>
                   <a
-                    href="/cv/Casper_Hildebrand_CV.pdf"
+                    href={pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"

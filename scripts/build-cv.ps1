@@ -18,15 +18,20 @@ if (Get-Command tectonic -ErrorAction SilentlyContinue) {
     }
 }
 
-$cvTex = (Resolve-Path (Join-Path $PSScriptRoot "..\cv\Casper_Hildebrand_CV.tex")).Path
+$cvDir = (Resolve-Path (Join-Path $PSScriptRoot "..\cv")).Path
 $outDir = (Resolve-Path (Join-Path $PSScriptRoot "..\public\cv")).Path
 
-Write-Host "Compiling CV with $tectonicCmd..."
-& $tectonicCmd $cvTex -o $outDir
+$texFiles = Get-ChildItem -Path $cvDir -Filter "*.tex" | Sort-Object Name
 
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "SUCCESS: CV compiled successfully to public/cv/Casper_Hildebrand_CV.pdf"
-} else {
-    Write-Error "Tectonic compilation failed with exit code $LASTEXITCODE"
-    exit 1
+foreach ($file in $texFiles) {
+    Write-Host "Compiling $($file.Name) with $tectonicCmd..."
+    & $tectonicCmd $file.FullName -o $outDir
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Tectonic compilation failed for $($file.Name) with exit code $LASTEXITCODE"
+        exit 1
+    }
+    $pdfName = [System.IO.Path]::ChangeExtension($file.Name, ".pdf")
+    Write-Host "SUCCESS: $($file.Name) compiled to public/cv/$pdfName"
 }
+
+Write-Host "All CV versions compiled successfully."

@@ -1,0 +1,161 @@
+% -----------------------------------------------------------------------------
+% CASPER HILDEBRAND - CURRICULUM VITAE (NEDERLANDS)
+% CONSTRAINT: This document MUST strictly compile to EXACTLY 1 PAGE.
+% Never allow content to spill onto page 2. Adjust margins/spacing if adding items.
+% Compile via: pnpm run build:cv
+% -----------------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[margin=0.48in, top=0.42in, bottom=0.42in]{geometry}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{primary}{RGB}{17, 24, 39}       % Near black
+\definecolor{accent}{RGB}{13, 148, 136}      % Subtle teal
+\definecolor{subtle}{RGB}{75, 85, 99}        % Slate gray
+\definecolor{rulecolor}{RGB}{229, 231, 235}  % Light gray
+
+% Font settings
+\urlstyle{same}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\normalsize\bfseries\color{primary}
+}{}{0em}{}[\color{rulecolor}\titlerule \vspace{-2pt}]
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}
+  \item[]
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \footnotesize \color{subtle} #2 \\
+    \textit{\small #3} & \footnotesize \color{subtle} #4 \\
+  \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=1.1em, label=\textcolor{accent}{\scriptsize$\bullet$}, itemsep=1.5pt, topsep=1.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\LARGE \textbf{Casper Hildebrand}} \\ \vspace{2pt}
+  \small \textbf{Full-Stack Software Engineer} \\ \vspace{2pt}
+  \footnotesize \color{subtle}
+  Amsterdam, Nederland \quad$\vert$\quad
+  \href{mailto:casperhildebrand@gmail.com}{\color{primary}casperhildebrand@gmail.com} \quad$\vert$\quad
+  \href{https://cashil.github.io}{\color{primary}cashil.github.io} \quad$\vert$\quad
+  \href{https://github.com/cashil}{\color{primary}github.com/cashil} \quad$\vert$\quad
+  \href{https://www.linkedin.com/in/casper-hildebrand/}{\color{primary}linkedin.com/in/casper-hildebrand}
+\end{center}
+\vspace{-4pt}
+
+%----------SUMMARY----------
+\section{Profiel}
+\footnotesize{
+  Full-stack software engineer bij Tikkie (ABN AMRO) bouwend aan Tikkie Zakelijk, met een dubbele Master in Computer Science (Data Science) en Science Education van de TU Delft. Ervaren in TypeScript, React, Node.js, AWS en PostgreSQL. Geïnteresseerd in agentic engineering en AI-ondersteunde ontwikkelworkflows.
+}
+
+%----------EXPERIENCE----------
+\section{Werkervaring}
+\begin{itemize}[leftmargin=0em, label={}]
+
+  \resumeSubheading
+    {Tikkie (ABN AMRO)}{Amsterdam, NL}
+    {Full Stack Software Engineer}{mrt 2026 -- heden}
+    \resumeItemListStart
+      \item Ontwikkeling van het zakelijke webportaal en onboarding-backendsystemen voor Tikkie Zakelijk met TypeScript, React en AWS.
+      \item Bouw van functionaliteiten voor het aanmaken van zakelijke betaalverzoeken, transactiemonitoring en accountbeheer.
+      \item Toepassing van agentic engineering en AI-ondersteunde workflows binnen de gehele software-ontwikkelcyclus.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Harvest}{Amsterdam, NL}
+    {Software Engineer -- Young Talent Fellow}{feb 2026 -- heden}
+    \resumeItemListStart
+      \item Deelname aan een post-MSc fellowship gericht op de overgang tussen academisch onderzoek en productiesoftware-ontwikkeling.
+      \item Tweewekelijkse hands-on masterclasses over cloudsystemen, Temporal workflows en agentic engineering.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Bitsized}{Delft, NL}
+    {Medeoprichter \& Lead Engineer}{jan 2023 -- feb 2025}
+    \resumeItemListStart
+      \item Medeoprichter van een interactief codeerplatform met TU Delft-studiegenoten voor informaticaonderwijs in het voortgezet onderwijs.
+      \item Realisatie van een zandbakomgeving voor code-uitvoering met Web Workers en React, waarmee leerlingen veilig client-side code draaien.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {CSG De Lage Waard \& Stanislascollege}{Zuid-Holland, NL}
+    {Docent Informatica}{aug 2024 -- jul 2025}
+    \resumeItemListStart
+      \item Lesgegeven aan 10 schoolklassen (~200 leerlingen) in algoritmen, digitale logica, computerarchitectuur en webontwikkeling.
+      \item Begeleiding van eindwerkstukken en ontwerp van het regionale programma van toetsing en afsluiting (PTA).
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Netcompany}{Delft, NL}
+    {Software Analyst \& Software Consultant}{sep 2021 -- jun 2022}
+    \resumeItemListStart
+      \item Ontwikkeling en onderhoud van overheidsprojecten voor Vervangingsfonds en Participatiefonds; user stories en workshops.
+      \item Bouw van een rekenmodel en webtool voor duurzaamheidsbeoordeling van woning- en utiliteitsbouw voor de overheid.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Bexter}{Delft, NL}
+    {Software Developer \& Frontend Developer}{sep 2019 -- mei 2021}
+    \resumeItemListStart
+      \item Ontwikkeling van backend-functionaliteiten en API's voor TrackOnline, een platform voor activabeheer in toeleveringsketens.
+      \item Onderhoud en vernieuwing van klantgerichte webinterfaces met behulp van TypeScript, JavaScript en HTML/CSS.
+    \resumeItemListEnd
+
+\end{itemize}
+
+%----------EDUCATION----------
+\section{Opleiding \& Onderzoek}
+\begin{itemize}[leftmargin=0em, label={}]
+
+  \resumeSubheading
+    {Technische Universiteit Delft (TU Delft)}{Delft, NL}
+    {MSc Computer Science (Data Science) \& MSc Science Education}{sep 2021 -- jan 2025}
+    \resumeItemListStart
+      \item \textbf{Masterthesis:} \textit{Debugging the Divide: Exploring Men's and Women's Motivations and Engagement in Computer Science MOOCs}. Analyse van clickstream-logs van 174.988 cursisten via $k$-means clustering in Python.
+      \item Behaalde formele Nederlandse eerstegraads onderwijsbevoegdheid in de Informatica.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {KTH Royal Institute of Technology}{Stockholm, Zweden}
+    {MSc Exchange -- Computer Science}{aug 2022 -- jan 2023}
+    \resumeItemListStart
+      \item Vakken afgerond in Human-Computer Interaction, Information Visualization en UX Design.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Technische Universiteit Delft (TU Delft)}{Delft, NL}
+    {BSc Technische Informatica}{sep 2018 -- jul 2021}
+    \resumeItemListStart
+      \item Afstudeerrichting Data Science (data mining, machine learning). Verkozen studentvertegenwoordiger in de Opleidingscommissie.
+    \resumeItemListEnd
+
+\end{itemize}
+
+%----------SKILLS----------
+\section{Technische Vaardigheden}
+\begingroup
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Talen:} & TypeScript, JavaScript, Python, SQL (PostgreSQL, MySQL), C\#, HTML/CSS \\
+  \textbf{Frontend:} & React, Vite, Tailwind CSS, Web Workers, Next.js, Toegankelijkheid (a11y) \\
+  \textbf{Backend \& Cloud:} & Node.js, Express, AWS (Lambda, S3, RDS), RESTful API's, Docker \\
+  \textbf{Data \& Systemen:} & Relationele Datamodellering, Clickstream Analyse, Pandas, Agentic Engineering, Temporal Workflows \\
+  \textbf{Methodieken:} & Git, GitHub Actions, CI/CD, Unit Testing (Vitest, Jest), Curriculumontwerp, Technisch Schrijven \\
+\end{tabularx}
+\endgroup
+
+\end{document}
