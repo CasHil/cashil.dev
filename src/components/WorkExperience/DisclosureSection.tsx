@@ -29,17 +29,17 @@ export default function DisclosureSection({
   const contentId = idPrefix ? `${idPrefix}-${reactId}` : reactId;
 
   return (
-    <div className="rounded-xl border border-zinc-200/80 dark:border-white/10 bg-zinc-50/50 dark:bg-zinc-900/30 transition-colors">
+    <div className="rounded-2xl p-5 sm:p-6 bg-gradient-to-b from-zinc-50/80 via-transparent to-transparent dark:from-zinc-900/40 dark:via-transparent dark:to-transparent transition-colors space-y-4">
       {/* Informative Header / Trigger Card */}
-      <div className="p-4 sm:p-5">
-        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1.5 pb-2">
+      <div className="space-y-2">
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1.5">
           <div className="flex items-center gap-2.5">
             <h3 className="font-display text-base sm:text-lg font-bold text-zinc-950 dark:text-white">
               {title}
             </h3>
             {badge && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono font-medium bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
-                {badge}
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                // {badge}
               </span>
             )}
           </div>
@@ -77,13 +77,13 @@ export default function DisclosureSection({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-zinc-200/80 dark:border-white/10"
+            className="overflow-hidden pt-4 border-t border-zinc-200/60 dark:border-white/5"
           >
-            <div className="p-4 sm:p-6 bg-white/60 dark:bg-zinc-950/40">
+            <div className="space-y-4">
               {children}
 
               {showBottomCollapse && (
-                <div className="pt-6 mt-6 border-t border-zinc-200/60 dark:border-white/5 flex justify-end">
+                <div className="pt-4 flex justify-end">
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}

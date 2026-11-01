@@ -2,15 +2,15 @@ import { SidebarTranslations } from "../../types";
 
 export const enSidebar: SidebarTranslations = {
   name: "Casper Hildebrand",
-  role: "Full-Stack Engineer · Tikkie",
+  role: "Full-Stack Engineer · Tikkie Business",
   degrees: "Double MSc • TU Delft",
   location: "Amsterdam, Netherlands",
   coreDomainsLabel: "Core Domains",
   coreDomains: [
-    "Full Stack Engineering",
-    "Distributed Systems",
-    "Event-Driven Architecture",
-    "API Design & Web Platforms",
+    "Full-Stack Engineering",
+    "TypeScript, React & Node.js",
+    "Backend & Onboarding Systems",
+    "AWS & Cloud Infrastructure",
   ],
   year: "© 2026 Casper Hildebrand",
   cvDownload: "Download PDF",

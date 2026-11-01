@@ -30,7 +30,7 @@ export const enEducation: EducationTranslations = {
       text: "**Focus**: Advanced algorithms, distributed data processing, applied machine learning, and quantitative telemetry analysis.\n**Master's Thesis**: Debugging the Divide: Exploring Men's and Women's Motivations and Engagement in Computer Science MOOCs.",
       skills: ["Data Science", "Python", "Algorithms", "Machine Learning", "Distributed Systems"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },
@@ -42,7 +42,7 @@ export const enEducation: EducationTranslations = {
       text: "**First-Degree Qualification**: Awarded formal Dutch first-degree teaching qualification (Eerste Graads) in Computer Science, authorizing instruction at all secondary and tertiary levels.\n**Pedagogy & Didactics**: Rigorous training in educational curriculum design, diagnostic assessment, cognitive load theory, and technical communication.",
       skills: ["Computer Science Didactics", "Cognitive Load Theory", "Technical Communication", "Curriculum Design"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },
@@ -54,7 +54,7 @@ export const enEducation: EducationTranslations = {
       text: "**Studies**: Focused on machine learning algorithms, information visualization, and human-computer interaction in Stockholm, Sweden.",
       skills: ["Machine Learning", "Information Visualization", "HCI"],
       image: {
-        uri: "kth.svg",
+        uri: "kth.webp",
         alt: "KTH logo",
       },
     },
@@ -66,7 +66,7 @@ export const enEducation: EducationTranslations = {
       text: "**Foundations**: Solid grounding in data structures, algorithms, operating systems, networking, computability, and software architecture.\n**Leadership**: Elected student representative on the BSc Computer Science & Engineering Board of Studies.",
       skills: ["Data Structures", "Algorithms", "Operating Systems", "Networking", "Software Engineering"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },

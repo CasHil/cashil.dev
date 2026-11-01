@@ -22,13 +22,13 @@ export const enExperience: WorkExperienceTranslations = {
   hideAcademic: "Hide academic timeline",
   items: [
     {
-      title: "Tikkie (ABN AMRO)",
+      title: "Tikkie Business (ABN AMRO)",
       subtitle: "Full Stack Software Engineer",
       startDate: "Mar 2026",
       endDate: "Present",
       current: true,
-      text: "**Merchant Payment Infrastructure**: Developed resilient merchant payment APIs and business web portals for Tikkie Business, supporting thousands of enterprise merchants.\n**Settlement & Idempotency**: Implemented idempotent payment settlement workflows, partner webhook dispatchers, and automated recovery pipelines guaranteeing zero duplicate financial transactions.\n**Analytics & Observability**: Built merchant reporting interfaces in React, TypeScript, and AWS serverless infrastructure with comprehensive telemetry and automated testing.",
-      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Idempotency"],
+      text: "**Business Portal**: Developed merchant-facing web applications in React and TypeScript for Tikkie Business, enabling companies to manage payment requests, view transactions, and configure account settings.\n**Onboarding Backend Systems**: Built backend onboarding workflows and APIs to verify business details, automate registration checks, and provision merchant accounts.\n**Platform Reliability**: Implemented services on AWS serverless infrastructure and PostgreSQL, adding automated test coverage, monitoring, and structured logging.",
+      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding Systems"],
       category: "engineering",
       tier: "featured",
       image: {
@@ -57,9 +57,13 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Jan 2023",
       endDate: "Feb 2025",
       text: "**Platform Architecture**: Co-founded and engineered an interactive educational coding platform adopted by Dutch secondary school computer science departments.\n**Sandboxed Execution**: Architected in-browser code execution sandboxes with Web Workers, memory isolation boundaries, and deterministic execution timers.\n**Teacher & Student Tooling**: Built automated assignment evaluation runners, real-time code review workflows, and classroom management portals using TypeScript, React, Node.js, and Docker.",
-      skills: ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "AST Evaluation"],
+      skills: ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "Browser Sandboxing"],
       category: "engineering",
       tier: "featured",
+      image: {
+        uri: "bitsized.webp",
+        alt: "Bitsized logo",
+      },
     },
     {
       title: "Netcompany",
@@ -67,9 +71,13 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Sep 2021",
       endDate: "Jun 2022",
       text: "**ETL Data Migrations**: Engineered automated data migration pipelines and technical specifications for Dutch public sector education funds (Vervangingsfonds & Participatiefonds).\n**Statutory Modeling Tools**: Developed full-stack energy modeling applications for commercial real estate conforming to Dutch governmental regulations.",
-      skills: ["C#", ".NET", "SQL Server", "ETL Pipelines", "Enterprise Architecture"],
+      skills: ["C#", ".NET", "SQL Server", "ETL Pipelines", "Data Modeling"],
       category: "engineering",
       tier: "featured",
+      image: {
+        uri: "netcompany.webp",
+        alt: "Netcompany logo",
+      },
     },
     {
       title: "Bexter",
@@ -80,16 +88,24 @@ export const enExperience: WorkExperienceTranslations = {
       skills: ["TypeScript", "JavaScript", "REST APIs", "SQL", "Logistics Systems"],
       category: "engineering",
       tier: "foundational",
+      image: {
+        uri: "bexter.webp",
+        alt: "Bexter logo",
+      },
     },
     {
-      title: "CS Instruction & TU Delft Academic Governance",
-      subtitle: "Computer Science Educator & Board of Studies Representative",
+      title: "CS Teaching & TU Delft Academic Governance",
+      subtitle: "Computer Science Teacher & Board of Studies Representative",
       startDate: "Sep 2018",
       endDate: "Jul 2025",
-      text: "**Secondary School Instruction**: Instructed ~200 secondary school students across 10 cohorts in algorithms, computer architecture, digital logic, and web application development at CSG De Lage Waard.\n**Undergraduate Teaching Assistance**: Guided hundreds of computer science undergraduates through algorithm analysis, graph theory, and data structures at TU Delft.\n**Curriculum Governance**: Served as student representative on the TU Delft BSc Computer Science & Engineering Board of Studies, assessing course curricula and academic examination quality.",
-      skills: ["Computer Science Pedagogy", "Algorithms", "Curriculum Governance", "Technical Communication"],
+      text: "**Secondary School Instruction**: Instructed ~200 secondary school students across 10 cohorts in algorithms, computer architecture, digital logic, and web fundamentals at CSG De Lage Waard & Stanislascollege.\n**Graduation Standards**: Supervised final-year student projects and designed the regional programme of tests and examinations (PTA).\n**Curriculum Governance**: Served as student representative on the TU Delft BSc Computer Science & Engineering Board of Studies, assessing course curricula and academic examination quality.",
+      skills: ["Computer Science Pedagogy", "Algorithms", "Curriculum Design", "Examination Standards"],
       category: "education",
       tier: "foundational",
+      image: {
+        uri: "tudelft.webp",
+        alt: "TU Delft logo",
+      },
     },
   ],
 };

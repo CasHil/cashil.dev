@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import FormattedBullet from "../common/FormattedBullet";
+import SandboxCrucible from "../common/SandboxCrucible";
 
 export default function BitsizedShowcase() {
   const { t } = useLanguage();
-  const bitsizedSkills = ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "AST Evaluation"];
+  const bitsizedSkills = ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "Browser Sandboxing"];
 
   return (
-    <article className="rounded-xl p-6 sm:p-7 bg-white/70 dark:bg-zinc-900/40 backdrop-blur-xs border border-zinc-200/90 dark:border-white/[0.08] shadow-xs space-y-5">
+    <article className="relative rounded-[2rem] p-6 sm:p-8 bg-gradient-to-b from-zinc-50/80 via-white/40 to-transparent dark:from-zinc-900/40 dark:via-zinc-950/20 dark:to-transparent space-y-6">
+      {/* Header & Direct Link */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-        <div>
-          <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-            {t.intro.bitsizedTag}
-          </span>
-          <h3 className="text-lg sm:text-xl font-bold text-zinc-950 dark:text-white mt-0.5">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+              {t.intro.bitsizedTag}
+            </span>
+            <span className="h-1 w-1 rounded-full bg-emerald-500" />
+            <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">Classroom Production</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
             {t.intro.bitsizedTitle}
           </h3>
           <p className="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400">
@@ -22,7 +28,7 @@ export default function BitsizedShowcase() {
         </div>
         <Link
           to="/work-experience"
-          className="group inline-flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors self-start sm:self-auto py-1"
+          className="group inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors self-start sm:self-auto py-1"
         >
           <span>{t.intro.bitsizedLink}</span>
           <span className="font-mono transition-transform group-hover:translate-x-0.5" aria-hidden="true">
@@ -31,32 +37,45 @@ export default function BitsizedShowcase() {
         </Link>
       </div>
 
+      {/* Editorial Narrative */}
       <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[62ch]">
         {t.intro.bitsizedDescription}
       </p>
 
-      {/* Real Systems Sandbox Architecture Breakdown */}
-      <div className="rounded-lg border border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/70 dark:bg-zinc-950/40 p-4 space-y-3">
-        <div>
-          <h4 className="text-xs font-bold text-zinc-900 dark:text-white tracking-tight">
-            {t.intro.bitsizedArchTitle}
-          </h4>
-          <span className="block text-[11px] text-zinc-500 dark:text-zinc-400 font-mono mt-0.5">
-            {t.intro.bitsizedArchSubtitle}
+      {/* Client-Side Sandbox Crucible Architecture (Zero Nested Boxes) */}
+      <div className="space-y-4 pt-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <h4 className="text-xs font-bold text-zinc-950 dark:text-white tracking-tight uppercase font-mono">
+              {t.intro.bitsizedArchTitle}
+            </h4>
+            <span className="block text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-0.5">
+              {t.intro.bitsizedArchSubtitle}
+            </span>
+          </div>
+          <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-700 dark:text-emerald-400">
+            <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5 stroke-current">
+              <circle cx="8" cy="8" r="6" strokeWidth="1.5" />
+              <circle cx="8" cy="8" r="2" fill="currentColor" />
+            </svg>
+            Client-Side Sandbox
           </span>
         </div>
 
-        {/* 3 Architecture Principles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+        {/* Bespoke Orbital SVG Sandbox Crucible */}
+        <SandboxCrucible />
+
+        {/* 3 Open Principle Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
           {t.intro.bitsizedPrinciples.map((item, idx) => (
-            <div
-              key={idx}
-              className="p-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200/70 dark:border-white/5 space-y-1 shadow-2xs"
-            >
-              <div className="font-bold text-xs text-zinc-900 dark:text-white">
+            <div key={idx} className="space-y-1.5 p-1">
+              <div className="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                0{idx + 1} //
+              </div>
+              <div className="font-bold text-sm text-zinc-950 dark:text-white">
                 {item.title}
               </div>
-              <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -66,22 +85,22 @@ export default function BitsizedShowcase() {
 
       {/* Impact Highlights */}
       {t.intro.bitsizedHighlights && (
-        <ul className="space-y-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 max-w-[62ch]">
+        <ul className="space-y-2 pt-2 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 max-w-[62ch]">
           {t.intro.bitsizedHighlights.map((point, idx) => (
             <FormattedBullet key={idx} text={point} />
           ))}
         </ul>
       )}
 
-      {/* Clean Tech Stack Tags */}
-      <div className="pt-1 flex flex-wrap items-center gap-1.5 text-xs">
-        <span className="font-mono text-zinc-500 dark:text-zinc-400 mr-1">Stack:</span>
-        {bitsizedSkills.map((skill) => (
-          <span
-            key={skill}
-            className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-zinc-100/90 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200/70 dark:border-white/10"
-          >
-            {skill}
+      {/* Monospaced Editorial Stack Run (Zero Pill Confetti) */}
+      <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono">
+        <span className="text-zinc-400 dark:text-zinc-500">Stack:</span>
+        {bitsizedSkills.map((skill, idx) => (
+          <span key={skill} className="flex items-center gap-2">
+            <span className="text-zinc-800 dark:text-zinc-200 font-medium">{skill}</span>
+            {idx < bitsizedSkills.length - 1 && (
+              <span className="text-zinc-300 dark:text-zinc-700 select-none">/</span>
+            )}
           </span>
         ))}
       </div>

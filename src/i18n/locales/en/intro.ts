@@ -2,58 +2,58 @@ import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
   kicker: "Full-Stack Software Engineer · Amsterdam, NL",
-  heroTitle: "Building resilient payment services and web platforms at Tikkie.",
+  heroTitle: "Building the business portal and onboarding backend at Tikkie Business.",
   bioParagraph1:
-    "Full-stack software engineer at Tikkie (ABN AMRO), architecting idempotent payment APIs, partner webhooks, and merchant management portals supporting thousands of enterprises across the Netherlands.",
+    "Full-stack software engineer at Tikkie Business (ABN AMRO). I build the merchant web portal and underlying backend systems, including onboarding workflows and business services.",
   bioParagraph2:
-    "Holder of a Double Master's from Delft University of Technology in Computer Science and Science Education. Combining distributed systems engineering with rigorous pedagogical principles to design intuitive developer interfaces, rock-solid API contracts, and high-velocity engineering workflows.",
+    "Double Master's graduate from TU Delft in Computer Science and Science Education. Previously co-founded Bitsized, building an in-browser code execution sandbox used in Dutch schools, and analyzed telemetry from 175,000 learners for research.",
   viewCv: "Curriculum Vitae",
-  exploreWork: "Selected Systems",
+  exploreWork: "Explore Work Experience",
   featuredHeading: "Featured Engineering",
-  featuredSubtitle: "Production payment systems, in-browser execution sandboxes, and engineering architecture.",
+  featuredSubtitle: "Production web applications, onboarding backend systems, and browser sandboxes.",
 
   // Tikkie Business Flagship
   tikkieTag: "ABN AMRO · 2026 – Present",
-  tikkieTitle: "Tikkie Business Payment Services",
-  tikkieSubtitle: "Merchant payment infrastructure, idempotent settlement, and reporting portals",
+  tikkieTitle: "Tikkie Business",
+  tikkieSubtitle: "Merchant Portal & Onboarding Systems · ABN AMRO",
   tikkieDescription:
-    "Engineered core merchant payment endpoints and real-time business web portals for Tikkie Business. Built end-to-end payment settlement workflows, webhook dispatch systems, and automated reconciliation pipelines handling enterprise financial transactions.",
-  tikkiePipelineTitle: "Merchant Payment & Settlement Pipeline",
-  tikkiePipelineSubtitle: "End-to-end transaction lifecycle ensuring strict idempotency and zero duplicate charges",
+    "Full-stack software engineering for Tikkie Business across customer-facing web applications and cloud services. Developing seamless merchant onboarding workflows, portal interfaces for business transactions, and resilient backend services on AWS.",
+  tikkiePipelineTitle: "Merchant Portal & Onboarding Architecture",
+  tikkiePipelineSubtitle: "Full-stack architecture from business registration to portal management",
   tikkiePipelineStages: [
     {
-      id: "ingestion",
+      id: "onboarding",
       stage: "01",
-      title: "Merchant API",
-      subtitle: "Ingestion Tier",
-      description: "Cryptographic signature validation, schema enforcement, and rate-limiting at the edge gateway.",
+      title: "Onboarding Flow",
+      subtitle: "Registration",
+      description: "Automated business registration, merchant detail verification, and qualification workflows.",
     },
     {
-      id: "idempotency",
+      id: "portal",
       stage: "02",
-      title: "Idempotency Guard",
-      subtitle: "Deduplication",
-      description: "Atomic Redis and database lock validation guaranteeing zero duplicate financial authorizations.",
+      title: "Merchant Portal",
+      subtitle: "Web Application",
+      description: "Single-page application in React and TypeScript for payment requests, transaction views, and settings.",
     },
     {
-      id: "settlement",
+      id: "services",
       stage: "03",
-      title: "Settlement Engine",
-      subtitle: "Async Worker Tier",
-      description: "Event-driven reconciliation workers executing automated bank transfers and partner webhooks.",
+      title: "Backend Services",
+      subtitle: "API & Services",
+      description: "Node.js services and APIs running on AWS serverless infrastructure for merchant operations.",
     },
     {
-      id: "ledger",
+      id: "data",
       stage: "04",
-      title: "ACID Ledger",
+      title: "Data Layer",
       subtitle: "Persistence",
-      description: "Immutable double-entry transaction journals stored in PostgreSQL with point-in-time recovery.",
+      description: "Relational data modeling, merchant account provisioning, and transaction state in PostgreSQL.",
     },
   ],
   tikkieHighlights: [
-    "**Idempotency & Reconciliation**: Designed fault-tolerant payment ingestion endpoints preventing duplicate debits across distributed network retries.",
-    "**Merchant Reporting**: Built responsive analytics dashboards in React, TypeScript, and AWS serverless infrastructure for enterprise merchant telemetry.",
-    "**Partner Integrations**: Implemented automated webhook dispatch mechanisms with exponential backoff and dead-letter queues.",
+    "**Business Portal**: Developed merchant-facing interfaces in React and TypeScript for payment link creation, transaction monitoring, and account management.",
+    "**Onboarding Backend**: Built onboarding workflows and backend verification services to automate merchant qualification and account setup.",
+    "**Cloud Services**: Implemented backend services on AWS serverless infrastructure with PostgreSQL, automated tests, and structured logging.",
   ],
   tikkieLink: "View in Work Timeline",
 
@@ -64,19 +64,19 @@ export const enIntro: IntroTranslations = {
   bitsizedDescription:
     "Co-founded and engineered an interactive code evaluation platform deployed across Dutch secondary school computer science classrooms. Engineered in-browser code execution sandboxes, automated evaluation suites, and assignment administration tools.",
   bitsizedArchTitle: "Sandboxed In-Browser Execution Architecture",
-  bitsizedArchSubtitle: "Deterministic isolation, infinite loop termination, and real-time code evaluation",
+  bitsizedArchSubtitle: "Deterministic runtime isolation, infinite loop termination, and immediate evaluation",
   bitsizedPrinciples: [
     {
       title: "Web Worker Isolation",
       description: "Student code executes in dedicated, non-blocking Web Worker threads completely separated from the host DOM and main UI thread.",
     },
     {
-      title: "Deterministic Watchdogs",
-      description: "Execution timers and AST pre-checks terminate runaway while loops and memory spikes before they can freeze the browser.",
+      title: "Execution Watchdogs",
+      description: "Configurable execution timers terminate runaway while loops and unresponsive scripts before they can block the browser.",
     },
     {
-      title: "Immediate Evaluation",
-      description: "Unit assertion runners compile test suites in under 25ms, delivering real-time syntactic and behavioral feedback to students.",
+      title: "Immediate Feedback",
+      description: "In-browser assertion test runners deliver real-time syntactic and behavioral feedback without server-side latency.",
     },
   ],
   bitsizedHighlights: [

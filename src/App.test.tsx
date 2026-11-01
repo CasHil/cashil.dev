@@ -92,9 +92,9 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
 
 test("renders Tikkie architecture pipeline stages", () => {
   render(<App />);
-  expect(screen.getByText(/Merchant Payment & Settlement Pipeline/i)).toBeInTheDocument();
-  expect(screen.getByText(/Idempotency Guard/i)).toBeInTheDocument();
-  expect(screen.getByText(/ACID Ledger/i)).toBeInTheDocument();
+  expect(screen.getByText(/Merchant Portal & Onboarding Architecture/i)).toBeInTheDocument();
+  expect(screen.getByText(/^Onboarding Flow$/i)).toBeInTheDocument();
+  expect(screen.getByText(/^Data Layer$/i)).toBeInTheDocument();
 });
 
 test("renders Bitsized sandbox architecture breakdown without fake terminal buttons", () => {

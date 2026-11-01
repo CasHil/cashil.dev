@@ -47,31 +47,23 @@ export default function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Narrative / Achievements using FormattedBullet */}
       {data.text && (
-        data.text.includes("\n") ? (
-          <ul className="space-y-1.5 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-[62ch]">
-            {data.text.split("\n").map((line, idx) => (
-              <FormattedBullet key={idx} text={line} />
-            ))}
-          </ul>
-        ) : (
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[62ch] pt-1">
-            {data.text}
-          </p>
-        )
+        <ul className="space-y-1.5 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-[62ch]">
+          {data.text.split("\n").map((line, idx) => (
+            <FormattedBullet key={idx} text={line} />
+          ))}
+        </ul>
       )}
 
-      {/* Tech Stack / Skills (Clean neutral tags) */}
+      {/* Tech Stack / Skills (Clean monospaced inline stream) */}
       {data.skills && data.skills.length > 0 && (
-        <div className="pt-1.5 flex flex-wrap items-center gap-1.5 text-xs">
-          <span className="font-mono text-zinc-500 dark:text-zinc-400 mr-1">
-            Stack:
-          </span>
-          {data.skills.map((skill) => (
-            <span
-              key={skill}
-              className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-zinc-100/90 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200/70 dark:border-white/10"
-            >
-              {skill}
+        <div className="pt-1.5 flex flex-wrap items-center gap-2 text-xs font-mono">
+          <span className="text-zinc-400 dark:text-zinc-500">Stack:</span>
+          {data.skills.map((skill, idx) => (
+            <span key={skill} className="flex items-center gap-2">
+              <span className="text-zinc-800 dark:text-zinc-200">{skill}</span>
+              {idx < data.skills!.length - 1 && (
+                <span className="text-zinc-300 dark:text-zinc-700 select-none">/</span>
+              )}
             </span>
           ))}
         </div>
