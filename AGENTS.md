@@ -12,8 +12,10 @@
 - **Cloudflare**: Use the `cf` CLI unless the project has a Wrangler configuration file.
 
 ## Quality & Design Guardrails
-- **Bilingual Parity**: Any copy added or modified in `src/i18n/translations.ts` must maintain 100% symmetry between `en` and `nl`.
-- **Typography & Accessibility**: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` or `[undersized-ui-text]` violations in `impeccable detect`.
+- **Anti-Slop Knowledge Base**: Before proposing copy, styling, or architecture changes, review `criticism.md` and `criticisms/README.md`. Adhere strictly to the 10-point Anti-Slop Prevention Checklist.
+- **Card Elevation**: Every card must feature a visible border and drop shadow (`shadow-sm hover:shadow-md`) on both mobile and desktop. Never strip borders or shadows on desktop (`sm:border-none sm:shadow-none`).
+- **Bilingual Parity**: Any copy added or modified in `src/i18n/` must maintain 100% symmetry between `en` and `nl`.
+- **Typography & Accessibility**: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` violations. Reserve `font-mono` strictly for code, syntax, paths, and stack chips.
 - **ATS Single-Page CV**: Never allow `cv/Casper_Hildebrand_CV.tex` or `cv/Casper_Hildebrand_CV_NL.tex` to spill onto page 2.
 
 ## Safety & File System Guardrails
