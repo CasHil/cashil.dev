@@ -9,12 +9,12 @@ export default function Footer() {
         className="mt-16 h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-300/80 dark:via-zinc-700/80 to-transparent"
         aria-hidden="true"
       />
-      <footer className="pt-8 pb-12 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+      <footer className="pt-8 pb-12 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">
         <div>{t.sidebar.year}</div>
         <div className="flex items-center gap-3">
           <a
             href="mailto:casperhildebrand@gmail.com"
-            className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+            className="hover:text-brand dark:hover:text-brand transition-colors"
           >
             casperhildebrand@gmail.com
           </a>
@@ -23,7 +23,7 @@ export default function Footer() {
             href="https://github.com/CasHil"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+            className="hover:text-brand dark:hover:text-brand transition-colors"
           >
             GitHub
           </a>
@@ -32,7 +32,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/casper-hildebrand/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+            className="hover:text-brand dark:hover:text-brand transition-colors"
           >
             LinkedIn
           </a>

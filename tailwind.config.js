@@ -17,6 +17,12 @@ module.exports = {
           subtle: "var(--border-subtle)",
           hover: "var(--border-hover)",
         },
+        brand: {
+          DEFAULT: "var(--brand)",
+          hover: "var(--brand-hover)",
+          subtle: "var(--brand-subtle)",
+          border: "var(--brand-border)",
+        },
       },
       fontFamily: {
         display: ['"Instrument Sans"', "sans-serif"],
@@ -29,7 +35,6 @@ module.exports = {
           "sans-serif",
         ],
         mono: [
-          '"JetBrains Mono"',
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",

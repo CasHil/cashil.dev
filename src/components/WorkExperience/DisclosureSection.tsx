@@ -38,8 +38,8 @@ export default function DisclosureSection({
               {title}
             </h3>
             {badge && (
-              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
-                // {badge}
+              <span className="px-2 py-0.5 rounded text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200/80 dark:border-white/10">
+                {badge}
               </span>
             )}
           </div>
@@ -48,7 +48,7 @@ export default function DisclosureSection({
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls={contentId}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-md self-start sm:self-auto py-2 sm:py-1 min-h-[36px]"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:text-brand-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md self-start sm:self-auto py-2 sm:py-1 min-h-[36px]"
           >
             <span>{isOpen ? closeLabel : openLabel}</span>
             <motion.span

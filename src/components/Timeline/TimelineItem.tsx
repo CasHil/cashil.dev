@@ -23,7 +23,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             />
           )}
           <div>
-            <h3 className="text-base sm:text-lg font-bold text-zinc-950 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight">
+            <h3 className="text-base sm:text-lg font-bold text-zinc-950 dark:text-white group-hover:text-brand dark:group-hover:text-brand transition-colors leading-tight">
               {data.title}
             </h3>
             <p className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-400 mt-0.5">
@@ -33,12 +33,12 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </div>
 
         {/* Date & Status Meta */}
-        <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0" data-tabular>
+        <div className="flex items-center gap-2 text-xs font-medium text-zinc-600 dark:text-zinc-400 sm:text-right shrink-0" data-tabular>
           <span>
             {data.startDate} {t.workExperience.to} {data.endDate}
           </span>
           {data.current && (
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-sans font-semibold tracking-wider uppercase bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-semibold tracking-wider uppercase bg-brand/10 text-brand border border-brand/20">
               {t.workExperience.currentBadge}
             </span>
           )}
@@ -54,16 +54,16 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </ul>
       )}
 
-      {/* Tech Stack / Skills (Clean monospaced inline stream) */}
+      {/* Tech Stack / Skills (Clean deliberate chips) */}
       {data.skills && data.skills.length > 0 && (
-        <div className="pt-1.5 flex flex-wrap items-center gap-2 text-xs font-mono">
-          <span className="text-zinc-400 dark:text-zinc-500">Stack:</span>
-          {data.skills.map((skill, idx) => (
-            <span key={skill} className="flex items-center gap-2">
-              <span className="text-zinc-800 dark:text-zinc-200">{skill}</span>
-              {idx < data.skills!.length - 1 && (
-                <span className="text-zinc-300 dark:text-zinc-700 select-none">/</span>
-              )}
+        <div className="pt-1.5 flex flex-wrap items-center gap-1.5 text-xs">
+          <span className="font-medium text-zinc-400 dark:text-zinc-500 mr-1">Stack:</span>
+          {data.skills.map((skill) => (
+            <span
+              key={skill}
+              className="px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200/80 dark:border-white/10 font-medium"
+            >
+              {skill}
             </span>
           ))}
         </div>

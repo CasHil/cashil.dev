@@ -91,7 +91,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
             {/* Section 1: Quick Actions */}
             <div className="space-y-2">
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                 {t.nav.quickActions}
               </span>
 
@@ -103,14 +103,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-100/90 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10 active:scale-[0.98] transition-all min-h-[48px]"
                 >
                   <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <span className="text-xs font-medium text-zinc-900 dark:text-zinc-100">
                       casperhildebrand@gmail.com
                     </span>
                   </div>
-                  <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                  <span className="text-xs font-semibold text-brand">
                     {copied ? t.sidebar.copiedEmail : t.sidebar.copyEmail}
                   </span>
                 </button>
@@ -122,14 +122,14 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-100/90 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10 active:scale-[0.98] transition-all min-h-[48px] text-zinc-900 dark:text-zinc-100"
                 >
                   <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     <span className="text-xs font-medium">
                       {t.nav.downloadCv}
                     </span>
                   </div>
-                  <span className="text-xs font-mono font-medium text-zinc-500 dark:text-zinc-400 uppercase">
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase">
                     {language.toUpperCase()} · PDF
                   </span>
                 </a>
@@ -138,7 +138,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
             {/* Section 2: Preferences (Language & Theme) */}
             <div className="space-y-2">
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                 {t.nav.preferences}
               </span>
 

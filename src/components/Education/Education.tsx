@@ -29,15 +29,15 @@ export default function Education() {
       </div>
 
       {/* Section 2: Master's Thesis Research Publication Card */}
-      <section aria-labelledby="thesis-publication-title" className="pt-8 border-t border-zinc-200/80 dark:border-white/10 space-y-4">
-        <article className="relative rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow space-y-4">
+      <section aria-labelledby="thesis-publication-title" className="pt-6 border-t border-zinc-200/80 dark:border-white/10 space-y-4">
+        <article className="relative rounded-2xl p-5 sm:p-6 bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow space-y-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand">
                 {pub.badge}
               </span>
-              <span className="h-1 w-1 rounded-full bg-emerald-500" />
-              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">TU Delft Repository</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
+              <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">TU Delft Repository</span>
             </div>
             <h3 id="thesis-publication-title" className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-950 dark:text-white">
               {pub.title}
@@ -58,30 +58,30 @@ export default function Education() {
               href={pub.repositoryLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:text-brand-hover transition-colors"
             >
               <span>{pub.repositoryText}</span>
-              <span className="font-mono" aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗</span>
             </a>
           </div>
         </article>
       </section>
 
       {/* Strict 2-CTA Action Bar */}
-      <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <div className="pt-6 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <Link
           to="/cv"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs sm:text-sm shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[42px]"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white font-semibold text-xs sm:text-sm shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[42px]"
         >
           <span>{t.outreach.cvBtn}</span>
-          <span className="font-mono opacity-60 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          <span className="opacity-75 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
         </Link>
         <Link
           to="/work-experience"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[42px]"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-brand/40 dark:hover:border-brand/40 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[42px]"
         >
           <span>{t.workExperience.title}</span>
-          <span className="font-mono text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          <span className="text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
         </Link>
       </div>
     </div>

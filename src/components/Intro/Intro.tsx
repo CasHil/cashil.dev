@@ -8,15 +8,12 @@ export default function Intro() {
   const { t } = useLanguage();
 
   return (
-    <div className="space-y-14">
+    <div className="space-y-10 sm:space-y-12">
       {/* 1. Hero Elevator Pitch & Direct Recruiter Actions */}
       <HeroSection />
 
-      {/* 2. Core Engineering Pillars (Agentic Development, Code Quality, Pedagogy) */}
-      <EngineeringEthos />
-
-      {/* 3. Featured Engineering Showcases */}
-      <section aria-labelledby="featured-engineering-title" className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-8">
+      {/* 2. Featured Engineering Showcases (Production Impact First) */}
+      <section aria-labelledby="featured-engineering-title" className="space-y-6 pt-2">
         <div>
           <h2
             id="featured-engineering-title"
@@ -25,13 +22,13 @@ export default function Intro() {
             {t.intro.featuredHeading}
           </h2>
           {t.intro.featuredSubtitle && (
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
               {t.intro.featuredSubtitle}
             </p>
           )}
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Flagship 1: Production Business Portal & Onboarding Backend */}
           <TikkieShowcase />
 
@@ -39,6 +36,9 @@ export default function Intro() {
           <BitsizedShowcase />
         </div>
       </section>
+
+      {/* 3. Core Engineering Approach (Pragmatic Developer Values) */}
+      <EngineeringEthos />
     </div>
   );
 }

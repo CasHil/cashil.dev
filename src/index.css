@@ -13,6 +13,10 @@
   --text-primary: #181a19;
   --text-secondary: #484d49;
   --text-muted: #6e7570;
+  --brand: #2563eb;
+  --brand-hover: #1d4ed8;
+  --brand-subtle: rgba(37, 99, 235, 0.08);
+  --brand-border: rgba(37, 99, 235, 0.22);
   --scrollbar-track: #faf8f5;
   --scrollbar-thumb: rgba(24, 26, 25, 0.12);
   --scrollbar-thumb-hover: rgba(24, 26, 25, 0.22);
@@ -29,6 +33,10 @@
   --text-primary: #f2f4f3;
   --text-secondary: #9ea5a1;
   --text-muted: #6b736e;
+  --brand: #3b82f6;
+  --brand-hover: #60a5fa;
+  --brand-subtle: rgba(59, 130, 246, 0.12);
+  --brand-border: rgba(59, 130, 246, 0.3);
   --scrollbar-track: #0b0d0c;
   --scrollbar-thumb: rgba(255, 255, 255, 0.12);
   --scrollbar-thumb-hover: rgba(255, 255, 255, 0.22);
@@ -81,7 +89,7 @@
   code,
   .font-mono,
   [data-tabular] {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-feature-settings: "tnum" 1, "zero" 1;
     font-variant-numeric: tabular-nums;
   }
@@ -102,39 +110,6 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
-}
-
-/* Organic Ambient Aura Animation */
-@keyframes organicFloatSlow {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -20px) scale(1.06);
-  }
-  66% {
-    transform: translate(-20px, 25px) scale(0.95);
-  }
-}
-
-@keyframes organicFloatAlt {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(-25px, 20px) scale(0.95);
-  }
-  66% {
-    transform: translate(20px, -25px) scale(1.05);
-  }
-}
-
-.animate-organic-aura {
-  animation: organicFloatSlow 24s ease-in-out infinite;
-}
-
-.animate-organic-aura-alt {
-  animation: organicFloatAlt 28s ease-in-out infinite;
 }
 
 @layer utilities {

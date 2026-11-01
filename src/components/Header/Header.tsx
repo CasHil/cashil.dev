@@ -47,7 +47,7 @@ export default function Header({
                 to={item.to}
                 onClick={handleClick}
                 className={({ isActive }) =>
-                  `relative px-3 sm:px-3 py-2 sm:py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-flex items-center min-h-[40px] sm:min-h-0 rounded-md shrink-0 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  `relative px-3 sm:px-3 py-2 sm:py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-flex items-center min-h-[40px] sm:min-h-0 rounded-md shrink-0 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                     isActive
                       ? "text-zinc-950 dark:text-white font-semibold"
                       : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"
@@ -60,7 +60,7 @@ export default function Header({
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicator"
-                        className="absolute -bottom-3 left-1.5 right-1.5 h-[2px] rounded-full bg-zinc-950 dark:bg-white"
+                        className="absolute -bottom-3 left-1.5 right-1.5 h-[2px] rounded-full bg-brand"
                         transition={{ type: "spring", stiffness: 500, damping: 36 }}
                       />
                     )}
