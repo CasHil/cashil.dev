@@ -1,5 +1,6 @@
 import { useLanguage } from "../../context/LanguageContext";
 import HeroSection from "./HeroSection";
+import EngineeringEthos from "./EngineeringEthos";
 import TikkieShowcase from "./TikkieShowcase";
 import BitsizedShowcase from "./BitsizedShowcase";
 
@@ -7,11 +8,14 @@ export default function Intro() {
   const { t } = useLanguage();
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-14">
       {/* 1. Hero Elevator Pitch & Direct Recruiter Actions */}
       <HeroSection />
 
-      {/* 2. Featured Engineering Showcases */}
+      {/* 2. Core Engineering Pillars (Agentic Development, Code Quality, Pedagogy) */}
+      <EngineeringEthos />
+
+      {/* 3. Featured Engineering Showcases */}
       <section aria-labelledby="featured-engineering-title" className="pt-10 border-t border-zinc-200/80 dark:border-white/10 space-y-8">
         <div>
           <h2
@@ -31,7 +35,7 @@ export default function Intro() {
           {/* Flagship 1: Production Business Portal & Onboarding Backend */}
           <TikkieShowcase />
 
-          {/* Flagship 2: 0-to-1 In-Browser Sandbox Platform */}
+          {/* Flagship 2: In-Browser Sandbox Platform */}
           <BitsizedShowcase />
         </div>
       </section>

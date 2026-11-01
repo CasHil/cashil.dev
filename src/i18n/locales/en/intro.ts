@@ -1,115 +1,115 @@
 import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
-  kicker: "Full-Stack Software Engineer · Amsterdam, NL",
-  heroTitle: "Building the business portal and onboarding backend at Tikkie Business.",
+  kicker: "Full-Stack & Agentic Software Developer · Amsterdam, NL",
+  heroTitle: "Shipping resilient web applications with agentic workflows and high code standards.",
   bioParagraph1:
-    "Full-stack software engineer at Tikkie Business (ABN AMRO). I build the merchant web portal and underlying backend systems, including onboarding workflows and business services.",
+    "Full-stack software engineer at Tikkie Business (ABN AMRO). I build merchant web applications in TypeScript and React, supported by onboarding backend services on AWS serverless infrastructure.",
   bioParagraph2:
-    "Double Master's graduate from TU Delft in Computer Science and Science Education. Previously co-founded Bitsized, building an in-browser code execution sandbox used in Dutch schools, and analyzed telemetry from 175,000 learners for research.",
+    "Double Master's graduate from TU Delft in Computer Science and Science Education. I prioritize code quality, automated test coverage, and clear technical communication across the engineering cycle.",
   viewCv: "Curriculum Vitae",
   exploreWork: "Explore Work Experience",
   featuredHeading: "Featured Engineering",
-  featuredSubtitle: "Production web applications, onboarding backend systems, and browser sandboxes.",
+  featuredSubtitle: "Production applications at Tikkie Business and client-side execution sandboxes.",
 
   // Tikkie Business Flagship
   tikkieTag: "ABN AMRO · 2026 – Present",
   tikkieTitle: "Tikkie Business",
-  tikkieSubtitle: "Merchant Portal & Onboarding Systems · ABN AMRO",
+  tikkieSubtitle: "Merchant Web Portal & Onboarding Services · ABN AMRO",
   tikkieDescription:
-    "Full-stack software engineering for Tikkie Business across customer-facing web applications and cloud services. Developing seamless merchant onboarding workflows, portal interfaces for business transactions, and resilient backend services on AWS.",
+    "Full-stack software engineering for Tikkie Business. Developing the merchant web portal for business transactions and backend verification workflows to automate merchant onboarding on AWS.",
   tikkiePipelineTitle: "Merchant Portal & Onboarding Architecture",
-  tikkiePipelineSubtitle: "Full-stack architecture from business registration to portal management",
+  tikkiePipelineSubtitle: "Architecture across web portal interfaces, onboarding services, and persistence",
   tikkiePipelineStages: [
     {
       id: "onboarding",
       stage: "01",
       title: "Onboarding Flow",
-      subtitle: "Registration",
-      description: "Automated business registration, merchant detail verification, and qualification workflows.",
+      subtitle: "Verification",
+      description: "Business detail validation, registration checks, and automated onboarding workflows.",
     },
     {
       id: "portal",
       stage: "02",
       title: "Merchant Portal",
       subtitle: "Web Application",
-      description: "Single-page application in React and TypeScript for payment requests, transaction views, and settings.",
+      description: "Single-page application in React and TypeScript for payment requests, transactions, and account settings.",
     },
     {
       id: "services",
       stage: "03",
       title: "Backend Services",
-      subtitle: "API & Services",
-      description: "Node.js services and APIs running on AWS serverless infrastructure for merchant operations.",
+      subtitle: "Node.js & AWS",
+      description: "Services and REST APIs on AWS serverless infrastructure for merchant operations.",
     },
     {
       id: "data",
       stage: "04",
       title: "Data Layer",
-      subtitle: "Persistence",
-      description: "Relational data modeling, merchant account provisioning, and transaction state in PostgreSQL.",
+      subtitle: "PostgreSQL",
+      description: "Relational data modeling, merchant account state, and transaction tracking in PostgreSQL.",
     },
   ],
   tikkieHighlights: [
-    "**Business Portal**: Developed merchant-facing interfaces in React and TypeScript for payment link creation, transaction monitoring, and account management.",
-    "**Onboarding Backend**: Built onboarding workflows and backend verification services to automate merchant qualification and account setup.",
-    "**Cloud Services**: Implemented backend services on AWS serverless infrastructure with PostgreSQL, automated tests, and structured logging.",
+    "**Merchant Portal**: Developed responsive web interfaces in React and TypeScript for creating payment requests, monitoring transactions, and managing business accounts.",
+    "**Onboarding Backend**: Built onboarding workflows and backend verification services to validate merchant details and configure accounts.",
+    "**Code Quality & Testing**: Implemented automated test coverage (Vitest, integration tests) and structured logging across AWS serverless services.",
   ],
   tikkieLink: "View in Work Timeline",
 
   // Bitsized 0-to-1 Flagship
   bitsizedTag: "Co-Founder & Lead Engineer · 2023 – 2025",
   bitsizedTitle: "Bitsized Sandbox Engine",
-  bitsizedSubtitle: "Isolated browser execution runtime and computer science learning platform",
+  bitsizedSubtitle: "Isolated browser execution runtime for computer science education",
   bitsizedDescription:
-    "Co-founded and engineered an interactive code evaluation platform deployed across Dutch secondary school computer science classrooms. Engineered in-browser code execution sandboxes, automated evaluation suites, and assignment administration tools.",
+    "Co-founded an interactive code evaluation platform used in Dutch high school computer science classrooms. Built client-side execution sandboxes, automated exercise evaluation, and teacher dashboards.",
   bitsizedArchTitle: "Sandboxed In-Browser Execution Architecture",
-  bitsizedArchSubtitle: "Deterministic runtime isolation, infinite loop termination, and immediate evaluation",
+  bitsizedArchSubtitle: "Isolated worker execution, script timeouts, and immediate feedback",
   bitsizedPrinciples: [
     {
       title: "Web Worker Isolation",
-      description: "Student code executes in dedicated, non-blocking Web Worker threads completely separated from the host DOM and main UI thread.",
+      description: "Student code runs in dedicated Web Worker threads isolated from the DOM and the main UI thread.",
     },
     {
       title: "Execution Watchdogs",
-      description: "Configurable execution timers terminate runaway while loops and unresponsive scripts before they can block the browser.",
+      description: "Execution timers stop runaway loops and unresponsive scripts before they can freeze the browser.",
     },
     {
       title: "Immediate Feedback",
-      description: "In-browser assertion test runners deliver real-time syntactic and behavioral feedback without server-side latency.",
+      description: "In-browser assertion test runners provide immediate syntax and test feedback without server compute cost.",
     },
   ],
   bitsizedHighlights: [
-    "**In-Browser Sandboxing**: Architected client-side isolated evaluation runtime using Web Workers, eliminating server-side execution cost and latency.",
-    "**Classroom Adoption**: Shipped to Dutch secondary schools, supporting multiple cohorts of students and teachers across daily coursework.",
+    "**In-Browser Sandboxing**: Designed a client-side execution runtime in Web Workers, running untrusted student code safely in the browser.",
+    "**Classroom Adoption**: Shipped to Dutch secondary schools, supporting daily coursework and practical programming exercises.",
     "**Full-Stack Platform**: Built real-time progress monitors, assignment management dashboards, and code review workflows in React and Node.js.",
   ],
   bitsizedLink: "View in Work Timeline",
 
-  // Engineering Force Multiplier
-  ethosTag: "Engineering Multiplier · TU Delft Double MSc",
-  ethosTitle: "The Didactics & Systems Advantage",
-  ethosSubtitle: "How computer science pedagogy acts as a force multiplier on software engineering teams",
+  // Engineering Ethos / Pillars
+  ethosTag: "Engineering Philosophy · TU Delft Double MSc",
+  ethosTitle: "Code Quality, Agentic Workflows & Didactic Rigor",
+  ethosSubtitle: "How software craftsmanship and science education strengthen engineering teams",
   ethosDescription:
-    "Holding formal degrees in both Computer Science and Science Education provides a distinctive perspective: code is not just machine instructions, but a human communication medium.",
+    "Combining computer science with formal training in science education shapes how I write code: software should be reliable, well-tested, and built for humans to understand and maintain.",
   ethosPillars: [
     {
-      title: "API Design as Human Communication",
+      title: "Agentic Software Development",
       description:
-        "Every endpoint, interface, and error state is an interaction contract. Applying pedagogical clarity creates self-documenting APIs with low cognitive friction and zero ambiguous edge cases.",
+        "Using AI coding agents for specification-driven workflows, automated test generation, and fast refactoring, backed by strict human verification and type checks.",
     },
     {
-      title: "Strict Type Boundaries & RFCs",
+      title: "Code Quality & Testing Rigor",
       description:
-        "Prioritizing explicit domain boundaries, thorough architectural documentation, and disciplined technical proposals accelerates team alignment and reduces bug surface area.",
+        "Enforcing strict type boundaries in TypeScript, deterministic state handling, automated CI test suites, and clean component architecture.",
     },
     {
-      title: "Mentoring & Team Velocity",
+      title: "Didactics & Pedagogical Clarity",
       description:
-        "Trained in first-degree didactic methodology, accelerating knowledge transfer across junior and mid-level engineers and building team execution momentum.",
+        "Trained as a certified computer science teacher. Applying pedagogical clarity to write clean documentation, conduct thorough code reviews, and accelerate team onboarding.",
     },
   ],
-  outsideTitle: "Outside the Codebase",
+  outsideTitle: "Outside the Terminal",
   outsideDescription:
-    "When away from the terminal, I focus on two lifelong pursuits requiring pattern recognition and deliberate practice: Electric Bass Guitar (groove, rhythm, and harmonic precision) and Chess (tactical calculation and deep positional strategy).",
+    "Away from the codebase, I play electric bass guitar and chess.",
 };

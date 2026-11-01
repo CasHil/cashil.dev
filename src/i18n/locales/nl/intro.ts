@@ -1,32 +1,32 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  kicker: "Full-Stack Software Engineer · Amsterdam, NL",
-  heroTitle: "Bouwen aan het zakelijke portaal en backend-systemen bij Tikkie Zakelijk.",
+  kicker: "Full-Stack & Agentic Software Developer · Amsterdam, NL",
+  heroTitle: "Betrouwbare webapplicaties bouwen met agentic workflows en hoge codestandaarden.",
   bioParagraph1:
-    "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO). Ik werk aan het zakelijke webportaal en achterliggende backend-systemen, waaronder onboardingflows en zakelijke accountservices.",
+    "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO). Ik ontwikkel zakelijke webapplicaties in TypeScript en React, ondersteund door onboarding-backendservices op AWS serverless infrastructuur.",
   bioParagraph2:
-    "Dubbele Master van de TU Delft in Computer Science en Science Education. Eerder medeoprichter van Bitsized, waar ik een in-browser code-sandbox voor scholen bouwde, en scriptieonderzoek gedaan naar telemetrie van 175.000 cursisten.",
+    "Dubbele Master van de TU Delft in Computer Science en Science Education. Ik geef prioriteit aan codekwaliteit, geautomatiseerde testdekking en heldere technische communicatie binnen de ontwikkelcyclus.",
   viewCv: "Curriculum Vitae",
   exploreWork: "Bekijk Werkervaring",
   featuredHeading: "Uitgelichte Engineering",
-  featuredSubtitle: "Productiewebapplicaties, onboarding-backendsystemen en browser-zandbakken.",
+  featuredSubtitle: "Productiesystemen bij Tikkie Zakelijk en client-side code-executieomgevingen.",
 
   // Tikkie Business Flagship
   tikkieTag: "ABN AMRO · 2026 – Heden",
   tikkieTitle: "Tikkie Zakelijk",
-  tikkieSubtitle: "Zakelijk Portaal & Onboarding-systemen · ABN AMRO",
+  tikkieSubtitle: "Zakelijk Webportaal & Onboarding-services · ABN AMRO",
   tikkieDescription:
-    "Full-stack software engineering voor Tikkie Zakelijk, gericht op zakelijke webportalen en cloudservices. Ontwikkeling van soepele onboardingflows voor bedrijven, interfaces voor transactiebeheer en betrouwbare backend-diensten op AWS.",
+    "Full-stack software engineering voor Tikkie Zakelijk. Ontwikkeling van het zakelijke webportaal voor transactiebeheer en backend-verificatieworkflows voor geautomatiseerde onboarding op AWS.",
   tikkiePipelineTitle: "Zakelijk Portaal- & Onboarding-architectuur",
-  tikkiePipelineSubtitle: "Full-stack architectuur van zakelijke registratie tot portaalbeheer",
+  tikkiePipelineSubtitle: "Architectuur over webportaalinterfaces, onboarding-services en persistentie",
   tikkiePipelineStages: [
     {
       id: "onboarding",
       stage: "01",
       title: "Onboarding Flow",
-      subtitle: "Registratie",
-      description: "Geautomatiseerde registratie van bedrijven, verificatie van bedrijfsgegevens en kwalificatieworkflows.",
+      subtitle: "Verificatie",
+      description: "Controle van bedrijfsgegevens, registratievalidatie en geautomatiseerde onboardingworkflows.",
     },
     {
       id: "portal",
@@ -39,77 +39,77 @@ export const nlIntro: IntroTranslations = {
       id: "services",
       stage: "03",
       title: "Backend Services",
-      subtitle: "API & Services",
-      description: "Node.js-services en API's op AWS serverless infrastructuur voor zakelijke interacties.",
+      subtitle: "Node.js & AWS",
+      description: "Backend-services en REST-API's op AWS serverless infrastructuur voor zakelijke interacties.",
     },
     {
       id: "data",
       stage: "04",
       title: "Data Layer",
-      subtitle: "Persistentie",
+      subtitle: "PostgreSQL",
       description: "Relationele datamodellering, inrichting van zakelijke accounts en transactiestatus in PostgreSQL.",
     },
   ],
   tikkieHighlights: [
     "**Zakelijk Portaal**: Webinterfaces ontwikkeld in React en TypeScript voor het aanmaken van betaalverzoeken, transactiemonitoring en accountbeheer.",
     "**Onboarding Backend**: Onboardingworkflows en backend-verificatiediensten gebouwd voor geautomatiseerde accountvalidatie en configuratie.",
-    "**Cloudservices**: Backend-services gerealiseerd op AWS serverless infrastructuur met PostgreSQL, geautomatiseerde tests en gestructureerde logging.",
+    "**Codekwaliteit & Testen**: Geautomatiseerde testdekking gerealiseerd (Vitest, integratietests) en gestructureerde logging over AWS services ingericht.",
   ],
   tikkieLink: "Bekijk in Tijdlijn",
 
   // Bitsized 0-to-1 Flagship
   bitsizedTag: "Medeoprichter & Lead Engineer · 2023 – 2025",
   bitsizedTitle: "Bitsized Sandbox Engine",
-  bitsizedSubtitle: "Geïsoleerde browser-uitvoeringsruntime en informatica-onderwijsplatform",
+  bitsizedSubtitle: "Geïsoleerde browser-uitvoeringsruntime voor informatica-onderwijs",
   bitsizedDescription:
-    "Medeoprichter en engineer van een interactief code-evaluatieplatform dat in gebruik is genomen op Nederlandse middelbare scholen. In-browser code-executiezandbakken, geautomatiseerde beoordelingstests en tools voor opdrachtenbeheer gerealiseerd.",
+    "Medeoprichter van een interactief code-evaluatieplatform dat in gebruik is genomen op Nederlandse middelbare scholen. In-browser executie-omgevingen, geautomatiseerde opdrachtevaluatie en docentendashboards gebouwd.",
   bitsizedArchTitle: "Sandboxed In-Browser Executie-architectuur",
-  bitsizedArchSubtitle: "Deterministische isolatie, oneindige-lusterminatie en directe code-evaluatie",
+  bitsizedArchSubtitle: "Geïsoleerde worker-executie, script-timeouts en directe evaluatie",
   bitsizedPrinciples: [
     {
       title: "Web Worker Isolatie",
-      description: "Leerlingencode draait in dedicated, niet-blokkerende Web Workers, volledig afgezonderd van de DOM en UI-hoofddraad.",
+      description: "Leerlingencode draait in aparte Web Workers, afgezonderd van de DOM en UI-hoofddraad.",
     },
     {
       title: "Executie-watchdogs",
-      description: "Configureerbare uitvoeringstimers beëindigen op hol geslagen lussen en niet-reagerende scripts voordat de browser bevriest.",
+      description: "Uitvoeringstimers beëindigen oneindige lussen en niet-reagerende scripts voordat de browser bevriest.",
     },
     {
       title: "Directe Feedback",
-      description: "In-browser assertion-runners geven leerlingen realtime syntactische en inhoudelijke feedback zonder serverlatentie.",
+      description: "In-browser assertion-runners geven leerlingen realtime syntactische en inhoudelijke feedback zonder serverkosten.",
     },
   ],
   bitsizedHighlights: [
-    "**In-Browser Sandboxing**: Client-side geïsoleerde executie-runtime ontworpen met Web Workers, waardoor serverkosten en vertraging nihil zijn.",
-    "**Onderwijsadoptie**: Uitgerold op Nederlandse middelbare scholen ter ondersteuning van diverse klassen en docenten tijdens dagelijkse lessen.",
-    "**Full-Stack Platform**: Realtime voortgangsmonitors, opdrachtbeheerdashboards en code-evaluatieworkflows gebouwd in React en Node.js.",
+    "**In-Browser Sandboxing**: Client-side executie-runtime ontworpen met Web Workers om niet-vertrouwde leerlingencode veilig lokaal uit te voeren.",
+    "**Onderwijsadoptie**: Uitgerold op Nederlandse middelbare scholen ter ondersteuning van dagelijkse programmeerlessen.",
+    "**Full-Stack Platform**: Voortgangsmonitors, opdrachtbeheerdashboards en code-evaluatieworkflows gebouwd in React en Node.js.",
   ],
   bitsizedLink: "Bekijk in Tijdlijn",
 
-  // Engineering Force Multiplier
-  ethosTag: "Engineering Multiplier · TU Delft Dubbele MSc",
-  ethosTitle: "Het Voordeel van Didactiek & Systemen",
-  ethosSubtitle: "Hoe informaticadidactiek fungeert als een krachtvermenigvuldiger in software-engineeringteams",
+  // Engineering Ethos / Pillars
+  ethosTag: "Engineering Filosofie · TU Delft Dubbele MSc",
+  ethosTitle: "Codekwaliteit, Agentic Workflows & Didactische Rigor",
+  ethosSubtitle: "Hoe software-ambacht en wetenschapsonderwijs engineeringteams versterken",
   ethosDescription:
-    "Het bezit van universitaire diploma's in zowel Informatica als Wetenschapsonderwijs biedt een onderscheidend perspectief: programmacode is niet louter machine-instructie, maar bovenal een menselijk communicatiemiddel.",
+    "De combinatie van informatica en wetenschapsonderwijs bepaalt hoe ik software ontwikkel: code moet betrouwbaar zijn, goed getest, en gebouwd voor mensen om te begrijpen en te onderhouden.",
   ethosPillars: [
     {
-      title: "API-Ontwerp als Menselijke Communicatie",
+      title: "Agentic Software Development",
       description:
-        "Elk endpoint, interface en foutbericht is een interactiecontract. Didactische helderheid leidt tot zelfdocumenterende API's met minimale cognitieve belasting en heldere randgevallen.",
+        "Inzet van AI-agenten voor specificatie-gedreven ontwikkeling, geautomatiseerde testgeneratie en snelle refactoring, bewaakt door strikte verificatie en typechecks.",
     },
     {
-      title: "Strikte Typegrenzen & RFC's",
+      title: "Codekwaliteit & Testdiscipline",
       description:
-        "Expliciete domeingrenzen, grondige architectuurdocumentatie en gedisciplineerde technische voorstellen versnellen afstemming en reduceren bugs.",
+        "Strikte typegrenzen in TypeScript, deterministische statusverwerking, geautomatiseerde CI-testsuites en een heldere componentarchitectuur.",
     },
     {
-      title: "Mentorschap & Teamsnelheid",
+      title: "Didactiek & Heldere Communicatie",
       description:
-        "Gekwalificeerd eerstegraads docent met ervaring in het versnellen van kennisoverdracht bij junior en medior engineers en het versterken van een leercultuur.",
+        "Bevoegd eerstegraads docent informatica. Didactische helderheid inzetten voor duidelijke documentatie, constructieve code reviews en versnelde inwerktrajecten.",
     },
   ],
-  outsideTitle: "Buiten de Codebase",
+  outsideTitle: "Buiten het Beeldscherm",
   outsideDescription:
-    "Buiten het beeldscherm richt ik me op twee passies die patroonherkenning en bewuste oefening vereisen: Elektrische Basgitaar (groove, timing en harmonische precisie) en Schaken (tactische berekening en diepgaande positionele strategie).",
+    "Buiten de codebase speel ik elektrische basgitaar en schaak ik graag.",
 };

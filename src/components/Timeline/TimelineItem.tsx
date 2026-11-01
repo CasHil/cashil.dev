@@ -10,10 +10,10 @@ export default function TimelineItem({ data }: TimelineItemProps) {
   const { t } = useLanguage();
 
   return (
-    <article className="group space-y-2.5 p-3.5 sm:p-0 rounded-2xl sm:rounded-none bg-white/50 dark:bg-zinc-900/40 sm:bg-transparent sm:dark:bg-transparent border border-zinc-200/60 dark:border-white/5 sm:border-none shadow-2xs sm:shadow-none transition-all">
-      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+    <article className="group space-y-3 p-5 sm:p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm hover:shadow-md transition-all">
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1.5">
         {/* Role Title & Organization with Inline Logo */}
-        <div className="flex items-start gap-2.5">
+        <div className="flex items-start gap-3">
           {data.image && (
             <img
               src={`/images/${data.image.uri}`}
