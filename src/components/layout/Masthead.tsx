@@ -20,7 +20,7 @@ export default function Masthead() {
   };
 
   return (
-    <header className="pt-8 sm:pt-12 pb-6 space-y-6">
+    <header className="pt-6 sm:pt-12 pb-4 sm:pb-6 space-y-4 sm:space-y-6 border-b sm:border-b-0 border-zinc-200/80 dark:border-white/10">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Candidate Identity */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
@@ -36,7 +36,7 @@ export default function Masthead() {
               <span className="font-display font-bold text-base sm:text-lg text-zinc-950 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 {t.sidebar.name}
               </span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[11px] font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
+              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
                 {t.sidebar.timezone}
               </span>
             </div>
@@ -109,8 +109,8 @@ export default function Masthead() {
         </div>
       </div>
 
-      {/* Primary Navigation */}
-      <div className="border-b border-zinc-200/80 dark:border-white/10 pb-3">
+      {/* Primary Navigation (Desktop) */}
+      <div className="hidden sm:block border-b border-zinc-200/80 dark:border-white/10 pb-3">
         <Header orientation="horizontal" />
       </div>
     </header>

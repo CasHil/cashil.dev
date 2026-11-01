@@ -6,6 +6,11 @@ export interface NavTranslations {
   workExperience: string;
   workShort: string;
   education: string;
+  menu: string;
+  close: string;
+  quickActions: string;
+  preferences: string;
+  swipeNav: string;
 }
 
 export interface SidebarTranslations {

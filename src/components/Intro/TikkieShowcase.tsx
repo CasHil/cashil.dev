@@ -61,17 +61,34 @@ export default function TikkieShowcase() {
           </span>
         </div>
 
-        {/* Continuous Flow Ribbon SVG */}
-        <FlowRibbonConduit />
+        {/* Continuous Flow Ribbon SVG (Desktop) */}
+        <div className="hidden sm:block">
+          <FlowRibbonConduit />
+        </div>
 
-        {/* 4 Open Architectural Stations */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+        {/* Mobile Swipe Cue */}
+        <div className="flex sm:hidden items-center justify-between text-xs font-mono text-zinc-400 dark:text-zinc-500 pt-1">
+          <span>Pipeline Stages</span>
+          <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+            <span>Swipe</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        </div>
+
+        {/* 4 Architectural Stations: Mobile Swipe Deck + Desktop Grid */}
+        <div
+          data-carousel="true"
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2 sm:pb-0"
+        >
           {t.intro.tikkiePipelineStages.map((stage) => (
-            <div key={stage.id} className="space-y-1.5 p-1">
+            <div
+              key={stage.id}
+              className="w-[78vw] max-w-[270px] shrink-0 snap-center rounded-2xl p-4 bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-2xs sm:w-auto sm:max-w-none sm:p-1 sm:bg-transparent sm:dark:bg-transparent sm:border-none sm:shadow-none space-y-1.5"
+            >
               <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 dark:text-zinc-500">
                 <span className="font-bold text-emerald-700 dark:text-emerald-400">{stage.stage}</span>
                 <span className="opacity-40">//</span>
-                <span className="uppercase text-[11px] tracking-wider truncate">{stage.subtitle}</span>
+                <span className="uppercase text-xs tracking-wider truncate">{stage.subtitle}</span>
               </div>
               <div className="font-bold text-sm text-zinc-950 dark:text-white">
                 {stage.title}

@@ -10,7 +10,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
   const { t } = useLanguage();
 
   return (
-    <article className="group space-y-2">
+    <article className="group space-y-2.5 p-3.5 sm:p-0 rounded-2xl sm:rounded-none bg-white/50 dark:bg-zinc-900/40 sm:bg-transparent sm:dark:bg-transparent border border-zinc-200/60 dark:border-white/5 sm:border-none shadow-2xs sm:shadow-none transition-all">
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
         {/* Role Title & Organization with Inline Logo */}
         <div className="flex items-start gap-2.5">
@@ -38,7 +38,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
             {data.startDate} {t.workExperience.to} {data.endDate}
           </span>
           {data.current && (
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-sans font-semibold tracking-wider uppercase bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-sans font-semibold tracking-wider uppercase bg-zinc-200/70 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300/60 dark:border-white/10">
               {t.workExperience.currentBadge}
             </span>
           )}
