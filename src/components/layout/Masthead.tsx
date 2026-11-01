@@ -28,12 +28,12 @@ export default function Masthead() {
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-12 w-12 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
+              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
             />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+              <span className="font-display font-bold text-base sm:text-lg text-zinc-950 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                 {t.sidebar.name}
               </span>
               <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[11px] font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
@@ -47,12 +47,12 @@ export default function Masthead() {
         </Link>
 
         {/* Action Controls & Social Channels */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 self-start sm:self-auto">
+        <div className="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full sm:w-auto">
           {/* Quick Copy Email Interaction */}
           <button
             type="button"
             onClick={handleCopyEmail}
-            className="group relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-zinc-200/80 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-all shadow-2xs min-h-[36px]"
+            className="group relative inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-zinc-200/80 dark:border-white/10 bg-white/80 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-all shadow-2xs min-h-[36px]"
             title="Click to copy email address"
             aria-label={copied ? t.sidebar.copiedEmail : t.sidebar.copyEmail}
           >
@@ -99,10 +99,10 @@ export default function Masthead() {
             </a>
           </nav>
 
-          <span className="h-4 w-[1px] bg-zinc-200 dark:bg-white/10" aria-hidden="true" />
+          <span className="h-4 w-px bg-zinc-200 dark:bg-white/10 shrink-0 mx-0.5" aria-hidden="true" />
 
           {/* Theme & Language Toggles */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 shrink-0">
             <LanguageToggle />
             <ThemeToggle />
           </div>

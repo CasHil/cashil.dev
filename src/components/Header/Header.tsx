@@ -60,8 +60,8 @@ export default function Header({
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicator"
-                        className="absolute bottom-0 left-2 right-2 h-[2px] bg-zinc-950 dark:bg-white"
-                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                        className="absolute -bottom-3 left-1.5 right-1.5 h-[2px] rounded-full bg-zinc-950 dark:bg-white"
+                        transition={{ type: "spring", stiffness: 500, damping: 36 }}
                       />
                     )}
                   </>

@@ -22,13 +22,13 @@ export const nlExperience: WorkExperienceTranslations = {
   hideAcademic: "Verberg onderwijs- & bestuurservaring",
   items: [
     {
-      title: "Tikkie (ABN AMRO)",
+      title: "Tikkie Zakelijk (ABN AMRO)",
       subtitle: "Full Stack Software Engineer",
       startDate: "mrt 2026",
       endDate: "Heden",
       current: true,
-      text: "**Zakelijke Betaalinfrastructuur**: Resiliente betaal-API's en zakelijke webportalen ontwikkeld voor Tikkie Zakelijk ter ondersteuning van duizenden aangesloten ondernemingen.\n**Afwikkeling & Idempotentie**: Idempotente afwikkelingsworkflows, webhook-dispatchers en automatische herstelpipelines geïmplementeerd die dubbele afschrijvingen uitsluiten.\n**Analyse & Observability**: Uitgebreide merchant dashboards gebouwd in React, TypeScript en AWS serverloze infrastructuur met grondige telemetrie en geautomatiseerde tests.",
-      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Idempotentie"],
+      text: "**Zakelijk Portaal**: Ontwikkeling van het zakelijke webportaal in React en TypeScript voor Tikkie Zakelijk, waarmee bedrijven betaalverzoeken beheren, transacties inzien en accountinstellingen configureren.\n**Onboarding Backend-systemen**: Backend-onboardingworkflows en API's gebouwd voor verificatie van bedrijfsgegevens, geautomatiseerde controles en het inrichten van zakelijke accounts.\n**Platformbetrouwbaarheid**: Services gerealiseerd op AWS serverless infrastructuur en PostgreSQL met geautomatiseerde testdekking, monitoring en gestructureerde logging.",
+      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding-systemen"],
       category: "engineering",
       tier: "featured",
       image: {
@@ -57,9 +57,13 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "jan 2023",
       endDate: "feb 2025",
       text: "**Platformarchitectuur**: Medeoprichter en hoofdontwikkelaar van een interactief codeerplatform dat in gebruik is genomen op Nederlandse middelbare scholen.\n**Zandbak-executie**: In-browser code-executiezandbakken ontworpen met Web Workers, geheugenisolatie en deterministische uitvoeringstimers.\n**Docenten- & Leerlingentools**: Geautomatiseerde opdrachtevaluatie, realtime codebeoordeling en klassikaal beheer gebouwd met TypeScript, React, Node.js en Docker.",
-      skills: ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "AST Evaluation"],
+      skills: ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "Browser Sandboxing"],
       category: "engineering",
       tier: "featured",
+      image: {
+        uri: "bitsized.webp",
+        alt: "Bitsized logo",
+      },
     },
     {
       title: "Netcompany",
@@ -67,9 +71,13 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "sep 2021",
       endDate: "jun 2022",
       text: "**ETL-datamigraties**: Geautomatiseerde migratieworkflows en technische specificaties ontworpen voor landelijke onderwijsfondsen (Vervangingsfonds & Participatiefonds).\n**Wettelijke Rekentools**: Full-stack energiemodelleringssoftware gebouwd voor utiliteitsbouw conform Nederlandse wet- en regelgeving.",
-      skills: ["C#", ".NET", "SQL Server", "ETL Pipelines", "Enterprise Architecture"],
+      skills: ["C#", ".NET", "SQL Server", "ETL Pipelines", "Datamodellering"],
       category: "engineering",
       tier: "featured",
+      image: {
+        uri: "netcompany.webp",
+        alt: "Netcompany logo",
+      },
     },
     {
       title: "Bexter",
@@ -80,16 +88,24 @@ export const nlExperience: WorkExperienceTranslations = {
       skills: ["TypeScript", "JavaScript", "REST APIs", "SQL", "Logistieke Systemen"],
       category: "engineering",
       tier: "foundational",
+      image: {
+        uri: "bexter.webp",
+        alt: "Bexter logo",
+      },
     },
     {
       title: "Informaticaonderwijs & TU Delft Universitair Bestuur",
       subtitle: "Docent Informatica & Opleidingscommissielid",
       startDate: "sep 2018",
       endDate: "jul 2025",
-      text: "**Voortgezet Onderwijs**: Lesgegeven aan circa 200 middelbare scholieren over algoritmen, computerarchitectuur, digitale logica en webapplicaties op CSG De Lage Waard.\n**Universitair Onderwijsassistent**: Honderden bachelorstudenten begeleid bij algoritme-analyse, grafentheorie en datastructuren aan de TU Delft.\n**Opleidingscommissie**: Verkozen studentvertegenwoordiger in de Opleidingscommissie Technische Informatica van de TU Delft voor kwaliteitsbewaking van het curriculum.",
-      skills: ["Informaticadidactiek", "Algoritmen", "Curriculumontwerp", "Technische Communicatie"],
+      text: "**Voortgezet Onderwijs**: Lesgegeven aan circa 200 middelbare scholieren over algoritmen, computerarchitectuur, digitale logica en webapplicaties op CSG De Lage Waard & Stanislascollege.\n**Examenstandaarden**: Eindwerkstukken van leerlingen begeleid en het regionale programma van toetsing en afsluiting (PTA) ontworpen.\n**Opleidingscommissie**: Verkozen studentvertegenwoordiger in de Opleidingscommissie Technische Informatica van de TU Delft voor kwaliteitsbewaking van het curriculum.",
+      skills: ["Informaticadidactiek", "Algoritmen", "Curriculumontwerp", "Examenstandaarden"],
       category: "education",
       tier: "foundational",
+      image: {
+        uri: "tudelft.webp",
+        alt: "TU Delft logo",
+      },
     },
   ],
 };

@@ -1,14 +1,27 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import TopographicAura from "../common/TopographicAura";
 
 export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section aria-labelledby="hero-title" className="space-y-6">
-      {/* Clean Typographic Eyebrow (Zero AI pills, zero green ping dots) */}
-      <div className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500 dark:text-zinc-400">
-        {t.intro.kicker}
+    <section aria-labelledby="hero-title" className="relative space-y-6 pt-2">
+      {/* Handcrafted Organic Waveform Backdrop */}
+      <TopographicAura className="-top-12 -bottom-10" />
+
+      {/* Organic Eyebrow */}
+      <div className="flex items-center gap-2 text-xs font-mono font-medium tracking-wider uppercase text-zinc-500 dark:text-zinc-400">
+        <svg
+          viewBox="0 0 24 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-2.5 text-emerald-600 dark:text-emerald-400 stroke-current shrink-0"
+          aria-hidden="true"
+        >
+          <path d="M1 6 C 6 1, 10 11, 15 6 C 18 2, 21 8, 23 6" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+        <span>{t.intro.kicker}</span>
       </div>
 
       {/* Editorial Hero Statement */}

@@ -30,7 +30,7 @@ export const nlEducation: EducationTranslations = {
       text: "**Focus**: Geavanceerde algoritmen, gedistribueerde gegevensverwerking, toegepaste machine learning en kwantitatieve telemetrie-analyse.\n**Masterthesis**: Debugging the Divide: Exploring Men's and Women's Motivations and Engagement in Computer Science MOOCs.",
       skills: ["Data Science", "Python", "Algoritmen", "Machine Learning", "Gedistribueerde Systemen"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },
@@ -42,7 +42,7 @@ export const nlEducation: EducationTranslations = {
       text: "**Eerstegraads Bevoegdheid**: Formele Nederlandse eerstegraads onderwijsbevoegdheid behaald in de Informatica voor lesbevoegdheid op alle niveaus in het vo en hoger onderwijs.\n**Didactiek & Onderwijskunde**: Diepgaande training in curriculumontwerp, diagnostische toetsing, cognitieve belastingstheorie en technische communicatie.",
       skills: ["Informaticadidactiek", "Cognitieve Belastingstheorie", "Technische Communicatie", "Curriculumontwerp"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },
@@ -54,7 +54,7 @@ export const nlEducation: EducationTranslations = {
       text: "**Studie**: Gericht op machine-learning-algoritmen, informatievisualisatie en mens-computerinteractie in Stockholm, Zweden.",
       skills: ["Machine Learning", "Informatievisualisatie", "HCI"],
       image: {
-        uri: "kth.svg",
+        uri: "kth.webp",
         alt: "KTH logo",
       },
     },
@@ -66,7 +66,7 @@ export const nlEducation: EducationTranslations = {
       text: "**Fundament**: Gedegen basis in datastructuren, algoritmen, besturingssystemen, computernetwerken, berekenbaarheid en softwarearchitectuur.\n**Bestuur**: Verkozen studentvertegenwoordiger in de Opleidingscommissie Technische Informatica.",
       skills: ["Datastructuren", "Algoritmen", "Besturingssystemen", "Netwerken", "Software Engineering"],
       image: {
-        uri: "tudelft.svg",
+        uri: "tudelft.webp",
         alt: "TU Delft logo",
       },
     },

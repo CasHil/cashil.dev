@@ -2,58 +2,58 @@ import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
   kicker: "Full-Stack Software Engineer · Amsterdam, NL",
-  heroTitle: "Robuuste betaaldiensten en webplatforms bouwen bij Tikkie.",
+  heroTitle: "Bouwen aan het zakelijke portaal en backend-systemen bij Tikkie Zakelijk.",
   bioParagraph1:
-    "Full-stack software engineer bij Tikkie (ABN AMRO), verantwoordelijk voor idempotente betaal-API's, partnerwebhooks en zakelijke beheerportalen voor duizenden ondernemingen in heel Nederland.",
+    "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO). Ik werk aan het zakelijke webportaal en achterliggende backend-systemen, waaronder onboardingflows en zakelijke accountservices.",
   bioParagraph2:
-    "In het bezit van een Dubbele Master van de Technische Universiteit Delft in Computer Science en Science Education. Ik combineer gedistribueerde systemen met didactische principes om intuïtieve developer interfaces, betrouwbare API-contracten en efficiënte engineering-workflows te ontwerpen.",
+    "Dubbele Master van de TU Delft in Computer Science en Science Education. Eerder medeoprichter van Bitsized, waar ik een in-browser code-sandbox voor scholen bouwde, en scriptieonderzoek gedaan naar telemetrie van 175.000 cursisten.",
   viewCv: "Curriculum Vitae",
-  exploreWork: "Geselecteerde Systemen",
+  exploreWork: "Bekijk Werkervaring",
   featuredHeading: "Uitgelichte Engineering",
-  featuredSubtitle: "Productiebetaalsystemen, in-browser uitvoeringszandbakken en software-architectuur.",
+  featuredSubtitle: "Productiewebapplicaties, onboarding-backendsystemen en browser-zandbakken.",
 
   // Tikkie Business Flagship
   tikkieTag: "ABN AMRO · 2026 – Heden",
-  tikkieTitle: "Tikkie Zakelijk Betaaldiensten",
-  tikkieSubtitle: "Zakelijke betaalinfrastructuur, idempotente afwikkeling en rapportageportalen",
+  tikkieTitle: "Tikkie Zakelijk",
+  tikkieSubtitle: "Zakelijk Portaal & Onboarding-systemen · ABN AMRO",
   tikkieDescription:
-    "Kern-betaal-endpoints en realtime zakelijke webportalen ontworpen en gebouwd voor Tikkie Zakelijk. End-to-end betaalafwikkelingsworkflows, webhook-dispatchsystemen en geautomatiseerde reconciliatiepipelines gerealiseerd voor zakelijke financiële transacties.",
-  tikkiePipelineTitle: "Zakelijke Betaal- & Afwikkelingspipeline",
-  tikkiePipelineSubtitle: "End-to-end transactieleveringscyclus met gegarandeerde strikte idempotentie en nul dubbele afschrijvingen",
+    "Full-stack software engineering voor Tikkie Zakelijk, gericht op zakelijke webportalen en cloudservices. Ontwikkeling van soepele onboardingflows voor bedrijven, interfaces voor transactiebeheer en betrouwbare backend-diensten op AWS.",
+  tikkiePipelineTitle: "Zakelijk Portaal- & Onboarding-architectuur",
+  tikkiePipelineSubtitle: "Full-stack architectuur van zakelijke registratie tot portaalbeheer",
   tikkiePipelineStages: [
     {
-      id: "ingestion",
+      id: "onboarding",
       stage: "01",
-      title: "Merchant API",
-      subtitle: "Ingestionlaag",
-      description: "Cryptografische handtekeningverificatie, schemacontrole en rate-limiting aan de edge gateway.",
+      title: "Onboarding Flow",
+      subtitle: "Registratie",
+      description: "Geautomatiseerde registratie van bedrijven, verificatie van bedrijfsgegevens en kwalificatieworkflows.",
     },
     {
-      id: "idempotency",
+      id: "portal",
       stage: "02",
-      title: "Idempotency Guard",
-      subtitle: "Deduplicatie",
-      description: "Atomische Redis- en databasevergrendelingen die nul dubbele financiële autorisaties garanderen.",
+      title: "Zakelijk Portaal",
+      subtitle: "Webapplicatie",
+      description: "Single-page applicatie in React en TypeScript voor betaalverzoeken, transactie-inzicht en instellingen.",
     },
     {
-      id: "settlement",
+      id: "services",
       stage: "03",
-      title: "Settlement Engine",
-      subtitle: "Async Workerlaag",
-      description: "Event-driven verwerkingsworkers voor geautomatiseerde bankoverboekingen en partnerwebhooks.",
+      title: "Backend Services",
+      subtitle: "API & Services",
+      description: "Node.js-services en API's op AWS serverless infrastructuur voor zakelijke interacties.",
     },
     {
-      id: "ledger",
+      id: "data",
       stage: "04",
-      title: "ACID Ledger",
+      title: "Data Layer",
       subtitle: "Persistentie",
-      description: "Onveranderlijke dubbele boekhoudtransacties opgeslagen in PostgreSQL met point-in-time recovery.",
+      description: "Relationele datamodellering, inrichting van zakelijke accounts en transactiestatus in PostgreSQL.",
     },
   ],
   tikkieHighlights: [
-    "**Idempotentie & Reconciliatie**: Fouttolerante betaal-ingestion ontworpen die dubbele afschrijvingen voorkomt bij netwerk-retries.",
-    "**Zakelijke Rapportage**: Responsieve analysedashboards gebouwd in React, TypeScript en AWS serverloze infrastructuur met live telemetrie.",
-    "**Partnerintegraties**: Geautomatiseerde webhook-dispatchmechanismen geïmplementeerd met exponential backoff en dead-letter queues.",
+    "**Zakelijk Portaal**: Webinterfaces ontwikkeld in React en TypeScript voor het aanmaken van betaalverzoeken, transactiemonitoring en accountbeheer.",
+    "**Onboarding Backend**: Onboardingworkflows en backend-verificatiediensten gebouwd voor geautomatiseerde accountvalidatie en configuratie.",
+    "**Cloudservices**: Backend-services gerealiseerd op AWS serverless infrastructuur met PostgreSQL, geautomatiseerde tests en gestructureerde logging.",
   ],
   tikkieLink: "Bekijk in Tijdlijn",
 
@@ -64,19 +64,19 @@ export const nlIntro: IntroTranslations = {
   bitsizedDescription:
     "Medeoprichter en engineer van een interactief code-evaluatieplatform dat in gebruik is genomen op Nederlandse middelbare scholen. In-browser code-executiezandbakken, geautomatiseerde beoordelingstests en tools voor opdrachtenbeheer gerealiseerd.",
   bitsizedArchTitle: "Sandboxed In-Browser Executie-architectuur",
-  bitsizedArchSubtitle: "Deterministische isolatie, oneindige-lustermatie en realtime codebeoordeling",
+  bitsizedArchSubtitle: "Deterministische isolatie, oneindige-lusterminatie en directe code-evaluatie",
   bitsizedPrinciples: [
     {
       title: "Web Worker Isolatie",
       description: "Leerlingencode draait in dedicated, niet-blokkerende Web Workers, volledig afgezonderd van de DOM en UI-hoofddraad.",
     },
     {
-      title: "Deterministische Watchdogs",
-      description: "Uitvoeringstimers en AST-pre-checks beëindigen op hol geslagen lussen en geheugenpieken direct voordat de browser bevriest.",
+      title: "Executie-watchdogs",
+      description: "Configureerbare uitvoeringstimers beëindigen op hol geslagen lussen en niet-reagerende scripts voordat de browser bevriest.",
     },
     {
-      title: "Directe Evaluatie",
-      description: "Testrunners voeren assertion-suites uit in minder dan 25ms en geven leerlingen realtime syntactische en inhoudelijke feedback.",
+      title: "Directe Feedback",
+      description: "In-browser assertion-runners geven leerlingen realtime syntactische en inhoudelijke feedback zonder serverlatentie.",
     },
   ],
   bitsizedHighlights: [

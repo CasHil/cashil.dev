@@ -2,7 +2,6 @@ import { useLanguage } from "../../context/LanguageContext";
 import HeroSection from "./HeroSection";
 import TikkieShowcase from "./TikkieShowcase";
 import BitsizedShowcase from "./BitsizedShowcase";
-import EngineeringEthos from "./EngineeringEthos";
 
 export default function Intro() {
   const { t } = useLanguage();
@@ -29,14 +28,11 @@ export default function Intro() {
         </div>
 
         <div className="space-y-8">
-          {/* Flagship 1: Production Fintech Payment Services */}
+          {/* Flagship 1: Production Business Portal & Onboarding Backend */}
           <TikkieShowcase />
 
           {/* Flagship 2: 0-to-1 In-Browser Sandbox Platform */}
           <BitsizedShowcase />
-
-          {/* Pillar 3: Didactics & Systems Force Multiplier */}
-          <EngineeringEthos />
         </div>
       </section>
     </div>
