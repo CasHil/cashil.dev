@@ -6,4 +6,9 @@ export const nlNav: NavTranslations = {
   workExperience: "Werkervaring",
   workShort: "Werk",
   education: "Opleiding",
+  menu: "Menu",
+  close: "Sluiten",
+  quickActions: "Snelle acties",
+  preferences: "Voorkeuren",
+  swipeNav: "Veeg om van pagina te wisselen",
 };

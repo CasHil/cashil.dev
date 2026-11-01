@@ -137,3 +137,39 @@ test("allows switching CV PDF language via dedicated toggle", () => {
   const downloadLinkEn = screen.getByRole("link", { name: /download pdf \(en\)/i });
   expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
+
+test("renders mobile bottom navigation bar with thumb-zone controls", () => {
+  render(<App />);
+  const mobileNav = screen.getByRole("navigation", { name: /mobile primary navigation/i });
+  expect(mobileNav).toBeInTheDocument();
+
+  const menuButton = screen.getByRole("button", { name: /menu/i });
+  expect(menuButton).toBeInTheDocument();
+});
+
+test("opens and closes mobile action drawer with quick actions", () => {
+  render(<App />);
+  const menuButton = screen.getByRole("button", { name: /menu/i });
+  expect(menuButton).toHaveAttribute("aria-expanded", "false");
+
+  // Open drawer
+  fireEvent.click(menuButton);
+  expect(menuButton).toHaveAttribute("aria-expanded", "true");
+
+  const dialog = screen.getByRole("dialog");
+  expect(dialog).toBeInTheDocument();
+  expect(dialog).toHaveTextContent(/casperhildebrand@gmail.com/i);
+
+  // Close drawer via close button
+  const closeButton = screen.getByRole("button", { name: /close|sluiten/i });
+  fireEvent.click(closeButton);
+  expect(menuButton).toHaveAttribute("aria-expanded", "false");
+});
+
+test("renders swipeable card carousels with peek affordance for showcases", () => {
+  window.history.pushState({}, "", "/");
+  render(<App />);
+  const carousels = document.querySelectorAll('[data-carousel="true"]');
+  expect(carousels.length).toBe(2);
+});
+

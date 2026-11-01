@@ -62,13 +62,30 @@ export default function BitsizedShowcase() {
           </span>
         </div>
 
-        {/* Bespoke Orbital SVG Sandbox Crucible */}
-        <SandboxCrucible />
+        {/* Bespoke Orbital SVG Sandbox Crucible (Desktop) */}
+        <div className="hidden sm:block">
+          <SandboxCrucible />
+        </div>
 
-        {/* 3 Open Principle Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+        {/* Mobile Swipe Cue */}
+        <div className="flex sm:hidden items-center justify-between text-xs font-mono text-zinc-400 dark:text-zinc-500 pt-1">
+          <span>Core Principles</span>
+          <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+            <span>Swipe</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        </div>
+
+        {/* 3 Principles: Mobile Swipe Deck + Desktop Grid */}
+        <div
+          data-carousel="true"
+          className="flex sm:grid sm:grid-cols-3 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2 sm:pb-0"
+        >
           {t.intro.bitsizedPrinciples.map((item, idx) => (
-            <div key={idx} className="space-y-1.5 p-1">
+            <div
+              key={idx}
+              className="w-[78vw] max-w-[270px] shrink-0 snap-center rounded-2xl p-4 bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-2xs sm:w-auto sm:max-w-none sm:p-1 sm:bg-transparent sm:dark:bg-transparent sm:border-none sm:shadow-none space-y-1.5"
+            >
               <div className="text-xs font-mono text-zinc-400 dark:text-zinc-500">
                 0{idx + 1} //
               </div>
