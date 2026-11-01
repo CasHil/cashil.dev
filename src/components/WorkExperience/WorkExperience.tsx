@@ -63,19 +63,28 @@ export default function WorkExperience() {
         )}
       </div>
 
-      {/* Section 2: Teaching & Academic Experience (Progressive Disclosure) */}
+      {/* Section 2: Teaching & Academic Leadership (Direct Visibility) */}
       {educationRoles.length > 0 && (
-        <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 space-y-4">
-          <DisclosureSection
-            idPrefix="academic-experience"
-            title={t.workExperience.academicHeading}
-            badge={t.workExperience.academicBadge}
-            summary={t.workExperience.academicSummary}
-            openLabel={t.workExperience.showAcademic}
-            closeLabel={t.workExperience.hideAcademic}
-          >
+        <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                {t.workExperience.academicBadge}
+              </span>
+            </div>
+            <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white mt-1">
+              {t.workExperience.academicHeading}
+            </h2>
+            {t.workExperience.academicSummary && (
+              <p className="text-xs font-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
+                {t.workExperience.academicSummary}
+              </p>
+            )}
+          </div>
+
+          <div className="pt-2">
             <Timeline data={educationRoles} />
-          </DisclosureSection>
+          </div>
         </div>
       )}
 

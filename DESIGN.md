@@ -8,9 +8,9 @@ This document establishes the design principles, tokens, typography scale, and l
 
 - **Authenticity over Cliché**: Eliminate AI tropes (e.g. waving hands `👋`, generic buzzwords like "AI-enabled SDLC", stark pure-white cards floating on pitch black). Voice is confident, direct, and first-person.
 - **Calibrated Dark Mode**: Avoid raw `#111827` (gray-900) and pure-black `#000000`. Use deep, warm obsidian/slate tones with subtle hue harmony.
-- **Surface Elevation Hierarchy**: Surfaces are distinguished through subtle lightness shifts and hairline borders (`rgba(255, 255, 255, 0.08)`), not heavy blurry black drop shadows.
+- **Surface Elevation Hierarchy**: Every card has a tactile presence with a defined shadow (`shadow-sm hover:shadow-md`) and clean hairline border, creating an unmistakable, organized information hierarchy.
 - **Typographic Hierarchy**: Bold editorial display type is strictly preserved for titles and focal accents; all body copy, dates, metadata, and tags use a readable, neutral system sans stack with balanced leading and tracking.
-- **Deliberate Craft Details**: Purposeful indicators (live pulse dot for current fintech role, subtle skill chips, elegant chess & audio motifs, fluid responsive transitions).
+- **Deliberate Craft Details**: Purposeful indicators, subtle skill tags, and fluid responsive transitions that build trust and professionalism.
 
 ---
 

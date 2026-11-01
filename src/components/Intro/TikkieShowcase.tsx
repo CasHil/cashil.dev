@@ -8,7 +8,7 @@ export default function TikkieShowcase() {
   const tikkieSkills = ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding Systems"];
 
   return (
-    <article className="relative rounded-[2rem] p-6 sm:p-8 bg-gradient-to-b from-zinc-50/80 via-white/40 to-transparent dark:from-zinc-900/40 dark:via-zinc-950/20 dark:to-transparent space-y-6">
+    <article className="relative rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow space-y-6">
       {/* Header & Direct Link */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
         <div className="space-y-1">
@@ -37,12 +37,12 @@ export default function TikkieShowcase() {
         </Link>
       </div>
 
-      {/* Editorial Narrative */}
+      {/* Narrative */}
       <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[62ch]">
         {t.intro.tikkieDescription}
       </p>
 
-      {/* Organic Systems Flow Conduit (Zero Nested Boxes) */}
+      {/* Systems Architecture Stations */}
       <div className="space-y-4 pt-2">
         <div className="flex items-center justify-between">
           <div>
@@ -78,12 +78,12 @@ export default function TikkieShowcase() {
         {/* 4 Architectural Stations: Mobile Swipe Deck + Desktop Grid */}
         <div
           data-carousel="true"
-          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2 sm:pb-0"
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2 sm:pb-0"
         >
           {t.intro.tikkiePipelineStages.map((stage) => (
             <div
               key={stage.id}
-              className="w-[78vw] max-w-[270px] shrink-0 snap-center rounded-2xl p-4 bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-2xs sm:w-auto sm:max-w-none sm:p-1 sm:bg-transparent sm:dark:bg-transparent sm:border-none sm:shadow-none space-y-1.5"
+              className="w-[78vw] max-w-[270px] shrink-0 snap-center rounded-xl p-4 bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200/80 dark:border-white/10 shadow-xs sm:w-auto sm:max-w-none space-y-1.5"
             >
               <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 dark:text-zinc-500">
                 <span className="font-bold text-emerald-700 dark:text-emerald-400">{stage.stage}</span>
@@ -110,7 +110,7 @@ export default function TikkieShowcase() {
         </ul>
       )}
 
-      {/* Monospaced Editorial Stack Run (Zero Pill Confetti) */}
+      {/* Monospaced Editorial Stack Run */}
       <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono">
         <span className="text-zinc-400 dark:text-zinc-500">Stack:</span>
         {tikkieSkills.map((skill, idx) => (

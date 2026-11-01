@@ -18,7 +18,7 @@ export default function Education() {
         </p>
       </div>
 
-      {/* Section 1: Academic Degrees & Credentials */}
+      {/* Section 1: Academic Degrees */}
       <div className="space-y-6">
         <div>
           <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
@@ -28,9 +28,9 @@ export default function Education() {
         <Timeline data={t.education.items} />
       </div>
 
-      {/* Section 2: Master's Thesis Research Ledger (Open Editorial, Zero Boxed Cards) */}
+      {/* Section 2: Master's Thesis Research Publication Card */}
       <section aria-labelledby="thesis-publication-title" className="pt-8 border-t border-zinc-200/80 dark:border-white/10 space-y-4">
-        <article className="relative rounded-[2rem] p-6 sm:p-8 bg-gradient-to-b from-zinc-50/80 via-white/40 to-transparent dark:from-zinc-900/40 dark:via-zinc-950/20 dark:to-transparent space-y-6">
+        <article className="relative rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow space-y-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
@@ -47,51 +47,10 @@ export default function Education() {
             </p>
           </div>
 
-          {/* Floating Typographic Telemetry Ledger (Zero Box Enclosure) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-2 border-y border-zinc-200/70 dark:border-white/10">
-            <div>
-              <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-zinc-950 dark:text-white" data-tabular>
-                {pub.datasetStat}
-              </span>
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                {pub.datasetLabel}
-              </span>
-            </div>
-            <div>
-              <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-emerald-700 dark:text-emerald-400" data-tabular>
-                {pub.runsStat}
-              </span>
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                {pub.runsLabel}
-              </span>
-            </div>
-            <div>
-              <span className="block text-2xl sm:text-3xl font-bold font-mono tracking-tight text-sky-700 dark:text-sky-400" data-tabular>
-                {pub.gapStat}
-              </span>
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-                {pub.gapLabel}
-              </span>
-            </div>
-          </div>
-
           {/* Abstract */}
           <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-[62ch]">
             {pub.abstract}
           </p>
-
-          {/* Methodology Run (Zero Pill Confetti) */}
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-            <span className="text-zinc-400 dark:text-zinc-500">Methods:</span>
-            {pub.methods.map((method, idx) => (
-              <span key={method} className="flex items-center gap-2">
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">{method}</span>
-                {idx < pub.methods.length - 1 && (
-                  <span className="text-zinc-300 dark:text-zinc-700 select-none">/</span>
-                )}
-              </span>
-            ))}
-          </div>
 
           {/* Direct Repository Link */}
           <div className="pt-1">
