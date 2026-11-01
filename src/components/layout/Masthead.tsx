@@ -33,10 +33,10 @@ export default function Masthead() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-base sm:text-lg text-zinc-950 dark:text-white tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+              <span className="font-display font-bold text-base sm:text-lg text-zinc-950 dark:text-white tracking-tight group-hover:text-brand dark:group-hover:text-brand transition-colors">
                 {t.sidebar.name}
               </span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
+              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
                 {t.sidebar.timezone}
               </span>
             </div>

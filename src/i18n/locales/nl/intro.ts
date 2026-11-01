@@ -86,27 +86,27 @@ export const nlIntro: IntroTranslations = {
   ],
   bitsizedLink: "Bekijk in Tijdlijn",
 
-  // Engineering Ethos / Pillars
-  ethosTag: "Engineering Filosofie · TU Delft Dubbele MSc",
-  ethosTitle: "Codekwaliteit, Agentic Workflows & Didactische Rigor",
-  ethosSubtitle: "Hoe software-ambacht en wetenschapsonderwijs engineeringteams versterken",
+  // Engineering Approach
+  ethosTag: "Engineering Aanpak",
+  ethosTitle: "Hoe Ik Software Bouw",
+  ethosSubtitle: "Kernprincipes in full-stack ontwikkeling, tooling en samenwerking",
   ethosDescription:
-    "De combinatie van informatica en wetenschapsonderwijs bepaalt hoe ik software ontwikkel: code moet betrouwbaar zijn, goed getest, en gebouwd voor mensen om te begrijpen en te onderhouden.",
+    "Een pragmatische focus op betrouwbare productiecode, moderne geautomatiseerde workflows en duidelijke technische communicatie.",
   ethosPillars: [
     {
-      title: "Agentic Software Development",
+      title: "Betrouwbare Full-Stack Architectuur",
       description:
-        "Inzet van AI-agenten voor specificatie-gedreven ontwikkeling, geautomatiseerde testgeneratie en snelle refactoring, bewaakt door strikte verificatie en typechecks.",
+        "Strikte typegrenzen in TypeScript, deterministisch statusbeheer en geautomatiseerde testdekking in React-frontends en Node.js serverless backends.",
     },
     {
-      title: "Codekwaliteit & Testdiscipline",
+      title: "Specificatie-Gedreven Workflows",
       description:
-        "Strikte typegrenzen in TypeScript, deterministische statusverwerking, geautomatiseerde CI-testsuites en een heldere componentarchitectuur.",
+        "Inzet van moderne AI-codingtools voor snelle prototyping en testgeneratie, bewaakt door grondige code reviews, typechecks en CI-pijplijnen.",
     },
     {
-      title: "Didactiek & Heldere Communicatie",
+      title: "Didactische Helderheid & Mentorschap",
       description:
-        "Bevoegd eerstegraads docent informatica. Didactische helderheid inzetten voor duidelijke documentatie, constructieve code reviews en versnelde inwerktrajecten.",
+        "Ervaring als eerstegraads docent toepassen om onderhoudbare code te schrijven, architectuur helder te documenteren en collega's effectief te ondersteunen.",
     },
   ],
   outsideTitle: "Buiten het Beeldscherm",

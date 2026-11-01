@@ -132,12 +132,12 @@ export default function Cv() {
           <a
             href={pdfUrl}
             download={pdfFileName}
-            className="group inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[34px]"
+            className="group inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-semibold text-xs shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[34px]"
             aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
-            <span className="font-mono text-xs opacity-75 uppercase">({pdfLang})</span>
-            <span className="font-mono opacity-70 group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
+            <span className="text-xs opacity-75 uppercase">({pdfLang})</span>
+            <span className="opacity-70 group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
               ↓
             </span>
           </a>
@@ -146,11 +146,11 @@ export default function Cv() {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[34px]"
+            className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs hover:border-brand/40 dark:hover:border-brand/40 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[34px]"
             aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
-            <span className="font-mono text-zinc-400 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+            <span className="text-zinc-400 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
               ↗
             </span>
           </a>
@@ -168,15 +168,15 @@ export default function Cv() {
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
               Casper Hildebrand
             </h2>
-            <p className="text-sm sm:text-base font-semibold text-emerald-700 dark:text-emerald-400">
+            <p className="text-sm sm:text-base font-semibold text-brand">
               Full-Stack Software Engineer
             </p>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-zinc-600 dark:text-zinc-400 pt-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-400 pt-1">
               <span>Amsterdam, Netherlands</span>
               <span className="opacity-40" aria-hidden="true">·</span>
               <a
                 href="mailto:casperhildebrand@gmail.com"
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-brand dark:hover:text-brand transition-colors"
               >
                 casperhildebrand@gmail.com
               </a>
@@ -185,7 +185,7 @@ export default function Cv() {
                 href="https://cashil.github.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-brand dark:hover:text-brand transition-colors"
               >
                 cashil.github.io
               </a>
@@ -194,7 +194,7 @@ export default function Cv() {
                 href="https://github.com/CasHil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-brand dark:hover:text-brand transition-colors"
               >
                 github.com/CasHil
               </a>
@@ -203,7 +203,7 @@ export default function Cv() {
                 href="https://www.linkedin.com/in/casper-hildebrand/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-brand dark:hover:text-brand transition-colors"
               >
                 linkedin.com/in/casper-hildebrand
               </a>
@@ -214,7 +214,7 @@ export default function Cv() {
           <section aria-labelledby="cv-profile-heading" className="space-y-3">
             <h3
               id="cv-profile-heading"
-              className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
             >
               {isNl ? "Profiel" : "Profile"}
             </h3>
@@ -229,7 +229,7 @@ export default function Cv() {
           <section aria-labelledby="cv-experience-heading" className="space-y-6">
             <h3
               id="cv-experience-heading"
-              className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
             >
               {isNl ? "Werkervaring" : "Experience"}
             </h3>
@@ -241,11 +241,11 @@ export default function Cv() {
                       <h4 className="text-sm sm:text-base font-bold text-zinc-950 dark:text-white">
                         {role.title}
                       </h4>
-                      <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                      <p className="text-xs font-medium text-brand">
                         {role.subtitle}
                       </p>
                     </div>
-                    <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
+                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
                       {role.startDate} {t.workExperience.to} {role.endDate}
                     </span>
                   </div>
@@ -266,7 +266,7 @@ export default function Cv() {
           <section aria-labelledby="cv-education-heading" className="space-y-6">
             <h3
               id="cv-education-heading"
-              className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
             >
               {isNl ? "Opleiding & Onderzoek" : "Education & Research"}
             </h3>
@@ -278,11 +278,11 @@ export default function Cv() {
                       <h4 className="text-sm sm:text-base font-bold text-zinc-950 dark:text-white">
                         {edu.title}
                       </h4>
-                      <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                      <p className="text-xs font-medium text-brand">
                         {edu.subtitle}
                       </p>
                     </div>
-                    <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
+                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
                       {edu.startDate} {t.workExperience.to} {edu.endDate}
                     </span>
                   </div>
@@ -303,7 +303,7 @@ export default function Cv() {
           <section aria-labelledby="cv-skills-heading" className="space-y-3">
             <h3
               id="cv-skills-heading"
-              className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
             >
               {isNl ? "Technische Competenties" : "Technical Competencies"}
             </h3>
@@ -330,11 +330,11 @@ export default function Cv() {
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[44px] w-full"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand text-white font-semibold text-xs shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[44px] w-full"
             >
               <span>{t.cv.viewFullscreen}</span>
-              <span className="font-mono text-xs opacity-75 uppercase">({pdfLang})</span>
-              <span className="font-mono" aria-hidden="true">↗</span>
+              <span className="text-xs opacity-75 uppercase">({pdfLang})</span>
+              <span aria-hidden="true">↗</span>
             </a>
           </div>
 

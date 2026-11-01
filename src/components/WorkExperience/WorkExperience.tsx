@@ -65,10 +65,10 @@ export default function WorkExperience() {
 
       {/* Section 2: Teaching & Academic Leadership (Direct Visibility) */}
       {educationRoles.length > 0 && (
-        <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+        <div className="pt-6 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand">
                 {t.workExperience.academicBadge}
               </span>
             </div>
@@ -89,20 +89,20 @@ export default function WorkExperience() {
       )}
 
       {/* Strict 2-CTA Hierarchy: 1 Primary + 1 Secondary */}
-      <div className="pt-8 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <div className="pt-6 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <Link
           to="/cv"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-xs sm:text-sm shadow-xs hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-[0.98] transition-all min-h-[42px]"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white font-semibold text-xs sm:text-sm shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[42px]"
         >
           <span>{t.workExperience.cvBtn}</span>
-          <span className="font-mono opacity-60 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          <span className="opacity-75 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
         </Link>
         <Link
           to="/education"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[42px]"
+          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-brand/40 dark:hover:border-brand/40 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[42px]"
         >
           <span>{t.workExperience.educationBtn}</span>
-          <span className="font-mono text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          <span className="text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
         </Link>
       </div>
     </div>

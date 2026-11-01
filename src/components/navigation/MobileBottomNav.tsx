@@ -62,9 +62,9 @@ export default function MobileBottomNav({
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              `flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isActive
-                  ? "text-emerald-700 dark:text-emerald-400 font-semibold"
+                  ? "text-brand dark:text-brand font-semibold"
                   : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
               }`
             }
@@ -83,9 +83,9 @@ export default function MobileBottomNav({
           aria-expanded={isDrawerOpen}
           aria-haspopup="dialog"
           aria-label={t.nav.menu}
-          className={`flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+          className={`flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
             isDrawerOpen
-              ? "text-emerald-700 dark:text-emerald-400 font-semibold"
+              ? "text-brand dark:text-brand font-semibold"
               : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           }`}
         >

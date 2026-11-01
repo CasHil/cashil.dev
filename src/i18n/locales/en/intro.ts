@@ -86,30 +86,30 @@ export const enIntro: IntroTranslations = {
   ],
   bitsizedLink: "View in Work Timeline",
 
-  // Engineering Ethos / Pillars
-  ethosTag: "Engineering Philosophy · TU Delft Double MSc",
-  ethosTitle: "Code Quality, Agentic Workflows & Didactic Rigor",
-  ethosSubtitle: "How software craftsmanship and science education strengthen engineering teams",
+  // Engineering Approach
+  ethosTag: "Engineering Approach",
+  ethosTitle: "How I Build Software",
+  ethosSubtitle: "Core engineering practices across full-stack development, tooling, and team collaboration",
   ethosDescription:
-    "Combining computer science with formal training in science education shapes how I write code: software should be reliable, well-tested, and built for humans to understand and maintain.",
+    "A pragmatic focus on reliable production code, modern automated workflows, and clear technical communication.",
   ethosPillars: [
     {
-      title: "Agentic Software Development",
+      title: "Reliable Full-Stack Architecture",
       description:
-        "Using AI coding agents for specification-driven workflows, automated test generation, and fast refactoring, backed by strict human verification and type checks.",
+        "Strict type boundaries in TypeScript, deterministic state handling, and automated test coverage across React interfaces and Node.js serverless services.",
     },
     {
-      title: "Code Quality & Testing Rigor",
+      title: "Specification-Driven Workflows",
       description:
-        "Enforcing strict type boundaries in TypeScript, deterministic state handling, automated CI test suites, and clean component architecture.",
+        "Using modern AI coding tools to accelerate scaffolding and test generation, backed by rigorous human code review, typing, and CI checks.",
     },
     {
-      title: "Didactics & Pedagogical Clarity",
+      title: "Pedagogical Clarity & Mentorship",
       description:
-        "Trained as a certified computer science teacher. Applying pedagogical clarity to write clean documentation, conduct thorough code reviews, and accelerate team onboarding.",
+        "Applying formal teaching experience to write maintainable code, document architecture clearly, and support team members through actionable code reviews.",
     },
   ],
-  outsideTitle: "Outside the Terminal",
+  outsideTitle: "Outside of Engineering",
   outsideDescription:
     "Away from the codebase, I play electric bass guitar and chess.",
 };
