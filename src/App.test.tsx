@@ -103,3 +103,37 @@ test("renders Bitsized sandbox architecture breakdown without fake terminal butt
   expect(screen.getByText(/Web Worker Isolation/i)).toBeInTheDocument();
   expect(screen.queryByText(/▶/)).toBeNull();
 });
+
+test("links to Dutch CV PDF when site language is Dutch", () => {
+  window.history.pushState({}, "", "/cv");
+  render(<App />);
+
+  // Switch to Dutch
+  const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
+  if (nlButtons.length > 0) {
+    fireEvent.click(nlButtons[0]);
+  }
+
+  const downloadLink = screen.getByRole("link", { name: /download pdf \(nl\)/i });
+  expect(downloadLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+  expect(downloadLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
+});
+
+test("allows switching CV PDF language via dedicated toggle", () => {
+  window.history.pushState({}, "", "/cv");
+  render(<App />);
+
+  // Switch CV PDF to NL
+  const nlToggle = screen.getByRole("button", { name: /dutch \(nl\)|nederlands \(nl\)/i });
+  fireEvent.click(nlToggle);
+
+  const downloadLinkNl = screen.getByRole("link", { name: /download pdf \(nl\)/i });
+  expect(downloadLinkNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+
+  // Switch CV PDF back to EN
+  const enToggle = screen.getByRole("button", { name: /english \(en\)|engels \(en\)/i });
+  fireEvent.click(enToggle);
+
+  const downloadLinkEn = screen.getByRole("link", { name: /download pdf \(en\)/i });
+  expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+});

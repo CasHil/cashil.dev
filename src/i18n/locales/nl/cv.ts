@@ -7,4 +7,7 @@ export const nlCv: CvTranslations = {
   downloadPdf: "Download PDF",
   mobilePrompt: "Bekijk je dit op een mobiel apparaat? Open op volledig scherm voor de beste leeservaring.",
   viewFullscreen: "Open PDF op Volledig Scherm",
+  pdfLanguageLabel: "CV-documenttaal",
+  englishPdf: "Engels (EN)",
+  dutchPdf: "Nederlands (NL)",
 };
