@@ -54,30 +54,30 @@ export default function Cv() {
   return (
     <div className="space-y-6">
       {/* Header & Controls Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-200/80 dark:border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-border-subtle">
         <div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
+          <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary">
             {t.cv.title}
           </h1>
-          <p className="text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400 mt-1">
+          <p className="text-xs sm:text-sm text-text-muted mt-0.5">
             {t.cv.subtitle}
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex flex-wrap items-center gap-2">
           {/* Mode Switcher */}
           <div
             role="group"
             aria-label="CV presentation mode"
-            className="inline-flex items-center text-xs font-medium rounded-lg bg-zinc-100 dark:bg-zinc-800/80 p-0.5 border border-zinc-200/80 dark:border-white/10"
+            className="inline-flex items-center text-xs font-medium rounded-lg bg-surface-subtle p-0.5 border border-border-subtle"
           >
             <button
               type="button"
               onClick={() => setViewMode("sheet")}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-md transition-colors duration-150 ${
                 viewMode === "sheet"
-                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                  ? "bg-surface text-text-primary font-semibold shadow-xs"
+                  : "text-text-muted hover:text-text-primary"
               }`}
             >
               {isNl ? "Webweergave" : "Interactive View"}
@@ -85,10 +85,10 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setViewMode("pdf")}
-              className={`px-3 py-1.5 rounded-md transition-colors ${
+              className={`px-3 py-1.5 rounded-md transition-colors duration-150 ${
                 viewMode === "pdf"
-                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                  ? "bg-surface text-text-primary font-semibold shadow-xs"
+                  : "text-text-muted hover:text-text-primary"
               }`}
             >
               PDF Embed
@@ -99,15 +99,15 @@ export default function Cv() {
           <div
             role="group"
             aria-label={t.cv.pdfLanguageLabel}
-            className="inline-flex items-center text-xs font-medium rounded-lg bg-zinc-100 dark:bg-zinc-800/80 p-0.5 border border-zinc-200/80 dark:border-white/10"
+            className="inline-flex items-center text-xs font-medium rounded-lg bg-surface-subtle p-0.5 border border-border-subtle"
           >
             <button
               type="button"
               onClick={() => setPdfLang("en")}
-              className={`px-2.5 py-1.5 rounded-md transition-colors ${
+              className={`px-2.5 py-1.5 rounded-md transition-colors duration-150 ${
                 pdfLang === "en"
-                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                  ? "bg-surface text-text-primary font-semibold shadow-xs"
+                  : "text-text-muted hover:text-text-primary"
               }`}
               aria-pressed={pdfLang === "en"}
               aria-label={t.cv.englishPdf}
@@ -117,10 +117,10 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setPdfLang("nl")}
-              className={`px-2.5 py-1.5 rounded-md transition-colors ${
+              className={`px-2.5 py-1.5 rounded-md transition-colors duration-150 ${
                 pdfLang === "nl"
-                  ? "bg-white dark:bg-zinc-700 text-zinc-950 dark:text-white font-semibold shadow-2xs"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                  ? "bg-surface text-text-primary font-semibold shadow-xs"
+                  : "text-text-muted hover:text-text-primary"
               }`}
               aria-pressed={pdfLang === "nl"}
               aria-label={t.cv.dutchPdf}
@@ -129,30 +129,26 @@ export default function Cv() {
             </button>
           </div>
 
+          {/* Download PDF Button (No glued arrow, Gate 63) */}
           <a
             href={pdfUrl}
             download={pdfFileName}
-            className="group inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-semibold text-xs shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[34px]"
+            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-medium text-xs shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
             <span className="text-xs opacity-75 uppercase">({pdfLang})</span>
-            <span className="opacity-70 group-hover:translate-y-0.5 transition-transform" aria-hidden="true">
-              ↓
-            </span>
           </a>
 
+          {/* Open in New Tab Button (No glued arrow, Gate 63) */}
           <a
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs hover:border-brand/40 dark:hover:border-brand/40 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[34px]"
+            className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs shadow-sm hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
-            <span className="text-zinc-400 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
-              ↗
-            </span>
           </a>
         </div>
       </div>
@@ -161,49 +157,49 @@ export default function Cv() {
         /* Native ATS Document Sheet */
         <article
           aria-label="Curriculum Vitae Document"
-          className="rounded-xl p-6 sm:p-10 bg-white/80 dark:bg-zinc-900/50 backdrop-blur-xs border border-zinc-200/90 dark:border-white/[0.08] shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
+          className="rounded-xl p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
         >
           {/* Document Header */}
-          <header className="border-b border-zinc-200/80 dark:border-white/10 pb-6 space-y-2">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
+          <header className="border-b border-border-subtle pb-6 space-y-2">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary">
               Casper Hildebrand
             </h2>
-            <p className="text-sm sm:text-base font-semibold text-brand">
+            <p className="text-sm sm:text-base font-medium text-brand">
               Full-Stack Software Engineer
             </p>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-400 pt-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-text-muted pt-1">
               <span>Amsterdam, Netherlands</span>
-              <span className="opacity-40" aria-hidden="true">·</span>
+              <span className="text-text-muted/40" aria-hidden="true">/</span>
               <a
                 href="mailto:casperhildebrand@gmail.com"
-                className="hover:text-brand dark:hover:text-brand transition-colors"
+                className="hover:text-brand transition-colors"
               >
                 casperhildebrand@gmail.com
               </a>
-              <span className="opacity-40" aria-hidden="true">·</span>
+              <span className="text-text-muted/40" aria-hidden="true">/</span>
               <a
                 href="https://cashil.github.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brand dark:hover:text-brand transition-colors"
+                className="hover:text-brand transition-colors"
               >
                 cashil.github.io
               </a>
-              <span className="opacity-40" aria-hidden="true">·</span>
+              <span className="text-text-muted/40" aria-hidden="true">/</span>
               <a
                 href="https://github.com/CasHil"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brand dark:hover:text-brand transition-colors"
+                className="hover:text-brand transition-colors"
               >
                 github.com/CasHil
               </a>
-              <span className="opacity-40" aria-hidden="true">·</span>
+              <span className="text-text-muted/40" aria-hidden="true">/</span>
               <a
                 href="https://www.linkedin.com/in/casper-hildebrand/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brand dark:hover:text-brand transition-colors"
+                className="hover:text-brand transition-colors"
               >
                 linkedin.com/in/casper-hildebrand
               </a>
@@ -214,11 +210,11 @@ export default function Cv() {
           <section aria-labelledby="cv-profile-heading" className="space-y-3">
             <h3
               id="cv-profile-heading"
-              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Profiel" : "Profile"}
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {isNl
                 ? "Full-stack software engineer bij Tikkie (ABN AMRO) bouwend aan Tikkie Zakelijk, met een dubbele Master in Computer Science (Data Science) en Science Education van de TU Delft. Ervaren in TypeScript, React, Node.js, AWS en PostgreSQL. Geïnteresseerd in agentic engineering en AI-ondersteunde ontwikkelworkflows."
                 : "Full-stack software engineer at Tikkie (ABN AMRO) building Tikkie Business, with a double Master's degree in Computer Science (Data Science) and Science Education from Delft University of Technology. Experienced across TypeScript, React, Node.js, AWS, and PostgreSQL. Interested in agentic engineering and AI-enabled software development workflows."}
@@ -229,7 +225,7 @@ export default function Cv() {
           <section aria-labelledby="cv-experience-heading" className="space-y-6">
             <h3
               id="cv-experience-heading"
-              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Werkervaring" : "Experience"}
             </h3>
@@ -238,20 +234,20 @@ export default function Cv() {
                 <div key={role.title} className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
                     <div>
-                      <h4 className="text-sm sm:text-base font-bold text-zinc-950 dark:text-white">
+                      <h4 className="text-sm sm:text-base font-semibold text-text-primary">
                         {role.title}
                       </h4>
                       <p className="text-xs font-medium text-brand">
                         {role.subtitle}
                       </p>
                     </div>
-                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
+                    <span className="text-xs font-medium text-text-muted shrink-0" data-tabular>
                       {role.startDate} {t.workExperience.to} {role.endDate}
                     </span>
                   </div>
 
                   {role.text && (
-                    <ul className="space-y-1 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
+                    <ul className="space-y-1 text-xs sm:text-sm text-text-secondary">
                       {role.text.split("\n").map((line, idx) => (
                         <FormattedBullet key={idx} text={line} className="flex items-start gap-2 leading-relaxed" />
                       ))}
@@ -266,7 +262,7 @@ export default function Cv() {
           <section aria-labelledby="cv-education-heading" className="space-y-6">
             <h3
               id="cv-education-heading"
-              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Opleiding & Onderzoek" : "Education & Research"}
             </h3>
@@ -275,20 +271,20 @@ export default function Cv() {
                 <div key={`${edu.title}-${idx}`} className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
                     <div>
-                      <h4 className="text-sm sm:text-base font-bold text-zinc-950 dark:text-white">
+                      <h4 className="text-sm sm:text-base font-semibold text-text-primary">
                         {edu.title}
                       </h4>
                       <p className="text-xs font-medium text-brand">
                         {edu.subtitle}
                       </p>
                     </div>
-                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0" data-tabular>
+                    <span className="text-xs font-medium text-text-muted shrink-0" data-tabular>
                       {edu.startDate} {t.workExperience.to} {edu.endDate}
                     </span>
                   </div>
 
                   {edu.text && (
-                    <ul className="space-y-1 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
+                    <ul className="space-y-1 text-xs sm:text-sm text-text-secondary">
                       {edu.text.split("\n").map((line, lIdx) => (
                         <FormattedBullet key={lIdx} text={line} className="flex items-start gap-2 leading-relaxed" />
                       ))}
@@ -303,17 +299,17 @@ export default function Cv() {
           <section aria-labelledby="cv-skills-heading" className="space-y-3">
             <h3
               id="cv-skills-heading"
-              className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200/60 dark:border-white/10 pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Technische Competenties" : "Technical Competencies"}
             </h3>
-            <div className="space-y-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+            <div className="space-y-2 text-xs sm:text-sm text-text-secondary">
               {competencies.map((comp) => (
                 <div key={comp.category} className="grid grid-cols-1 sm:grid-cols-4 gap-1">
-                  <span className="font-semibold text-zinc-950 dark:text-white">
+                  <span className="font-medium text-text-primary">
                     {comp.category}
                   </span>
-                  <span className="sm:col-span-3 text-zinc-600 dark:text-zinc-400">
+                  <span className="sm:col-span-3 text-text-secondary">
                     {comp.items}
                   </span>
                 </div>
@@ -323,18 +319,17 @@ export default function Cv() {
         </article>
       ) : (
         /* Embedded PDF Object View */
-        <div className="relative w-full rounded-xl overflow-hidden border border-zinc-200/80 dark:border-white/10 bg-zinc-100 dark:bg-zinc-900/60 shadow-xs">
-          <div className="sm:hidden p-4 bg-zinc-100 dark:bg-zinc-800/80 border-b border-zinc-200 dark:border-white/10 text-xs text-zinc-700 dark:text-zinc-300 flex flex-col gap-3">
+        <div className="relative w-full rounded-xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-xs">
+          <div className="sm:hidden p-4 bg-surface border-b border-border-subtle text-xs text-text-secondary flex flex-col gap-3">
             <span className="leading-relaxed">{t.cv.mobilePrompt}</span>
             <a
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand text-white font-semibold text-xs shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[44px] w-full"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand text-white font-medium text-xs shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[44px] w-full"
             >
               <span>{t.cv.viewFullscreen}</span>
               <span className="text-xs opacity-75 uppercase">({pdfLang})</span>
-              <span aria-hidden="true">↗</span>
             </a>
           </div>
 
@@ -352,7 +347,7 @@ export default function Cv() {
                 className="w-full h-full border-0"
               >
                 <div className="p-8 text-center space-y-3">
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="text-sm text-text-secondary">
                     {isNl
                       ? "Je browser ondersteunt geen ingesloten PDF-weergave."
                       : "Your browser does not support embedded PDF viewing."}
@@ -361,9 +356,9 @@ export default function Cv() {
                     href={pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-surface text-text-primary border border-border-subtle text-xs font-medium hover:bg-surface-hover transition-colors"
                   >
-                    {t.cv.openNewTab} ↗
+                    {t.cv.openNewTab}
                   </a>
                 </div>
               </iframe>

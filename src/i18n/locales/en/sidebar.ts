@@ -2,8 +2,8 @@ import { SidebarTranslations } from "../../types";
 
 export const enSidebar: SidebarTranslations = {
   name: "Casper Hildebrand",
-  role: "Full-Stack & Agentic Software Engineer · Tikkie Business",
-  degrees: "Double MSc • TU Delft",
+  role: "Full-Stack Software Engineer, Tikkie Business",
+  degrees: "Double MSc, TU Delft",
   location: "Amsterdam, Netherlands",
   coreDomainsLabel: "Core Focus",
   coreDomains: [
@@ -16,5 +16,5 @@ export const enSidebar: SidebarTranslations = {
   cvDownload: "Download PDF",
   copyEmail: "Copy email",
   copiedEmail: "Email copied!",
-  timezone: "Amsterdam · CET",
+  timezone: "Amsterdam (CET)",
 };

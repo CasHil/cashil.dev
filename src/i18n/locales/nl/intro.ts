@@ -1,7 +1,7 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  kicker: "Full-Stack & Agentic Software Developer · Amsterdam, NL",
+  kicker: "Full-Stack Software Engineer, Amsterdam",
   heroTitle: "Betrouwbare webapplicaties bouwen met agentic workflows en hoge codestandaarden.",
   bioParagraph1:
     "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO). Ik ontwikkel zakelijke webapplicaties in TypeScript en React, ondersteund door onboarding-backendservices op AWS serverless infrastructuur.",
@@ -13,9 +13,9 @@ export const nlIntro: IntroTranslations = {
   featuredSubtitle: "Productiesystemen bij Tikkie Zakelijk en client-side code-executieomgevingen.",
 
   // Tikkie Business Flagship
-  tikkieTag: "ABN AMRO · 2026 – Heden",
+  tikkieTag: "ABN AMRO (2026 – Heden)",
   tikkieTitle: "Tikkie Zakelijk",
-  tikkieSubtitle: "Zakelijk Webportaal & Onboarding-services · ABN AMRO",
+  tikkieSubtitle: "Zakelijk Webportaal & Onboarding-services, ABN AMRO",
   tikkieDescription:
     "Full-stack software engineering voor Tikkie Zakelijk. Ontwikkeling van het zakelijke webportaal voor transactiebeheer en backend-verificatieworkflows voor geautomatiseerde onboarding op AWS.",
   tikkiePipelineTitle: "Zakelijk Portaal- & Onboarding-architectuur",
@@ -31,85 +31,85 @@ export const nlIntro: IntroTranslations = {
     {
       id: "portal",
       stage: "02",
-      title: "Zakelijk Portaal",
+      title: "Merchant Portal",
       subtitle: "Webapplicatie",
-      description: "Single-page applicatie in React en TypeScript voor betaalverzoeken, transactie-inzicht en instellingen.",
+      description: "Single-page applicatie in React en TypeScript voor betaalverzoeken, transacties en accountinstellingen.",
     },
     {
       id: "services",
       stage: "03",
       title: "Backend Services",
       subtitle: "Node.js & AWS",
-      description: "Backend-services en REST-API's op AWS serverless infrastructuur voor zakelijke interacties.",
+      description: "Services en REST-API's op AWS serverless infrastructuur voor zakelijke betalingen.",
     },
     {
       id: "data",
       stage: "04",
       title: "Data Layer",
       subtitle: "PostgreSQL",
-      description: "Relationele datamodellering, inrichting van zakelijke accounts en transactiestatus in PostgreSQL.",
+      description: "Relationele datamodellering, merchant-accountstatus en transactietracking in PostgreSQL.",
     },
   ],
   tikkieHighlights: [
-    "**Zakelijk Portaal**: Webinterfaces ontwikkeld in React en TypeScript voor het aanmaken van betaalverzoeken, transactiemonitoring en accountbeheer.",
-    "**Onboarding Backend**: Onboardingworkflows en backend-verificatiediensten gebouwd voor geautomatiseerde accountvalidatie en configuratie.",
-    "**Codekwaliteit & Testen**: Geautomatiseerde testdekking gerealiseerd (Vitest, integratietests) en gestructureerde logging over AWS services ingericht.",
+    "**Zakelijk Portaal**: Responsieve webinterfaces in React en TypeScript ontwikkeld voor het aanmaken van betaalverzoeken, monitoren van transacties en beheren van bedrijfsaccounts.",
+    "**Onboarding-backend**: Onboardingworkflows en backend-verificatieservices gebouwd voor het valideren van bedrijfsgegevens en het inrichten van accounts.",
+    "**Codekwaliteit & Testen**: Geautomatiseerde testdekking (Vitest, integratietests) en gestructureerde logging geïmplementeerd over serverless AWS-services.",
   ],
   tikkieLink: "Bekijk in Tijdlijn",
 
   // Bitsized 0-to-1 Flagship
-  bitsizedTag: "Medeoprichter & Lead Engineer · 2023 – 2025",
+  bitsizedTag: "Medeoprichter & Lead Engineer (2023 – 2025)",
   bitsizedTitle: "Bitsized Sandbox Engine",
-  bitsizedSubtitle: "Geïsoleerde browser-uitvoeringsruntime voor informatica-onderwijs",
+  bitsizedSubtitle: "Geïsoleerde browser-executieruntime voor informaticaonderwijs",
   bitsizedDescription:
-    "Medeoprichter van een interactief code-evaluatieplatform dat in gebruik is genomen op Nederlandse middelbare scholen. In-browser executie-omgevingen, geautomatiseerde opdrachtevaluatie en docentendashboards gebouwd.",
-  bitsizedArchTitle: "Sandboxed In-Browser Executie-architectuur",
-  bitsizedArchSubtitle: "Geïsoleerde worker-executie, script-timeouts en directe evaluatie",
+    "Medeoprichter van een interactief code-evaluatieplatform voor Nederlandse middelbare scholen. Client-side executiesandboxes, automatische opgave-evaluatie en docentendashboards ontwikkeld.",
+  bitsizedArchTitle: "Sandboxed In-Browser Execution Architecture",
+  bitsizedArchSubtitle: "Geïsoleerde worker-executie, script-timeouts en directe feedback",
   bitsizedPrinciples: [
     {
-      title: "Web Worker Isolatie",
-      description: "Leerlingencode draait in aparte Web Workers, afgezonderd van de DOM en UI-hoofddraad.",
+      title: "Web Worker Isolation",
+      description: "Code van leerlingen draait in afzonderlijke Web Worker threads, geïsoleerd van het DOM en de UI thread.",
     },
     {
-      title: "Executie-watchdogs",
-      description: "Uitvoeringstimers beëindigen oneindige lussen en niet-reagerende scripts voordat de browser bevriest.",
+      title: "Execution Watchdogs",
+      description: "Executietimers stoppen oneindige lussen en vastlopende scripts voordat de browser bevriest.",
     },
     {
       title: "Directe Feedback",
-      description: "In-browser assertion-runners geven leerlingen realtime syntactische en inhoudelijke feedback zonder serverkosten.",
+      description: "In-browser assertietestrunners geven directe syntax- en testfeedback zonder servercompute-kosten.",
     },
   ],
   bitsizedHighlights: [
-    "**In-Browser Sandboxing**: Client-side executie-runtime ontworpen met Web Workers om niet-vertrouwde leerlingencode veilig lokaal uit te voeren.",
-    "**Onderwijsadoptie**: Uitgerold op Nederlandse middelbare scholen ter ondersteuning van dagelijkse programmeerlessen.",
-    "**Full-Stack Platform**: Voortgangsmonitors, opdrachtbeheerdashboards en code-evaluatieworkflows gebouwd in React en Node.js.",
+    "**Client-side Sandboxing**: Een executieruntime in Web Workers ontworpen om onvertrouwde studentencode veilig in de browser uit te voeren.",
+    "**Gebruik in het Onderwijs**: Uitgerold naar Nederlandse middelbare scholen voor dagelijkse programmeerlessen en praktijkopdrachten.",
+    "**Full-Stack Platform**: Voortgangsmonitors, opgavenbeheerdashboards en codereviewworkflows gerealiseerd in React en Node.js.",
   ],
   bitsizedLink: "Bekijk in Tijdlijn",
 
   // Engineering Approach
-  ethosTag: "Engineering Aanpak",
-  ethosTitle: "Hoe Ik Software Bouw",
-  ethosSubtitle: "Kernprincipes in full-stack ontwikkeling, tooling en samenwerking",
+  ethosTag: "Engineeringaanpak",
+  ethosTitle: "Hoe ik software bouw",
+  ethosSubtitle: "Kernprincipes over full-stack engineering, tooling en teamsamenwerking",
   ethosDescription:
-    "Een pragmatische focus op betrouwbare productiecode, moderne geautomatiseerde workflows en duidelijke technische communicatie.",
+    "Een pragmatische focus op betrouwbare productiecode, moderne geautomatiseerde workflows en heldere technische communicatie.",
   ethosPillars: [
     {
       title: "Betrouwbare Full-Stack Architectuur",
       description:
-        "Strikte typegrenzen in TypeScript, deterministisch statusbeheer en geautomatiseerde testdekking in React-frontends en Node.js serverless backends.",
+        "Strikte type-grenzen in TypeScript, deterministische statusverwerking en geautomatiseerde testdekking over React-interfaces en Node.js serverless services.",
     },
     {
-      title: "Specificatie-Gedreven Workflows",
+      title: "Specificatie-gedreven Workflows",
       description:
-        "Inzet van moderne AI-codingtools voor snelle prototyping en testgeneratie, bewaakt door grondige code reviews, typechecks en CI-pijplijnen.",
+        "Moderne AI-codingtools inzetten voor snellere scaffolding en testgeneratie, ondersteund door grondige menselijke codereviews, typestriktheid en CI-checks.",
     },
     {
       title: "Didactische Helderheid & Mentorschap",
       description:
-        "Ervaring als eerstegraads docent toepassen om onderhoudbare code te schrijven, architectuur helder te documenteren en collega's effectief te ondersteunen.",
+        "Onderwijservaring toepassen om onderhoudbare code te schrijven, architectuur helder te documenteren en teamleden te ondersteunen via constructieve codereviews.",
     },
   ],
-  outsideTitle: "Buiten het Beeldscherm",
+  outsideTitle: "Buiten Software Engineering",
   outsideDescription:
-    "Buiten de codebase speel ik elektrische basgitaar en schaak ik graag.",
+    "Naast coderen speel ik elektrische basgitaar en schaak ik.",
 };

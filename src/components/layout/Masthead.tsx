@@ -20,7 +20,7 @@ export default function Masthead() {
   };
 
   return (
-    <header className="pt-6 sm:pt-12 pb-4 sm:pb-6 space-y-4 sm:space-y-6 border-b sm:border-b-0 border-zinc-200/80 dark:border-white/10">
+    <header className="pt-6 sm:pt-10 pb-4 sm:pb-6 space-y-4 sm:space-y-6 border-b sm:border-b-0 border-border-subtle">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Candidate Identity */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
@@ -28,19 +28,19 @@ export default function Masthead() {
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-zinc-300/80 dark:ring-white/20 ring-offset-2 ring-offset-canvas transition-transform duration-300 group-hover:scale-105"
+              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
             />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-base sm:text-lg text-zinc-950 dark:text-white tracking-tight group-hover:text-brand dark:group-hover:text-brand transition-colors">
+              <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150">
                 {t.sidebar.name}
               </span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-white/10" data-tabular>
+              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-text-muted bg-surface-subtle border border-border-subtle" data-tabular>
                 {t.sidebar.timezone}
               </span>
             </div>
-            <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+            <p className="text-xs font-normal text-text-muted">
               {t.sidebar.role}
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function Masthead() {
           <button
             type="button"
             onClick={handleCopyEmail}
-            className="group relative inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-zinc-200/80 dark:border-white/10 bg-white/80 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-all shadow-2xs min-h-[36px]"
+            className="group relative inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-border-subtle bg-surface hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors duration-150 shadow-xs min-h-[36px]"
             title="Click to copy email address"
             aria-label={copied ? t.sidebar.copiedEmail : t.sidebar.copyEmail}
           >
@@ -65,7 +65,7 @@ export default function Masthead() {
               </>
             ) : (
               <>
-                <svg className="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-3.5 h-3.5 text-text-muted group-hover:text-text-primary transition-colors duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
                 <span>{t.sidebar.copyEmail}</span>
@@ -74,12 +74,12 @@ export default function Masthead() {
           </button>
 
           {/* Social Profiles */}
-          <nav aria-label="Social Profiles" className="flex items-center text-zinc-500 dark:text-zinc-400">
+          <nav aria-label="Social Profiles" className="flex items-center text-text-muted">
             <a
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ export default function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export default function Masthead() {
             </a>
           </nav>
 
-          <span className="h-4 w-px bg-zinc-200 dark:bg-white/10 shrink-0 mx-0.5" aria-hidden="true" />
+          <span className="h-4 w-px bg-border-subtle shrink-0 mx-0.5" aria-hidden="true" />
 
           {/* Theme & Language Toggles */}
           <div className="flex items-center gap-1.5 shrink-0">
@@ -110,7 +110,7 @@ export default function Masthead() {
       </div>
 
       {/* Primary Navigation (Desktop) */}
-      <div className="hidden sm:block border-b border-zinc-200/80 dark:border-white/10 pb-3">
+      <div className="hidden sm:block border-b border-border-subtle pb-3">
         <Header orientation="horizontal" />
       </div>
     </header>
