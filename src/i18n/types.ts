@@ -40,17 +40,20 @@ export interface CvTranslations {
   dutchPdf: string;
 }
 
-export interface ArchPipelineStage {
+export interface TikkieWorkflow {
   id: string;
-  stage: string;
+  badge: string;
   title: string;
-  subtitle: string;
   description: string;
+  details: string[];
 }
 
-export interface SandboxPrinciple {
+export interface BitsizedPerspective {
+  id: string;
+  role: string;
   title: string;
   description: string;
+  points: string[];
 }
 
 export interface IntroTranslations {
@@ -67,22 +70,18 @@ export interface IntroTranslations {
   tikkieTitle: string;
   tikkieSubtitle: string;
   tikkieDescription: string;
-  tikkiePipelineTitle: string;
-  tikkiePipelineSubtitle: string;
-  tikkiePipelineStages: ArchPipelineStage[];
-  tikkieHighlights: string[];
+  tikkieWorkflowsTitle: string;
+  tikkieWorkflows: TikkieWorkflow[];
   tikkieLink: string;
-  // Bitsized 0-to-1 Flagship
+  // Bitsized Flagship
   bitsizedTag: string;
   bitsizedTitle: string;
   bitsizedSubtitle: string;
   bitsizedDescription: string;
-  bitsizedArchTitle: string;
-  bitsizedArchSubtitle: string;
-  bitsizedPrinciples: SandboxPrinciple[];
-  bitsizedHighlights: string[];
+  bitsizedPerspectivesTitle: string;
+  bitsizedPerspectives: BitsizedPerspective[];
   bitsizedLink: string;
-  // Engineering Ethos / Force Multiplier
+  // Engineering Ethos / Philosophy
   ethosTag: string;
   ethosTitle: string;
   ethosSubtitle: string;

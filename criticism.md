@@ -27,6 +27,7 @@ The audits are arranged chronologically in the [`criticisms/`](./criticisms/) di
 - [**`criticisms/04-vibecoding-and-spatial-coherence.md`**](./criticisms/04-vibecoding-and-spatial-coherence.md): "Vibecoded" decorative SVG conduits and orbital rings, borderless "dissolving cards" on desktop, padding drift, and canvas contrast tuning.
 - [**`criticisms/05-mobile-native-ux-and-touch-patterns.md`**](./criticisms/05-mobile-native-ux-and-touch-patterns.md): Desktop-ported top hamburger menu vs thumb-zone bottom navigation bar, mobile-native CV preview, micro touch targets (`<44px`), and horizontal scroll leakage.
 - [**`criticisms/06-no-ai-slop-copy-and-positioning-audit.md`**](./criticisms/06-no-ai-slop-copy-and-positioning-audit.md): Harvest traineeship puffery ("elite engineering fellowship"), unearned senior claims ("mentoring mid-level engineers"), thesis telemetry fixation obscuring software engineering, hiding the CS teaching superpower, and corporate throat-clearing jargon.
+- [**`criticisms/07-showmanship-featured-engineering-and-pruning-audit.md`**](./criticisms/07-showmanship-featured-engineering-and-pruning-audit.md): Over-correction into a sterile corporate morgue, 768px desktop void, static pseudo-architectural boxification in "Featured Engineering", sextuple redundancy, live Web Worker sandbox execution, and native Web Crypto HMAC verification showmanship.
 
 ---
 

@@ -216,8 +216,8 @@ export default function Cv() {
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {isNl
-                ? "Full-stack software engineer bij Tikkie (ABN AMRO) bouwend aan Tikkie Zakelijk, met een dubbele Master in Computer Science (Data Science) en Science Education van de TU Delft. Ervaren in TypeScript, React, Node.js, AWS en PostgreSQL. Geïnteresseerd in agentic engineering en AI-ondersteunde ontwikkelworkflows."
-                : "Full-stack software engineer at Tikkie (ABN AMRO) building Tikkie Business, with a double Master's degree in Computer Science (Data Science) and Science Education from Delft University of Technology. Experienced across TypeScript, React, Node.js, AWS, and PostgreSQL. Interested in agentic engineering and AI-enabled software development workflows."}
+                ? "Software engineer bij Tikkie Zakelijk (ABN AMRO) met een dubbele Master in Computer Science en Science Education van de TU Delft. Ervaren in TypeScript, React, Node.js, AWS en onboarding- en uitbetalingsprocessen. Gericht op eenvoud, heldere interfaces en betrouwbare cloudservices."
+                : "Software engineer at Tikkie Business (ABN AMRO) with a double Master's degree in Computer Science and Science Education from Delft University of Technology. Experienced across TypeScript, React, Node.js, AWS, and client onboarding/payout systems. Focused on simplicity, clean interfaces, and dependable cloud services."}
             </p>
           </section>
 

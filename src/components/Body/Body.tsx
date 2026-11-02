@@ -25,7 +25,7 @@ export default function Body() {
   );
 
   return (
-    <main id="main-content" className="w-full max-w-3xl pb-16">
+    <main id="main-content" className="w-full pb-16">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={wrapMotionDiv(<Intro />)} />
