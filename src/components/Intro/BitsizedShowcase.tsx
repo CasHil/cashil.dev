@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
-import FormattedBullet from "../common/FormattedBullet";
+import BitsizedClassroomInspector from "./BitsizedClassroomInspector";
 
 export default function BitsizedShowcase() {
   const { t } = useLanguage();
-  const bitsizedSkills = ["TypeScript", "React", "Node.js", "Docker", "Web Workers", "Browser Sandboxing"];
+  const bitsizedSkills = [
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Classroom UX",
+    "Teacher Tooling",
+  ];
 
   return (
     <article className="rounded-xl p-5 sm:p-6 bg-surface border border-border-subtle shadow-sm hover:shadow-md transition-shadow duration-150 space-y-5">
@@ -14,7 +20,7 @@ export default function BitsizedShowcase() {
           <div className="flex items-center gap-2 text-xs font-medium text-text-muted">
             <span className="text-brand">{t.intro.bitsizedTag}</span>
             <span className="text-text-muted/40">/</span>
-            <span>Classroom Production</span>
+            <span>Education Software</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-text-primary">
             {t.intro.bitsizedTitle}
@@ -36,54 +42,8 @@ export default function BitsizedShowcase() {
         {t.intro.bitsizedDescription}
       </p>
 
-      {/* Client-Side Sandbox Architecture (Single containment layer with internal hairline grid, Gate 4) */}
-      <div className="space-y-2.5 pt-1">
-        <div className="flex items-center justify-between">
-          <div>
-            <h4 className="text-xs font-semibold text-text-primary">
-              {t.intro.bitsizedArchTitle}
-            </h4>
-            <span className="block text-xs text-text-muted mt-0.5">
-              {t.intro.bitsizedArchSubtitle}
-            </span>
-          </div>
-          <span className="hidden sm:inline-block text-xs font-medium text-text-muted">
-            Client-side sandbox
-          </span>
-        </div>
-
-        {/* 3 Principles: Mobile Snap Strip + Desktop Hairline Grid */}
-        <div
-          data-carousel="true"
-          className="flex sm:grid sm:grid-cols-3 gap-2.5 sm:gap-0 sm:border sm:border-border-subtle sm:rounded-lg sm:divide-x sm:divide-border-subtle sm:bg-surface-subtle/40 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-1 sm:py-0"
-        >
-          {t.intro.bitsizedPrinciples.map((item, idx) => (
-            <div
-              key={idx}
-              className="w-[78vw] max-w-[260px] shrink-0 snap-center rounded-lg sm:rounded-none p-3.5 bg-surface-subtle/50 sm:bg-transparent border border-border-subtle sm:border-none sm:w-auto sm:max-w-none space-y-1"
-            >
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-brand" data-tabular>Principle {idx + 1}</span>
-              </div>
-              <div className="font-semibold text-xs sm:text-sm text-text-primary">
-                {item.title}
-              </div>
-              <p className="text-xs text-text-secondary leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Impact Highlights */}
-      {t.intro.bitsizedHighlights && (
-        <ul className="space-y-1.5 pt-1 text-xs sm:text-sm text-text-secondary max-w-[62ch]">
-          {t.intro.bitsizedHighlights.map((point, idx) => (
-            <FormattedBullet key={idx} text={point} />
-          ))}
-        </ul>
-      )}
+      {/* Interactive Classroom Perspectives Inspector */}
+      <BitsizedClassroomInspector />
 
       {/* Deliberate Tech Stack Chips */}
       <div className="pt-2 flex flex-wrap items-center gap-1.5 text-xs">

@@ -90,17 +90,18 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
   compareKeys(translations.en, translations.nl);
 });
 
-test("renders Tikkie architecture pipeline stages", () => {
+test("renders Tikkie operations workflows preview", () => {
   render(<App />);
-  expect(screen.getByText(/Merchant Portal & Onboarding Architecture/i)).toBeInTheDocument();
-  expect(screen.getByText(/^Onboarding Flow$/i)).toBeInTheDocument();
-  expect(screen.getByText(/^Data Layer$/i)).toBeInTheDocument();
+  expect(screen.getByText(/Key Operational Responsibilities/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Client Onboarding/i).length).toBeGreaterThan(0);
+  expect(screen.getByText(/Payouts & Settlements/i)).toBeInTheDocument();
 });
 
-test("renders Bitsized sandbox architecture breakdown without fake terminal buttons", () => {
+test("renders Bitsized classroom perspectives without fake terminal buttons", () => {
   render(<App />);
-  expect(screen.getByText(/Sandboxed In-Browser Execution Architecture/i)).toBeInTheDocument();
-  expect(screen.getByText(/Web Worker Isolation/i)).toBeInTheDocument();
+  expect(screen.getByText(/Designing for the Classroom/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/For Teachers/i).length).toBeGreaterThan(0);
+  expect(screen.getByText(/For Students/i)).toBeInTheDocument();
   expect(screen.queryByText(/▶/)).toBeNull();
 });
 
@@ -183,10 +184,10 @@ test("mobile action drawer provides single CV download tailored to active langua
   expect(cvLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
 });
 
-test("renders swipeable card carousels with peek affordance for showcases", () => {
+test("renders interactive operational inspectors with accessible tabs", () => {
   window.history.pushState({}, "", "/");
   render(<App />);
-  const carousels = document.querySelectorAll('[data-carousel="true"]');
-  expect(carousels.length).toBe(2);
+  const tablists = screen.getAllByRole("tablist");
+  expect(tablists.length).toBeGreaterThanOrEqual(2);
 });
 

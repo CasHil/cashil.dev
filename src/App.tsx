@@ -23,8 +23,8 @@ function AppContent() {
           Skip to main content
         </a>
 
-        {/* Centered Single-Column Editorial Canvas */}
-        <div className="relative z-10 max-w-2xl sm:max-w-3xl mx-auto px-4 sm:px-8">
+        {/* Responsive High-Craft Canvas: Mobile-Ergonomic & Desktop-Anchored */}
+        <div className="relative z-10 max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
           <Masthead />
           <SwipeNavigationWrapper>
             <Body />

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
@@ -7,17 +6,6 @@ import { useLanguage } from "../../context/LanguageContext";
 
 export default function Masthead() {
   const { t } = useLanguage();
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("casperhildebrand@gmail.com");
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2200);
-    } catch {
-      window.location.href = "mailto:casperhildebrand@gmail.com";
-    }
-  };
 
   return (
     <header className="pt-6 sm:pt-10 pb-4 sm:pb-6 space-y-4 sm:space-y-6 border-b sm:border-b-0 border-border-subtle">
@@ -28,7 +16,7 @@ export default function Masthead() {
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
+              className="relative h-12 w-12 sm:h-13 sm:w-13 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
             />
           </div>
           <div>
@@ -36,7 +24,10 @@ export default function Masthead() {
               <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150">
                 {t.sidebar.name}
               </span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-text-muted bg-surface-subtle border border-border-subtle" data-tabular>
+              <span
+                className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-text-muted bg-surface-subtle border border-border-subtle"
+                data-tabular
+              >
                 {t.sidebar.timezone}
               </span>
             </div>
@@ -48,33 +39,18 @@ export default function Masthead() {
 
         {/* Action Controls & Social Channels */}
         <div className="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full sm:w-auto">
-          {/* Quick Copy Email Interaction */}
-          <button
-            type="button"
-            onClick={handleCopyEmail}
-            className="group relative inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-border-subtle bg-surface hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors duration-150 shadow-xs min-h-[36px]"
-            title="Click to copy email address"
-            aria-label={copied ? t.sidebar.copiedEmail : t.sidebar.copyEmail}
-          >
-            {copied ? (
-              <>
-                <svg className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-emerald-700 dark:text-emerald-300 font-semibold">{t.sidebar.copiedEmail}</span>
-              </>
-            ) : (
-              <>
-                <svg className="w-3.5 h-3.5 text-text-muted group-hover:text-text-primary transition-colors duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <span>{t.sidebar.copyEmail}</span>
-              </>
-            )}
-          </button>
-
-          {/* Social Profiles */}
-          <nav aria-label="Social Profiles" className="flex items-center text-text-muted">
+          {/* Direct Channels */}
+          <nav aria-label="Direct Channels & Profiles" className="flex items-center text-text-muted gap-0.5">
+            <a
+              href="mailto:casperhildebrand@gmail.com"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
+              aria-label="Send direct email"
+              title="casperhildebrand@gmail.com"
+            >
+              <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
             <a
               href="https://github.com/CasHil"
               target="_blank"

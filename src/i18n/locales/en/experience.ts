@@ -3,13 +3,13 @@ import { WorkExperienceTranslations } from "../../types";
 export const enExperience: WorkExperienceTranslations = {
   title: "Work Experience",
   intro:
-    "Chronological history of software engineering ownership across fintech payment applications, in-browser sandboxed platforms, and computer science education.",
+    "Software engineering roles across payment systems, classroom software, and computer science education.",
   currentBadge: "CURRENT",
   to: "to",
   cvBtn: "Curriculum Vitae",
   educationBtn: "View Education",
   primaryHeading: "Software Engineering & Production Systems",
-  primarySubtitle: "Production systems at Tikkie, cloud engineering, and developer platforms",
+  primarySubtitle: "Production applications at Tikkie Business, Bitsized, and consulting",
   earlyEngineeringTitle: "Foundational Engineering Experience",
   earlyEngineeringBadge: "Foundational (2019 – 2021)",
   earlyEngineeringSubtitle: "Backend services, asset logistics APIs, and web development at Bexter",
@@ -23,12 +23,12 @@ export const enExperience: WorkExperienceTranslations = {
   items: [
     {
       title: "Tikkie Business (ABN AMRO)",
-      subtitle: "Full Stack Software Engineer",
-      startDate: "Mar 2026",
+      subtitle: "Software Engineer (via Harvest Young Talent)",
+      startDate: "Feb 2025",
       endDate: "Present",
       current: true,
-      text: "**Merchant Web Portal**: Developed merchant-facing web applications in React and TypeScript for Tikkie Business, enabling companies to manage payment requests, view transactions, and configure account settings.\n**Onboarding Backend Systems**: Built backend onboarding workflows and APIs to verify business details, automate registration checks, and provision merchant accounts on AWS.\n**Code Quality & Agentic Workflows**: Integrated automated test suites (Vitest, integration tests) and structured logging, leveraging agentic engineering tools to accelerate development while enforcing strict code quality.",
-      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Agentic Workflows"],
+      text: "**Merchant Web Portal**: Building and maintaining customer-facing web applications in TypeScript and React for payment requests, transaction management, and business operations.\n**Client Onboarding & AWS**: Developing backend onboarding workflows and services on AWS to verify business registrations and automate client activation.\n**Payouts & Settlements**: Supporting payout processing pipelines to ensure merchant settlements flow accurately and on schedule.",
+      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding", "Payouts"],
       category: "engineering",
       tier: "featured",
       image: {
@@ -37,27 +37,12 @@ export const enExperience: WorkExperienceTranslations = {
       },
     },
     {
-      title: "Harvest",
-      subtitle: "Software Engineer -- Young Talent",
-      startDate: "Feb 2026",
-      endDate: "Present",
-      current: true,
-      text: "**Technical Development Program**: Participating in a post-MSc engineering program designed to bridge academic research and enterprise production engineering.\n**Cloud & Distributed Systems**: Attending bi-weekly hands-on masterclasses covering cloud architecture, Temporal workflows, event-driven design, and system reliability.",
-      skills: ["Cloud Architecture", "Temporal Workflows", "Event-Driven Systems", "System Reliability"],
-      category: "engineering",
-      tier: "featured",
-      image: {
-        uri: "harvest.svg",
-        alt: "Harvest logo",
-      },
-    },
-    {
       title: "Bitsized",
-      subtitle: "Co-Founder & Lead Engineer",
+      subtitle: "Co-Founder & Frontend Engineer",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
-      text: "**Platform Architecture**: Co-founded and engineered an interactive educational coding platform adopted by Dutch secondary school computer science departments.\n**Sandboxed Execution**: Built client-side in-browser code execution sandboxes using Web Workers, execution timers to prevent runaway loops, and immediate assertion feedback.\n**Teacher & Student Tooling**: Developed automated exercise evaluation runners, assignment management portals, and code review workflows in TypeScript, React, and Node.js.",
-      skills: ["TypeScript", "React", "Node.js", "Web Workers", "Browser Sandboxing", "Docker"],
+      text: "**Classroom Discovery**: Collaborated directly with Dutch secondary school teachers to understand classroom hurdles and design software that solved real teaching problems.\n**Frontend Development**: Built a clean, accessible web application in React and TypeScript that allowed students to code directly in the browser without local setup headaches.\n**Plain-Language Feedback**: Designed straightforward assignment distribution and friendly student feedback tools to keep students engaged without cryptic error messages.",
+      skills: ["TypeScript", "React", "Node.js", "Didactic UX", "Classroom Tooling"],
       category: "engineering",
       tier: "featured",
       image: {
