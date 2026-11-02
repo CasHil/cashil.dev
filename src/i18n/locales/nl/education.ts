@@ -6,7 +6,7 @@ export const nlEducation: EducationTranslations = {
     "Universitaire basis van de Technische Universiteit Delft en KTH Royal Institute of Technology, een combinatie van computer science met wetenschapsonderwijs en didactische scholing.",
   thesisTitle: "Academische Graden",
   publication: {
-    badge: "Masterthesis Publicatie · TU Delft 2024",
+    badge: "Masterthesis Publicatie, TU Delft 2024",
     title: "Debugging the Divide: Leerdersmotivaties & Betrokkenheid in CS MOOCs",
     subtitle: "Empirische clickstream-loganalyse over 14 online cursusedities",
     datasetStat: "175.000",

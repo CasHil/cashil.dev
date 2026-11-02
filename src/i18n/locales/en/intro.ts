@@ -1,7 +1,7 @@
 import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
-  kicker: "Full-Stack & Agentic Software Developer · Amsterdam, NL",
+  kicker: "Full-Stack Software Engineer, Amsterdam",
   heroTitle: "Shipping resilient web applications with agentic workflows and high code standards.",
   bioParagraph1:
     "Full-stack software engineer at Tikkie Business (ABN AMRO). I build merchant web applications in TypeScript and React, supported by onboarding backend services on AWS serverless infrastructure.",
@@ -13,9 +13,9 @@ export const enIntro: IntroTranslations = {
   featuredSubtitle: "Production applications at Tikkie Business and client-side execution sandboxes.",
 
   // Tikkie Business Flagship
-  tikkieTag: "ABN AMRO · 2026 – Present",
+  tikkieTag: "ABN AMRO (2026 – Present)",
   tikkieTitle: "Tikkie Business",
-  tikkieSubtitle: "Merchant Web Portal & Onboarding Services · ABN AMRO",
+  tikkieSubtitle: "Merchant Web Portal & Onboarding Services, ABN AMRO",
   tikkieDescription:
     "Full-stack software engineering for Tikkie Business. Developing the merchant web portal for business transactions and backend verification workflows to automate merchant onboarding on AWS.",
   tikkiePipelineTitle: "Merchant Portal & Onboarding Architecture",
@@ -58,7 +58,7 @@ export const enIntro: IntroTranslations = {
   tikkieLink: "View in Work Timeline",
 
   // Bitsized 0-to-1 Flagship
-  bitsizedTag: "Co-Founder & Lead Engineer · 2023 – 2025",
+  bitsizedTag: "Co-Founder & Lead Engineer (2023 – 2025)",
   bitsizedTitle: "Bitsized Sandbox Engine",
   bitsizedSubtitle: "Isolated browser execution runtime for computer science education",
   bitsizedDescription:

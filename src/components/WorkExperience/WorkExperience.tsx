@@ -17,13 +17,13 @@ export default function WorkExperience() {
   );
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10 sm:space-y-12">
       {/* Header */}
-      <div className="space-y-3">
-        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
+      <div className="space-y-2">
+        <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary">
           {t.workExperience.title}
         </h1>
-        <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-[65ch]">
+        <p className="text-base text-text-secondary leading-relaxed max-w-[65ch]">
           {t.workExperience.intro}
         </p>
       </div>
@@ -31,17 +31,17 @@ export default function WorkExperience() {
       {/* Section 1: Software Engineering & Production Systems */}
       <div className="space-y-6">
         <div>
-          <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+          <h2 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-text-primary">
             {t.workExperience.primaryHeading}
           </h2>
           {t.workExperience.primarySubtitle && (
-            <p className="text-xs font-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
+            <p className="text-xs text-text-muted mt-0.5">
               {t.workExperience.primarySubtitle}
             </p>
           )}
         </div>
 
-        <div className="pt-2">
+        <div className="pt-1">
           <Timeline data={coreEngineeringRoles} />
         </div>
 
@@ -65,44 +65,40 @@ export default function WorkExperience() {
 
       {/* Section 2: Teaching & Academic Leadership (Direct Visibility) */}
       {educationRoles.length > 0 && (
-        <div className="pt-6 border-t border-zinc-200/80 dark:border-white/10 space-y-6">
+        <div className="pt-6 border-t border-border-subtle space-y-6">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand">
-                {t.workExperience.academicBadge}
-              </span>
-            </div>
-            <h2 className="font-display text-lg sm:text-xl font-bold tracking-tight text-zinc-950 dark:text-white mt-1">
+            <span className="text-xs font-medium text-brand">
+              {t.workExperience.academicBadge}
+            </span>
+            <h2 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-text-primary mt-1">
               {t.workExperience.academicHeading}
             </h2>
             {t.workExperience.academicSummary && (
-              <p className="text-xs font-normal text-zinc-500 dark:text-zinc-400 mt-0.5">
+              <p className="text-xs text-text-muted mt-0.5">
                 {t.workExperience.academicSummary}
               </p>
             )}
           </div>
 
-          <div className="pt-2">
+          <div className="pt-1">
             <Timeline data={educationRoles} />
           </div>
         </div>
       )}
 
-      {/* Strict 2-CTA Hierarchy: 1 Primary + 1 Secondary */}
-      <div className="pt-6 border-t border-zinc-200/80 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      {/* Strict 2-CTA Hierarchy: 1 Primary + 1 Secondary (No glued arrows, Gate 63) */}
+      <div className="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
         <Link
           to="/cv"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white font-semibold text-xs sm:text-sm shadow-xs hover:bg-brand-hover active:scale-[0.98] transition-all min-h-[42px]"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand text-white font-medium text-xs sm:text-sm shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[40px]"
         >
-          <span>{t.workExperience.cvBtn}</span>
-          <span className="opacity-75 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          {t.workExperience.cvBtn}
         </Link>
         <Link
           to="/education"
-          className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300/80 dark:border-white/15 bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 font-medium text-xs sm:text-sm hover:border-brand/40 dark:hover:border-brand/40 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98] transition-all min-h-[42px]"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs sm:text-sm shadow-sm hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[40px]"
         >
-          <span>{t.workExperience.educationBtn}</span>
-          <span className="text-zinc-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          {t.workExperience.educationBtn}
         </Link>
       </div>
     </div>

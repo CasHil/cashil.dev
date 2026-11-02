@@ -6,7 +6,7 @@ export const enEducation: EducationTranslations = {
     "Academic foundation from Delft University of Technology and KTH Royal Institute of Technology, combining computer science with science education and pedagogical training.",
   thesisTitle: "Academic Degrees",
   publication: {
-    badge: "Master's Thesis Publication · TU Delft 2024",
+    badge: "Master's Thesis Publication, TU Delft 2024",
     title: "Debugging the Divide: Learner Motivations & Engagement in CS MOOCs",
     subtitle: "Empirical clickstream log analysis across 14 online course runs",
     datasetStat: "175,000",
