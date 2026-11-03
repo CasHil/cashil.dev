@@ -13,7 +13,7 @@ The active visual world is **The Open Typographic Editorial** — an authoritati
 - **Strictly No Monospace Fonts**: Monospace type is banished from all UI, timestamps, stack chips, and labels. Pure proportional typography is used everywhere (`Newsreader` serif and modern system-ui proportional sans).
 - **Two-Line Headline Rule**: All `h1`–`h6` headings are formatted to occupy two lines or fewer at all viewport sizes.
 - **Authenticity as Software Engineer & Educator**: Grounded narrative highlighting Casper Hildebrand's production systems at Tikkie Business (ABN AMRO via Harvest), in-browser sandbox architecture at Bitsized, and double Master's degrees in Computer Science and Science Education from TU Delft.
-- **Substantive Architecture over Gimmicks**: Elimination of synthetic developer toys (such as fake HMAC tamper buttons or prime sieve counters). Replaced with clear, authoritative systems telemetry: distributed AWS event workflows, Chamber of Commerce (KvK) verification pipelines, and client-side AST didactic diagnostic engines.
+- **Authentic Engineering over Faux-Architecture Gimmicks**: Elimination of synthetic developer toys, fake interactive inspectors, and made-up pseudo-contracts. Case studies and projects are presented honestly, clearly describing Casper's direct responsibilities, real cloud workflows, and educational tools.
 
 ---
 

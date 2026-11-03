@@ -90,19 +90,11 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
   compareKeys(translations.en, translations.nl);
 });
 
-test("renders Tikkie architecture workflows preview", () => {
+test("renders featured work showcases for Tikkie Business and Bitsized", () => {
   render(<App />);
-  expect(screen.getByText(/Core Architectural Domains|Belangrijkste Architectuurdomeinen/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/Merchant Onboarding|Merchant-onboarding/i).length).toBeGreaterThan(0);
-  expect(screen.getByText(/Payout & Settlement|Uitbetaling & Reconciliatie/i)).toBeInTheDocument();
-});
-
-test("renders Bitsized architecture perspectives without fake terminal buttons", () => {
-  render(<App />);
-  expect(screen.getByText(/Runtime & Didactic Architecture|Runtime & Didactische Architectuur/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/Runtime Architecture|Runtime-architectuur/i).length).toBeGreaterThan(0);
-  expect(screen.getByText(/Didactic Diagnostics|Didactische Diagnostiek/i)).toBeInTheDocument();
-  expect(screen.queryByText(/▶/)).toBeNull();
+  expect(screen.getByText(/Featured Work|Uitgelicht Werk/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Tikkie Business|Tikkie Zakelijk/i).length).toBeGreaterThan(0);
+  expect(screen.getAllByText(/Bitsized/i).length).toBeGreaterThan(0);
 });
 
 test("links to Dutch CV PDF when site language is Dutch", () => {
@@ -158,9 +150,3 @@ test("renders mobile bottom navigation bar with thumb-zone controls across 4 des
   expect(eduLinks.length).toBeGreaterThan(0);
 });
 
-test("renders interactive operational inspectors with accessible tabs", () => {
-  window.history.pushState({}, "", "/");
-  render(<App />);
-  const tablists = screen.getAllByRole("tablist");
-  expect(tablists.length).toBeGreaterThanOrEqual(2);
-});

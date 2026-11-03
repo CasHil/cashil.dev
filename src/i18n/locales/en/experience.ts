@@ -41,8 +41,8 @@ export const enExperience: WorkExperienceTranslations = {
       subtitle: "Co-Founder & Lead Frontend Engineer",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
-      text: "**In-Browser Sandboxing**: Engineered client-side Python execution sandboxes using Web Workers with execution watchdogs, allowing students to code safely without remote server overhead.\n**Teacher & Classroom Tooling**: Built cohort management portals and live progress dashboards in React and TypeScript, collaborating with Dutch secondary school teachers to eliminate setup friction.\n**AST-Driven Feedback**: Designed targeted syntax and runtime diagnostics using Abstract Syntax Trees to output actionable, plain-language student guidance.",
-      skills: ["TypeScript", "React", "Node.js", "Didactic UX", "Classroom Tooling", "Web Workers"],
+      text: "**Zero-Setup Learning Environment**: Built an accessible web application in React enabling students to complete programming assignments directly in the browser with zero local setup.\n**Teacher & Classroom Tooling**: Collaborated directly with Dutch secondary school teachers to design straightforward assignment distribution and cohort progress tracking.\n**Approachable Feedback**: Designed friendly student feedback tools and clear diagnostics to keep beginners engaged without cryptic error messages.",
+      skills: ["TypeScript", "React", "Node.js", "Classroom Tooling", "Educational Software"],
       category: "engineering",
       tier: "featured",
       image: {

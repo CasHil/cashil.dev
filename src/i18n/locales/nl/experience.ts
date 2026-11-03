@@ -41,8 +41,8 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Medeoprichter & Lead Frontend Engineer",
       startDate: "jan 2023",
       endDate: "feb 2025",
-      text: "**In-Browser Sandboxing**: Client-side Python-executie ontwikkeld met behulp van Web Workers en watchdogs, waardoor leerlingen veilig kunnen programmeren zonder serveroverhead.\n**Tools voor Docenten**: Realtime voortgangsdashboards en lesbeheer gebouwd in React en TypeScript in directe samenwerking met Nederlandse docenten.\n**AST-Gedreven Feedback**: Syntax- en runtimediagnostiek ontworpen op basis van Abstract Syntax Trees voor directe en begrijpelijke feedback aan leerlingen.",
-      skills: ["TypeScript", "React", "Node.js", "Didactische UX", "Onderwijstools", "Web Workers"],
+      text: "**Toegankelijke Leeromgeving**: Een webapplicatie in React en TypeScript gebouwd waarmee middelbare scholieren programmeeropdrachten direct in de browser maken zonder lokale installatie.\n**Docenten- & Klassentools**: Direct samengewerkt met Nederlandse informaticadocenten om overzichtelijke opdrachtdistributie en voortgangsmonitoring te ontwerpen.\n**Begrijpelijke Feedback**: Vriendelijke foutmeldingen en didactische hulpmiddelen ontworpen zodat leerlingen hun programmeerfouten begrijpen zonder intimiderende meldingen.",
+      skills: ["TypeScript", "React", "Node.js", "Onderwijstools", "Educatieve Software"],
       category: "engineering",
       tier: "featured",
       image: {
