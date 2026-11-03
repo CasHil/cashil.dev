@@ -5,96 +5,42 @@ export const nlIntro: IntroTranslations = {
   heroTitle:
     "Software engineer bij Tikkie Zakelijk en docent informatica.",
   bioParagraph1:
-    "Bij Tikkie Zakelijk (ABN AMRO via Harvest) ontwikkel ik zakelijke webapplicaties in TypeScript en React, samen met backendservices op AWS voor merchant-onboarding, KYC-verificatie en geautomatiseerde uitbetalingen.",
+    "Bij Tikkie Zakelijk (ABN AMRO via Harvest) ontwikkel ik zakelijke webapplicaties in TypeScript en React, samen met backendservices op AWS voor merchant-onboarding en uitbetalingsprocessen.",
   bioParagraph2:
-    "Met dubbele Mastertitels in Computer Science en Science Education van de Technische Universiteit Delft beschouw ik didactische helderheid als een engineering-standaard: duidelijke API-contracten, kwalitatieve documentatie en software die onderhoudbaar blijft naarmate teams groeien.",
+    "Met dubbele Mastertitels in Computer Science en Science Education van de TU Delft hecht ik veel waarde aan eenvoud, heldere interfaces en software die onderhoudbaar blijft naarmate teams groeien.",
   viewCv: "Curriculum Vitae",
   exploreWork: "Bekijk Werkervaring",
-  featuredHeading: "Uitgelichte Architectuur",
+  featuredHeading: "Uitgelicht Werk",
   featuredSubtitle:
-    "Productiesystemen bij Tikkie Zakelijk en in-browser sandboxing bij Bitsized.",
+    "Geselecteerde productie- en onderwijsprojecten.",
 
   // Tikkie Business Flagship
-  tikkieTag: "ABN AMRO (2025 – Heden)",
+  tikkieTag: "feb 2025 – Heden",
   tikkieTitle: "Tikkie Zakelijk",
-  tikkieSubtitle: "Portaal, Onboarding-architectuur & Uitbetalingen",
+  tikkieSubtitle: "Software Engineer · ABN AMRO (via Harvest)",
   tikkieDescription:
-    "Ontwikkeling van bedrijfskritische systemen voor Nederlandse ondernemingen. Ik bouw responsieve dashboards en cloudworkflows op AWS voor geautomatiseerde merchant-onboarding, bedrijfsverificatie en dagelijkse uitbetalingen.",
-  tikkieWorkflowsTitle: "Belangrijkste Architectuurdomeinen",
-  tikkieWorkflows: [
-    {
-      id: "onboarding",
-      badge: "Onboarding",
-      title: "Merchant-onboarding Pipeline",
-      description:
-        "Automatiseren van bedrijfsverificatie, KVK-controles en KYC-validatie voorafgaand aan het inrichten van zakelijke accounts op AWS.",
-      details: [
-        "Validatie van bedrijfsidentiteit via het Handelsregister (KVK)",
-        "Geautomatiseerde provisioning en sleutelbeheer op AWS",
-        "Deterministische statusbewaking en auditlogboek",
-      ],
-    },
-    {
-      id: "payouts",
-      badge: "Uitbetalingen",
-      title: "Uitbetaling & Reconciliatie",
-      description:
-        "Orkestreren van batch-uitbetalingen en transactiereconciliatie om te waarborgen dat zakelijke saldi accuraat worden uitgekeerd.",
-      details: [
-        "Batchvalidatie en continue reconciliatie van transacties",
-        "Event-driven betalingsstatusupdates over gedistribueerde services",
-        "Audit-klare uitbetalingsgeschiedenis en rapportages",
-      ],
-    },
-    {
-      id: "portal",
-      badge: "Portaal",
-      title: "Zakelijk Webportaal",
-      description:
-        "Bouwen en beheren van het centrale zakelijke portaal in TypeScript en React met hoge toegankelijkheid en testdekking.",
-      details: [
-        "Responsieve React-interfaces voor betaallinks en transactie-inzichten",
-        "Uitgebreide geautomatiseerde testdekking met Vitest en integratietests",
-        "Toegankelijke componenten die voldoen aan de WCAG-standaarden",
-      ],
-    },
+    "Ontwikkeling van zakelijke webapplicaties en cloud-backendservices die Nederlandse bedrijven ondersteunen met betaalverzoeken en geautomatiseerde administratie.",
+  tikkiePoints: [
+    "Bouwen en onderhouden van webapplicaties in TypeScript en React voor zakelijke betaalverzoeken, transactiebeheer en accountinstellingen.",
+    "Ontwikkelen van backend-onboardingworkflows en services op AWS voor verificatie van bedrijfsgegevens en automatische activatie.",
+    "Ondersteunen van uitbetalingsprocessen en transactiereconciliatie zodat zakelijke uitbetalingen accuraat en tijdig verlopen.",
   ],
-  tikkieLink: "Bekijk in Tijdlijn",
+  tikkieStack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding", "Uitbetalingen"],
+  tikkieLink: "Bekijk in Werkervaring",
 
   // Bitsized Flagship
-  bitsizedTag: "Medeoprichter & Lead Frontend (2023 – 2025)",
-  bitsizedTitle: "Bitsized Sandbox Platform",
-  bitsizedSubtitle: "In-Browser Code-executie & Didactiek",
+  bitsizedTag: "jan 2023 – feb 2025",
+  bitsizedTitle: "Bitsized",
+  bitsizedSubtitle: "Medeoprichter & Frontend Engineer",
   bitsizedDescription:
-    "Medeoprichter en lead engineer van een educatief platform voor informaticaonderwijs op Nederlandse middelbare scholen. Ontwikkelde client-side code-executie in sandboxes, realtime docentendashboards en AST-diagnostiek die installatiegedoe overbodig maakten.",
-  bitsizedPerspectivesTitle: "Runtime & Didactische Architectuur",
-  bitsizedPerspectives: [
-    {
-      id: "sandbox",
-      role: "Runtime-architectuur",
-      title: "Geïsoleerde Web Worker Executie",
-      description:
-        "Client-side uitvoeren van code van leerlingen zonder externe serverinfrastructuur, met beveiliging tegen oneindige lussen via timeouts en geheugenlimieten.",
-      points: [
-        "Web Worker executiedraad volledig geïsoleerd van de hoofd-DOM",
-        "Configureerbare watchdogs die vastlopende scripts veilig beëindigen",
-        "Geen serverkosten en directe executie op school-Chromebooks",
-      ],
-    },
-    {
-      id: "diagnostics",
-      role: "Didactische Diagnostiek",
-      title: "AST-Gedreven Feedback in Begrijpelijke Taal",
-      description:
-        "Parseren van Python-code naar een Abstract Syntax Tree om conceptuele denkfouten te identificeren en constructieve feedback te geven.",
-      points: [
-        "Client-side AST-analyse voor gerichte foutdiagnoses",
-        "Opbouwende uitleg in plaats van intimiderende interpreter-tracebacks",
-        "Realtime voortgangsoverzicht voor docenten tijdens practica",
-      ],
-    },
+    "Medeoprichter van een educatief platform voor informaticaonderwijs op Nederlandse middelbare scholen, gericht op programmeren zonder installatiegedoe.",
+  bitsizedPoints: [
+    "Directe samenwerking met informaticadocenten op middelbare scholen om praktische behoeften in de lesruimte te vertalen naar effectieve software.",
+    "Bouwen van een toegankelijke webapplicatie in React waarmee leerlingen direct in de browser programmeren zonder lokale configuratie.",
+    "Ontwerpen van heldere opdrachtdistributie en begrijpelijke feedback voor leerlingen zonder intimiderende foutmeldingen.",
   ],
-  bitsizedLink: "Bekijk in Tijdlijn",
+  bitsizedStack: ["TypeScript", "React", "Node.js", "Onderwijssoftware", "Webdevelopment"],
+  bitsizedLink: "Bekijk in Werkervaring",
 
   // Engineering Ethos
   ethosTag: "Engineeringprincipes",

@@ -40,22 +40,6 @@ export interface CvTranslations {
   dutchPdf: string;
 }
 
-export interface TikkieWorkflow {
-  id: string;
-  badge: string;
-  title: string;
-  description: string;
-  details: string[];
-}
-
-export interface BitsizedPerspective {
-  id: string;
-  role: string;
-  title: string;
-  description: string;
-  points: string[];
-}
-
 export interface IntroTranslations {
   kicker: string;
   heroTitle: string;
@@ -70,16 +54,16 @@ export interface IntroTranslations {
   tikkieTitle: string;
   tikkieSubtitle: string;
   tikkieDescription: string;
-  tikkieWorkflowsTitle: string;
-  tikkieWorkflows: TikkieWorkflow[];
+  tikkiePoints: string[];
+  tikkieStack: string[];
   tikkieLink: string;
   // Bitsized Flagship
   bitsizedTag: string;
   bitsizedTitle: string;
   bitsizedSubtitle: string;
   bitsizedDescription: string;
-  bitsizedPerspectivesTitle: string;
-  bitsizedPerspectives: BitsizedPerspective[];
+  bitsizedPoints: string[];
+  bitsizedStack: string[];
   bitsizedLink: string;
   // Engineering Ethos / Philosophy
   ethosTag: string;

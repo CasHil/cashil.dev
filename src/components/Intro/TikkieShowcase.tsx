@@ -1,43 +1,24 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
-import TikkieOperationsInspector from "./TikkieOperationsInspector";
 
 export default function TikkieShowcase() {
   const { t } = useLanguage();
-  const tikkieSkills = [
-    "TypeScript",
-    "React",
-    "Node.js",
-    "AWS Lambda",
-    "DynamoDB",
-    "EventBridge",
-    "PostgreSQL",
-    "KvK Validation",
-    "Payouts",
-  ];
 
   return (
-    <article className="space-y-6">
+    <article className="space-y-4">
       {/* Header & Direct Link */}
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
         <div>
-          <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-text-primary">
+          <h3 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary">
             {t.intro.tikkieTitle}
           </h3>
-          <p className="text-base text-brand font-medium mt-1">
+          <p className="text-base text-brand font-medium">
             {t.intro.tikkieSubtitle}
           </p>
-          <p className="text-xs text-text-muted mt-0.5">
-            {t.intro.tikkieTag}
-          </p>
         </div>
-        <Link
-          to="/work-experience"
-          className="text-sm font-medium text-brand hover:underline shrink-0 inline-flex items-center gap-1"
-        >
-          <span>{t.intro.tikkieLink}</span>
-          <span aria-hidden="true">→</span>
-        </Link>
+        <span className="text-xs text-text-muted shrink-0">
+          {t.intro.tikkieTag}
+        </span>
       </div>
 
       {/* Narrative */}
@@ -45,14 +26,32 @@ export default function TikkieShowcase() {
         {t.intro.tikkieDescription}
       </p>
 
-      {/* Interactive Operations Workflow */}
-      <TikkieOperationsInspector />
+      {/* Concrete, Authentic Responsibilities */}
+      <ul className="space-y-2 text-sm sm:text-base text-text-secondary max-w-[70ch] pt-1">
+        {t.intro.tikkiePoints.map((point, idx) => (
+          <li key={idx} className="flex items-start gap-2">
+            <span className="text-brand shrink-0" aria-hidden="true">—</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
 
-      {/* Technologies in Proportional Text */}
-      <p className="text-sm text-text-muted leading-relaxed">
+      {/* Technologies */}
+      <p className="text-sm text-text-muted leading-relaxed pt-1">
         <strong className="text-text-primary font-medium">Stack:</strong>{" "}
-        {tikkieSkills.join(", ")}
+        {t.intro.tikkieStack.join(", ")}
       </p>
+
+      {/* Navigation Link */}
+      <div className="pt-1">
+        <Link
+          to="/work-experience"
+          className="text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
+        >
+          <span>{t.intro.tikkieLink}</span>
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </article>
   );
 }
