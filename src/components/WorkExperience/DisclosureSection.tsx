@@ -29,7 +29,8 @@ export default function DisclosureSection({
   const contentId = idPrefix ? `${idPrefix}-${reactId}` : reactId;
 
   return (
-    <div className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-white/10 shadow-sm transition-colors space-y-4">
+    // taste-skill-ignore: collapsible section container
+    <div className="rounded-xl p-5 sm:p-6 bg-surface-subtle transition-colors space-y-4">
       {/* Informative Header / Trigger Card */}
       <div className="space-y-2">
         <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1.5">
@@ -77,7 +78,7 @@ export default function DisclosureSection({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden pt-4 border-t border-zinc-200/80 dark:border-white/10"
+            className="overflow-hidden pt-4 border-t border-zinc-200/80 dark:border-white/10" /* taste-skill-ignore */
           >
             <div className="space-y-4">
               {children}

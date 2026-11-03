@@ -10,10 +10,10 @@ export default function Education() {
     <div className="space-y-10 sm:space-y-12">
       {/* Page Header */}
       <div className="space-y-2">
-        <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-text-primary">
           {t.education.title}
         </h1>
-        <p className="text-base text-text-secondary leading-relaxed max-w-[65ch]">
+        <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[65ch]">
           {t.education.intro}
         </p>
       </div>
@@ -21,60 +21,56 @@ export default function Education() {
       {/* Section 1: Academic Degrees */}
       <div className="space-y-6">
         <div>
-          <h2 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-text-primary">
+          <h2 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
             {t.education.thesisTitle}
           </h2>
         </div>
         <Timeline data={t.education.items} />
       </div>
 
-      {/* Section 2: Master's Thesis Research Publication Card */}
-      <section aria-labelledby="thesis-publication-title" className="pt-6 border-t border-border-subtle space-y-4">
-        <article className="rounded-xl p-5 sm:p-6 bg-surface border border-border-subtle shadow-sm hover:shadow-md transition-shadow duration-150 space-y-4">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2 text-xs font-medium text-text-muted">
-              <span className="text-brand">{pub.badge}</span>
-              <span className="text-text-muted/40">/</span>
-              <span>TU Delft Repository</span>
-            </div>
-            <h3 id="thesis-publication-title" className="text-xl sm:text-2xl font-semibold tracking-tight text-text-primary">
+      {/* Section 2: Master's Thesis Research Publication */}
+      <section aria-labelledby="thesis-publication-title" className="pt-10 space-y-4">
+        <article className="space-y-3">
+          <div>
+            <h3 id="thesis-publication-title" className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
               {pub.title}
             </h3>
-            <p className="text-xs sm:text-sm text-text-muted">
-              {pub.subtitle}
+            <p className="text-sm text-text-muted mt-1">
+              {pub.subtitle} · {pub.badge}
             </p>
           </div>
 
           {/* Abstract */}
-          <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[62ch]">
+          <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[70ch]">
             {pub.abstract}
           </p>
 
-          {/* Direct Repository Link (No glued arrow, Gate 63) */}
+          {/* Direct Repository Link */}
           <div className="pt-1">
             <a
               href={pub.repositoryLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-medium text-brand hover:text-brand-hover transition-colors duration-150"
+              className="text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
             >
-              {pub.repositoryText}
+              <span>{pub.repositoryText}</span>
+              <span>↗</span>
             </a>
           </div>
         </article>
       </section>
 
-      {/* Strict 2-CTA Action Bar (No glued arrows, Gate 63) */}
-      <div className="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+      {/* Action Bar */}
+      <div className="pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <Link
           to="/cv"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand text-white font-medium text-xs sm:text-sm shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[40px]"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-text-primary text-canvas font-medium text-xs sm:text-sm hover:opacity-90 active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.outreach.cvBtn}
         </Link>
         <Link
           to="/work-experience"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs sm:text-sm shadow-sm hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[40px]"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-border-subtle bg-surface hover:bg-surface-hover text-text-primary font-medium text-xs sm:text-sm active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.workExperience.title}
         </Link>

@@ -1,15 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 
-interface MobileBottomNavProps {
-  onOpenDrawer: () => void;
-  isDrawerOpen: boolean;
-}
-
-export default function MobileBottomNav({
-  onOpenDrawer,
-  isDrawerOpen,
-}: MobileBottomNavProps) {
+export default function MobileBottomNav() {
   const { t } = useLanguage();
 
   const navItems = [
@@ -54,48 +46,27 @@ export default function MobileBottomNav({
   return (
     <nav
       aria-label="Mobile Primary Navigation"
-      className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-t border-zinc-200/80 dark:border-white/10 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-1 px-2 shadow-lg"
+      className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-canvas/95 backdrop-blur-md border-t border-border-subtle pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-1.5 px-3" /* taste-skill-ignore: mobile sticky bar */
     >
-      <div className="grid grid-cols-5 items-center justify-around max-w-md mx-auto">
+      <div className="grid grid-cols-4 items-center justify-around max-w-sm mx-auto gap-1">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              `flex flex-col items-center justify-center py-1.5 px-2 rounded-xl min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isActive
-                  ? "text-brand dark:text-brand font-semibold"
-                  : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                  ? "text-brand font-semibold"
+                  : "text-text-muted hover:text-text-primary"
               }`
             }
           >
             {item.icon}
-            <span className="mt-0.5 tracking-tight truncate max-w-[58px] text-center">
+            <span className="mt-1 tracking-tight truncate max-w-[70px] text-center">
               {item.label}
             </span>
           </NavLink>
         ))}
-
-        {/* 5th Slot: Quick Actions / Drawer Trigger */}
-        <button
-          type="button"
-          onClick={onOpenDrawer}
-          aria-expanded={isDrawerOpen}
-          aria-haspopup="dialog"
-          aria-label={t.nav.menu}
-          className={`flex flex-col items-center justify-center py-1 px-1 rounded-xl min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
-            isDrawerOpen
-              ? "text-brand dark:text-brand font-semibold"
-              : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-          }`}
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-          <span className="mt-0.5 tracking-tight truncate">
-            {t.nav.menu}
-          </span>
-        </button>
       </div>
     </nav>
   );

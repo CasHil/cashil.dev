@@ -1,120 +1,126 @@
 import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
-  kicker: "Software Engineer, Amsterdam",
-  heroTitle: "Software engineer at Tikkie Business with a background in education. I keep systems simple, build clean user interfaces, and support merchant onboarding and payouts on AWS.",
+  kicker: "Software Engineer & Educator",
+  heroTitle:
+    "Software engineer at Tikkie Business and computer science educator.",
   bioParagraph1:
-    "At Tikkie Business (ABN AMRO), my focus started in frontend engineering with TypeScript and React. Over time, I took on a variety of backend and AWS tasks—especially around onboarding new business clients, handling payouts, and operating the business portal.",
+    "At Tikkie Business (ABN AMRO via Harvest), I engineer customer-facing web applications in TypeScript and React, alongside backend services on AWS for merchant onboarding, KYC verification, and automated payout settlements.",
   bioParagraph2:
-    "With a double Master's in Computer Science and Science Education from TU Delft, I value clear communication over unnecessary complexity. Whether discussing requirements with users or writing software, I aim to keep things understandable and dependable.",
+    "Holding double Master's degrees in Computer Science and Science Education from Delft University of Technology, I treat didactic clarity as an engineering standard: clear API contracts, high-signal documentation, and software that remains maintainable as teams grow.",
   viewCv: "Curriculum Vitae",
   exploreWork: "Explore Work Experience",
-  featuredHeading: "Featured Work",
-  featuredSubtitle: "Production systems at Tikkie Business and classroom software at Bitsized.",
+  featuredHeading: "Featured Engineering",
+  featuredSubtitle:
+    "Production systems at Tikkie Business and in-browser sandboxing at Bitsized.",
 
   // Tikkie Business Flagship
   tikkieTag: "ABN AMRO (2025 – Present)",
   tikkieTitle: "Tikkie Business",
-  tikkieSubtitle: "Merchant Web Portal, Onboarding & Payouts",
+  tikkieSubtitle: "Merchant Portal, Onboarding Architecture & Payouts",
   tikkieDescription:
-    "Engineering the business portal used by Dutch enterprises. I build responsive merchant interfaces and handle backend services on AWS for client onboarding and automated payout workflows.",
-  tikkieWorkflowsTitle: "Key Operational Responsibilities",
+    "Engineering core business systems for Dutch enterprises. I develop high-throughput merchant interfaces and backend workflows on AWS for automated client onboarding, business validation, and daily payout settlements.",
+  tikkieWorkflowsTitle: "Core Architectural Domains",
   tikkieWorkflows: [
     {
       id: "onboarding",
-      badge: "01",
-      title: "Client Onboarding",
-      description: "Verifying company information and automating merchant account setup with AWS services.",
+      badge: "Onboarding",
+      title: "Merchant Onboarding Pipeline",
+      description:
+        "Automating business validation, KvK registration checks, and KYC verification before provisioning merchant accounts on AWS.",
       details: [
-        "KVK and business identity validation",
-        "Automated account provisioning on AWS",
-        "Direct onboarding status visibility in the portal",
+        "Chamber of Commerce (KvK) business identity validation",
+        "Automated merchant provisioning and credential generation on AWS",
+        "Deterministic onboarding state tracking and audit logging",
       ],
     },
     {
       id: "payouts",
-      badge: "02",
-      title: "Payouts & Settlements",
-      description: "Ensuring merchant transactions are settled accurately and payouts are dispatched on schedule.",
+      badge: "Payouts",
+      title: "Payout & Settlement Engine",
+      description:
+        "Orchestrating daily batch settlements and transaction reconciliations to ensure merchant balances are disbursed accurately.",
       details: [
-        "Batch settlement validation",
-        "Transaction status synchronization",
-        "Clear payout history and balance insights",
+        "Batch transaction validation and balance reconciliation",
+        "Event-driven payment status updates across distributed services",
+        "Audit-ready payout history and reporting records",
       ],
     },
     {
       id: "portal",
-      badge: "03",
-      title: "Portal Operations & Frontend",
-      description: "Maintaining and evolving the merchant web application in TypeScript and React with high reliability.",
+      badge: "Portal",
+      title: "Merchant Web Portal",
+      description:
+        "Building and operating the primary business dashboard in TypeScript and React with high accessibility and test coverage.",
       details: [
-        "Accessible React and TypeScript interfaces",
-        "Real-time payment link management",
-        "Proactive error handling and system monitoring",
+        "Responsive React interfaces for payment links and transaction records",
+        "Comprehensive automated test coverage with Vitest and integration tests",
+        "Accessible, high-performance UI components adhering to WCAG standards",
       ],
     },
   ],
   tikkieLink: "View in Work Timeline",
 
   // Bitsized Flagship
-  bitsizedTag: "Startup Co-Founder (2023 – 2025)",
-  bitsizedTitle: "Bitsized",
-  bitsizedSubtitle: "Interactive Coding Platform for Dutch High Schools",
+  bitsizedTag: "Co-Founder & Lead Frontend (2023 – 2025)",
+  bitsizedTitle: "Bitsized Sandbox Platform",
+  bitsizedSubtitle: "In-Browser Code Execution & Classroom Didactics",
   bitsizedDescription:
-    "Co-founded an educational platform to make computer science accessible in Dutch secondary schools. My primary focus was talking to teachers to identify classroom needs and building a clean, simple frontend that eliminated setup friction.",
-  bitsizedPerspectivesTitle: "Designing for the Classroom",
+    "Co-founded and engineered an educational coding platform for Dutch secondary schools. Built client-side code execution sandboxes, live progress telemetry for teachers, and AST-based diagnostics that eliminate setup friction.",
+  bitsizedPerspectivesTitle: "Runtime & Didactic Architecture",
   bitsizedPerspectives: [
     {
-      id: "teacher",
-      role: "For Teachers",
-      title: "Less Admin, Clear Classroom Overview",
+      id: "sandbox",
+      role: "Runtime Architecture",
+      title: "Isolated Web Worker Execution",
       description:
-        "Teachers needed a way to assign exercises and instantly see where students were getting stuck, without dealing with local compiler setups on school laptops.",
+        "Executing untrusted student code client-side without remote compiler infrastructure, protecting the browser thread with timeouts and memory bounds.",
       points: [
-        "Direct assignment distribution across cohorts",
-        "Live progress dashboard during practical lessons",
-        "Runs directly in the browser on school Chromebooks",
+        "Web Worker execution thread completely isolated from the main DOM",
+        "Configurable execution watchdogs that terminate runaway loops safely",
+        "Zero server runtime costs and instant execution on school Chromebooks",
       ],
     },
     {
-      id: "student",
-      role: "For Students",
-      title: "Immediate Guidance in Plain Language",
+      id: "diagnostics",
+      role: "Didactic Diagnostics",
+      title: "AST-Driven Feedback in Plain Language",
       description:
-        "Students needed an approachable code editor that gave them friendly, understandable feedback instead of cryptic compiler error messages.",
+        "Parsing student Python code into an Abstract Syntax Tree to identify semantic misunderstandings and output actionable, friendly guidance.",
       points: [
-        "Clean, distraction-free editing environment",
-        "Helpful step-by-step guidance in plain language",
-        "Instant exercise verification with visible test results",
+        "Client-side AST inspection for targeted error diagnostics",
+        "Constructive error explanations replacing cryptic interpreter tracebacks",
+        "Real-time cohort progress visibility for teachers during practical lessons",
       ],
     },
   ],
   bitsizedLink: "View in Work Timeline",
 
   // Engineering Ethos
-  ethosTag: "Engineering Approach",
+  ethosTag: "Engineering Principles",
   ethosTitle: "How I Approach Software",
-  ethosSubtitle: "Practical priorities shaped by software development and formal teaching",
+  ethosSubtitle:
+    "Engineering principles shaped by production systems and pedagogical practice",
   ethosDescription:
-    "Software is built for people. I focus on simplicity, maintainability, and clear communication across the entire development process.",
+    "Reliable software requires both technical rigor and clear human communication. I design for simplicity, durability, and team velocity.",
   ethosPillars: [
     {
-      title: "Keep Systems Simple",
+      title: "Systems Simplicity",
       description:
-        "Avoiding unnecessary complexity and jargon. Simple code is easier to review, test, maintain, and hand off.",
+        "Eliminating accidental complexity and unnecessary dependencies. Clean interfaces, deterministic states, and predictable data flows make systems easier to test, debug, and maintain.",
     },
     {
-      title: "Listen to Real Users",
+      title: "Production Rigor",
       description:
-        "Whether collaborating with teachers in a classroom or merchants running a business, good engineering starts by understanding actual human needs.",
+        "Backing implementations with strict TypeScript types, automated Vitest suites, and structured error handling. Systems should fail explicitly and safely.",
     },
     {
       title: "Didactic Clarity",
       description:
-        "Applying formal teaching experience to write clear documentation, give constructive pull request reviews, and make complex technical decisions accessible.",
+        "Applying formal teaching experience to write precise technical documentation, conduct high-signal code reviews, and keep architecture transparent across the team.",
     },
   ],
   outsideTitle: "Outside of Engineering",
   outsideDescription:
-    "Away from the codebase, I play electric bass guitar and chess.",
+    "Outside of software engineering, I play electric bass guitar and play chess.",
 };

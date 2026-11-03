@@ -8,7 +8,7 @@ export default function Masthead() {
   const { t } = useLanguage();
 
   return (
-    <header className="pt-6 sm:pt-10 pb-4 sm:pb-6 space-y-4 sm:space-y-6 border-b sm:border-b-0 border-border-subtle">
+    <header className="pt-6 sm:pt-8 pb-8 sm:pb-12">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         {/* Candidate Identity */}
         <Link to="/" className="group flex items-center gap-3.5 focus:outline-none">
@@ -16,7 +16,7 @@ export default function Masthead() {
             <img
               src="/images/profile.webp"
               alt="Casper Hildebrand"
-              className="relative h-12 w-12 sm:h-13 sm:w-13 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
+              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
             />
           </div>
           <div>
@@ -24,11 +24,8 @@ export default function Masthead() {
               <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150">
                 {t.sidebar.name}
               </span>
-              <span
-                className="hidden sm:inline-block px-1.5 py-0.5 rounded text-xs font-medium text-text-muted bg-surface-subtle border border-border-subtle"
-                data-tabular
-              >
-                {t.sidebar.timezone}
+              <span className="hidden sm:inline-block text-xs font-normal text-text-muted">
+                · {t.sidebar.timezone}
               </span>
             </div>
             <p className="text-xs font-normal text-text-muted">
@@ -37,13 +34,18 @@ export default function Masthead() {
           </div>
         </Link>
 
+        {/* Primary Navigation (Desktop) */}
+        <div className="hidden sm:block">
+          <Header orientation="horizontal" />
+        </div>
+
         {/* Action Controls & Social Channels */}
         <div className="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 w-full sm:w-auto">
           {/* Direct Channels */}
           <nav aria-label="Direct Channels & Profiles" className="flex items-center text-text-muted gap-0.5">
             <a
               href="mailto:casperhildebrand@gmail.com"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="Send direct email"
               title="casperhildebrand@gmail.com"
             >
@@ -55,7 +57,7 @@ export default function Masthead() {
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -66,7 +68,7 @@ export default function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -83,11 +85,6 @@ export default function Masthead() {
             <ThemeToggle />
           </div>
         </div>
-      </div>
-
-      {/* Primary Navigation (Desktop) */}
-      <div className="hidden sm:block border-b border-border-subtle pb-3">
-        <Header orientation="horizontal" />
       </div>
     </header>
   );

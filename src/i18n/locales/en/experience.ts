@@ -27,7 +27,7 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Feb 2025",
       endDate: "Present",
       current: true,
-      text: "**Merchant Web Portal**: Building and maintaining customer-facing web applications in TypeScript and React for payment requests, transaction management, and business operations.\n**Client Onboarding & AWS**: Developing backend onboarding workflows and services on AWS to verify business registrations and automate client activation.\n**Payouts & Settlements**: Supporting payout processing pipelines to ensure merchant settlements flow accurately and on schedule.",
+      text: "**Merchant Web Portal**: Building and maintaining customer-facing web applications in TypeScript and React for payment requests, transaction management, and business operations.\n**Client Onboarding & AWS**: Developing backend onboarding workflows and services on AWS to verify business registrations and automate client activation.\n**Payouts & Settlements**: Operating payout processing pipelines and settlement reconciliation to ensure merchant transactions flow accurately and on schedule.",
       skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding", "Payouts"],
       category: "engineering",
       tier: "featured",
@@ -38,11 +38,11 @@ export const enExperience: WorkExperienceTranslations = {
     },
     {
       title: "Bitsized",
-      subtitle: "Co-Founder & Frontend Engineer",
+      subtitle: "Co-Founder & Lead Frontend Engineer",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
-      text: "**Classroom Discovery**: Collaborated directly with Dutch secondary school teachers to understand classroom hurdles and design software that solved real teaching problems.\n**Frontend Development**: Built a clean, accessible web application in React and TypeScript that allowed students to code directly in the browser without local setup headaches.\n**Plain-Language Feedback**: Designed straightforward assignment distribution and friendly student feedback tools to keep students engaged without cryptic error messages.",
-      skills: ["TypeScript", "React", "Node.js", "Didactic UX", "Classroom Tooling"],
+      text: "**In-Browser Sandboxing**: Engineered client-side Python execution sandboxes using Web Workers with execution watchdogs, allowing students to code safely without remote server overhead.\n**Teacher & Classroom Tooling**: Built cohort management portals and live progress dashboards in React and TypeScript, collaborating with Dutch secondary school teachers to eliminate setup friction.\n**AST-Driven Feedback**: Designed targeted syntax and runtime diagnostics using Abstract Syntax Trees to output actionable, plain-language student guidance.",
+      skills: ["TypeScript", "React", "Node.js", "Didactic UX", "Classroom Tooling", "Web Workers"],
       category: "engineering",
       tier: "featured",
       image: {

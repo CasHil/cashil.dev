@@ -4,7 +4,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="mt-16 pt-8 pb-12 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-normal text-text-muted">
+    <footer className="mt-20 pt-8 pb-12 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-normal text-text-muted">
       <div>{t.sidebar.year}</div>
       <div className="flex items-center gap-3">
         <a

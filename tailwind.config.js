@@ -17,6 +17,11 @@ module.exports = {
           subtle: "var(--border-subtle)",
           hover: "var(--border-hover)",
         },
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
+        },
         brand: {
           DEFAULT: "var(--brand)",
           hover: "var(--brand-hover)",
@@ -25,9 +30,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['"Instrument Sans"', "sans-serif"],
+        serif: ['"Newsreader"', "Georgia", "serif"],
+        display: ['"Newsreader"', "Georgia", "serif"],
         sans: [
-          '"Instrument Sans"',
+          "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',
@@ -35,12 +41,12 @@ module.exports = {
           "sans-serif",
         ],
         mono: [
-          "ui-monospace",
-          "SFMono-Regular",
-          "Menlo",
-          "Monaco",
-          "Consolas",
-          "monospace",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          "sans-serif",
         ],
       },
     },

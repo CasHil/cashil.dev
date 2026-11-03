@@ -7,56 +7,50 @@ export default function BitsizedShowcase() {
   const bitsizedSkills = [
     "TypeScript",
     "React",
+    "Web Workers",
+    "AST Parsing",
+    "WebAssembly",
+    "Client-Side Sandboxing",
     "Node.js",
-    "Classroom UX",
-    "Teacher Tooling",
   ];
 
   return (
-    <article className="rounded-xl p-5 sm:p-6 bg-surface border border-border-subtle shadow-sm hover:shadow-md transition-shadow duration-150 space-y-5">
+    <article className="space-y-6">
       {/* Header & Direct Link */}
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-medium text-text-muted">
-            <span className="text-brand">{t.intro.bitsizedTag}</span>
-            <span className="text-text-muted/40">/</span>
-            <span>Education Software</span>
-          </div>
-          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-text-primary">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
+        <div>
+          <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-text-primary">
             {t.intro.bitsizedTitle}
           </h3>
-          <p className="text-xs sm:text-sm text-text-secondary">
+          <p className="text-base text-brand font-medium mt-1">
             {t.intro.bitsizedSubtitle}
+          </p>
+          <p className="text-xs text-text-muted mt-0.5">
+            {t.intro.bitsizedTag}
           </p>
         </div>
         <Link
           to="/work-experience"
-          className="text-xs font-medium text-brand hover:text-brand-hover transition-colors duration-150 self-start sm:self-auto py-1"
+          className="text-sm font-medium text-brand hover:underline shrink-0 inline-flex items-center gap-1"
         >
-          {t.intro.bitsizedLink}
+          <span>{t.intro.bitsizedLink}</span>
+          <span aria-hidden="true">→</span>
         </Link>
       </div>
 
       {/* Narrative */}
-      <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[62ch]">
+      <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[70ch]">
         {t.intro.bitsizedDescription}
       </p>
 
-      {/* Interactive Classroom Perspectives Inspector */}
+      {/* Interactive Architecture Inspector */}
       <BitsizedClassroomInspector />
 
-      {/* Deliberate Tech Stack Chips */}
-      <div className="pt-2 flex flex-wrap items-center gap-1.5 text-xs">
-        <span className="font-medium text-text-muted mr-1">Stack:</span>
-        {bitsizedSkills.map((skill) => (
-          <span
-            key={skill}
-            className="px-2 py-0.5 rounded-md bg-surface-subtle text-text-secondary border border-border-subtle font-mono text-xs"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
+      {/* Tech Stack in Proportional Text */}
+      <p className="text-sm text-text-muted leading-relaxed">
+        <strong className="text-text-primary font-medium">Stack:</strong>{" "}
+        {bitsizedSkills.join(", ")}
+      </p>
     </article>
   );
 }

@@ -90,18 +90,18 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
   compareKeys(translations.en, translations.nl);
 });
 
-test("renders Tikkie operations workflows preview", () => {
+test("renders Tikkie architecture workflows preview", () => {
   render(<App />);
-  expect(screen.getByText(/Key Operational Responsibilities/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/Client Onboarding/i).length).toBeGreaterThan(0);
-  expect(screen.getByText(/Payouts & Settlements/i)).toBeInTheDocument();
+  expect(screen.getByText(/Core Architectural Domains|Belangrijkste Architectuurdomeinen/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Merchant Onboarding|Merchant-onboarding/i).length).toBeGreaterThan(0);
+  expect(screen.getByText(/Payout & Settlement|Uitbetaling & Reconciliatie/i)).toBeInTheDocument();
 });
 
-test("renders Bitsized classroom perspectives without fake terminal buttons", () => {
+test("renders Bitsized architecture perspectives without fake terminal buttons", () => {
   render(<App />);
-  expect(screen.getByText(/Designing for the Classroom/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/For Teachers/i).length).toBeGreaterThan(0);
-  expect(screen.getByText(/For Students/i)).toBeInTheDocument();
+  expect(screen.getByText(/Runtime & Didactic Architecture|Runtime & Didactische Architectuur/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Runtime Architecture|Runtime-architectuur/i).length).toBeGreaterThan(0);
+  expect(screen.getByText(/Didactic Diagnostics|Didactische Diagnostiek/i)).toBeInTheDocument();
   expect(screen.queryByText(/▶/)).toBeNull();
 });
 
@@ -139,49 +139,23 @@ test("allows switching CV PDF language via dedicated toggle", () => {
   expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
 
-test("renders mobile bottom navigation bar with thumb-zone controls", () => {
+test("renders mobile bottom navigation bar with thumb-zone controls across 4 destinations", () => {
   render(<App />);
   const mobileNav = screen.getByRole("navigation", { name: /mobile primary navigation/i });
   expect(mobileNav).toBeInTheDocument();
 
-  const menuButton = screen.getByRole("button", { name: /menu/i });
-  expect(menuButton).toBeInTheDocument();
-});
+  // All 4 primary destinations are directly accessible in the thumb-zone
+  const overviewLinks = screen.getAllByRole("link", { name: /overview|overzicht/i });
+  expect(overviewLinks.length).toBeGreaterThan(0);
 
-test("opens and closes mobile action drawer with quick actions", () => {
-  render(<App />);
-  const menuButton = screen.getByRole("button", { name: /menu/i });
-  expect(menuButton).toHaveAttribute("aria-expanded", "false");
+  const cvLinks = screen.getAllByRole("link", { name: /cv/i });
+  expect(cvLinks.length).toBeGreaterThan(0);
 
-  // Open drawer
-  fireEvent.click(menuButton);
-  expect(menuButton).toHaveAttribute("aria-expanded", "true");
+  const workLinks = screen.getAllByRole("link", { name: /work|werk/i });
+  expect(workLinks.length).toBeGreaterThan(0);
 
-  const dialog = screen.getByRole("dialog");
-  expect(dialog).toBeInTheDocument();
-  expect(dialog).toHaveTextContent(/casperhildebrand@gmail.com/i);
-
-  // Close drawer via Escape key
-  fireEvent.keyDown(window, { key: "Escape" });
-  expect(menuButton).toHaveAttribute("aria-expanded", "false");
-});
-
-test("mobile action drawer provides single CV download tailored to active language", () => {
-  localStorage.setItem("lang", "en");
-  render(<App />);
-  const menuButton = screen.getByRole("button", { name: /menu/i });
-  fireEvent.click(menuButton);
-
-  const cvLink = screen.getByRole("link", { name: /download cv \(pdf\)/i });
-  expect(cvLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
-  expect(cvLink).toHaveAttribute("download", "Casper_Hildebrand_CV.pdf");
-
-  // Switch language to Dutch in drawer
-  const nlButton = screen.getByRole("button", { name: /^nederlands$/i });
-  fireEvent.click(nlButton);
-
-  expect(cvLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
-  expect(cvLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
+  const eduLinks = screen.getAllByRole("link", { name: /education|opleiding/i });
+  expect(eduLinks.length).toBeGreaterThan(0);
 });
 
 test("renders interactive operational inspectors with accessible tabs", () => {
@@ -190,4 +164,3 @@ test("renders interactive operational inspectors with accessible tabs", () => {
   const tablists = screen.getAllByRole("tablist");
   expect(tablists.length).toBeGreaterThanOrEqual(2);
 });
-
