@@ -1,47 +1,45 @@
-/* Hallmark · modern-minimal · cobalt · pre-emit critique: P5 H5 E5 S5 R5 V4 · technical precision, hairline craft */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
-  --canvas: oklch(98.6% 0.005 250);
+  --canvas: #fafaf7;
   --surface: #ffffff;
-  --surface-hover: oklch(96.8% 0.007 250);
-  --surface-subtle: oklch(94.8% 0.009 250);
-  --border-subtle: oklch(89.5% 0.01 252);
-  --border-hover: oklch(80% 0.014 252);
-  --text-primary: oklch(21% 0.028 262);
-  --text-secondary: oklch(38% 0.022 260);
-  --text-muted: oklch(52% 0.018 258);
-  --brand: oklch(52% 0.19 258);
-  --brand-hover: oklch(46% 0.2 260);
-  --brand-subtle: oklch(95% 0.028 256);
-  --brand-border: oklch(82% 0.08 256);
-  --scrollbar-track: oklch(98.6% 0.005 250);
-  --scrollbar-thumb: oklch(82% 0.012 252);
-  --scrollbar-thumb-hover: oklch(68% 0.016 252);
+  --surface-hover: #f3f6f4;
+  --surface-subtle: #edf2ee;
+  --border-subtle: #e1e7e2;
+  --border-hover: #c4cdc6;
+  --text-primary: #141715;
+  --text-secondary: #3b443e;
+  --text-muted: #6b7770;
+  --brand: #4a6b56;
+  --brand-hover: #3b5745;
+  --brand-subtle: #eaf1ec;
+  --brand-border: #b8c9bd;
+  --scrollbar-track: #fafaf7;
+  --scrollbar-thumb: #d0dad2;
+  --scrollbar-thumb-hover: #a8b8ac;
 }
 
 .dark {
   color-scheme: dark;
-  --canvas: oklch(16% 0.008 250);
-  --surface: oklch(20% 0.01 250);
-  --surface-hover: oklch(24% 0.012 250);
-  --surface-subtle: oklch(27% 0.014 250);
-  --border-subtle: oklch(29% 0.012 250);
-  --border-hover: oklch(38% 0.016 250);
-  --text-primary: oklch(96% 0.005 250);
-  --text-secondary: oklch(82% 0.008 250);
-  --text-muted: oklch(68% 0.01 250);
-  --brand: oklch(66% 0.18 256);
-  --brand-hover: oklch(74% 0.16 254);
-  --brand-subtle: oklch(26% 0.05 258);
-  --brand-border: oklch(40% 0.09 258);
-  --scrollbar-track: oklch(16% 0.008 250);
-  --scrollbar-thumb: oklch(32% 0.012 250);
-  --scrollbar-thumb-hover: oklch(42% 0.016 250);
+  --canvas: #0c100e;
+  --surface: #121714;
+  --surface-hover: #18201b;
+  --surface-subtle: #1a241e;
+  --border-subtle: #222c25;
+  --border-hover: #334238;
+  --text-primary: #f2f5f3;
+  --text-secondary: #c9d4cd;
+  --text-muted: #798a80;
+  --brand: #8da896;
+  --brand-hover: #a3bea9;
+  --brand-subtle: #19261e;
+  --brand-border: #2e4235;
+  --scrollbar-track: #0c100e;
+  --scrollbar-thumb: #222c25;
+  --scrollbar-thumb-hover: #334238;
 }
 
 @layer base {
@@ -54,13 +52,12 @@
     margin: 0;
     background-color: var(--canvas);
     color: var(--text-primary);
-    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
     overflow-y: scroll;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   :focus-visible {
@@ -74,9 +71,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Instrument Sans", -apple-system, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
     color: var(--text-primary);
     text-wrap: balance;
     overflow-wrap: break-word;
@@ -89,16 +86,16 @@
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.65;
     color: var(--text-secondary);
   }
 
   code,
-  .font-mono,
   [data-tabular] {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-feature-settings: "tnum" 1, "zero" 1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, sans-serif;
+    font-feature-settings: "tnum" 1;
     font-variant-numeric: tabular-nums;
   }
 }
@@ -126,7 +123,6 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 9999px;
   background: var(--scrollbar-thumb);
-  border: 2px solid var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);

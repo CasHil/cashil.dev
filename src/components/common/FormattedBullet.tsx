@@ -1,4 +1,3 @@
-
 interface FormattedBulletProps {
   text: string;
   bulletColor?: string;
@@ -7,10 +6,10 @@ interface FormattedBulletProps {
 
 export default function FormattedBullet({
   text,
-  bulletColor = "bg-emerald-600 dark:bg-emerald-400",
-  className = "flex items-start gap-2.5 leading-relaxed text-sm sm:text-base text-zinc-600 dark:text-zinc-300",
+  bulletColor = "bg-brand/70",
+  className = "flex items-start gap-2.5 leading-relaxed text-sm sm:text-base text-text-secondary",
 }: FormattedBulletProps) {
-  // Strip leading list bullet or hyphen prefix (e.g. "• ", "- ", "– ") if present, without stripping markdown bold `**`
+  // Strip leading list bullet or hyphen prefix if present
   const clean = text.replace(/^(?:[•\u2013\u2014]|\-(?!\*))\s*/, "").trim();
   const match = clean.match(/^\*\*(.+?)\*\*[:\-—]?\s*(.*)$/);
 
@@ -23,7 +22,7 @@ export default function FormattedBullet({
       <span>
         {match ? (
           <>
-            <strong className="font-semibold text-zinc-950 dark:text-zinc-100">
+            <strong className="font-semibold text-text-primary">
               {match[1]}:
             </strong>{" "}
             {match[2]}

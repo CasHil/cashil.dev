@@ -27,7 +27,7 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "feb 2025",
       endDate: "Heden",
       current: true,
-      text: "**Zakelijk Webportaal**: Bouwen en onderhouden van webapplicaties in TypeScript en React voor betaalverzoeken, transactieoverzichten en zakelijk accountbeheer.\n**Klant-onboarding & AWS**: Ontwikkelen van backend-onboardingworkflows en services op AWS voor verificatie van bedrijfsgegevens en automatische activatie.\n**Uitbetalingen & Saldo**: Ondersteunen van uitbetalingsprocessen zodat zakelijke verrekeningen accuraat en tijdig worden uitgevoerd.",
+      text: "**Zakelijk Webportaal**: Bouwen en onderhouden van webapplicaties in TypeScript en React voor betaalverzoeken, transactieoverzichten en zakelijk accountbeheer.\n**Klant-onboarding & AWS**: Ontwikkelen van backend-onboardingworkflows en services op AWS voor verificatie van bedrijfsgegevens en automatische activatie.\n**Uitbetalingen & Saldo**: Beheren van uitbetalingsprocessen en transactiereconciliatie zodat zakelijke verrekeningen accuraat en tijdig verlopen.",
       skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding", "Uitbetalingen"],
       category: "engineering",
       tier: "featured",
@@ -38,11 +38,11 @@ export const nlExperience: WorkExperienceTranslations = {
     },
     {
       title: "Bitsized",
-      subtitle: "Medeoprichter & Frontend Engineer",
+      subtitle: "Medeoprichter & Lead Frontend Engineer",
       startDate: "jan 2023",
       endDate: "feb 2025",
-      text: "**Behoeften in het Onderwijs**: Nauw samengewerkt met docenten informatica om knelpunten in de lespraktijk te achterhalen en passende softwareoplossingen te ontwerpen.\n**Frontend-ontwikkeling**: Een overzichtelijke webapplicatie gebouwd in React en TypeScript waarmee leerlingen direct in de browser konden programmeren zonder installatiegedoe.\n**Begrijpelijke Feedback**: Eenvoudige opgaveverdeling en vriendelijke feedbackworkflows ontworpen om leerlingen gemotiveerd te houden zonder cryptische foutmeldingen.",
-      skills: ["TypeScript", "React", "Node.js", "Didactische UX", "Onderwijstools"],
+      text: "**In-Browser Sandboxing**: Client-side Python-executie ontwikkeld met behulp van Web Workers en watchdogs, waardoor leerlingen veilig kunnen programmeren zonder serveroverhead.\n**Tools voor Docenten**: Realtime voortgangsdashboards en lesbeheer gebouwd in React en TypeScript in directe samenwerking met Nederlandse docenten.\n**AST-Gedreven Feedback**: Syntax- en runtimediagnostiek ontworpen op basis van Abstract Syntax Trees voor directe en begrijpelijke feedback aan leerlingen.",
+      skills: ["TypeScript", "React", "Node.js", "Didactische UX", "Onderwijstools", "Web Workers"],
       category: "engineering",
       tier: "featured",
       image: {

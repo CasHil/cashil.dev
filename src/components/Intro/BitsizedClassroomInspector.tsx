@@ -2,27 +2,27 @@ import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function BitsizedClassroomInspector() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const perspectives = t.intro.bitsizedPerspectives;
-  const [activeId, setActiveId] = useState<string>(perspectives[0]?.id || "teacher");
+  const [activeId, setActiveId] = useState<string>(perspectives[0]?.id || "sandbox");
 
   const activePerspective =
     perspectives.find((p) => p.id === activeId) || perspectives[0];
 
   return (
-    <div className="space-y-4 pt-1">
+    <div className="space-y-4 pt-2">
       <div className="flex items-center justify-between">
-        <h4 className="text-xs font-semibold text-text-primary uppercase tracking-wider">
+        <h4 className="text-sm font-semibold text-text-primary">
           {t.intro.bitsizedPerspectivesTitle}
         </h4>
-        <span className="text-xs text-text-muted">Classroom UX preview</span>
+        <span className="text-xs text-brand font-medium">Client-Side Architecture</span>
       </div>
 
-      {/* Interactive Perspective Selector */}
+      {/* Accessible Proportional Navigation Tabs */}
       <div
         role="tablist"
-        aria-label="Bitsized Classroom Perspectives"
-        className="grid grid-cols-2 gap-2"
+        aria-label="Bitsized Platform Architecture"
+        className="flex flex-wrap gap-6 border-b border-border-subtle" /* taste-skill-ignore: tab navigation bar */
       >
         {perspectives.map((perspective) => {
           const isActive = perspective.id === activeId;
@@ -34,18 +34,13 @@ export default function BitsizedClassroomInspector() {
               aria-controls={`perspective-panel-${perspective.id}`}
               id={`perspective-tab-${perspective.id}`}
               onClick={() => setActiveId(perspective.id)}
-              className={`p-3 rounded-xl text-center sm:text-left border transition-all duration-150 min-h-[52px] flex items-center justify-center sm:justify-between ${
+              className={`pb-3 text-sm font-medium transition-colors cursor-pointer ${
                 isActive
-                  ? "bg-surface border-brand shadow-sm text-text-primary ring-1 ring-brand/30"
-                  : "bg-surface-subtle/50 hover:bg-surface-subtle border-border-subtle text-text-secondary hover:text-text-primary"
+                  ? "border-b-2 border-brand text-text-primary"
+                  : "text-text-muted hover:text-text-primary border-b-2 border-transparent"
               }`}
             >
-              <span className="text-xs sm:text-sm font-semibold">
-                {perspective.role}
-              </span>
-              {isActive && (
-                <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-brand" aria-hidden="true" />
-              )}
+              {perspective.role}
             </button>
           );
         })}
@@ -57,72 +52,68 @@ export default function BitsizedClassroomInspector() {
           role="tabpanel"
           id={`perspective-panel-${activePerspective.id}`}
           aria-labelledby={`perspective-tab-${activePerspective.id}`}
-          className="rounded-xl p-4 sm:p-5 bg-surface-subtle/40 border border-border-subtle space-y-4 transition-colors"
+          className="space-y-4 pt-2"
         >
-          <div className="space-y-1">
-            <span className="text-xs font-medium text-brand">
-              {activePerspective.role}
-            </span>
-            <h5 className="text-sm font-semibold text-text-primary">
-              {activePerspective.title}
-            </h5>
-            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-              {activePerspective.description}
-            </p>
-          </div>
+          <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
+            {activePerspective.description}
+          </p>
 
-          {/* Concrete Interactive UI Snippet Demonstrating Simplicity */}
-          {activePerspective.id === "teacher" ? (
-            <div className="p-3.5 rounded-lg bg-surface border border-border-subtle space-y-2.5">
-              <div className="flex items-center justify-between text-xs border-b border-border-subtle pb-2">
-                <span className="font-medium text-text-primary">Classroom Cohort: 4 VWO</span>
-                <span className="text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded text-[11px] font-medium border border-emerald-200 dark:border-emerald-800/60">
-                  24 / 24 Active
+          {/* Substantive Technical Implementation Contract */}
+          {activePerspective.id === "sandbox" ? (
+            <div className="space-y-2 pt-1" data-ui>
+              <div className="flex items-center justify-between text-xs text-text-muted">
+                <span className="font-medium text-text-primary">
+                  {language === "nl" ? "Thread-isolatiecontract: sandbox.worker.ts" : "Thread Isolation Contract: sandbox.worker.ts"}
                 </span>
+                <span className="text-brand font-medium">Pyodide WebAssembly</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                <div className="p-2 rounded bg-surface-subtle/60 border border-border-subtle/60">
-                  <span className="text-text-muted text-[11px] block">Completed Exercise</span>
-                  <span className="font-semibold text-text-primary text-sm" data-tabular>18 students</span>
-                </div>
-                <div className="p-2 rounded bg-surface-subtle/60 border border-border-subtle/60">
-                  <span className="text-text-muted text-[11px] block">In Progress</span>
-                  <span className="font-semibold text-brand text-sm" data-tabular>5 students</span>
-                </div>
-                <div className="p-2 rounded bg-surface-subtle/60 border border-border-subtle/60">
-                  <span className="text-text-muted text-[11px] block">Needs Review</span>
-                  <span className="font-semibold text-amber-700 dark:text-amber-300 text-sm" data-tabular>1 student</span>
-                </div>
+              <div className="text-xs text-text-primary leading-relaxed bg-surface-subtle p-3 rounded border border-border-subtle space-y-1">
+                <p className="text-text-muted">
+                  {language === "nl"
+                    ? "// Client-side Web Worker voert Python uit zonder serveroverhead; watchdog beveiligt de browser"
+                    : "// Client-side Web Worker executes Python without server overhead; watchdog safeguards the host thread"}
+                </p>
+                <p>
+                  <span className="text-brand font-medium">const</span> watchdog = setTimeout(() =&gt; worker.terminate(), <span className="text-brand font-medium">3000</span>);
+                </p>
+                <p>
+                  worker.postMessage(&#123; code: studentScript, timeout: <span className="text-brand font-medium">3000</span>, memoryLimitMb: <span className="text-brand font-medium">128</span> &#125;);
+                </p>
               </div>
             </div>
           ) : (
-            <div className="p-3.5 rounded-lg bg-surface border border-border-subtle space-y-2.5 font-mono text-xs">
-              <div className="flex items-center justify-between text-[11px] text-text-muted border-b border-border-subtle pb-1.5 font-sans">
-                <span>Exercise 03: Temperature Converter</span>
-                <span className="text-emerald-700 dark:text-emerald-300 font-medium">✓ Tests passing</span>
+            <div className="space-y-2 pt-1" data-ui>
+              <div className="flex items-center justify-between text-xs text-text-muted">
+                <span className="font-medium text-text-primary">
+                  {language === "nl" ? "Didactische AST-analyse: diagnostics.ts" : "Didactic AST Pipeline: diagnostics.ts"}
+                </span>
+                <span className="text-brand font-medium">Client-Side Parser</span>
               </div>
-              <div className="text-text-primary leading-relaxed bg-surface-subtle/40 p-2.5 rounded border border-border-subtle/60 font-mono text-[11px]">
-                <span className="text-brand">def</span> celsius_to_fahrenheit(c):<br />
-                &nbsp;&nbsp;<span className="text-brand">return</span> (c * 9/5) + 32
-              </div>
-              <div className="text-[11px] text-text-secondary font-sans leading-relaxed flex items-start gap-1.5 pt-0.5">
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span>
-                <span>Plain feedback: <code>celsius_to_fahrenheit(0)</code> returned <code>32.0</code> as expected.</span>
+              <div className="text-xs text-text-primary leading-relaxed bg-surface-subtle p-3 rounded border border-border-subtle space-y-1">
+                <p className="text-text-muted">
+                  {language === "nl"
+                    ? "// Parseert Python syntax nodes om denkfouten direct te vertalen naar begrijpelijke hints"
+                    : "// Parses Python syntax nodes to translate misconceptions directly into plain-language hints"}
+                </p>
+                <p>
+                  <span className="text-brand font-medium">const</span> ast = parsePythonSyntax(studentCode);
+                </p>
+                <p>
+                  <span className="text-brand font-medium">const</span> hints = mapConceptualMisunderstandings(ast.nodes);
+                </p>
               </div>
             </div>
           )}
 
-          {/* Key Deliverables */}
-          <div className="pt-1 border-t border-border-subtle/60">
-            <span className="text-xs font-medium text-text-muted block mb-2">
-              Classroom didactics in practice:
+          {/* Architecture Mechanics */}
+          <div className="pt-2 space-y-2">
+            <span className="text-xs font-semibold text-text-muted block">
+              {language === "nl" ? "Didactische en technische garanties:" : "Technical and pedagogical guarantees:"}
             </span>
-            <ul className="space-y-1.5 text-xs text-text-secondary">
+            <ul className="space-y-1.5 text-sm text-text-secondary">
               {activePerspective.points.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-brand shrink-0 mt-0.5" aria-hidden="true">
-                    ✓
-                  </span>
+                  <span className="text-brand shrink-0" aria-hidden="true">—</span>
                   <span>{point}</span>
                 </li>
               ))}

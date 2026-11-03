@@ -54,7 +54,7 @@ export default function Cv() {
   return (
     <div className="space-y-6">
       {/* Header & Controls Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-border-subtle">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4">
         <div>
           <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-text-primary">
             {t.cv.title}
@@ -133,7 +133,7 @@ export default function Cv() {
           <a
             href={pdfUrl}
             download={pdfFileName}
-            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-medium text-xs shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-medium text-xs hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
@@ -145,7 +145,7 @@ export default function Cv() {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs shadow-sm hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
@@ -156,8 +156,9 @@ export default function Cv() {
       {viewMode === "sheet" ? (
         /* Native ATS Document Sheet */
         <article
+          data-ui
           aria-label="Curriculum Vitae Document"
-          className="rounded-xl p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
+          className="rounded-xl p-6 sm:p-10 bg-surface border border-border-subtle space-y-8 print:p-0 print:border-none print:shadow-none"
         >
           {/* Document Header */}
           <header className="border-b border-border-subtle pb-6 space-y-2">
@@ -210,14 +211,14 @@ export default function Cv() {
           <section aria-labelledby="cv-profile-heading" className="space-y-3">
             <h3
               id="cv-profile-heading"
-              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
             >
               {isNl ? "Profiel" : "Profile"}
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {isNl
-                ? "Software engineer bij Tikkie Zakelijk (ABN AMRO) met een dubbele Master in Computer Science en Science Education van de TU Delft. Ervaren in TypeScript, React, Node.js, AWS en onboarding- en uitbetalingsprocessen. Gericht op eenvoud, heldere interfaces en betrouwbare cloudservices."
-                : "Software engineer at Tikkie Business (ABN AMRO) with a double Master's degree in Computer Science and Science Education from Delft University of Technology. Experienced across TypeScript, React, Node.js, AWS, and client onboarding/payout systems. Focused on simplicity, clean interfaces, and dependable cloud services."}
+                ? "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO) met een dubbele Master in Computer Science en Science Education van de TU Delft. Gespecialiseerd in TypeScript, React, Node.js en AWS serverless architecturen voor zakelijke onboarding en uitbetalingssystemen. Gedreven door technische diepgang en didactische helderheid."
+                : "Full-stack software engineer at Tikkie Business (ABN AMRO) with a double Master's degree in Computer Science and Science Education from Delft University of Technology. Experienced in TypeScript, React, Node.js, and AWS serverless architectures for merchant onboarding and automated payouts. Driven by systems rigor and didactic clarity."}
             </p>
           </section>
 
@@ -225,7 +226,7 @@ export default function Cv() {
           <section aria-labelledby="cv-experience-heading" className="space-y-6">
             <h3
               id="cv-experience-heading"
-              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
             >
               {isNl ? "Werkervaring" : "Experience"}
             </h3>
@@ -262,7 +263,7 @@ export default function Cv() {
           <section aria-labelledby="cv-education-heading" className="space-y-6">
             <h3
               id="cv-education-heading"
-              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
             >
               {isNl ? "Opleiding & Onderzoek" : "Education & Research"}
             </h3>
@@ -299,7 +300,7 @@ export default function Cv() {
           <section aria-labelledby="cv-skills-heading" className="space-y-3">
             <h3
               id="cv-skills-heading"
-              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
             >
               {isNl ? "Technische Competenties" : "Technical Competencies"}
             </h3>
@@ -320,13 +321,13 @@ export default function Cv() {
       ) : (
         /* Embedded PDF Object View */
         <div className="relative w-full rounded-xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-xs">
-          <div className="sm:hidden p-4 bg-surface border-b border-border-subtle text-xs text-text-secondary flex flex-col gap-3">
+          <div className="sm:hidden p-4 bg-surface border-b-2 border-border-subtle text-xs text-text-secondary flex flex-col gap-3">
             <span className="leading-relaxed">{t.cv.mobilePrompt}</span>
             <a
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand text-white font-medium text-xs shadow-sm hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[44px] w-full"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-brand text-white font-medium text-xs hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[44px] w-full"
             >
               <span>{t.cv.viewFullscreen}</span>
               <span className="text-xs opacity-75 uppercase">({pdfLang})</span>

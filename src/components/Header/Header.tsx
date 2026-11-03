@@ -14,8 +14,8 @@ export default function Header({
   const { t } = useLanguage();
 
   const navItems = [
-    { to: "/", label: <span>{t.nav.overview}</span> },
-    { to: "/cv", label: <span>{t.nav.cv}</span> },
+    { to: "/", label: t.nav.overview },
+    { to: "/cv", label: t.nav.cv },
     {
       to: "/work-experience",
       label: (
@@ -25,52 +25,50 @@ export default function Header({
         </>
       ),
     },
-    { to: "/education", label: <span>{t.nav.education}</span> },
+    { to: "/education", label: t.nav.education },
   ];
 
   const isVertical = orientation === "vertical";
 
   return (
-    <header aria-label="Main Navigation">
-      <nav aria-label="Site Links">
-        <ul
-          role="list"
-          className={
-            isVertical
-              ? "flex flex-col space-y-1"
-              : "flex flex-nowrap sm:flex-wrap items-center gap-1 sm:gap-1.5 overflow-x-auto sm:overflow-visible no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0"
-          }
-        >
-          {navItems.map((item) => (
-            <li key={item.to} className="shrink-0">
-              <NavLink
-                to={item.to}
-                onClick={handleClick}
-                className={({ isActive }) =>
-                  `relative px-3 sm:px-3 py-2 sm:py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-flex items-center min-h-[40px] sm:min-h-0 rounded-md shrink-0 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
-                    isActive
-                      ? "text-zinc-950 dark:text-white font-semibold"
-                      : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    <span className="relative z-10">{item.label}</span>
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavIndicator"
-                        className="absolute -bottom-3 left-1.5 right-1.5 h-[2px] rounded-full bg-brand"
-                        transition={{ type: "spring", stiffness: 500, damping: 36 }}
-                      />
-                    )}
-                  </>
-                )}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <nav aria-label="Main Navigation">
+      <ul
+        role="list"
+        className={
+          isVertical
+            ? "flex flex-col space-y-1"
+            : "flex items-center gap-1 p-1 rounded-xl bg-surface-subtle/50 border border-border-subtle"
+        }
+      >
+        {navItems.map((item) => (
+          <li key={item.to} className="shrink-0">
+            <NavLink
+              to={item.to}
+              onClick={handleClick}
+              className={({ isActive }) =>
+                `relative px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 inline-flex items-center justify-center rounded-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                  isActive
+                    ? "text-text-primary font-semibold"
+                    : "text-text-muted hover:text-text-primary hover:bg-surface-subtle"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <span className="relative z-10">{item.label}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavPill"
+                      className="absolute inset-0 bg-surface rounded-lg shadow-xs border border-border-subtle"
+                      transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                    />
+                  )}
+                </>
+              )}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
