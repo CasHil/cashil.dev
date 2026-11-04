@@ -11,7 +11,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.88 }}
-      className="relative inline-flex items-center justify-center h-9 w-9 sm:h-8 sm:w-8 rounded-full border border-zinc-200/80 dark:border-white/10 bg-zinc-200/60 dark:bg-zinc-800/60 hover:bg-zinc-200 dark:hover:bg-zinc-700/80 text-zinc-700 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 after:absolute after:-inset-1 sm:after:inset-0"
+      className="relative inline-flex items-center justify-center h-9 w-9 sm:h-8 sm:w-8 rounded-squircle-sm border border-zinc-200/80 dark:border-white/10 bg-zinc-200/60 dark:bg-zinc-800/60 hover:bg-zinc-200 dark:hover:bg-zinc-700/80 text-zinc-700 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 after:absolute after:-inset-1 sm:after:inset-0"
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >

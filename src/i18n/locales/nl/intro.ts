@@ -5,9 +5,9 @@ export const nlIntro: IntroTranslations = {
   heroTitle:
     "Software engineer bij Tikkie Zakelijk en docent informatica.",
   bioParagraph1:
-    "Bij Tikkie Zakelijk (ABN AMRO via Harvest) ontwikkel ik zakelijke webapplicaties in TypeScript en React, samen met backendservices op AWS voor merchant-onboarding en uitbetalingsprocessen.",
+    "Bij Tikkie Zakelijk (ABN AMRO via Harvest) ontwikkel ik zakelijke webapplicaties in TypeScript en React, samen met cloud-backendservices op AWS voor merchant-onboarding en uitbetalingsprocessen.",
   bioParagraph2:
-    "Met dubbele Mastertitels in Computer Science en Science Education van de TU Delft hecht ik veel waarde aan eenvoud, heldere interfaces en software die onderhoudbaar blijft naarmate teams groeien.",
+    "Met dubbele Mastertitels in Computer Science en Science Education van de TU Delft combineer ik technische diepgang met didactische helderheid: onderhoudbare software bouwen, heldere interfaces ontwerpen en teamgenoten helpen floreren.",
   viewCv: "Curriculum Vitae",
   exploreWork: "Bekijk Werkervaring",
   featuredHeading: "Uitgelicht Werk",
@@ -25,7 +25,7 @@ export const nlIntro: IntroTranslations = {
     "Ontwikkelen van backend-onboardingworkflows en services op AWS voor verificatie van bedrijfsgegevens en automatische activatie.",
     "Ondersteunen van uitbetalingsprocessen en transactiereconciliatie zodat zakelijke uitbetalingen accuraat en tijdig verlopen.",
   ],
-  tikkieStack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Onboarding", "Uitbetalingen"],
+  tikkieStack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
   tikkieLink: "Bekijk in Werkervaring",
 
   // Bitsized Flagship
@@ -36,36 +36,21 @@ export const nlIntro: IntroTranslations = {
     "Medeoprichter van een educatief platform voor informaticaonderwijs op Nederlandse middelbare scholen, gericht op programmeren zonder installatiegedoe.",
   bitsizedPoints: [
     "Directe samenwerking met informaticadocenten op middelbare scholen om praktische behoeften in de lesruimte te vertalen naar effectieve software.",
-    "Bouwen van een toegankelijke webapplicatie in React waarmee leerlingen direct in de browser programmeren zonder lokale configuratie.",
+    "Bouwen van een toegankelijke webapplicatie met Vue.js en het Meteor-framework waarmee leerlingen direct in de browser programmeren.",
     "Ontwerpen van heldere opdrachtdistributie en begrijpelijke feedback voor leerlingen zonder intimiderende foutmeldingen.",
   ],
-  bitsizedStack: ["TypeScript", "React", "Node.js", "Onderwijssoftware", "Webdevelopment"],
+  bitsizedStack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
   bitsizedLink: "Bekijk in Werkervaring",
 
-  // Engineering Ethos
-  ethosTag: "Engineeringprincipes",
-  ethosTitle: "Mijn Aanpak in Software",
-  ethosSubtitle:
-    "Engineeringprincipes gevormd door productiesystemen en didactische praktijk",
-  ethosDescription:
-    "Betrouwbare software vraagt om zowel technische precisie als heldere communicatie. Ik ontwerp voor eenvoud, stabiliteit en teamsnelheid.",
-  ethosPillars: [
-    {
-      title: "Eenvoud van Systemen",
-      description:
-        "Vermijden van onnodige complexiteit en overbodige afhankelijkheden. Duidelijke interfaces, deterministische states en voorspelbare datastromen maken systemen eenvoudiger te testen, debuggen en onderhouden.",
-    },
-    {
-      title: "Productierigor",
-      description:
-        "Ondersteunen van implementaties met strikte TypeScript-types, geautomatiseerde Vitest-suites en gestructureerde foutafhandeling. Systemen moeten expliciet en veilig falen.",
-    },
-    {
-      title: "Didactische Helderheid",
-      description:
-        "Onderwijservaring inzetten voor nauwkeurige technische documentatie, constructieve code-reviews en transparante architectuurkeuzes binnen het team.",
-    },
-  ],
+  // Technology Experience Live Counter
+  techHeading: "Technologische Ervaring",
+  techSubtitle: "Continue productie- en onderwijservaring met kerntechnologieën",
+  techLiveBadge: "Werkt live per minuut bij",
+
+  // Teaching & Mentorship
+  mentorshipHeading: "Onderwijs & Teamgenoten Helpen Floreren",
+  mentorshipDescription:
+    "Met een formele eerstegraads onderwijsbevoegdheid in de informatica beschouw ik heldere communicatie en mentorschap als fundamentele engineeringvaardigheden. Schone code, constructieve code-reviews en duidelijke documentatie verhogen de teamsnelheid en helpen iedereen het beste uit zichzelf te halen.",
   outsideTitle: "Buiten Software Engineering",
   outsideDescription:
     "Buiten software engineering speel ik elektrische basgitaar en schaak ik.",

@@ -29,6 +29,12 @@ module.exports = {
           border: "var(--brand-border)",
         },
       },
+      borderRadius: {
+        "squircle-sm": "12px",
+        squircle: "18px",
+        "squircle-lg": "24px",
+        "squircle-xl": "32px",
+      },
       fontFamily: {
         serif: ['"Newsreader"', "Georgia", "serif"],
         display: ['"Newsreader"', "Georgia", "serif"],

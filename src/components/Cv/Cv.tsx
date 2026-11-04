@@ -35,19 +35,19 @@ export default function Cv() {
     },
     {
       category: "Frontend:",
-      items: "React, Vite, Tailwind CSS, Web Workers, Next.js, Accessibility (a11y)",
+      items: "React, Vue.js, Vite, Tailwind CSS, Next.js, Web Workers, Accessibility (a11y)",
     },
     {
       category: "Backend & Cloud:",
-      items: "Node.js, Express, AWS (Lambda, S3, RDS), RESTful APIs, Docker",
+      items: "Node.js, Meteor, Express, AWS (Lambda, DynamoDB, S3), RESTful APIs, Docker",
     },
     {
-      category: isNl ? "Data & Systemen:" : "Data & Systems:",
-      items: "Relational Data Modeling, Clickstream Analysis, Pandas, Agentic Engineering, Temporal Workflows",
+      category: isNl ? "Databases & Architectuur:" : "Databases & Architecture:",
+      items: "PostgreSQL, MySQL, MongoDB, Relational Data Modeling, Event-Driven Systems",
     },
     {
       category: isNl ? "Methodieken:" : "Practices:",
-      items: "Git, GitHub Actions, CI/CD, Unit Testing (Vitest, Jest), Curriculum Design, Technical Writing",
+      items: "Git, GitHub Actions, CI/CD, Unit Testing (Vitest, Jest), Curriculum Design, Mentorship",
     },
   ];
 
@@ -69,12 +69,12 @@ export default function Cv() {
           <div
             role="group"
             aria-label="CV presentation mode"
-            className="inline-flex items-center text-xs font-medium rounded-lg bg-surface-subtle p-0.5 border border-border-subtle"
+            className="inline-flex items-center text-xs font-medium rounded-squircle-sm bg-surface-subtle p-0.5 border border-border-subtle"
           >
             <button
               type="button"
               onClick={() => setViewMode("sheet")}
-              className={`px-3 py-1.5 rounded-md transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
                 viewMode === "sheet"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -85,7 +85,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setViewMode("pdf")}
-              className={`px-3 py-1.5 rounded-md transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
                 viewMode === "pdf"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -99,12 +99,12 @@ export default function Cv() {
           <div
             role="group"
             aria-label={t.cv.pdfLanguageLabel}
-            className="inline-flex items-center text-xs font-medium rounded-lg bg-surface-subtle p-0.5 border border-border-subtle"
+            className="inline-flex items-center text-xs font-medium rounded-squircle-sm bg-surface-subtle p-0.5 border border-border-subtle"
           >
             <button
               type="button"
               onClick={() => setPdfLang("en")}
-              className={`px-2.5 py-1.5 rounded-md transition-colors duration-150 ${
+              className={`px-2.5 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
                 pdfLang === "en"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -117,7 +117,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setPdfLang("nl")}
-              className={`px-2.5 py-1.5 rounded-md transition-colors duration-150 ${
+              className={`px-2.5 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
                 pdfLang === "nl"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -129,23 +129,23 @@ export default function Cv() {
             </button>
           </div>
 
-          {/* Download PDF Button (No glued arrow, Gate 63) */}
+          {/* Download PDF Button */}
           <a
             href={pdfUrl}
             download={pdfFileName}
-            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand text-white font-medium text-xs hover:bg-brand-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-squircle bg-brand text-white font-medium text-xs hover:bg-brand-hover active:scale-[0.98] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
             <span className="text-xs opacity-75 uppercase">({pdfLang})</span>
           </a>
 
-          {/* Open in New Tab Button (No glued arrow, Gate 63) */}
+          {/* Open in New Tab Button */}
           <a
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg border border-border-subtle bg-surface text-text-primary font-medium text-xs hover:border-border-hover hover:bg-surface-hover active:scale-[0.99] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center px-3 py-1.5 rounded-squircle border border-border-subtle bg-surface text-text-primary font-medium text-xs hover:border-border-hover hover:bg-surface-hover active:scale-[0.98] transition-colors duration-150 min-h-[34px]"
             aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
@@ -158,7 +158,7 @@ export default function Cv() {
         <article
           data-ui
           aria-label="Curriculum Vitae Document"
-          className="rounded-xl p-6 sm:p-10 bg-surface border border-border-subtle space-y-8 print:p-0 print:border-none print:shadow-none"
+          className="rounded-squircle-lg p-6 sm:p-10 bg-surface border border-border-subtle space-y-8 print:p-0 print:border-none print:shadow-none"
         >
           {/* Document Header */}
           <header className="border-b border-border-subtle pb-6 space-y-2">
@@ -217,8 +217,8 @@ export default function Cv() {
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {isNl
-                ? "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO) met een dubbele Master in Computer Science en Science Education van de TU Delft. Gespecialiseerd in TypeScript, React, Node.js en AWS serverless architecturen voor zakelijke onboarding en uitbetalingssystemen. Gedreven door technische diepgang en didactische helderheid."
-                : "Full-stack software engineer at Tikkie Business (ABN AMRO) with a double Master's degree in Computer Science and Science Education from Delft University of Technology. Experienced in TypeScript, React, Node.js, and AWS serverless architectures for merchant onboarding and automated payouts. Driven by systems rigor and didactic clarity."}
+                ? "Full-stack software engineer bij Tikkie Zakelijk (ABN AMRO) met een dubbele Master in Computer Science en Science Education van de TU Delft. Ervaren in TypeScript, React, Vue.js, Node.js en AWS cloudworkflows. Combineert technische diepgang met didactische helderheid om onderhoudbare systemen te bouwen en teamgenoten te helpen floreren."
+                : "Full-stack software engineer at Tikkie Business (ABN AMRO) with a double Master's degree in Computer Science and Science Education from Delft University of Technology. Experienced across TypeScript, React, Vue.js, Node.js, and AWS cloud workflows. Bringing a teacher's clarity and mentorship mindset to build maintainable systems and help engineering teams thrive."}
             </p>
           </section>
 

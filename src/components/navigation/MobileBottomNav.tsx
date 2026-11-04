@@ -54,7 +54,7 @@ export default function MobileBottomNav() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-1.5 px-2 rounded-xl min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              `flex flex-col items-center justify-center py-1.5 px-2 rounded-squircle-sm min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isActive
                   ? "text-brand font-semibold"
                   : "text-text-muted hover:text-text-primary"

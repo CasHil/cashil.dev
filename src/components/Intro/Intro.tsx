@@ -1,8 +1,8 @@
 import { useLanguage } from "../../context/LanguageContext";
 import HeroSection from "./HeroSection";
-import EngineeringEthos from "./EngineeringEthos";
 import TikkieShowcase from "./TikkieShowcase";
 import BitsizedShowcase from "./BitsizedShowcase";
+import TechExperienceTracker from "../common/TechExperienceTracker";
 
 export default function Intro() {
   const { t } = useLanguage();
@@ -37,8 +37,34 @@ export default function Intro() {
         </div>
       </section>
 
-      {/* 3. Core Engineering Approach */}
-      <EngineeringEthos />
+      {/* 3. Technology Experience Counters */}
+      <TechExperienceTracker />
+
+      {/* 4. Mentorship & Beyond Engineering */}
+      <section aria-labelledby="mentorship-heading" className="space-y-6 pt-4">
+        <div className="space-y-2">
+          <h2
+            id="mentorship-heading"
+            className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary"
+          >
+            {t.intro.mentorshipHeading}
+          </h2>
+          <p className="text-base text-text-secondary leading-relaxed max-w-[70ch]">
+            {t.intro.mentorshipDescription}
+          </p>
+        </div>
+
+        <div className="pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 text-sm">
+          <div>
+            <span className="font-medium text-text-primary block">
+              {t.intro.outsideTitle}
+            </span>
+            <span className="text-text-secondary mt-0.5 block">
+              {t.intro.outsideDescription}
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

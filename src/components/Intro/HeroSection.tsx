@@ -24,14 +24,14 @@ export default function HeroSection() {
       <div className="flex flex-wrap items-center gap-4 pt-2">
         <Link
           to="/work-experience"
-          className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-text-primary text-canvas font-medium text-sm hover:opacity-90 active:scale-[0.99] transition-opacity"
+          className="inline-flex items-center justify-center px-5 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-sm hover:opacity-90 active:scale-[0.99] transition-opacity"
         >
           <span>{t.intro.exploreWork}</span>
           <span className="ml-1.5" aria-hidden="true">→</span>
         </Link>
         <Link
           to="/cv"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-text-secondary hover:text-brand text-sm font-medium transition-colors underline underline-offset-4 decoration-border-hover hover:decoration-brand"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle text-text-secondary hover:text-brand text-sm font-medium transition-colors underline underline-offset-4 decoration-border-hover hover:decoration-brand"
         >
           {t.intro.viewCv}
         </Link>
