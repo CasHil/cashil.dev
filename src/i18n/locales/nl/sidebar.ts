@@ -16,5 +16,5 @@ export const nlSidebar: SidebarTranslations = {
   cvDownload: "Download PDF",
   copyEmail: "Kopieer e-mail",
   copiedEmail: "E-mail gekopieerd!",
-  timezone: "Amsterdam (CET)",
+  timezone: "Amsterdam",
 };

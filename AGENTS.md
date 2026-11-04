@@ -6,10 +6,16 @@
 - **Research Publication**: Master's thesis telemetry and publication citation are presented under `/education` linking to the official TU Delft repository.
 
 ## Tooling & Environment Constraints
-- **Shell**: Host is Windows PowerShell 5.1/7. Use `;` or sequential commands; never use `&&`.
+- **Shell**: Host is Windows PowerShell 5.1/7. Always run commands sequentially as separate invocations. Never join with `;`, `&&`, or wrap with `cmd /c` / `powershell -Command` as this breaks permission prefix matching.
 - **Node.js Runtime**: Project uses ES modules (`"type": "module"` in `package.json`). Scripts must use `import` or `.cjs` extensions.
-- **Sandbox**: Operations that inspect drive root `F:\` or run build/compilation binaries require `BypassSandbox: true`.
+- **Sandbox**: Operations within the repository execute sandboxed (`BypassSandbox: false`). Only escalate to `BypassSandbox: true` when external network access or host-specific binaries (e.g., Tectonic package downloads) strictly require it.
 - **Cloudflare**: Use the `cf` CLI unless the project has a Wrangler configuration file.
+
+## Git & PR Workflow
+- **Branch-Isolated Development**: Develop all changes on dedicated branches (`feat/*` or `chore/*`). Never commit or push directly to `main` or `master`.
+- **Automated Verification**: Always run `pnpm test run` and `pnpm run build` locally before pushing.
+- **PR Lifecycle**: Push to branch (`git push -u origin <branch>`), open PR (`gh pr create`), and merge when verified (`gh pr merge <num> --merge --delete-branch`). Never use `git push --force`.
+
 
 ## Quality & Design Guardrails
 - **Anti-Slop Knowledge Base**: Before proposing copy, styling, or architecture changes, review `criticism.md` and `criticisms/README.md`. Adhere strictly to the 10-point Anti-Slop Prevention Checklist.

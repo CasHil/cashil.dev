@@ -45,7 +45,7 @@ export default function Masthead() {
           <nav aria-label="Direct Channels & Profiles" className="flex items-center text-text-muted gap-0.5">
             <a
               href="mailto:casperhildebrand@gmail.com"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              className="w-8 h-8 flex items-center justify-center rounded-squircle-sm hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="Send direct email"
               title="casperhildebrand@gmail.com"
             >
@@ -57,7 +57,7 @@ export default function Masthead() {
               href="https://github.com/CasHil"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              className="w-8 h-8 flex items-center justify-center rounded-squircle-sm hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="GitHub profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function Masthead() {
               href="https://www.linkedin.com/in/casper-hildebrand/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              className="w-8 h-8 flex items-center justify-center rounded-squircle-sm hover:bg-surface-subtle hover:text-text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               aria-label="LinkedIn profile"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

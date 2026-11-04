@@ -64,13 +64,13 @@ export default function Education() {
       <div className="pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <Link
           to="/cv"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-text-primary text-canvas font-medium text-xs sm:text-sm hover:opacity-90 active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-xs sm:text-sm hover:opacity-90 active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.outreach.cvBtn}
         </Link>
         <Link
           to="/work-experience"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-border-subtle bg-surface hover:bg-surface-hover text-text-primary font-medium text-xs sm:text-sm active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle border border-border-subtle bg-surface hover:bg-surface-hover text-text-primary font-medium text-xs sm:text-sm active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.workExperience.title}
         </Link>

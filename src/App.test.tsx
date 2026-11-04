@@ -150,3 +150,19 @@ test("renders mobile bottom navigation bar with thumb-zone controls across 4 des
   expect(eduLinks.length).toBeGreaterThan(0);
 });
 
+test("renders live technology experience tracker and authentic mentorship section", () => {
+  window.history.pushState({}, "", "/");
+  render(<App />);
+
+  // Technology Experience Counter section
+  expect(screen.getByText(/Technology Experience|Technologische Ervaring/i)).toBeInTheDocument();
+  expect(screen.getByText(/Updates live every minute|Werkt live per minuut bij/i)).toBeInTheDocument();
+  expect(screen.getByText(/TypeScript & JavaScript/i)).toBeInTheDocument();
+  expect(screen.getByText(/Vue\.js & Meteor/i)).toBeInTheDocument();
+  expect(screen.getByText(/AWS Cloud/i)).toBeInTheDocument();
+
+  // Authentic mentorship & outside engineering
+  expect(screen.getByText(/Teaching & Helping Teammates Thrive|Onderwijs & Teamgenoten Helpen Floreren/i)).toBeInTheDocument();
+  expect(screen.getByText(/electric bass guitar|elektrische basgitaar/i)).toBeInTheDocument();
+});
+

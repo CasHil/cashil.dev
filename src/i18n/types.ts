@@ -66,14 +66,13 @@ export interface IntroTranslations {
   bitsizedStack: string[];
   bitsizedLink: string;
   // Engineering Ethos / Philosophy
-  ethosTag: string;
-  ethosTitle: string;
-  ethosSubtitle: string;
-  ethosDescription: string;
-  ethosPillars: {
-    title: string;
-    description: string;
-  }[];
+  // Technology Experience Live Counter
+  techHeading: string;
+  techSubtitle: string;
+  techLiveBadge: string;
+  // Teaching & Mentorship
+  mentorshipHeading: string;
+  mentorshipDescription: string;
   outsideTitle: string;
   outsideDescription: string;
 }
