@@ -16,7 +16,7 @@ export default function TikkieShowcase() {
             {t.intro.tikkieSubtitle}
           </p>
         </div>
-        <span className="text-xs text-text-muted shrink-0">
+        <span className="text-xs text-text-muted shrink-0 tabular-nums">
           {t.intro.tikkieTag}
         </span>
       </div>
@@ -36,20 +36,26 @@ export default function TikkieShowcase() {
         ))}
       </ul>
 
-      {/* Technologies */}
-      <p className="text-sm text-text-muted leading-relaxed pt-1">
-        <strong className="text-text-primary font-medium">Stack:</strong>{" "}
-        {t.intro.tikkieStack.join(", ")}
-      </p>
+      {/* Technologies in clean proportional sans */}
+      <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs text-text-muted">
+        {t.intro.tikkieStack.map((tech, idx) => (
+          <span
+            key={idx}
+            className="px-2 py-0.5 rounded-md bg-surface-subtle border border-border-subtle text-text-secondary font-normal"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
 
       {/* Navigation Link */}
       <div className="pt-1">
         <Link
           to="/work-experience"
-          className="text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
+          className="group text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
         >
           <span>{t.intro.tikkieLink}</span>
-          <span aria-hidden="true">→</span>
+          <span className="transition-transform duration-150 group-hover:translate-x-0.5 inline-block" aria-hidden="true">→</span>
         </Link>
       </div>
     </article>

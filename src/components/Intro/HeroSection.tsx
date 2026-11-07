@@ -20,18 +20,18 @@ export default function HeroSection() {
         <p>{t.intro.bioParagraph2}</p>
       </div>
 
-      {/* Clear primary actions */}
+      {/* Clear primary actions (Emphasized CTA per Rule 10) */}
       <div className="flex flex-wrap items-center gap-4 pt-2">
         <Link
           to="/work-experience"
-          className="inline-flex items-center justify-center px-5 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-sm hover:opacity-90 active:scale-[0.99] transition-opacity"
+          className="group inline-flex items-center justify-center px-5 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           <span>{t.intro.exploreWork}</span>
-          <span className="ml-1.5" aria-hidden="true">→</span>
+          <span className="ml-1.5 transition-transform duration-150 group-hover:translate-x-0.5 inline-block" aria-hidden="true">→</span>
         </Link>
         <Link
           to="/cv"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle text-text-secondary hover:text-brand text-sm font-medium transition-colors underline underline-offset-4 decoration-border-hover hover:decoration-brand"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle text-text-secondary hover:text-brand text-sm font-medium transition-colors underline underline-offset-4 decoration-border-hover hover:decoration-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.intro.viewCv}
         </Link>

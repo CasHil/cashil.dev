@@ -18,13 +18,19 @@
 
 
 ## Quality & Design Guardrails
-- **Anti-Slop Knowledge Base**: Before proposing copy, styling, or architecture changes, review `criticism.md` and `criticisms/README.md`. Adhere strictly to the 10-point Anti-Slop Prevention Checklist.
+- **Anti-Slop Knowledge Base**: Before proposing copy, styling, or architecture changes, review `criticism.md`, `criticisms/README.md`, and `criticisms/08-twenty-ways-to-unslop-ai-designs.md`. Adhere strictly to the **20-point Anti-Slop Prevention Checklist**.
 - **Card Elevation**: Every card must feature a visible border and drop shadow (`shadow-sm hover:shadow-md`) on both mobile and desktop. Never strip borders or shadows on desktop (`sm:border-none sm:shadow-none`).
+- **Concentric Corner Radius ($R_{\text{inner}} = R_{\text{outer}} - P$)**: Always ensure nested corner radii follow $R_{\text{inner}} = \max(0, R_{\text{outer}} - P)$ to prevent pinched gaps and mismatched curves.
 - **Bilingual Parity**: Any copy added or modified in `src/i18n/` must maintain 100% symmetry between `en` and `nl`.
 - **Typography & Accessibility**: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` violations. Reserve `font-mono` strictly for code, syntax, paths, and stack chips.
 - **ATS Single-Page CV**: Never allow `cv/Casper_Hildebrand_CV.tex` or `cv/Casper_Hildebrand_CV_NL.tex` to spill onto page 2.
 
 ## Safety & File System Guardrails
-- **Strict Deletion Boundary**: NEVER run deletion commands (`Remove-Item`, `del`, `rmdir`, `rm`) on files or directories outside the project root (`f:\Projects\cashil.github.io`) and temporary scratch locations (`$env:TEMP`, `.gemini/.../scratch`). Deletion of external files, system roots, or arbitrary user directories is strictly prohibited.
-- **Scoped Writes**: Agents must never mutate or write files outside the workspace repository, the `.gemini` agent state directory, or the designated OS temp folder.
+- **Permitted File Modification & Deletion Whitelist**: File writes, mutations, and deletions (`Remove-Item`, `del`, `rmdir`, `rm`, `git rm`) are strictly prohibited outside:
+  1. `F:\Projects\` (project repositories)
+  2. `C:\Users\Casper\.gemini\` (Antigravity configs, scratch, tools)
+  3. `C:\Users\Casper\.claude\` (Claude configs, skills, memory)
+  4. `C:\Users\Casper\.agents\` (Agent skills and global rules)
+  5. OS temporary scratch locations (`$env:TEMP`, `.gemini/.../scratch`)
+  Modifying or deleting files outside these 5 locations is strictly prohibited.
 

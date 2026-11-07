@@ -28,6 +28,7 @@ The audits are arranged chronologically in the [`criticisms/`](./criticisms/) di
 - [**`criticisms/05-mobile-native-ux-and-touch-patterns.md`**](./criticisms/05-mobile-native-ux-and-touch-patterns.md): Desktop-ported top hamburger menu vs thumb-zone bottom navigation bar, mobile-native CV preview, micro touch targets (`<44px`), and horizontal scroll leakage.
 - [**`criticisms/06-no-ai-slop-copy-and-positioning-audit.md`**](./criticisms/06-no-ai-slop-copy-and-positioning-audit.md): Harvest traineeship puffery ("elite engineering fellowship"), unearned senior claims ("mentoring mid-level engineers"), thesis telemetry fixation obscuring software engineering, hiding the CS teaching superpower, and corporate throat-clearing jargon.
 - [**`criticisms/07-showmanship-featured-engineering-and-pruning-audit.md`**](./criticisms/07-showmanship-featured-engineering-and-pruning-audit.md): Over-correction into a sterile corporate morgue, 768px desktop void, static pseudo-architectural boxification in "Featured Engineering", sextuple redundancy, live Web Worker sandbox execution, and native Web Crypto HMAC verification showmanship.
+- [**`criticisms/08-twenty-ways-to-unslop-ai-designs.md`**](./criticisms/08-twenty-ways-to-unslop-ai-designs.md): Systematic enforcement of the 20 anti-slop rules: filler badge elimination, redundant label removal, unitalicized text, strict monospace boundaries, design system tokens, showing actual products, prominent CTAs, consistent icons, R_inner = R_outer - P concentricity, WCAG AA text contrast, headline wrapping, tabular nums, loading states, and useful feedback animation.
 
 ---
 
@@ -74,16 +75,26 @@ Any subagent modifying this codebase must actively avoid these eight recurring A
 Run this checklist before finalizing any changes:
 
 ```markdown
-- [ ] 1. Factual Grounding: Are all titles, dates, and roles 100% factual and aligned with Casper's LinkedIn and CV?
-- [ ] 2. No Unearned Seniority: Does copy avoid claiming unearned executive titles or non-existent mentorship of senior peers?
-- [ ] 3. Typographic Discipline: Is font-mono restricted strictly to code, syntax, paths, and stack chips?
-- [ ] 4. Physical Card Elevation: Does EVERY card maintain a border, surface, and shadow (shadow-sm hover:shadow-md)?
-- [ ] 5. Bilingual Parity: Are all copy changes in src/i18n/locales/en/ matched with 100% semantic symmetry in nl/?
-- [ ] 6. Banned Word Scan: Did pnpm run lint:copy pass with zero violations?
-- [ ] 7. No Portfolio Theater: Are there zero setTimeout() mock runners, fake terminal chrome, or pulsing green dots?
-- [ ] 8. Mobile Thumb-Zone & A11y: Is mobile navigation anchored to bottom thumb zone? Are tap targets at least 44x44px?
-- [ ] 9. Pedagogical Clarity: Is Casper's teaching background positioned as an engineering strength for code quality?
-- [ ] 10. ATS 1-Page CV Budget: Does pnpm run build:cv compile both English and Dutch CVs to strictly 1 page?
+- [ ] 1. Delete Filler Badges: Are all gratuitous tags, status pills, and decorative chips stripped?
+- [ ] 2. Drop Redundant Labels: Are redundant field prefixes ("Stack:", "Role:", "Date:") removed?
+- [ ] 3. Unitalicize Random Words: Are random words unitalicized; italics used only for formal citations?
+- [ ] 4. Typographic Discipline (Mono Only Where Needed): Is font-mono strictly limited to code, syntax, paths, and chips?
+- [ ] 5. Use a Design System: Are colors, radii, and spacing aligned strictly with CSS variables and Tailwind tokens?
+- [ ] 6. Show the Actual Product: Are features grounded in real, verifiable code contracts and interactive UI?
+- [ ] 7. Enlarge the Main Feature: Is the primary headline and flagship work (Tikkie Business) visually commanding?
+- [ ] 8. Group with Spacing: Is visual grouping achieved through purposeful whitespace rather than noisy divider lines?
+- [ ] 9. Make Headlines Specific: Are headlines concrete, factual engineering statements rather than vague marketing jargon?
+- [ ] 10. Emphasize the CTA: Do primary actions have high contrast, clear padding, arrow indicators, and active states?
+- [ ] 11. Add an Accent Colour: Is the --brand accent color (forest sage) applied cohesively for focus, active nav, and highlights?
+- [ ] 12. Keep Icons Consistent: Are icons uniform in stroke weight (1.8px), bounding box (24x24), and style?
+- [ ] 13. Remove Embellishments: Are decorative background gradients, orbital rings, and pulsing green dots absent?
+- [ ] 14. Inner Radius = Outer - Padding: Does every nested child adhere to R_inner = max(0, R_outer - Padding)?
+- [ ] 15. Improve Text Contrast: Does all text pass WCAG AA contrast (>= 4.5:1 for normal text, >= 3:1 for large)?
+- [ ] 16. Wrap Headlines Properly: Are headings wrapped with text-wrap: balance and paragraphs with text-wrap: pretty?
+- [ ] 17. Align by Eye, Not Pixels: Are inline icons, arrows, and tags optically balanced with text cap-height?
+- [ ] 18. Use Tabular Numbers: Do all counters, metrics, dates, and elapsed times use tabular-nums?
+- [ ] 19. Add Loading States: Are smooth loading/skeleton indicators provided for asynchronous/PDF view states?
+- [ ] 20. Animate Useful Feedback: Are animations strictly restricted to responsive tactile feedback (active press, pill transition)?
 ```
 
 ---

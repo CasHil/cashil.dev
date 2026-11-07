@@ -74,7 +74,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setViewMode("sheet")}
-              className={`px-3 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[10px] transition-colors duration-150 ${
                 viewMode === "sheet"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -85,7 +85,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setViewMode("pdf")}
-              className={`px-3 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[10px] transition-colors duration-150 ${
                 viewMode === "pdf"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -104,7 +104,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setPdfLang("en")}
-              className={`px-2.5 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
+              className={`px-2.5 py-1.5 rounded-[10px] transition-colors duration-150 ${
                 pdfLang === "en"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -117,7 +117,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setPdfLang("nl")}
-              className={`px-2.5 py-1.5 rounded-squircle-sm transition-colors duration-150 ${
+              className={`px-2.5 py-1.5 rounded-[10px] transition-colors duration-150 ${
                 pdfLang === "nl"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"

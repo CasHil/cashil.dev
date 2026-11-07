@@ -33,7 +33,7 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </div>
 
         {/* Date & Status Meta */}
-        <div className="text-xs sm:text-sm text-text-muted sm:text-right shrink-0">
+        <div className="text-xs sm:text-sm text-text-muted sm:text-right shrink-0 tabular-nums">
           <span>
             {data.startDate} {t.workExperience.to} {data.endDate}
           </span>
@@ -54,12 +54,18 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </ul>
       )}
 
-      {/* Tech Stack in Proportional Text */}
+      {/* Tech Stack in clean proportional sans */}
       {data.skills && data.skills.length > 0 && (
-        <p className="text-sm text-text-muted leading-relaxed">
-          <strong className="text-text-primary font-medium">Stack:</strong>{" "}
-          {data.skills.join(", ")}
-        </p>
+        <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs text-text-muted">
+          {data.skills.map((skill, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-0.5 rounded-md bg-surface-subtle border border-border-subtle text-text-secondary font-normal"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       )}
     </article>
   );
