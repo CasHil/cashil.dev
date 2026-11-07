@@ -64,7 +64,7 @@ export default function WorkExperience() {
       <div className="pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <Link
           to="/cv"
-          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-xs sm:text-sm hover:opacity-90 active:scale-[0.99] transition-colors min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          className="inline-flex items-center justify-center px-4 py-2.5 rounded-squircle bg-text-primary text-canvas font-medium text-xs sm:text-sm hover:opacity-90 active:scale-[0.98] shadow-sm hover:shadow-md transition-all min-h-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.workExperience.cvBtn}
         </Link>

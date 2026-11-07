@@ -141,11 +141,11 @@ export default function TechExperienceTracker() {
           </p>
         </div>
 
-        {/* Live Indicator Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-squircle-sm bg-brand/10 border border-brand/20 text-brand text-xs font-medium shrink-0 self-start sm:self-auto">
-          <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true" />
+        {/* Subtle Live Metadata Note (No filler badge) */}
+        <span className="text-xs text-text-muted shrink-0 self-start sm:self-auto inline-flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
           <span>{t.intro.techLiveBadge}</span>
-        </div>
+        </span>
       </div>
 
       {/* Grid of Apple-squircle Cards */}
@@ -163,7 +163,7 @@ export default function TechExperienceTracker() {
                   <h3 className="text-sm font-semibold text-text-primary tracking-tight">
                     {item.name}
                   </h3>
-                  <span className="text-[11px] font-medium text-brand px-2 py-0.5 rounded-squircle-sm bg-brand/10 border border-brand/20 shrink-0">
+                  <span className="text-xs font-medium text-brand shrink-0">
                     {isNl ? item.focusNl : item.focusEn}
                   </span>
                 </div>
@@ -174,7 +174,7 @@ export default function TechExperienceTracker() {
 
               {/* Counter Display */}
               <div className="pt-2 flex items-baseline justify-between gap-2">
-                <span className="font-serif text-xl sm:text-2xl font-normal text-text-primary tracking-tight">
+                <span className="font-serif text-xl sm:text-2xl font-normal text-text-primary tracking-tight tabular-nums">
                   {duration.primary}
                 </span>
                 <span className="text-xs text-text-muted font-medium tabular-nums" title={isNl ? "Dagen, uren en minuten sinds aanvang" : "Days, hours, and minutes elapsed"}>
