@@ -34,3 +34,10 @@
   5. OS temporary scratch locations (`$env:TEMP`, `.gemini/.../scratch`)
   Modifying or deleting files outside these 5 locations is strictly prohibited.
 
+## Pre-Approved Safe Operations & Auto-Execution Scope
+- **Workspace Scope Guarantee**: Any command, file modification, or build executed within this repository (`f:\Projects\cashil.github.io`) is 100% pre-approved and safe. Agents must execute these operations proactively without prompting the user for approval.
+- **Git & PR Automation**: Creating branches (`git checkout -b <branch>`), switching branches (`git checkout`), staging (`git add`), committing (`git commit`), pushing (`git push -u origin`), creating PRs (`gh pr create`), and merging PRs (`gh pr merge`) are fully pre-approved.
+- **Quality & Verification Suites**: Local verification (`pnpm test`, `vitest`, `pnpm run lint:copy`, `tsc`, `pnpm exec tsc`, `pnpm run build`) is fully pre-approved and must run automatically before PR creation or completion.
+- **Visual & Browser Verification (Playwright)**: Taking screenshots or inspecting the browser (`pnpm run screenshot`, `node scripts/screenshot.mjs`, `npx playwright`, `pnpm run preview`) to verify layout, responsive appearance, and visual polish is 100% pre-approved. Agents should proactively run visual inspections and embed screenshots rather than asking the user to manually verify.
+
+
