@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import Masthead from "./components/layout/Masthead";
 import Body from "./components/Body/Body";
 import Footer from "./components/layout/Footer";
-import MobileBottomNav from "./components/navigation/MobileBottomNav";
 import SwipeNavigationWrapper from "./components/common/SwipeNavigationWrapper";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -10,7 +9,7 @@ import "./App.css";
 
 function AppContent() {
   return (
-    <div className="relative min-h-[100dvh] bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 selection:text-zinc-950 dark:selection:text-white transition-colors pb-24 sm:pb-0">
+    <div className="relative min-h-[100dvh] bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 selection:text-zinc-950 dark:selection:text-white transition-colors pb-12 sm:pb-0">
       <BrowserRouter>
         <a
           href="#main-content"
@@ -29,9 +28,6 @@ function AppContent() {
           </SwipeNavigationWrapper>
           <Footer />
         </div>
-
-        {/* Mobile-Native Thumb Zone Navigation */}
-        <MobileBottomNav />
       </BrowserRouter>
     </div>
   );
