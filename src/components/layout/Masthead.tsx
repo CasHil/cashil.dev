@@ -9,19 +9,27 @@ export default function Masthead() {
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-canvas/90 dark:bg-canvas/90 border-b border-border-subtle/60 transition-colors">
       <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-4">
-        {/* Candidate Typographic Brand (No face in header, no mobile title truncation) */}
+        {/* Candidate Typographic Brand (Anchored with refined CH monogram mark) */}
         <Link
           to="/"
           className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md min-w-0"
           aria-label={t.sidebar.name}
         >
-          <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150 whitespace-nowrap">
-            {t.sidebar.name}
+          <span
+            className="w-8 h-8 rounded-squircle-sm bg-surface-subtle border border-border-subtle flex items-center justify-center font-display font-semibold text-xs tracking-tight text-text-primary group-hover:text-brand group-hover:border-brand/40 shadow-2xs transition-colors shrink-0"
+            aria-hidden="true"
+          >
+            CH
           </span>
-          <span className="hidden sm:inline-flex items-center gap-2 text-xs font-normal text-text-muted shrink-0">
-            <span aria-hidden="true">·</span>
-            <span>Software Engineer</span>
-          </span>
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150 whitespace-nowrap">
+              {t.sidebar.name}
+            </span>
+            <span className="hidden sm:inline-flex items-center gap-2 text-xs font-normal text-text-muted shrink-0">
+              <span aria-hidden="true">·</span>
+              <span>Software Engineer</span>
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Primary Navigation */}
