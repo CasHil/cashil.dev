@@ -144,15 +144,12 @@ test("allows switching CV PDF language via dedicated toggle", () => {
   expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
 
-test("renders mobile bottom navigation bar with thumb-zone controls across 4 destinations and opaque elevation", () => {
+test("renders primary navigation header with candidate branding and accessible routes", () => {
   render(<App />);
-  const mobileNav = screen.getByRole("navigation", { name: /mobile primary navigation/i });
-  expect(mobileNav).toBeInTheDocument();
-  // Verifies physical elevation and opacity against bleed-through
-  expect(mobileNav.className).toContain("bg-surface");
-  expect(mobileNav.className).toContain("shadow-");
+  const mainNav = screen.getByRole("navigation", { name: /main navigation/i });
+  expect(mainNav).toBeInTheDocument();
 
-  // All 4 primary destinations are directly accessible in the thumb-zone
+  // All 4 primary destinations are accessible
   const overviewLinks = screen.getAllByRole("link", { name: /overview|overzicht/i });
   expect(overviewLinks.length).toBeGreaterThan(0);
 
@@ -165,9 +162,31 @@ test("renders mobile bottom navigation bar with thumb-zone controls across 4 des
   const eduLinks = screen.getAllByRole("link", { name: /education|opleiding/i });
   expect(eduLinks.length).toBeGreaterThan(0);
 
-  // Verifies unified preferences and utility toolbar
-  const toolbar = screen.getByRole("toolbar", { name: /preferences and utilities/i });
-  expect(toolbar).toBeInTheDocument();
+  // Verifies candidate typographic identity in the header
+  const nameLink = screen.getByRole("link", { name: /casper hildebrand/i });
+  expect(nameLink).toBeInTheDocument();
+});
+
+test("allows toggling mobile menu in header to access routes and preferences", () => {
+  render(<App />);
+  const menuButton = screen.getByRole("button", { name: /menu|sluiten|close/i });
+  expect(menuButton).toBeInTheDocument();
+
+  // Open mobile menu
+  fireEvent.click(menuButton);
+
+  const dropdownNav = screen.getByRole("navigation", { name: /mobile dropdown navigation/i });
+  expect(dropdownNav).toBeInTheDocument();
+
+  // Language buttons inside mobile drawer
+  const enBtn = screen.getByRole("button", { name: /^english$/i });
+  const nlBtn = screen.getByRole("button", { name: /^nederlands$/i });
+  expect(enBtn).toBeInTheDocument();
+  expect(nlBtn).toBeInTheDocument();
+
+  // Theme toggle button
+  const themeBtn = screen.getByRole("button", { name: /switch to (light|dark) theme/i });
+  expect(themeBtn).toBeInTheDocument();
 });
 
 test("renders live technology experience tracker and authentic mentorship section", () => {
