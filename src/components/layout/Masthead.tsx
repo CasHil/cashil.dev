@@ -30,10 +30,10 @@ export default function Masthead() {
   }, [mobileMenuOpen]);
 
   const navItems = [
-    { to: "/", index: "01", label: t.nav.overview },
-    { to: "/cv", index: "02", label: t.nav.cv },
-    { to: "/work-experience", index: "03", label: t.nav.workExperience },
-    { to: "/education", index: "04", label: t.nav.education },
+    { to: "/", label: t.nav.overview },
+    { to: "/cv", label: t.nav.cv },
+    { to: "/work-experience", label: t.nav.workExperience },
+    { to: "/education", label: t.nav.education },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Masthead() {
         {/* Candidate Typographic Identity */}
         <Link
           to="/"
-          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md group"
+          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md group py-1"
           aria-label={t.sidebar.name}
         >
           <span className="font-sans font-semibold text-sm sm:text-base text-text-primary tracking-tight group-hover:text-brand transition-colors whitespace-nowrap">
@@ -59,53 +59,30 @@ export default function Masthead() {
           <Header orientation="horizontal" />
         </div>
 
-        {/* Right Utilities (Desktop: Recruiter CV + Settings; Mobile: Recruiter CV + Menu Toggle) */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {/* Recruiter 1-Click CV Action */}
-          <Link
-            to="/cv"
-            className="inline-flex items-center gap-1.5 h-8 px-2.5 sm:px-3 rounded-squircle-sm text-xs font-semibold text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-colors border border-border-subtle shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95"
-            aria-label={t.nav.cv}
-          >
-            <svg
-              className="w-3.5 h-3.5 text-brand"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.8}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            <span>{t.nav.cv}</span>
-          </Link>
-
+        {/* Right Utilities (Desktop: Settings; Mobile: Menu Toggle) */}
+        <div className="flex items-center gap-2">
           {/* Desktop Settings Menu */}
           <div className="hidden md:block">
             <SettingsMenu />
           </div>
 
-          {/* Mobile Menu Toggle with Animated Minimalist 2-Line Morphing Indicator */}
+          {/* Mobile Menu Toggle with Accessible Hit Area */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="md:hidden inline-flex items-center justify-center h-8 w-8 rounded-squircle-sm border border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 shadow-2xs"
+            className="md:hidden inline-flex items-center justify-center h-10 w-10 min-h-[40px] min-w-[40px] rounded-squircle-sm border border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 shadow-2xs"
             aria-label={mobileMenuOpen ? t.nav.close : t.nav.menu}
             aria-expanded={mobileMenuOpen}
           >
-            <div className="relative w-3.5 h-2.5 flex flex-col justify-between" aria-hidden="true">
+            <div className="relative w-4 h-3 flex flex-col justify-between" aria-hidden="true">
               <span
                 className={`block h-0.5 w-full bg-current rounded-full transition-transform duration-200 ease-out origin-center ${
-                  mobileMenuOpen ? "translate-y-[4px] rotate-45" : ""
+                  mobileMenuOpen ? "translate-y-[5px] rotate-45" : ""
                 }`}
               />
               <span
                 className={`block h-0.5 w-full bg-current rounded-full transition-transform duration-200 ease-out origin-center ${
-                  mobileMenuOpen ? "-translate-y-[4px] -rotate-45" : ""
+                  mobileMenuOpen ? "-translate-y-[5px] -rotate-45" : ""
                 }`}
               />
             </div>
@@ -123,7 +100,7 @@ export default function Masthead() {
             transition={{ duration: 0.18, ease: "easeOut" }}
             className="md:hidden border-t border-border-subtle bg-surface px-4 py-3 shadow-lg overflow-hidden space-y-3"
           >
-            {/* Primary Page Navigation (Editorial Monograph Style - Zero Arrows) */}
+            {/* Primary Page Navigation (No Artificial Numbering) */}
             <nav aria-label="Mobile Dropdown Navigation">
               <ul className="space-y-1">
                 {navItems.map((item) => (
@@ -140,9 +117,6 @@ export default function Masthead() {
                         }`
                       }
                     >
-                      <span className="font-sans tabular-nums text-xs text-brand/80 font-medium mr-3 tracking-wider select-none" aria-hidden="true">
-                        {item.index}
-                      </span>
                       <span className="text-sm sm:text-base font-medium tracking-tight">
                         {item.label}
                       </span>
@@ -154,16 +128,16 @@ export default function Masthead() {
 
             {/* Mobile Preferences & Utilities Colophon */}
             <div className="pt-2.5 border-t border-border-subtle/80 flex items-center justify-between text-xs">
-              {/* Language Switch */}
+              {/* Language Switch with Accessible Touch Area */}
               <div className="flex items-center gap-1.5">
-                <svg className="w-3.5 h-3.5 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                <svg className="w-4 h-4 text-text-muted shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
                 <div role="group" aria-label="Language selection" className="flex items-center gap-1 font-sans text-xs">
                   <button
                     type="button"
                     onClick={() => setLanguage("en")}
-                    className={`px-2 py-0.5 rounded-squircle-sm transition-colors ${
+                    className={`px-3 py-1.5 min-h-[36px] rounded-squircle-sm transition-colors ${
                       language === "en" ? "bg-surface-subtle text-text-primary font-semibold shadow-2xs border border-border-subtle/80" : "text-text-muted hover:text-text-primary"
                     }`}
                     aria-pressed={language === "en"}
@@ -175,7 +149,7 @@ export default function Masthead() {
                   <button
                     type="button"
                     onClick={() => setLanguage("nl")}
-                    className={`px-2 py-0.5 rounded-squircle-sm transition-colors ${
+                    className={`px-3 py-1.5 min-h-[36px] rounded-squircle-sm transition-colors ${
                       language === "nl" ? "bg-surface-subtle text-text-primary font-semibold shadow-2xs border border-border-subtle/80" : "text-text-muted hover:text-text-primary"
                     }`}
                     aria-pressed={language === "nl"}

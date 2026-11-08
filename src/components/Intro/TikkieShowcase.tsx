@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import FormattedBullet from "../common/FormattedBullet";
 
 export default function TikkieShowcase() {
   const { t } = useLanguage();
 
   return (
-    <article className="space-y-4">
+    <article
+      data-ui
+      className="rounded-squircle bg-surface border border-border-subtle p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-150 space-y-5"
+    >
       {/* Header & Direct Link */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
         <div>
@@ -27,22 +31,17 @@ export default function TikkieShowcase() {
       </p>
 
       {/* Concrete, Authentic Responsibilities */}
-      <ul className="space-y-2 text-sm sm:text-base text-text-secondary max-w-[70ch] pt-1">
+      <ul className="space-y-1.5 text-sm sm:text-base text-text-secondary max-w-[70ch]">
         {t.intro.tikkiePoints.map((point, idx) => (
-          <li key={idx} className="flex items-start gap-2">
-            <span className="text-brand shrink-0" aria-hidden="true">—</span>
-            <span>{point}</span>
-          </li>
+          <FormattedBullet key={idx} text={point} />
         ))}
       </ul>
 
-      {/* Technologies in clean proportional sans */}
-      <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs text-text-muted">
+      {/* Technologies in clean proportional text without nested cards/chips */}
+      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 pt-1 text-xs text-text-muted">
         {t.intro.tikkieStack.map((tech, idx) => (
-          <span
-            key={idx}
-            className="px-2 py-0.5 rounded-md bg-surface-subtle border border-border-subtle text-text-secondary font-normal"
-          >
+          <span key={idx} className="text-text-secondary">
+            {idx > 0 && <span className="text-border-hover mr-2.5 select-none" aria-hidden="true">·</span>}
             {tech}
           </span>
         ))}

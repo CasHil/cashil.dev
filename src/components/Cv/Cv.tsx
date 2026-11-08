@@ -30,23 +30,23 @@ export default function Cv() {
 
   const competencies = [
     {
-      category: isNl ? "Talen:" : "Languages:",
+      category: isNl ? "Talen" : "Languages",
       items: "TypeScript, JavaScript, Python, SQL (PostgreSQL, MySQL), C#, HTML/CSS",
     },
     {
-      category: "Frontend:",
+      category: "Frontend",
       items: "React, Vue.js, Vite, Tailwind CSS, Next.js, Web Workers, Accessibility (a11y)",
     },
     {
-      category: "Backend & Cloud:",
+      category: "Backend & Cloud",
       items: "Node.js, Meteor, Express, AWS (Lambda, DynamoDB, S3), RESTful APIs, Docker",
     },
     {
-      category: isNl ? "Databases & Architectuur:" : "Databases & Architecture:",
+      category: isNl ? "Databases & Architectuur" : "Databases & Architecture",
       items: "PostgreSQL, MySQL, MongoDB, Relational Data Modeling, Event-Driven Systems",
     },
     {
-      category: isNl ? "Methodieken:" : "Practices:",
+      category: isNl ? "Methodieken" : "Practices",
       items: "Git, GitHub Actions, CI/CD, Unit Testing (Vitest, Jest), Curriculum Design, Mentorship",
     },
   ];
@@ -64,17 +64,17 @@ export default function Cv() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           {/* Mode Switcher */}
           <div
             role="group"
             aria-label="CV presentation mode"
-            className="inline-flex items-center text-xs font-medium rounded-squircle-sm bg-surface-subtle p-0.5 border border-border-subtle"
+            className="inline-flex items-center text-xs font-medium rounded-squircle bg-surface-subtle p-1 border border-border-subtle min-h-[40px]"
           >
             <button
               type="button"
               onClick={() => setViewMode("sheet")}
-              className={`px-3 py-1.5 rounded-[10px] transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[14px] min-h-[34px] transition-colors duration-150 ${
                 viewMode === "sheet"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -85,7 +85,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setViewMode("pdf")}
-              className={`px-3 py-1.5 rounded-[10px] transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[14px] min-h-[34px] transition-colors duration-150 ${
                 viewMode === "pdf"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -99,12 +99,12 @@ export default function Cv() {
           <div
             role="group"
             aria-label={t.cv.pdfLanguageLabel}
-            className="inline-flex items-center text-xs font-medium rounded-squircle-sm bg-surface-subtle p-0.5 border border-border-subtle"
+            className="inline-flex items-center text-xs font-medium rounded-squircle bg-surface-subtle p-1 border border-border-subtle min-h-[40px]"
           >
             <button
               type="button"
               onClick={() => setPdfLang("en")}
-              className={`px-2.5 py-1.5 rounded-[10px] transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[14px] min-h-[34px] transition-colors duration-150 ${
                 pdfLang === "en"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -117,7 +117,7 @@ export default function Cv() {
             <button
               type="button"
               onClick={() => setPdfLang("nl")}
-              className={`px-2.5 py-1.5 rounded-[10px] transition-colors duration-150 ${
+              className={`px-3 py-1.5 rounded-[14px] min-h-[34px] transition-colors duration-150 ${
                 pdfLang === "nl"
                   ? "bg-surface text-text-primary font-semibold shadow-xs"
                   : "text-text-muted hover:text-text-primary"
@@ -133,7 +133,7 @@ export default function Cv() {
           <a
             href={pdfUrl}
             download={pdfFileName}
-            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-squircle bg-brand text-white font-medium text-xs hover:bg-brand-hover active:scale-[0.98] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-squircle bg-brand text-white font-medium text-xs sm:text-sm hover:bg-brand-hover active:scale-[0.98] transition-colors duration-150 min-h-[40px] shadow-sm"
             aria-label={`${t.cv.downloadPdf} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.downloadPdf}</span>
@@ -145,7 +145,7 @@ export default function Cv() {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-3 py-1.5 rounded-squircle border border-border-subtle bg-surface text-text-primary font-medium text-xs hover:border-border-hover hover:bg-surface-hover active:scale-[0.98] transition-colors duration-150 min-h-[34px]"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-squircle border border-border-subtle bg-surface text-text-primary font-medium text-xs sm:text-sm hover:border-border-hover hover:bg-surface-hover active:scale-[0.98] transition-colors duration-150 min-h-[40px] shadow-xs"
             aria-label={`${t.cv.openNewTab} (${pdfLang.toUpperCase()})`}
           >
             <span>{t.cv.openNewTab}</span>
@@ -158,7 +158,7 @@ export default function Cv() {
         <article
           data-ui
           aria-label="Curriculum Vitae Document"
-          className="rounded-squircle-lg p-6 sm:p-10 bg-surface border border-border-subtle space-y-8 print:p-0 print:border-none print:shadow-none"
+          className="rounded-squircle-lg p-6 sm:p-10 bg-surface border border-border-subtle space-y-8 print:p-0 print:border-none print:shadow-none shadow-sm"
         >
           {/* Document Header */}
           <header className="border-b border-border-subtle pb-6 space-y-2">
@@ -168,16 +168,16 @@ export default function Cv() {
             <p className="text-sm sm:text-base font-medium text-brand">
               Full-Stack Software Engineer
             </p>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-text-muted pt-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-text-muted pt-1">
               <span>Amsterdam, Netherlands</span>
-              <span className="text-text-muted/40" aria-hidden="true">/</span>
+              <span className="text-border-hover select-none" aria-hidden="true">·</span>
               <a
                 href="mailto:casperhildebrand@gmail.com"
                 className="hover:text-brand transition-colors"
               >
                 casperhildebrand@gmail.com
               </a>
-              <span className="text-text-muted/40" aria-hidden="true">/</span>
+              <span className="text-border-hover select-none" aria-hidden="true">·</span>
               <a
                 href="https://cashil.github.io"
                 target="_blank"
@@ -186,7 +186,7 @@ export default function Cv() {
               >
                 cashil.github.io
               </a>
-              <span className="text-text-muted/40" aria-hidden="true">/</span>
+              <span className="text-border-hover select-none" aria-hidden="true">·</span>
               <a
                 href="https://github.com/CasHil"
                 target="_blank"
@@ -195,7 +195,7 @@ export default function Cv() {
               >
                 github.com/CasHil
               </a>
-              <span className="text-text-muted/40" aria-hidden="true">/</span>
+              <span className="text-border-hover select-none" aria-hidden="true">·</span>
               <a
                 href="https://www.linkedin.com/in/casper-hildebrand/"
                 target="_blank"
@@ -211,7 +211,7 @@ export default function Cv() {
           <section aria-labelledby="cv-profile-heading" className="space-y-3">
             <h3
               id="cv-profile-heading"
-              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Profiel" : "Profile"}
             </h3>
@@ -226,7 +226,7 @@ export default function Cv() {
           <section aria-labelledby="cv-experience-heading" className="space-y-6">
             <h3
               id="cv-experience-heading"
-              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Werkervaring" : "Experience"}
             </h3>
@@ -263,7 +263,7 @@ export default function Cv() {
           <section aria-labelledby="cv-education-heading" className="space-y-6">
             <h3
               id="cv-education-heading"
-              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Opleiding & Onderzoek" : "Education & Research"}
             </h3>
@@ -300,7 +300,7 @@ export default function Cv() {
           <section aria-labelledby="cv-skills-heading" className="space-y-3">
             <h3
               id="cv-skills-heading"
-              className="text-xs font-semibold text-text-primary border-b-2 border-border-subtle pb-1"
+              className="text-xs font-semibold text-text-primary border-b border-border-subtle pb-1"
             >
               {isNl ? "Technische Competenties" : "Technical Competencies"}
             </h3>
@@ -321,7 +321,7 @@ export default function Cv() {
       ) : (
         /* Embedded PDF Object View */
         <div className="relative w-full rounded-xl overflow-hidden border border-border-subtle bg-surface-subtle shadow-xs">
-          <div className="sm:hidden p-4 bg-surface border-b-2 border-border-subtle text-xs text-text-secondary flex flex-col gap-3">
+          <div className="sm:hidden p-4 bg-surface border-b border-border-subtle text-xs text-text-secondary flex flex-col gap-3">
             <span className="leading-relaxed">{t.cv.mobilePrompt}</span>
             <a
               href={pdfUrl}

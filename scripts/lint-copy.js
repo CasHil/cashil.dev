@@ -35,6 +35,15 @@ const BANNED_PATTERNS = [
   /\bsupercharge(?:s|d|ing)?\b/i,
   /\bharness(?:es|ed|ing)?\b/i,
   /\bever[- ]evolving\b/i,
+  /\btestament\b/i,
+  /\bcrucible\b/i,
+  /\bspearhead(?:s|ed|ing)?\b/i,
+  /\bseamless(?:ly)?\b/i,
+  /\bgroundbreaking\b/i,
+  /\bsynergy\b/i,
+  /\bgame[- ]changer\b/i,
+  /\bholistic(?:ally)?\b/i,
+  /\bpivotal\b/i,
 ];
 
 function getAllTsFiles(dir) {
