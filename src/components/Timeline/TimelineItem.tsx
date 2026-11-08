@@ -54,14 +54,12 @@ export default function TimelineItem({ data }: TimelineItemProps) {
         </ul>
       )}
 
-      {/* Tech Stack in clean proportional sans */}
+      {/* Tech Stack in clean proportional text without nested cards/chips */}
       {data.skills && data.skills.length > 0 && (
-        <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs text-text-muted">
+        <div className="pt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-muted">
           {data.skills.map((skill, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-0.5 rounded-md bg-surface-subtle border border-border-subtle text-text-secondary font-normal"
-            >
+            <span key={idx} className="text-text-secondary">
+              {idx > 0 && <span className="text-border-hover mr-2 select-none" aria-hidden="true">·</span>}
               {skill}
             </span>
           ))}

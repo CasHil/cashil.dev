@@ -1,7 +1,6 @@
 import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
-  kicker: "Software Engineer & Educator",
   heroTitle:
     "Software engineer at Tikkie Business and computer science educator.",
   bioParagraph1:
@@ -42,10 +41,10 @@ export const enIntro: IntroTranslations = {
   bitsizedStack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
   bitsizedLink: "View in Work Timeline",
 
-  // Technology Experience Live Counter
-  techHeading: "Technology Experience",
-  techSubtitle: "Continuous production and educational experience with core technologies",
-  techLiveBadge: "Updates live every minute",
+  // Technology Experience
+  techHeading: "Core Technologies",
+  techSubtitle: "Production and educational experience across web applications, cloud services, and relational data.",
+  techLiveBadge: "Production & Academic",
 
   // Teaching & Mentorship
   mentorshipHeading: "Teaching & Helping Teammates Thrive",
@@ -53,5 +52,5 @@ export const enIntro: IntroTranslations = {
     "With a formal first-degree computer science teaching qualification, I consider clear communication and mentorship fundamental engineering skills. Clear code, high-signal reviews, and accessible documentation support team velocity and help everyone do their best work.",
   outsideTitle: "Outside of Engineering",
   outsideDescription:
-    "Outside of software engineering, I play electric bass guitar and play chess.",
+    "I play electric bass guitar and play chess.",
 };

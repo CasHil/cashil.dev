@@ -5,25 +5,8 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section aria-labelledby="hero-title" className="space-y-8 pt-2 sm:pt-4">
-      {/* Candidate Profile Avatar & Headline Header */}
-      <div className="flex items-center gap-3.5 sm:gap-4">
-        <img
-          src="/images/profile.webp"
-          alt="Casper Hildebrand"
-          className="h-14 w-14 sm:h-16 sm:w-16 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas shadow-xs"
-        />
-        <div className="min-w-0">
-          <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight block">
-            {t.sidebar.name}
-          </span>
-          <p className="text-xs sm:text-sm text-text-muted">
-            {t.sidebar.role} · {t.sidebar.location}
-          </p>
-        </div>
-      </div>
-
-      {/* 2-line maximum headline */}
+    <section aria-labelledby="hero-title" className="space-y-8 pt-4 sm:pt-6">
+      {/* 2-line maximum headline speaks first with full editorial authority (No eyebrow/kicker) */}
       <h1
         id="hero-title"
         className="font-serif text-4xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-text-primary leading-[1.05] max-w-[24ch]"
@@ -31,10 +14,17 @@ export default function HeroSection() {
         {t.intro.heroTitle}
       </h1>
 
-      {/* Grounded narrative */}
-      <div className="space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[65ch]">
-        <p>{t.intro.bioParagraph1}</p>
-        <p>{t.intro.bioParagraph2}</p>
+      {/* Grounded narrative with organic profile avatar */}
+      <div className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-start">
+        <img
+          src="/images/profile.webp"
+          alt="Casper Hildebrand"
+          className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas shadow-xs shrink-0"
+        />
+        <div className="space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[65ch]">
+          <p>{t.intro.bioParagraph1}</p>
+          <p>{t.intro.bioParagraph2}</p>
+        </div>
       </div>
 
       {/* Clear primary actions (Emphasized CTA per Rule 10) */}

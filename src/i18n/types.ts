@@ -46,7 +46,6 @@ export interface CvTranslations {
 }
 
 export interface IntroTranslations {
-  kicker: string;
   heroTitle: string;
   bioParagraph1: string;
   bioParagraph2: string;

@@ -189,13 +189,13 @@ test("allows toggling mobile menu in header to access routes and preferences", (
   expect(themeBtn).toBeInTheDocument();
 });
 
-test("renders live technology experience tracker and authentic mentorship section", () => {
+test("renders core technology experience and authentic mentorship section", () => {
   window.history.pushState({}, "", "/");
   render(<App />);
 
-  // Technology Experience Counter section
-  expect(screen.getByText(/Technology Experience|Technologische Ervaring/i)).toBeInTheDocument();
-  expect(screen.getByText(/Updates live every minute|Werkt live per minuut bij/i)).toBeInTheDocument();
+  // Core Technologies section
+  expect(screen.getByText(/Core Technologies|Kerntechnologieën/i)).toBeInTheDocument();
+  expect(screen.getByText(/Production & Academic|Productie & Onderwijs/i)).toBeInTheDocument();
   expect(screen.getByText(/TypeScript & JavaScript/i)).toBeInTheDocument();
   expect(screen.getByText(/Vue\.js & Meteor/i)).toBeInTheDocument();
   expect(screen.getByText(/AWS Cloud/i)).toBeInTheDocument();

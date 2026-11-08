@@ -25,6 +25,16 @@
 - **Bilingual Parity**: Any copy added or modified in `src/i18n/` must maintain 100% symmetry between `en` and `nl`.
 - **Typography & Accessibility**: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` violations. Reserve `font-mono` strictly for code, syntax, paths, and stack chips.
 - **ATS Single-Page CV**: Never allow `cv/Casper_Hildebrand_CV.tex` or `cv/Casper_Hildebrand_CV_NL.tex` to spill onto page 2.
+- **No Fake Live Telemetry (Rule 21)**: Never implement live minute/hour countdown clocks, interval tickers, or simulated telemetry for career experience duration.
+- **Absolute Ban on Card-in-Card & Cardocalypse (Rule 22)**: Cards are the lazy container; nested cards are always wrong. Never nest cards inside cards, never wrap timeline entries in boxed cards, and never render chips with borders inside cards. Let typography and whitespace structure the page.
+- **Absolute Ban on Eyebrows & Kickers (Rule 23)**: Headings carry their own weight; delete the label and let the heading speak. Never place uppercase overlines, pill tags, or avatar kickers above headings.
+- **Ban Bento Grid Monoculture (Rule 24)**: Never scaffold features or metrics into identical 3-card or 6-card bento grids. Use clean editorial layouts with hairline dividers (`divide-y`).
+- **Ban Border Accents on Rounded Containers (Rule 25)**: Never apply thick borders (`border-b-2`) inside or on rounded containers. Use 1px borders (`border-b border-border-subtle`).
+- **Ban the Em Dash (—) Bullet Epidemic (Rule 26)**: Never use colored em dashes (`—`) as bullet points. Use authentic circular bullets (`FormattedBullet`).
+- **Clean Navigation & No Duplicate CTAs (Rule 27 & 28)**: Never duplicate primary navigation routes (e.g. CV) as adjacent utility buttons. Never prefix navigation labels with artificial zero-padded numbers (`01`, `02`).
+- **Mobile Touch Ergonomics (Rule 29)**: All interactive buttons, toggles, and links on mobile must have a minimum hit target of 44×44px (minimum 40px with spacing). Never render 28px/32px micro-buttons.
+- **No Trailing Colons on Categories (Rule 30)**: Omit trailing colons (`Languages:`, `Frontend:`) on CV skill categories; use typographic weight instead.
+- **Authentic Monospace Configuration (Rule 31)**: Never map `font-mono` to `system-ui` to bypass unit tests. Maintain true monospace fonts for code and enforce sans-serif on editorial prose.
 
 ## Safety & File System Guardrails
 - **Permitted File Modification & Deletion Whitelist**: File writes, mutations, and deletions (`Remove-Item`, `del`, `rmdir`, `rm`, `git rm`) are strictly prohibited outside:

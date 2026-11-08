@@ -1,7 +1,6 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  kicker: "Software Engineer & Docent",
   heroTitle:
     "Software engineer bij Tikkie Zakelijk en docent informatica.",
   bioParagraph1:
@@ -42,10 +41,10 @@ export const nlIntro: IntroTranslations = {
   bitsizedStack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
   bitsizedLink: "Bekijk in Werkervaring",
 
-  // Technology Experience Live Counter
-  techHeading: "Technologische Ervaring",
-  techSubtitle: "Continue productie- en onderwijservaring met kerntechnologieën",
-  techLiveBadge: "Werkt live per minuut bij",
+  // Technology Experience
+  techHeading: "Kerntechnologieën",
+  techSubtitle: "Productie- en onderwijservaring met webapplicaties, clouddiensten en relationele data.",
+  techLiveBadge: "Productie & Onderwijs",
 
   // Teaching & Mentorship
   mentorshipHeading: "Onderwijs & Teamgenoten Helpen Floreren",
@@ -53,5 +52,5 @@ export const nlIntro: IntroTranslations = {
     "Met een formele eerstegraads onderwijsbevoegdheid in de informatica beschouw ik heldere communicatie en mentorschap als fundamentele engineeringvaardigheden. Schone code, constructieve code-reviews en duidelijke documentatie verhogen de teamsnelheid en helpen iedereen het beste uit zichzelf te halen.",
   outsideTitle: "Buiten Software Engineering",
   outsideDescription:
-    "Buiten software engineering speel ik elektrische basgitaar en schaak ik.",
+    "Speel ik elektrische basgitaar en schaak ik.",
 };

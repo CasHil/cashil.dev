@@ -29,35 +29,33 @@ export default function Education() {
       </div>
 
       {/* Section 2: Master's Thesis Research Publication */}
-      <section aria-labelledby="thesis-publication-title" className="pt-10 space-y-4">
-        <article className="space-y-3">
-          <div>
-            <h3 id="thesis-publication-title" className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
-              {pub.title}
-            </h3>
-            <p className="text-sm text-text-muted mt-1">
-              {pub.subtitle} · {pub.badge}
-            </p>
-          </div>
-
-          {/* Abstract */}
-          <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[70ch]">
-            {pub.abstract}
+      <section aria-labelledby="thesis-publication-title" className="pt-6 space-y-4">
+        <div>
+          <h2 id="thesis-publication-title" className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
+            {pub.title}
+          </h2>
+          <p className="text-sm text-text-muted mt-1">
+            {pub.subtitle} · {pub.badge}
           </p>
+        </div>
 
-          {/* Direct Repository Link */}
-          <div className="pt-1">
-            <a
-              href={pub.repositoryLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
-            >
-              <span>{pub.repositoryText}</span>
-              <span>↗</span>
-            </a>
-          </div>
-        </article>
+        {/* Abstract */}
+        <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[70ch]">
+          {pub.abstract}
+        </p>
+
+        {/* Direct Repository Link */}
+        <div className="pt-1">
+          <a
+            href={pub.repositoryLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-brand hover:underline inline-flex items-center gap-1"
+          >
+            <span>{pub.repositoryText}</span>
+            <span>↗</span>
+          </a>
+        </div>
       </section>
 
       {/* Action Bar */}
