@@ -12,6 +12,11 @@ export interface NavTranslations {
   preferences: string;
   swipeNav: string;
   downloadCv: string;
+  settings: string;
+  language: string;
+  theme: string;
+  lightTheme: string;
+  darkTheme: string;
 }
 
 export interface SidebarTranslations {

@@ -5,7 +5,24 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section aria-labelledby="hero-title" className="space-y-8 pt-4 sm:pt-8">
+    <section aria-labelledby="hero-title" className="space-y-8 pt-2 sm:pt-4">
+      {/* Candidate Profile Avatar & Headline Header */}
+      <div className="flex items-center gap-3.5 sm:gap-4">
+        <img
+          src="/images/profile.webp"
+          alt="Casper Hildebrand"
+          className="h-14 w-14 sm:h-16 sm:w-16 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas shadow-xs"
+        />
+        <div className="min-w-0">
+          <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight block">
+            {t.sidebar.name}
+          </span>
+          <p className="text-xs sm:text-sm text-text-muted">
+            {t.sidebar.role} · {t.sidebar.location}
+          </p>
+        </div>
+      </div>
+
       {/* 2-line maximum headline */}
       <h1
         id="hero-title"

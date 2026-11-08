@@ -11,6 +11,10 @@ test("renders navigation and portfolio content", () => {
 test("toggles language between English and Dutch", () => {
   render(<App />);
 
+  // Open settings menu
+  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
+  fireEvent.click(settingsButton);
+
   // Switch to Dutch
   const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
   if (nlButtons.length > 0) {
@@ -28,6 +32,9 @@ test("toggles language between English and Dutch", () => {
 
 test("toggles theme between light and dark", () => {
   render(<App />);
+  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
+  fireEvent.click(settingsButton);
+
   const themeToggle = screen.getAllByLabelText(/switch to/i)[0];
   expect(themeToggle).toBeDefined();
   fireEvent.click(themeToggle);
@@ -48,8 +55,11 @@ test("renders accessible main landmark with id", () => {
   expect(main).toHaveAttribute("id", "main-content");
 });
 
-test("renders theme toggle button", () => {
+test("renders theme toggle button in settings menu", () => {
   render(<App />);
+  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
+  fireEvent.click(settingsButton);
+
   const toggleButtons = screen.getAllByRole("button", {
     name: /switch to (light|dark) theme/i,
   });
@@ -101,7 +111,10 @@ test("links to Dutch CV PDF when site language is Dutch", () => {
   window.history.pushState({}, "", "/cv");
   render(<App />);
 
-  // Switch to Dutch
+  // Open settings and switch to Dutch
+  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
+  fireEvent.click(settingsButton);
+
   const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
   if (nlButtons.length > 0) {
     fireEvent.click(nlButtons[0]);

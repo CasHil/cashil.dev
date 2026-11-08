@@ -54,17 +54,27 @@ export default function MobileBottomNav() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `relative flex flex-col items-center justify-center py-1.5 px-1 rounded-squircle-sm min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              `relative flex flex-col items-center justify-center py-1.5 px-1 rounded-squircle-sm min-h-[48px] text-xs transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isActive
-                  ? "text-brand font-semibold bg-brand-subtle/80 dark:bg-brand-subtle/40 border border-brand-border/30 shadow-2xs"
-                  : "text-text-muted hover:text-text-primary hover:bg-surface-hover/50 border border-transparent"
+                  ? "text-brand font-semibold"
+                  : "text-text-muted hover:text-text-primary"
               }`
             }
           >
-            {item.icon}
-            <span className="mt-1 tracking-tight truncate max-w-[70px] text-center font-sans">
-              {item.label}
-            </span>
+            {({ isActive }) => (
+              <>
+                {item.icon}
+                <span className="mt-1 tracking-tight truncate max-w-[72px] text-center font-sans text-xs">
+                  {item.label}
+                </span>
+                {isActive && (
+                  <span
+                    className="w-1 h-1 rounded-full bg-brand mt-0.5"
+                    aria-hidden="true"
+                  />
+                )}
+              </>
+            )}
           </NavLink>
         ))}
       </div>
