@@ -49,7 +49,7 @@ export default function SettingsMenu() {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`relative inline-flex items-center justify-center h-9 w-9 sm:h-8 sm:w-8 rounded-squircle-sm border transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 ${
+        className={`relative inline-flex items-center justify-center h-7 w-7 sm:h-8 sm:w-8 rounded-full border transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 ${
           isOpen
             ? "bg-surface border-brand text-brand ring-2 ring-brand/20"
             : "border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary"
