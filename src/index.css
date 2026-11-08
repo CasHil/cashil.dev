@@ -45,7 +45,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: clip;
   }
 
   body {
@@ -56,8 +55,6 @@
       Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
-    overflow-y: scroll;
   }
 
   :focus-visible {
