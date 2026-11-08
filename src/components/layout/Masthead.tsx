@@ -1,58 +1,62 @@
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import LanguageToggle from "../LanguageToggle/LanguageToggle";
+import SettingsMenu from "../navigation/SettingsMenu";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function Masthead() {
   const { t } = useLanguage();
 
   return (
-    <header className="pt-6 sm:pt-8 pb-8 sm:pb-12">
-      <div className="flex items-center justify-between gap-4">
-        {/* Candidate Identity */}
-        <Link to="/" className="group flex items-center gap-3.5 focus:outline-none min-w-0">
-          <div className="relative shrink-0">
-            <img
-              src="/images/profile.webp"
-              alt="Casper Hildebrand"
-              className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-1 ring-border-subtle ring-offset-2 ring-offset-canvas transition-transform duration-200 group-hover:scale-105"
-            />
-          </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150 truncate">
-                {t.sidebar.name}
-              </span>
-              <span className="hidden sm:inline-block text-xs font-normal text-text-muted shrink-0">
-                · {t.sidebar.timezone}
-              </span>
-            </div>
-            <p className="text-xs font-normal text-text-muted truncate">
-              {t.sidebar.role}
-            </p>
-          </div>
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-canvas/90 dark:bg-canvas/90 border-b border-border-subtle/60 transition-colors">
+      <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-4">
+        {/* Candidate Typographic Brand (No face in header, no mobile title truncation) */}
+        <Link
+          to="/"
+          className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md min-w-0"
+          aria-label={t.sidebar.name}
+        >
+          <span className="font-display font-semibold text-base sm:text-lg text-text-primary tracking-tight group-hover:text-brand transition-colors duration-150 whitespace-nowrap">
+            {t.sidebar.name}
+          </span>
+          <span className="hidden sm:inline-flex items-center gap-2 text-xs font-normal text-text-muted shrink-0">
+            <span aria-hidden="true">·</span>
+            <span>Software Engineer</span>
+          </span>
         </Link>
 
-        {/* Primary Navigation (Desktop: md and up) */}
-        <div className="hidden md:block">
+        {/* Desktop Primary Navigation */}
+        <div className="hidden md:flex items-center justify-center">
           <Header orientation="horizontal" />
         </div>
 
-        {/* Unified Utility Island: Language & Theme Toggles */}
-        <div
-          role="toolbar"
-          aria-label="Preferences and utilities"
-          className="flex items-center gap-1.5 shrink-0"
-        >
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-      </div>
+        {/* Right: Recruiter Quick Access & Settings Menu */}
+        <div className="flex items-center gap-2 shrink-0">
+          {/* Recruiter Quick CV Link (Desktop) */}
+          <Link
+            to="/cv"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-squircle-sm text-xs font-semibold text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-colors border border-border-subtle shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95"
+            aria-label={t.nav.cv}
+          >
+            <svg
+              className="w-3.5 h-3.5 text-brand"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.8}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <span>{t.nav.cv}</span>
+          </Link>
 
-      {/* Primary Navigation (Tablet: between sm and md) */}
-      <div className="hidden sm:flex md:hidden justify-center pt-4">
-        <Header orientation="horizontal" />
+          {/* Settings & Preferences Popover */}
+          <SettingsMenu />
+        </div>
       </div>
     </header>
   );

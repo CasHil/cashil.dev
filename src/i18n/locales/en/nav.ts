@@ -12,4 +12,9 @@ export const enNav: NavTranslations = {
   preferences: "Preferences",
   swipeNav: "Swipe to switch pages",
   downloadCv: "Download CV (PDF)",
+  settings: "Settings",
+  language: "Language",
+  theme: "Theme",
+  lightTheme: "Light",
+  darkTheme: "Dark",
 };

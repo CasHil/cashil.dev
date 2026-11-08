@@ -12,4 +12,9 @@ export const nlNav: NavTranslations = {
   preferences: "Voorkeuren",
   swipeNav: "Veeg om van pagina te wisselen",
   downloadCv: "Download CV (PDF)",
+  settings: "Instellingen",
+  language: "Taal",
+  theme: "Thema",
+  lightTheme: "Licht",
+  darkTheme: "Donker",
 };
