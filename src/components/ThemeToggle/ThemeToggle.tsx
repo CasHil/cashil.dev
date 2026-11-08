@@ -6,12 +6,10 @@ export default function ThemeToggle() {
   const isDark = theme === "dark";
 
   return (
-    <motion.button
+    <button
       type="button"
       onClick={toggleTheme}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.88 }}
-      className="relative inline-flex items-center justify-center h-9 w-9 sm:h-8 sm:w-8 rounded-squircle-sm border border-zinc-200/80 dark:border-white/10 bg-zinc-200/60 dark:bg-zinc-800/60 hover:bg-zinc-200 dark:hover:bg-zinc-700/80 text-zinc-700 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 after:absolute after:-inset-1 sm:after:inset-0"
+      className="relative inline-flex items-center justify-center h-[34px] w-[34px] sm:h-[32px] sm:w-[32px] rounded-squircle-sm border border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95"
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
@@ -19,11 +17,11 @@ export default function ThemeToggle() {
         {isDark ? (
           <motion.svg
             key="sun"
-            initial={{ rotate: -90, scale: 0.4, opacity: 0 }}
+            initial={{ rotate: -90, scale: 0.5, opacity: 0 }}
             animate={{ rotate: 0, scale: 1, opacity: 1 }}
-            exit={{ rotate: 90, scale: 0.4, opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="w-3.5 h-3.5 text-amber-400"
+            exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="w-4 h-4 text-amber-500 dark:text-amber-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -39,11 +37,11 @@ export default function ThemeToggle() {
         ) : (
           <motion.svg
             key="moon"
-            initial={{ rotate: 90, scale: 0.4, opacity: 0 }}
+            initial={{ rotate: 90, scale: 0.5, opacity: 0 }}
             animate={{ rotate: 0, scale: 1, opacity: 1 }}
-            exit={{ rotate: -90, scale: 0.4, opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="w-3.5 h-3.5 text-zinc-700"
+            exit={{ rotate: -90, scale: 0.5, opacity: 0 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="w-4 h-4 text-text-secondary"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -58,6 +56,6 @@ export default function ThemeToggle() {
           </motion.svg>
         )}
       </AnimatePresence>
-    </motion.button>
+    </button>
   );
 }
