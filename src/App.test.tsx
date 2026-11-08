@@ -131,10 +131,13 @@ test("allows switching CV PDF language via dedicated toggle", () => {
   expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
 
-test("renders mobile bottom navigation bar with thumb-zone controls across 4 destinations", () => {
+test("renders mobile bottom navigation bar with thumb-zone controls across 4 destinations and opaque elevation", () => {
   render(<App />);
   const mobileNav = screen.getByRole("navigation", { name: /mobile primary navigation/i });
   expect(mobileNav).toBeInTheDocument();
+  // Verifies physical elevation and opacity against bleed-through
+  expect(mobileNav.className).toContain("bg-surface");
+  expect(mobileNav.className).toContain("shadow-");
 
   // All 4 primary destinations are directly accessible in the thumb-zone
   const overviewLinks = screen.getAllByRole("link", { name: /overview|overzicht/i });
@@ -148,6 +151,10 @@ test("renders mobile bottom navigation bar with thumb-zone controls across 4 des
 
   const eduLinks = screen.getAllByRole("link", { name: /education|opleiding/i });
   expect(eduLinks.length).toBeGreaterThan(0);
+
+  // Verifies unified preferences and utility toolbar
+  const toolbar = screen.getByRole("toolbar", { name: /preferences and utilities/i });
+  expect(toolbar).toBeInTheDocument();
 });
 
 test("renders live technology experience tracker and authentic mentorship section", () => {

@@ -46,7 +46,7 @@ export default function MobileBottomNav() {
   return (
     <nav
       aria-label="Mobile Primary Navigation"
-      className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-canvas/95 backdrop-blur-md border-t border-border-subtle pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] pt-1.5 px-3" /* taste-skill-ignore: mobile sticky bar */
+      className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-surface dark:bg-[#121714] border-t border-border-subtle shadow-[0_-4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_-6px_24px_rgba(0,0,0,0.5)] pb-[calc(0.6rem+env(safe-area-inset-bottom,0px))] pt-2 px-3"
     >
       <div className="grid grid-cols-4 items-center justify-around max-w-sm mx-auto gap-1">
         {navItems.map((item) => (
@@ -54,15 +54,15 @@ export default function MobileBottomNav() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-1.5 px-2 rounded-squircle-sm min-h-[48px] text-xs font-medium transition-colors duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              `relative flex flex-col items-center justify-center py-1.5 px-1 rounded-squircle-sm min-h-[48px] text-xs font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isActive
-                  ? "text-brand font-semibold"
-                  : "text-text-muted hover:text-text-primary"
+                  ? "text-brand font-semibold bg-brand-subtle/80 dark:bg-brand-subtle/40 border border-brand-border/30 shadow-2xs"
+                  : "text-text-muted hover:text-text-primary hover:bg-surface-hover/50 border border-transparent"
               }`
             }
           >
             {item.icon}
-            <span className="mt-1 tracking-tight truncate max-w-[70px] text-center">
+            <span className="mt-1 tracking-tight truncate max-w-[70px] text-center font-sans">
               {item.label}
             </span>
           </NavLink>
