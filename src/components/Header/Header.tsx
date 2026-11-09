@@ -47,7 +47,7 @@ export default function Header({
               end={item.to === "/"}
               onClick={handleClick}
               className={({ isActive }) =>
-                `relative px-3 py-1.5 text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                `relative px-3 py-1.5 text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
                   isActive
                     ? "text-text-primary font-semibold"
                     : "text-text-muted hover:text-text-primary hover:bg-surface-subtle/50"
@@ -62,8 +62,9 @@ export default function Header({
                       className="absolute inset-0 rounded-squircle-sm bg-surface-subtle border border-border-subtle/70 shadow-2xs -z-10"
                       transition={{
                         type: "spring",
-                        stiffness: 380,
-                        damping: 30,
+                        stiffness: 450,
+                        damping: 35,
+                        mass: 0.8,
                       }}
                     />
                   )}
