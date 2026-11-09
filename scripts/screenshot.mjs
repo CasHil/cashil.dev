@@ -96,6 +96,26 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await nlPage.screenshot({ path: path.join(OUT, '16_overview_mobile_nl_360.png'), fullPage: true });
   console.log('Saved: 16_overview_mobile_nl_360.png');
 
+  // Desktop settings open
+  await dPage.goto(BASE + '/', { waitUntil: 'networkidle' });
+  const settingsBtn = await dPage.$('button[aria-label*="Settings"], button[aria-label*="Instellingen"]');
+  if (settingsBtn) {
+    await settingsBtn.click();
+    await dPage.waitForTimeout(300);
+    await dPage.screenshot({ path: path.join(OUT, '23_desktop_settings_open.png') });
+    console.log('Saved: 23_desktop_settings_open.png');
+  }
+
+  // Mobile menu open
+  await mPage.goto(BASE + '/', { waitUntil: 'networkidle' });
+  const menuBtn = await mPage.$('button[aria-label*="Menu"]');
+  if (menuBtn) {
+    await menuBtn.click();
+    await mPage.waitForTimeout(300);
+    await mPage.screenshot({ path: path.join(OUT, '20_mobile_menu_open_light.png') });
+    console.log('Saved: 20_mobile_menu_open_light.png');
+  }
+
   await browser.close();
   server.httpServer.close();
   console.log('All screenshots captured successfully!');

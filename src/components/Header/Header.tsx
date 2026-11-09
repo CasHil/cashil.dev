@@ -37,7 +37,7 @@ export default function Header({
         className={
           isVertical
             ? "flex flex-col space-y-1"
-            : "flex items-center gap-1"
+            : "flex items-center gap-0.5 p-1 rounded-squircle bg-surface-subtle/80 dark:bg-surface-subtle/40 border border-border-subtle/80 shadow-2xs backdrop-blur-md"
         }
       >
         {navItems.map((item) => (
@@ -47,10 +47,10 @@ export default function Header({
               end={item.to === "/"}
               onClick={handleClick}
               className={({ isActive }) =>
-                `relative px-3 py-1.5 text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
+                `relative px-3.5 py-1.5 text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
                   isActive
                     ? "text-text-primary font-semibold"
-                    : "text-text-muted hover:text-text-primary hover:bg-surface-subtle/50"
+                    : "text-text-muted hover:text-text-primary hover:bg-surface/50"
                 }`
               }
             >
@@ -59,7 +59,7 @@ export default function Header({
                   {isActive && (
                     <motion.div
                       layoutId="magneticNavPill"
-                      className="absolute inset-0 rounded-squircle-sm bg-surface-subtle border border-border-subtle/70 shadow-2xs -z-10"
+                      className="absolute inset-0 rounded-squircle-sm bg-surface border border-border-subtle/80 shadow-2xs -z-10"
                       transition={{
                         type: "spring",
                         stiffness: 450,
