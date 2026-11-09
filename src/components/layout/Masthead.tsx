@@ -42,21 +42,35 @@ export default function Masthead() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-canvas border-b border-border-subtle transition-colors relative">
-      <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-14 flex items-center justify-between gap-4">
-        {/* Candidate Typographic Identity */}
+    <header className="sticky top-0 z-40 w-full bg-canvas/80 dark:bg-canvas/80 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/75 border-b border-border-subtle/80 transition-colors relative">
+      <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between gap-4">
+        {/* Candidate Typographic Identity & Agency Studio Mark */}
         <Link
           to="/"
-          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md group py-1"
+          className="flex items-center gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-squircle-sm group py-1 select-none"
           aria-label={t.sidebar.name}
         >
-          <span className="font-sans font-semibold text-sm sm:text-base text-text-primary tracking-tight group-hover:text-brand transition-colors whitespace-nowrap">
-            {t.sidebar.name}
-          </span>
-          <span className="hidden sm:inline-flex items-center gap-2 text-xs font-normal text-text-muted shrink-0">
-            <span aria-hidden="true">·</span>
-            <span>Software Engineer</span>
-          </span>
+          {/* Monogram Badge */}
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-squircle-sm bg-surface-subtle border border-border-subtle group-hover:border-brand/40 group-hover:bg-surface group-hover:shadow-xs transition-all duration-200 flex items-center justify-center shrink-0">
+            <span className="font-sans font-bold text-xs sm:text-[13px] tracking-tight text-text-primary group-hover:text-brand transition-colors">
+              CH
+            </span>
+          </div>
+
+          {/* Typographic Identity & Location / Craft Descriptor */}
+          <div className="flex flex-col text-left">
+            <span className="font-sans font-semibold text-sm sm:text-base text-text-primary tracking-tight leading-none group-hover:text-brand transition-colors whitespace-nowrap">
+              {t.sidebar.name}
+            </span>
+            <span className="hidden sm:flex items-center gap-1.5 text-xs font-normal text-text-muted leading-tight mt-1 whitespace-nowrap">
+              <span>Software Engineer</span>
+              <span className="inline-block w-1 h-1 rounded-full bg-border-subtle" aria-hidden="true" />
+              <span>Amsterdam</span>
+            </span>
+            <span className="sm:hidden text-xs font-normal text-text-muted leading-tight mt-0.5">
+              Amsterdam
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Primary Navigation with Magnetic Sliding Pill */}
@@ -107,7 +121,7 @@ export default function Masthead() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.12, ease: "easeOut" }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 top-14 bg-black/25 dark:bg-black/50 z-40 md:hidden"
+              className="fixed inset-0 top-16 bg-black/25 dark:bg-black/50 z-40 md:hidden"
               aria-hidden="true"
             />
 
