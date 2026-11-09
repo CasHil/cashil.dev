@@ -49,7 +49,7 @@ export default function SettingsMenu() {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`relative inline-flex items-center justify-center h-9 w-9 min-h-[36px] min-w-[36px] rounded-squircle-sm border transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 ${
+        className={`relative inline-flex items-center justify-center h-9 w-9 min-h-[36px] min-w-[36px] rounded-squircle-sm border transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 touch-manipulation ${
           isOpen
             ? "bg-surface border-brand text-brand ring-2 ring-brand/20"
             : "border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary"
@@ -60,7 +60,7 @@ export default function SettingsMenu() {
         title={t.nav.settings}
       >
         <svg
-          className="w-4 h-4 transition-transform duration-200"
+          className="w-4 h-4 transition-transform duration-150 transform-gpu"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -89,8 +89,9 @@ export default function SettingsMenu() {
             initial={{ opacity: 0, scale: 0.96, y: -4 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -4 }}
-            transition={{ duration: 0.12, ease: "easeOut" }}
-            className="absolute right-0 top-full mt-2 z-50 w-52 rounded-squircle-sm bg-surface border border-border-subtle shadow-lg dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)] p-1.5 space-y-1 backdrop-blur-md"
+            transition={{ duration: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            style={{ willChange: "transform, opacity" }}
+            className="absolute right-0 top-full mt-2 z-50 w-52 rounded-squircle-sm bg-surface border border-border-subtle shadow-lg dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)] p-1.5 space-y-1 transform-gpu"
           >
             {/* Language Row */}
             <div className="flex items-center justify-between px-2 py-1.5 rounded-[8px] hover:bg-surface-subtle/60 transition-colors">
@@ -120,7 +121,7 @@ export default function SettingsMenu() {
                 <button
                   type="button"
                   onClick={() => setLanguage("en")}
-                  className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
+                  className={`px-2 py-0.5 rounded text-xs font-medium transition-colors touch-manipulation active:scale-95 ${
                     language === "en"
                       ? "bg-surface text-text-primary font-semibold shadow-2xs border border-border-subtle/50"
                       : "text-text-muted hover:text-text-primary"
@@ -133,7 +134,7 @@ export default function SettingsMenu() {
                 <button
                   type="button"
                   onClick={() => setLanguage("nl")}
-                  className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
+                  className={`px-2 py-0.5 rounded text-xs font-medium transition-colors touch-manipulation active:scale-95 ${
                     language === "nl"
                       ? "bg-surface text-text-primary font-semibold shadow-2xs border border-border-subtle/50"
                       : "text-text-muted hover:text-text-primary"
@@ -186,7 +187,7 @@ export default function SettingsMenu() {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-subtle hover:bg-surface border border-border-subtle text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand shadow-2xs active:scale-95"
+                className="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-subtle hover:bg-surface border border-border-subtle text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand shadow-2xs active:scale-95 touch-manipulation"
                 aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
               >
                 <span>{isDark ? t.nav.darkTheme : t.nav.lightTheme}</span>

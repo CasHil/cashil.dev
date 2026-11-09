@@ -19,6 +19,7 @@
     "build:cv": "powershell -ExecutionPolicy Bypass -File scripts/build-cv.ps1",
     "audit:ux": "npx -y impeccable detect dist",
     "screenshot": "node scripts/screenshot.mjs",
+    "test:perf": "node scripts/measure-menu-fps.mjs",
     "check": "node scripts/lint-copy.js && tsc && vitest run",
     "deploy": "wrangler pages deploy dist --project-name casperhildebrand"
   },
