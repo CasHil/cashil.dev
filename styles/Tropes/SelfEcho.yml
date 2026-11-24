@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid narrow vocabulary echoes ''%s'' across paragraphs (Tropes: Self-echo).'
+level: suggestion
+link: https://tropes.fyi/tropes/self-echo
+ignorecase: true
+tokens:
+- quietly become the real source of truth
+- wearing the same italics
+tests:
+- name: flags self echo token
+  input: It has quietly become the real source of truth for the app.
+  contains:
+  - Tropes.SelfEcho
+- name: clean text
+  input: It is the primary datastore for the app.
+  want: ''

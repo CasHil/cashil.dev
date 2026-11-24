@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid pedagogical hand-holding ''%s'' (Tropes: Let''s break this down).'
+level: warning
+link: https://tropes.fyi/tropes/lets-break-this-down
+scope: sentence
+raw:
+- (?i)\blet's\s+(?:break\s+this\s+down|unpack|explore\s+this|dive\s+in|take\s+a\s+closer\s+look)\b
+tests:
+- name: flags lets break this down
+  input: Let's break this down step by step.
+  contains:
+  - Tropes.LetsBreakThisDown
+- name: flags lets unpack this
+  input: Let's unpack what this means for users.
+  contains:
+  - Tropes.LetsBreakThisDown
+- name: clean text
+  input: This changes the user flow in two ways.
+  want: ''

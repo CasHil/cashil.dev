@@ -1,0 +1,17 @@
+extends: existence
+message: 'Avoid cycling synonyms for the same concept; maintain consistent naming
+  (Tropes: Synonym cycling).'
+level: suggestion
+link: https://tropes.fyi/tropes/synonym-cycling
+ignorecase: true
+tokens:
+- analytics hub
+- insights portal
+tests:
+- name: flags synonym cycling token
+  input: Switch from the dashboard to the analytics hub.
+  contains:
+  - Tropes.SynonymCycling
+- name: clean text
+  input: Open the dashboard.
+  want: ''

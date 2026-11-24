@@ -1,0 +1,25 @@
+extends: existence
+message: 'Use simple copula ''is'' or ''are'' instead of pompous ''%s'' (Tropes: The
+  Serves As dodge).'
+level: warning
+link: https://tropes.fyi/tropes/serves-as-dodge
+ignorecase: true
+tokens:
+- serves as
+- serves as a
+- serves as an
+- stands as
+- stands as a
+- stands as an
+- marks a pivotal
+- marks a turning point
+- represents a pivotal
+- functions as a
+tests:
+- name: flags serves as
+  input: The building serves as a reminder of city history.
+  contains:
+  - Tropes.ServesAs
+- name: clean text
+  input: The building is a reminder of city history.
+  want: ''

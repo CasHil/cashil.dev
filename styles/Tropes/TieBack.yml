@@ -1,0 +1,16 @@
+extends: existence
+message: 'Stop after delivering the answer; avoid circular tie-back ''%s'' (Tropes:
+  The Tie-Back).'
+level: warning
+link: https://tropes.fyi/tropes/tie-back
+scope: sentence
+raw:
+- (?i)\b(?:so,\s+to\s+answer\s+your\s+question|to\s+answer\s+your\s+question|to\s+bring\s+it\s+back\s+to\s+what\s+you\s+asked|in\s+short,\s+this\s+gives\s+you|to\s+circle\s+back)\b
+tests:
+- name: flags tie back
+  input: 'So, to answer your question: yes, the user can be added.'
+  contains:
+  - Tropes.TieBack
+- name: clean text
+  input: Yes, you can add the user to the app.
+  want: ''

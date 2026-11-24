@@ -1,0 +1,15 @@
+extends: existence
+message: "Avoid verbatim section or paragraph duplication '%s' (Tropes: Content duplication)."
+level: warning
+ignorecase: true
+tokens:
+  - "word-for-word identical"
+link: https://tropes.fyi/tropes/content-duplication
+tests:
+  - name: flags content duplication token
+    input: "The second paragraph was word-for-word identical to the first."
+    contains:
+      - Tropes.ContentDuplication
+  - name: clean text
+    input: "The second paragraph summarized the main points."
+    want: ""

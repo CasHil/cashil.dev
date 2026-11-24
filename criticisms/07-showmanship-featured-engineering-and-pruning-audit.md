@@ -1,4 +1,4 @@
-# Round 07: Engineering Showmanship, "Featured Engineering" Overhaul & Ruthless Pruning Audit
+# Round 07: Engineering showmanship, "featured engineering" overhaul and ruthless pruning audit
 
 **Archive Date**: November 2, 2026  
 **Conversation Context**: Conversation `dc3522df-9e9e-43fa-832c-65c093665b56`  
@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Executive Summary: The Pendulum Over-Correction
+## 1. Executive summary: The pendulum over-correction
 
 In aggressively purging AI slop (pulsing green dots, fake `setTimeout` terminals, wavy decorative SVGs), the portfolio over-corrected into a **Sterile Corporate Morgue** dominated by **Academic Inertia and Static Boxification**:
 
@@ -26,7 +26,7 @@ In aggressively purging AI slop (pulsing green dots, fake `setTimeout` terminals
 
 ---
 
-## 2. The Ruthless "If It Has No Place, It Has to Go" Deletion Hit List
+## 2. The ruthless "if it has no place, it has to go" deletion hit list
 
 | Component / Artifact | Current State | Verdict | Justification |
 |---|---|---|---|
@@ -41,11 +41,11 @@ In aggressively purging AI slop (pulsing green dots, fake `setTimeout` terminals
 
 ---
 
-## 3. High-Signal Showmanship Blueprints (Zero Fake Theater)
+## 3. High-signal showmanship blueprints (zero fake theater)
 
 To achieve true engineering showmanship without violating anti-slop rules (no fake `setTimeout` timers, no fake terminal chrome):
 
-### Blueprint A: Bitsized Real In-Browser Web Worker Sandbox (`BitsizedSandboxEngine.tsx`)
+### Blueprint A: Bitsized real in-browser web worker sandbox (`BitsizedWorkerSandbox.tsx`)
 - Runs **real code client-side inside an isolated Web Worker (`new Worker(Blob URL)`)**.
 - Equipped with **true microsecond execution telemetry** via `performance.now()`.
 - Features an **actual main-thread watchdog timer** with an `AbortController` / `worker.terminate()` killing runaway executions after 500ms.
@@ -53,17 +53,17 @@ To achieve true engineering showmanship without violating anti-slop rules (no fa
   1. *Algorithmic Computation*: Prime sieve / Array mapping with microsecond benchmark (<1ms).
   2. *Runaway Loop Buster (`while(true)`)`: Demonstrates the 500ms watchdog terminating the runaway thread cleanly while the browser UI thread remains 60 FPS.
   3. *Sandbox Security Boundary*: Demonstrates DOM isolation throwing `ReferenceError: window is not defined in WorkerGlobalScope`.
-- **100% DevTools verifiable**: Open Chrome DevTools, inspect Threads, and see the real worker thread spawn and terminate.
+- 100% DevTools verifiable: Open Chrome DevTools, inspect Threads, and see the real worker thread spawn and terminate.
 
-### Blueprint B: Tikkie Business Cryptographic Webhook & State Inspector (`TikkieSystemsInspector.tsx`)
-- Models ABN AMRO merchant onboarding and payment lifecycle state transitions (`INITIATED` → `AUTHORIZED` → `SETTLED`).
+### Blueprint B: Tikkie Business cryptographic webhook and state inspector (`tikkiesystemsinspector.Tsx`)
+- Models ABN AMRO merchant onboarding and payment lifecycle state transitions (`INITIATED` -> `AUTHORIZED` -> `SETTLED`).
 - Uses native browser **Web Crypto API (`window.crypto.subtle`)** to compute real HMAC-SHA256 signatures over merchant payment payloads in real time.
-- **Interactive Tamper Testing**: The visitor can click "Tamper Payload" (e.g. modifying `amount_cents` from 2500 to 2501); the inspector recalculates the cryptographic digest instantly, showing `401 Unauthorized (Signature Mismatch)`.
+- Interactive Tamper Testing: The visitor can click "Tamper Payload" (e.g. modifying `amount_cents` from 2500 to 2501); the inspector recalculates the cryptographic digest instantly, showing `401 Unauthorized (Signature Mismatch)`.
 - Displays real, typed TypeScript schemas for merchant interfaces.
 
 ---
 
-## 4. Anti-Slop Codex Rules Updated
+## 4. Anti-slop codex rules updated
 
 1. **Rule 11 (Authentic Execution)**: If a project claims in-browser execution or cryptography, provide a live, client-side, DevTools-verifiable demonstration rather than static text boxes.
 2. **Rule 12 (Zero Sibling Echoes)**: Never repeat resume bullets on the homepage that are already present in `/work-experience`. The homepage is the proof-of-craft hook; the timeline is the chronological ledger.

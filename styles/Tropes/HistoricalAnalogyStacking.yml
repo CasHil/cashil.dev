@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid rapid-fire listing of tech revolutions ''%s'' for borrowed authority
+  (Tropes: Rapid-fire historical analogies).'
+level: warning
+link: https://tropes.fyi/tropes/historical-analogy-stacking
+scope: paragraph
+raw:
+- (?i)\b(?:Apple\s+didn't\s+build\s+Uber|Facebook\s+didn't\s+build\s+Spotify|Stripe\s+didn't\s+build\s+Shopify|the\s+web,\s+mobile,\s+social,\s+cloud)\b
+tests:
+- name: flags tech revolution list
+  input: Apple didn't build Uber. Facebook didn't build Spotify.
+  contains:
+  - Tropes.HistoricalAnalogyStacking
+- name: clean text
+  input: Platforms enable independent developers to create new products.
+  want: ''

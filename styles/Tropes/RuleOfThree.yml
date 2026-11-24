@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid repetitive tricolon cadence ''%s'' (Tropes: Rule of Three pattern).'
+level: suggestion
+link: https://tropes.fyi/tropes/rule-of-three
+scope: paragraph
+raw:
+- '(?i)(?:[^;.
+
+  ]+;){2,}[^;.
+
+  ]+'
+tests:
+- name: flags semicolon tricolon
+  input: Products impress people; platforms empower them; systems connect them.
+  contains:
+  - Tropes.RuleOfThree
+- name: clean text
+  input: Products solve problems while platforms connect users.
+  want: ''

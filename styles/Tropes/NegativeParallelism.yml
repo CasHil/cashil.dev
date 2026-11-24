@@ -1,0 +1,26 @@
+extends: existence
+message: 'Avoid negative parallelism ''%s'' (Tropes: Negative parallelism).'
+level: warning
+link: https://tropes.fyi/tropes/negative-parallelism
+scope: paragraph
+raw:
+- (?i)(?:\b(?:it's|it is|this is|they're|they are)\s+not\s+[^.?!;—–]+(?:—|--)\s*(?:it's|it
+  is|this is|they're|they are)\b|\b(?:it's|it is|this is)\s+not\s+[^.?!]+[.?!]\s*(?:it's|it
+  is|this is)\b|\b(?:isn't|is not|aren't|are not)\s+[^.?!;—–]+(?:—|--)\s*(?:it's|it
+  is|they're|they are)\b|\bnot\s+because\s+[^,.?!]+,\s*but\s+because\b)
+tests:
+- name: flags not X its Y with dash
+  input: It's not bold -- it's backwards.
+  contains:
+  - Tropes.NegativeParallelism
+- name: flags not X its Y sentences
+  input: It's not bold. It's backwards.
+  contains:
+  - Tropes.NegativeParallelism
+- name: flags not because but because
+  input: We failed not because of latency, but because of poor design.
+  contains:
+  - Tropes.NegativeParallelism
+- name: clean text
+  input: The approach is backwards.
+  want: ''

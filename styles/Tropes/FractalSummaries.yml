@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid unnecessary recursive recapping ''%s'' (Tropes: Fractal summaries).'
+level: warning
+link: https://tropes.fyi/tropes/fractal-summaries
+ignorecase: true
+tokens:
+- in this section, we'll explore
+- as we've seen in this section
+- and so we return to where we began
+- as mentioned in the previous section
+tests:
+- name: flags section exploration
+  input: In this section, we'll explore caching strategies.
+  contains:
+  - Tropes.FractalSummaries
+- name: clean text
+  input: Caching strategies reduce database load.
+  want: ''

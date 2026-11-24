@@ -1,0 +1,25 @@
+extends: existence
+message: 'Avoid magic adverb ''%s'' used to inflate significance (Tropes: Quietly
+  and other magic adverbs).'
+level: warning
+link: https://tropes.fyi/tropes/quietly-adverb
+ignorecase: true
+tokens:
+- quietly
+- deeply
+- fundamentally
+- remarkably
+- arguably
+- unusually well
+tests:
+- name: flags quietly
+  input: It is quietly orchestrating workflows behind the scenes.
+  contains:
+  - Tropes.Quietly
+- name: flags fundamentally
+  input: This will fundamentally alter how teams work.
+  contains:
+  - Tropes.Quietly
+- name: clean text
+  input: The service orchestrates workflows.
+  want: ''

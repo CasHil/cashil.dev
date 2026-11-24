@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid overuse of em dashes ''%s'' for dramatic pauses (Tropes: Em-dash addiction).'
+level: suggestion
+link: https://tropes.fyi/tropes/em-dash-addiction
+scope: raw
+raw:
+- (?:—|\s+--\s+)
+tests:
+- name: flags em dash
+  input: The problem — and this is crucial — is systemic.
+  contains:
+  - Tropes.EmDash
+- name: flags spaced double hyphen
+  input: The problem -- and this is crucial -- is systemic.
+  contains:
+  - Tropes.EmDash
+- name: clean text
+  input: The problem, which is crucial, is systemic.
+  want: ''

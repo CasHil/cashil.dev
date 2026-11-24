@@ -1,0 +1,16 @@
+extends: existence
+message: 'Make your point or ask your question directly before stacking evidence ''%s''
+  (Tropes: Premise stacking).'
+level: warning
+link: https://tropes.fyi/tropes/premise-stacking
+scope: sentence
+raw:
+- '(?i)\bnow\s+imagine\s+if\s+this\s+(?:was|were)\s+simply:'
+tests:
+- name: flags premise stacking intro
+  input: 'Now imagine if this was simply: what is the status of the rollout?'
+  contains:
+  - Tropes.PremiseStacking
+- name: clean text
+  input: What is the status of the rollout?
+  want: ''

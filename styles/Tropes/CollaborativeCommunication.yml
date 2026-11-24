@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid unearned ''we'' transitions ''%s'' in personal/authored content (Tropes:
+  Collaborative communication).'
+level: suggestion
+link: https://tropes.fyi/tropes/collaborative-communication
+ignorecase: true
+tokens:
+- we're now equipped to
+- this gives us a much clearer picture
+- as we move forward, our focus
+tests:
+- name: flags collaborative we
+  input: We're now equipped to handle whatever comes next.
+  contains:
+  - Tropes.CollaborativeCommunication
+- name: clean text
+  input: The system handles new traffic patterns.
+  want: ''

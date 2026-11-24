@@ -1,0 +1,16 @@
+extends: existence
+message: "Avoid padding a single thesis with circular repetition '%s' (Tropes: One-point dilution)."
+level: suggestion
+ignorecase: true
+tokens:
+  - "the same point, restated"
+  - "restated eight ways"
+link: https://tropes.fyi/tropes/one-point-dilution
+tests:
+  - name: flags one point dilution
+    input: "This is the same point, restated across sections."
+    contains:
+      - Tropes.OnePointDilution
+  - name: clean text
+    input: "The argument applies across multiple contexts."
+    want: ""

@@ -1,0 +1,20 @@
+extends: existence
+message: 'Lead with the point rather than announcing it ''%s'' (Tropes: Preamble (announce-then-answer)).'
+level: warning
+link: https://tropes.fyi/tropes/preamble
+ignorecase: true
+tokens:
+- two constraints shape the design
+- two continuations are worth supporting
+- the more important point is
+- in this article, we will explore
+- in this post, we will explore
+- before we begin,
+tests:
+- name: flags announce then answer
+  input: Two constraints shape the design of this service.
+  contains:
+  - Tropes.Preamble
+- name: clean text
+  input: Memory limits and latency bounds dictate our design.
+  want: ''

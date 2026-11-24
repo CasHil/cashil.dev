@@ -1,0 +1,23 @@
+extends: existence
+message: 'Avoid patronizing analogy opener ''%s'' (Tropes: Think of it as...).'
+level: warning
+link: https://tropes.fyi/tropes/think-of-it-as
+ignorecase: true
+tokens:
+- think of it as
+- think of it like
+- imagine it as
+- it's like a highway
+- swiss army knife for
+tests:
+- name: flags think of it as
+  input: Think of it as a central dispatch system.
+  contains:
+  - Tropes.ThinkOfItAs
+- name: flags think of it like
+  input: Think of it like a highway system for data.
+  contains:
+  - Tropes.ThinkOfItAs
+- name: clean text
+  input: It operates as a central dispatch system.
+  want: ''

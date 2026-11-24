@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid self-posed rhetorical Q&A ''%s'' (Tropes: The X? A Y.).'
+level: warning
+link: https://tropes.fyi/tropes/rhetorical-qa
+scope: paragraph
+raw:
+- (?i)\bthe\s+(?:result|worst part|scary part|irony|catch|problem|upshot|solution)\?\s+[A-Z]
+tests:
+- name: flags the result devastating
+  input: The result? Devastating.
+  contains:
+  - Tropes.RhetoricalQA
+- name: flags the worst part nobody
+  input: The worst part? Nobody saw it coming.
+  contains:
+  - Tropes.RhetoricalQA
+- name: clean text
+  input: The outcome caused significant damage.
+  want: ''

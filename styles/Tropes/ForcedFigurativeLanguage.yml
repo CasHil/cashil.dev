@@ -1,0 +1,18 @@
+extends: existence
+message: "Avoid forced or coined metaphors '%s' (Tropes: Forced figurative language)."
+level: suggestion
+scope: sentence
+ignorecase: true
+tokens:
+  - "is like tracking your weight"
+  - "is like asking someone to"
+  - "it's like asking someone to"
+link: https://tropes.fyi/tropes/forced-figurative-language
+tests:
+  - name: flags forced simile
+    input: "Using story points is like tracking your weight with a broken scale."
+    contains:
+      - Tropes.ForcedFigurativeLanguage
+  - name: clean text
+    input: "Story points are an imprecise measure."
+    want: ""

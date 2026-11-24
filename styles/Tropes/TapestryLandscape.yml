@@ -1,0 +1,32 @@
+extends: existence
+message: 'Avoid ornate/grandiose noun ''%s'' (Tropes: Tapestry and Landscape).'
+level: warning
+link: https://tropes.fyi/tropes/tapestry-landscape
+ignorecase: true
+tokens:
+- tapestry
+- tapestries
+- rich tapestry
+- landscape
+- landscapes
+- ever-evolving landscape
+- complex landscape
+- paradigm
+- paradigms
+- synergy
+- synergies
+- ecosystem
+- ecosystems
+- load-bearing
+tests:
+- name: flags tapestry
+  input: The rich tapestry of modern software development.
+  contains:
+  - Tropes.TapestryLandscape
+- name: flags landscape
+  input: Navigating the complex landscape of cloud tools.
+  contains:
+  - Tropes.TapestryLandscape
+- name: clean text
+  input: Navigating the tools in the repository.
+  want: ''

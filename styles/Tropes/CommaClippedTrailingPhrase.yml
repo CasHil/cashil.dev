@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid comma-clipped trailing fragments ''%s'' (Tropes: Comma-clipped trailing
+  phrase).'
+level: suggestion
+link: https://tropes.fyi/tropes/comma-clipped-trailing-phrase
+scope: sentence
+raw:
+- (?i)(?:,\s+and\s+save\.|,\s+mentoring\.)
+tests:
+- name: flags and save tail
+  input: Place it above the content, and save.
+  contains:
+  - Tropes.CommaClippedTrailingPhrase
+- name: clean text
+  input: Place it above the content and save the file.
+  want: ''

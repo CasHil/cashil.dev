@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid false range ''%s'' where items do not share a meaningful spectrum
+  (Tropes: False ranges).'
+level: warning
+link: https://tropes.fyi/tropes/false-ranges
+scope: sentence
+raw:
+- (?i)\bfrom\s+[a-z0-9_-]+\s+to\s+[a-z0-9_-]+\s+to\s+[a-z0-9_-]+
+tests:
+- name: flags from X to Y to Z
+  input: Spanning from innovation to implementation to cultural transformation.
+  contains:
+  - Tropes.FalseRanges
+- name: clean text
+  input: Covering innovation and implementation.
+  want: ''

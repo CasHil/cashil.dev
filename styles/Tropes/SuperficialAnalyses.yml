@@ -1,0 +1,23 @@
+extends: existence
+message: 'Avoid shallow ''-ing'' riders ''%s'' bolted on for artificial significance
+  (Tropes: Superficial analyses).'
+level: warning
+link: https://tropes.fyi/tropes/superficial-analyses
+ignorecase: true
+tokens:
+- highlighting its importance
+- highlighting the importance of
+- reflecting broader trends
+- underscoring its role
+- underscoring the importance
+- contributing to the development of
+- symbolizing the community's
+- resonating with the region's
+tests:
+- name: flags highlighting its importance
+  input: The committee met yesterday, highlighting its importance in governance.
+  contains:
+  - Tropes.SuperficialAnalyses
+- name: clean text
+  input: The committee met yesterday to review governance policies.
+  want: ''

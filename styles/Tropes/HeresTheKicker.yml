@@ -1,0 +1,28 @@
+extends: existence
+message: 'Avoid false suspense transition ''%s'' (Tropes: Here''s the kicker).'
+level: warning
+link: https://tropes.fyi/tropes/heres-the-kicker
+ignorecase: true
+tokens:
+- here's the kicker
+- heres the kicker
+- here's the thing
+- heres the thing
+- here's where it gets interesting
+- here's what most people miss
+- here's the starting point
+- here's the deal
+- here's the catch
+- but here's the catch
+tests:
+- name: flags heres the kicker
+  input: 'Here''s the kicker: the system was down all along.'
+  contains:
+  - Tropes.HeresTheKicker
+- name: flags heres where it gets interesting
+  input: Here's where it gets interesting for our team.
+  contains:
+  - Tropes.HeresTheKicker
+- name: clean text
+  input: The system was unavailable all along.
+  want: ''
