@@ -1,0 +1,7 @@
+{
+  "name": "Tropes",
+  "description": "Vale linting rules for identifying AI writing patterns and tropes from https://tropes.fyi",
+  "homepage": "https://tropes.fyi",
+  "version": "1.0.0",
+  "vale_version": "3.0.0"
+}

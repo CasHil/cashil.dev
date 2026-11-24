@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid rapid punchy fragments ''%s'' for manufactured emphasis (Tropes: Short
+  punchy fragments).'
+level: suggestion
+link: https://tropes.fyi/tropes/short-punchy-fragments
+scope: paragraph
+raw:
+- (?i)(?:\b[A-Z][a-z]+\.\s+[A-Z][a-z]+\.\s+In\s+a\s+\w+\.\s+As\s+a\s+\w+\.|\bPlatforms\s+do\.)
+tests:
+- name: flags dramatic fragments sequence
+  input: He published this. Openly. In a book. As a priest.
+  contains:
+  - Tropes.ShortPunchyFragments
+- name: clean text
+  input: He published this openly in a book as a priest.
+  want: ''

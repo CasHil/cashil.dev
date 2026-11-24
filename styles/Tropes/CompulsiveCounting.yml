@@ -1,0 +1,20 @@
+extends: existence
+message: 'Avoid announcing item counts ''%s'' before listing them (Tropes: Compulsive
+  counting).'
+level: suggestion
+link: https://tropes.fyi/tropes/compulsive-counting
+scope: sentence
+raw:
+- (?i)\b(?:two|three|four|five|six|seven|eight|nine|ten|\d+)\s+(?:things|reasons\s+why|factors|takeaways|steps|walls|constraints|continuations)\b
+tests:
+- name: flags five things we wish
+  input: There are five things to consider when designing APIs.
+  contains:
+  - Tropes.CompulsiveCounting
+- name: flags four reasons why
+  input: Here are four reasons why this architecture works.
+  contains:
+  - Tropes.CompulsiveCounting
+- name: clean text
+  input: Consider these factors when designing APIs.
+  want: ''

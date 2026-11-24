@@ -1,0 +1,22 @@
+extends: existence
+message: 'Avoid marketing hyperbole ''%s'' in factual prose (Tropes: Promotional language).'
+level: warning
+link: https://tropes.fyi/tropes/promotional-language
+ignorecase: true
+tokens:
+- all-in-one solution
+- unlocks unprecedented
+- unlock unprecedented
+- seamless experience that elevates
+- elevate your workflow
+- breathtaking
+- must-visit
+- transformative power of
+tests:
+- name: flags all in one solution
+  input: An all-in-one solution that unlocks unprecedented efficiency.
+  contains:
+  - Tropes.PromotionalLanguage
+- name: clean text
+  input: A tool that automates routine builds.
+  want: ''

@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid unicode decoration character ''%s'' in source prose (Tropes: Unicode
+  decoration).'
+level: warning
+link: https://tropes.fyi/tropes/unicode-decoration
+raw:
+- '[→←⇒➔“”‘’]'
+tests:
+- name: flags arrow
+  input: Input → Processing → Output
+  contains:
+  - Tropes.UnicodeDecoration
+- name: flags smart quotes
+  input: He said “hello” to everyone.
+  contains:
+  - Tropes.UnicodeDecoration
+- name: clean text
+  input: Input -> Processing -> Output with "quotes"
+  want: ''

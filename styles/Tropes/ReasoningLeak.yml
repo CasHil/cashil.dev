@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid narrating internal deliberation ''%s'' (Tropes: Reasoning leak).'
+level: warning
+link: https://tropes.fyi/tropes/reasoning-leak
+ignorecase: true
+tokens:
+- what that changes in the design is smaller
+- i want to be exact about my own role
+- i should be clear that none of this
+- let me explain my thinking here
+tests:
+- name: flags reasoning leak
+  input: I want to be exact about my own role here in the project.
+  contains:
+  - Tropes.ReasoningLeak
+- name: clean text
+  input: I managed the database migration.
+  want: ''

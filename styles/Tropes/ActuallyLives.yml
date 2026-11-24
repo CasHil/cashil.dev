@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid ''%s'' — don''t frame concepts as physical inhabitance (Tropes: Where
+  it actually lives).'
+level: warning
+link: https://tropes.fyi/tropes/actually-lives-locution
+ignorecase: true
+raw:
+- (?i)\bwhere\s+(?:the\s+)?[a-z0-9_-]+\s+actually\s+lives\b
+tests:
+- name: flags actually lives
+  input: This is where the complexity actually lives in our architecture.
+  contains:
+  - Tropes.ActuallyLives
+- name: clean text
+  input: This module contains the complexity.
+  want: ''

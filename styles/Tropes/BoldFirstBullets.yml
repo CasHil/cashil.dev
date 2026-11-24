@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid repetitive bold keyword prefixing on bullet points ''%s'' (Tropes:
+  Bold-first bullets).'
+level: suggestion
+link: https://tropes.fyi/tropes/bold-first-bullets
+scope: raw
+raw:
+- '(?m)^\s*[-*+]\s+\*\*[^*]+?\*\*:'
+tests:
+- name: flags bold first bullet
+  input: '* **Security**: Environment-based config.'
+  contains:
+  - Tropes.BoldFirstBullets
+- name: clean bullet
+  input: '* Use environment-based configuration for security.'
+  want: ''

@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid the rigid dismissive formula ''%s'' (Tropes: Despite its challenges...).'
+level: warning
+link: https://tropes.fyi/tropes/despite-challenges
+ignorecase: true
+tokens:
+- despite these challenges
+- despite its challenges
+- despite their challenges
+- despite industrial and residential challenges
+tests:
+- name: flags despite these challenges
+  input: Despite these challenges, the initiative continues to thrive.
+  contains:
+  - Tropes.DespiteChallenges
+- name: clean text
+  input: The initiative continues under current constraints.
+  want: ''

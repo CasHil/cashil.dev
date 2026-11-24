@@ -1,4 +1,4 @@
-# Portfolio Critique Knowledge Base & Anti-Slop Codex
+# Portfolio critique knowledge base and anti-slop codex
 
 This master document compiles all reviews, audits, and subagent critiques conducted on Casper Hildebrand's portfolio website (`cashil.dev` / `cashil.github.io`) between **October 25 and November 1, 2026**.
 
@@ -6,7 +6,7 @@ All detailed round notes and conversation archives are stored in the [`criticism
 
 ---
 
-## Quick Navigation
+## Quick navigation
 
 - [Numbered Critique Archive Index](#1-numbered-critique-archive-index)
 - [The Taxonomy of AI Slop: 8 Core Anti-Patterns](#2-the-taxonomy-of-ai-slop-8-core-anti-patterns)
@@ -16,7 +16,7 @@ All detailed round notes and conversation archives are stored in the [`criticism
 
 ---
 
-## 1. Numbered Critique Archive Index
+## 1. Numbered critique archive index
 
 The audits are arranged chronologically in the [`criticisms/`](./criticisms/) directory:
 
@@ -33,7 +33,7 @@ The audits are arranged chronologically in the [`criticisms/`](./criticisms/) di
 
 ---
 
-## 2. The Taxonomy of AI Slop: 8 Core Anti-Patterns
+## 2. The taxonomy of AI slop: 8 core anti-patterns
 
 Any subagent modifying this codebase must actively avoid these eight recurring AI slop traps:
 
@@ -63,7 +63,7 @@ Any subagent modifying this codebase must actively avoid these eight recurring A
 
 7. **The Buried Real Superpower (Misaligned Positioning)**:
    - *Slop*: Hiding Casper's double Master's in Science Education and teaching of 200+ high school students in collapsed drawers.
-   - *Fix*: Promote CS didactics as an Engineering Ethos pillar—translating into cleaner code reviews, API clarity, and mentorship.
+   - *Fix*: Promote CS didactics as an Engineering Ethos pillar, translating into cleaner code reviews, API clarity, and mentorship.
 
 8. **The Corporate Brochure Throat-Clearer (Vocabulary Slop)**:
    - *Slop*: Over-indexing on empty buzzwords (`seamless`, `pivotal`, `spearheaded`, `orchestrated`, `crucible`, `beacon`).
@@ -71,7 +71,7 @@ Any subagent modifying this codebase must actively avoid these eight recurring A
 
 ---
 
-## 3. The Anti-Slop Prevention Checklist (Pre-Flight Audit)
+## 3. The anti-slop prevention checklist (pre-flight audit)
 
 Run this checklist before finalizing any changes:
 
@@ -100,14 +100,14 @@ Run this checklist before finalizing any changes:
 
 ---
 
-## 4. Casper's Authentic Profile & Ground Truth
+## 4. Casper'S authentic profile and ground truth
 
-- **Current Role**: Full-Stack Software Engineer at **Tikkie Business (ABN AMRO)** via **Harvest Young Talent Program** (2025 – Present).
-- **Core Stack & Focus**: Agentic software engineering, AWS Lambda, DynamoDB, EventBridge, TypeScript, automated test verification, and code quality.
-- **Previous Startup**: Co-Founder & Lead Engineer at **Bitsized** (2023 – 2025), building in-browser sandboxed Python execution with Web Workers and AST analysis.
-- **Earlier Engineering**: Software Engineering Consultant at **Netcompany** (2024), full-stack intern at **Muziekweb** (2020), engineering intern at **Bexter** (2019).
-- **Academic Degrees (TU Delft)**:
+- Current Role: Full-Stack Software Engineer at **Tikkie Business (ABN AMRO)** via **Harvest Young Talent Program** (2025 – Present).
+- Core Stack & Focus: Agentic software engineering, AWS Lambda, DynamoDB, EventBridge, TypeScript, automated test verification, and code quality.
+- Previous Startup: Co-Founder & Lead Engineer at **Bitsized** (2023 – 2025), building in-browser sandboxed Python execution with Web Workers and AST analysis.
+- Earlier Engineering: Software Engineering Consultant at **Netcompany** (2024), full-stack intern at **Muziekweb** (2020), engineering intern at **Bexter** (2019).
+- Academic Degrees (TU Delft):
   * **MSc Computer Science** (2021 – 2024)
   * **MSc Science Education & Communication** (2021 – 2024; ~200 high school students taught across 10 cohorts)
   * **BSc Computer Science & Engineering** (2017 – 2021)
-- **Authentic Hobbies**: Electric Bass Guitar and Chess.
+- Authentic Hobbies: Electric Bass Guitar and Chess.

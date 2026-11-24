@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid defending uncontroversial points against unasked objections ''%s''
+  (Tropes: Belaboring the unnecessary).'
+level: warning
+link: https://tropes.fyi/tropes/belaboring-the-unnecessary
+ignorecase: true
+tokens:
+- we are setting this out in full rather than quietly
+- i don't mean any of that as cynicism
+- i do not mean any of that as cynicism
+- to be fair, though,
+tests:
+- name: flags belaboring
+  input: I don't mean any of that as cynicism about developers.
+  contains:
+  - Tropes.BelaboringUnnecessary
+- name: clean text
+  input: Developers prioritize delivery speed.
+  want: ''

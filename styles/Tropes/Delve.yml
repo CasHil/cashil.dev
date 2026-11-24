@@ -1,0 +1,36 @@
+extends: existence
+message: 'Avoid ''%s'' — overused AI vocabulary (Tropes: Delve and friends).'
+level: warning
+link: https://tropes.fyi/tropes/delve
+ignorecase: true
+tokens:
+- delve
+- delves
+- delved
+- delving
+- utilize
+- utilizes
+- utilized
+- utilizing
+- utilization
+- streamline
+- streamlines
+- streamlined
+- streamlining
+- harness
+- harnesses
+- harnessed
+- harnessing
+- robust
+tests:
+- name: flags delve
+  input: Let's delve into the details of this proposal.
+  contains:
+  - Tropes.Delve
+- name: flags utilize
+  input: We can utilize this component for the UI.
+  contains:
+  - Tropes.Delve
+- name: clean text
+  input: We can use this component for the interface.
+  want: ''

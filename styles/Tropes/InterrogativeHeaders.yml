@@ -1,0 +1,20 @@
+extends: existence
+message: 'Avoid starting headings with Wh-words ''%s'' (Tropes: Where / What / Why
+  Headers).'
+level: suggestion
+link: https://tropes.fyi/tropes/interrogative-root-headers
+scope: heading
+raw:
+- (?i)^(Where|What|Why|How)\s+
+tests:
+- name: flags what heading
+  input: '## What we do differently'
+  contains:
+  - Tropes.InterrogativeHeaders
+- name: flags where heading
+  input: '## Where the market is stuck today'
+  contains:
+  - Tropes.InterrogativeHeaders
+- name: clean heading
+  input: '## Our differentiators'
+  want: ''

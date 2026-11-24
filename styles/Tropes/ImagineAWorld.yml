@@ -1,0 +1,17 @@
+extends: existence
+message: 'Avoid classic AI futurism opener ''%s'' (Tropes: Imagine a world where...).'
+level: warning
+link: https://tropes.fyi/tropes/imagine-a-world
+ignorecase: true
+tokens:
+- imagine a world where
+- imagine a world in which
+- in that world, workflows
+tests:
+- name: flags imagine a world where
+  input: Imagine a world where every tool is interconnected.
+  contains:
+  - Tropes.ImagineAWorld
+- name: clean text
+  input: When tools are interconnected, workflows run faster.
+  want: ''

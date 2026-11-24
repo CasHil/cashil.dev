@@ -1,0 +1,15 @@
+extends: existence
+message: 'Avoid listicle disguised as prose ''%s'' (Tropes: Excessive enumeration).'
+level: warning
+link: https://tropes.fyi/tropes/enumerated-prose
+scope: sentence
+raw:
+- (?i)\bthe\s+(?:first|second|third|fourth|fifth)\s+(?:wall|takeaway|reason|factor|point|pillar|step)\s+is\b
+tests:
+- name: flags the first wall is
+  input: The first wall is the absence of an API.
+  contains:
+  - Tropes.EnumeratedProse
+- name: clean text
+  input: The primary obstacle is the lack of an API.
+  want: ''

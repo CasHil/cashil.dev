@@ -1,0 +1,22 @@
+extends: existence
+message: 'Avoid grandiose stakes inflation ''%s'' (Tropes: Grandiose stakes inflation).'
+level: warning
+link: https://tropes.fyi/tropes/grandiose-stakes
+ignorecase: true
+tokens:
+- fundamentally reshape
+- fundamentally reshapes
+- fundamentally reshaping
+- define the next era of
+- world-historical
+- fate of civilization
+- fate of civilisation
+- something entirely new
+tests:
+- name: flags fundamentally reshape
+  input: This will fundamentally reshape how we build software.
+  contains:
+  - Tropes.GrandioseStakes
+- name: clean text
+  input: This improves how we build software.
+  want: ''

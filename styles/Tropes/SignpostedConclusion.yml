@@ -1,0 +1,27 @@
+extends: existence
+message: 'Avoid signposted conclusion opener ''%s'' (Tropes: Signposted conclusion).'
+level: warning
+link: https://tropes.fyi/tropes/in-conclusion
+ignorecase: true
+tokens:
+- in conclusion
+- in conclusion,
+- to sum up
+- to sum up,
+- in summary
+- in summary,
+- to conclude
+- to conclude,
+- in closing
+tests:
+- name: flags in conclusion
+  input: In conclusion, the future of development depends on automation.
+  contains:
+  - Tropes.SignpostedConclusion
+- name: flags to sum up
+  input: To sum up, we covered three core metrics.
+  contains:
+  - Tropes.SignpostedConclusion
+- name: clean text
+  input: Automation reduces manual testing cycles.
+  want: ''

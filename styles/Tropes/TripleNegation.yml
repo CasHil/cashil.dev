@@ -1,0 +1,19 @@
+extends: existence
+message: 'Avoid countdown negation ''%s'' (Tropes: Not X. Not Y. Just Z.).'
+level: warning
+link: https://tropes.fyi/tropes/triple-negation-reveal
+scope: paragraph
+raw:
+- (?i)\bnot\s+[^.?!;]+[.?!;]\s*not\s+[^.?!;]+[.?!;]\s*(?:just\s+)?[^.?!;]+
+tests:
+- name: flags not X not Y Z
+  input: Not a bug. Not a feature. A fundamental design flaw.
+  contains:
+  - Tropes.TripleNegation
+- name: flags not ten not fifty
+  input: Not ten. Not fifty. Five hundred issues.
+  contains:
+  - Tropes.TripleNegation
+- name: clean text
+  input: There are five hundred issues.
+  want: ''

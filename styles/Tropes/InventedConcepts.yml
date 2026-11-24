@@ -1,0 +1,20 @@
+extends: existence
+message: 'Avoid pseudo-analytical compound label ''%s'' (Tropes: Invented concept
+  labels).'
+level: warning
+link: https://tropes.fyi/tropes/named-concept-abuse
+scope: sentence
+raw:
+- (?i)\b(?:supervision|acceleration|workload|productivity|alignment|context|prompt|agency|model)\s+(?:paradox|trap|creep|divide|vacuum|inversion)\b
+tests:
+- name: flags supervision paradox
+  input: We must navigate the supervision paradox carefully.
+  contains:
+  - Tropes.InventedConcepts
+- name: flags acceleration trap
+  input: Avoiding the acceleration trap requires discipline.
+  contains:
+  - Tropes.InventedConcepts
+- name: clean text
+  input: Supervising automated tasks requires clear boundaries.
+  want: ''

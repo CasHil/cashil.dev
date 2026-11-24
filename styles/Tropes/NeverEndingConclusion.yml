@@ -1,0 +1,17 @@
+extends: existence
+message: 'Land the point cleanly and stop instead of stacking clauses ''%s'' (Tropes:
+  Never-ending conclusion).'
+level: warning
+link: https://tropes.fyi/tropes/run-on-closer
+ignorecase: true
+tokens:
+- you can't optimize what you're mismeasuring, and a wrong metric
+tests:
+- name: flags never ending closer token
+  input: Remember that you can't optimize what you're mismeasuring, and a wrong metric
+    is worse than none.
+  contains:
+  - Tropes.NeverEndingConclusion
+- name: clean text
+  input: Ensure metrics measure the desired outcome.
+  want: ''

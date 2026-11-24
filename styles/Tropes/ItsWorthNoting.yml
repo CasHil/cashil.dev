@@ -1,0 +1,24 @@
+extends: existence
+message: 'Avoid filler transition ''%s'' (Tropes: It''s worth noting).'
+level: warning
+link: https://tropes.fyi/tropes/its-worth-noting
+ignorecase: true
+tokens:
+- it's worth noting
+- it is worth noting
+- it bears mentioning
+- importantly,
+- interestingly,
+- notably,
+tests:
+- name: flags its worth noting
+  input: It's worth noting that the API is throttled.
+  contains:
+  - Tropes.ItsWorthNoting
+- name: flags it bears mentioning
+  input: It bears mentioning that costs increased.
+  contains:
+  - Tropes.ItsWorthNoting
+- name: clean text
+  input: The API is throttled.
+  want: ''

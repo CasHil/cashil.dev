@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid asserting consensus without evidence ''%s'' (Tropes: Appeal to familiarity).'
+level: warning
+link: https://tropes.fyi/tropes/appeal-to-familiarity
+ignorecase: true
+tokens:
+- as we all know
+- a classic,
+- famously,
+- notoriously,
+tests:
+- name: flags as we all know
+  input: As we all know, distributed systems are hard.
+  contains:
+  - Tropes.AppealToFamiliarity
+- name: clean text
+  input: Distributed systems have well-documented reliability challenges.
+  want: ''

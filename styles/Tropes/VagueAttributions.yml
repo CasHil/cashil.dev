@@ -1,0 +1,25 @@
+extends: existence
+message: 'Avoid citing unnamed authorities ''%s''; name specific sources (Tropes:
+  Vague attributions).'
+level: warning
+link: https://tropes.fyi/tropes/vague-attributions
+ignorecase: true
+tokens:
+- experts argue
+- experts believe
+- observers have cited
+- observers note
+- industry reports suggest
+- several publications have cited
+tests:
+- name: flags experts argue
+  input: Experts argue that this approach introduces latency.
+  contains:
+  - Tropes.VagueAttributions
+- name: flags industry reports suggest
+  input: Industry reports suggest adoption is climbing.
+  contains:
+  - Tropes.VagueAttributions
+- name: clean text
+  input: Benchmark studies from ACM indicate increased latency.
+  want: ''

@@ -1,0 +1,18 @@
+extends: existence
+message: 'Avoid slide-bait aphorisms ''%s'' devoid of concrete information (Tropes:
+  Quotable one-liners).'
+level: suggestion
+link: https://tropes.fyi/tropes/quotable-one-liners
+ignorecase: true
+tokens:
+- every metric that rewards volume punishes leverage
+- story points are a planning tool with no fixed unit
+- when everything gets maximum emphasis, nothing has any
+tests:
+- name: flags aphorism
+  input: Every metric that rewards volume punishes leverage in engineering.
+  contains:
+  - Tropes.QuotableOneLiners
+- name: clean text
+  input: Measuring lines of code encourages verbose implementations.
+  want: ''

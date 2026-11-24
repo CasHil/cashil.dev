@@ -1,0 +1,14 @@
+extends: capitalization
+message: '''%s'' should be sentence case (Tropes: Title case headings).'
+level: warning
+link: https://tropes.fyi/tropes/title-case-headings
+scope: heading
+match: $sentence
+tests:
+- name: flags title case heading
+  input: '# Understanding The Impact Of Modern Technology'
+  contains:
+  - Tropes.TitleCaseHeadings
+- name: allows sentence case heading
+  input: '# Understanding the impact of modern technology'
+  want: ''

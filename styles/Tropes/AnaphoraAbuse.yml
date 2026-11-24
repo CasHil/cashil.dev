@@ -1,0 +1,16 @@
+extends: existence
+message: 'Avoid artificial anaphora repetition ''%s'' across sentences (Tropes: Anaphora
+  abuse).'
+level: warning
+link: https://tropes.fyi/tropes/anaphora-abuse
+scope: paragraph
+raw:
+- (?i)\b(They\s+assume\s+that|They\s+could|They\s+have\s+built)[^.?!]+[.?!]\s*\1\b
+tests:
+- name: flags repeated opener
+  input: They assume that users will pay. They assume that developers will build.
+  contains:
+  - Tropes.AnaphoraAbuse
+- name: clean text
+  input: They assume users will pay and developers will build.
+  want: ''
