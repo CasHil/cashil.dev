@@ -392,6 +392,34 @@ Keep the details that carry the writer's voice unless they hurt the meaning:
 - A first-person choice the writer can explain.
 - A genuine aside, parenthetical, or self-correction: "(I keep wanting to say 'almost' here, but it really was certain.)"
 
+## In this repository
+
+Added for cashil.dev. The upstream skill lives in the home repo under `skills/humanizer`.
+
+**Where the prose is.** Site copy is in `src/i18n/locales/en/*.ts` and `src/i18n/locales/nl/*.ts`. Use file mode on those: change string values only, never keys, and change both languages in the same edit. The PDF CVs are generated from that copy (`pnpm run build:cv`), so never edit `cv/*.tex`.
+
+**Check with Vale, not by eye.** After every copy change run `pnpm run lint:prose`. It extracts the strings and runs the `Tropes` style on English and the `CasperNL` style on Dutch. Warnings fail the run. A suggestion needs a decision: a list of four school subjects is a list, a third adjective added for rhythm is a triad.
+
+**No new facts.** The sources are Casper's CV, his thesis record and his own notes. If a sentence needs a number, a date or a name that is not in one of those, write the simpler sentence and note the gap for him.
+
+**Résumé tells.** These are the forms §15 and §6 take on a CV, and they were all on this site before:
+
+- Every bullet opens with a gerund and closes with a purpose clause: "Supporting payout pipelines to ensure settlements flow accurately." Write what he did: "I work on the payout pipeline."
+- A computed or rounded "7+ years" next to a technology. State where he used it instead.
+- A skills table padded with soft skills ("Mentorship", "Technical Communication").
+- A subtitle under a heading that restates the heading.
+- The same bullets on the home page, the work page and the CV. The home page tells the story. The work page lists the roles.
+
+**Dutch tells.** The patterns above apply in Dutch, plus these:
+
+- Title Case in headings and button labels ("Uitgelicht Werk"). Dutch uses sentence case.
+- "niet alleen … maar ook", "zowel … als", "enerzijds … anderzijds" as weightless contrasts.
+- Stiff written connectors at the start of a sentence: daarnaast, echter, tevens, bovendien.
+- Nominalised bullets: "Ontwikkeling van …", "Begeleiding van …". Use a verb: "Ik ontwikkelde …".
+- Calques: "opgeleid als" (opgeleid tot), "ter bevordering van", "floreren", "Open pdf" for a button (Pdf openen).
+- Spelling of compounds and loans: softwareanalist, cv, pdf, e-mail, REST-API's.
+- English terms that are normal in Dutch tech and should stay: software engineer, frontend, technical debt, retrospective, coding agents.
+
 ## Source
 
 The patterns come from Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup, and from reviews of AI-generated text on Wikipedia and elsewhere.
