@@ -10,28 +10,29 @@ The reader is a tech recruiter or hiring manager who gives the site under a minu
 - Headings use sentence case in both languages.
 - Every page ends with the contact block: email, CV download, LinkedIn.
 - English and Dutch stay in step. Run `pnpm run lint:prose` after any copy change.
+- Every text has a word limit and at most one marker. The limits are in `DESIGN.md` and a test enforces them.
 
 ## Home (`/`)
 
 Question: who is this, and is he worth a call?
 
 1. Headline: his role and the one thing that sets him apart. Currently "Software engineer at Tikkie, trained as a computer science teacher."
-2. One line of facts a recruiter filters on: stack, city, languages.
+2. His photo beside one line of facts a recruiter filters on: stack, city, languages.
 3. Two actions: email him, download the CV.
-4. The story in four short paragraphs: what he does now, how he got there, what teaching changed, one line about life outside work.
-5. Selected work: Tikkie Business and Bitsized, two paragraphs each, with the stack on one line. No bullets here.
+4. The story in at most four short paragraphs and 120 words: what he does now, how he ended up teaching, what teaching still changes, one line about life outside work.
+5. Selected work: Tikkie Business and Bitsized, one paragraph each, with the stack on one line. No bullets here.
 
 ## Work experience (`/work-experience`)
 
 Question: what did he do, where, and when?
 
-One reverse-chronological list. Each role has the employer, the title, the dates, two to four sentences, and the stack where it applies. Teaching is a role in this list, at its real dates.
+Email and CV links under the title, then one reverse-chronological list. Each role has the employer, the title, the dates, at most three bullets, and the stack where it applies. Teaching is a role in this list, at its real dates. Part-time roles say so.
 
 ## Education (`/education`)
 
 Question: what did he study, and is the thesis real?
 
-The four programmes with one or two lines each. Then the thesis: exact title, what he measured, what he found, and the link to the TU Delft repository record.
+Email and CV links under the title, then the four programmes with one line each. Then the thesis, told once: exact title, what he measured, what he found, and the link to the TU Delft repository record.
 
 ## CV (`/cv`)
 

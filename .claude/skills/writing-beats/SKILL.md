@@ -65,7 +65,7 @@ Use this skill for the home page story (`story` in `src/i18n/locales/en/intro.ts
 
 - **The reader** is a tech recruiter or hiring manager with under a minute. Grounded on arrival: what a software engineer does, TypeScript, React, AWS, ABN AMRO. Not grounded: Tikkie Business, Harvest, Bitsized, eerstegraads, PTA. Ground each of these in one clause before leaning on it.
 - **The pile** is Casper's CV, his thesis record and his own notes. Nothing outside it goes in.
-- **The beats that work**, in order: what he builds now; how he ended up in front of a classroom; what teaching changed in how he works; one line about life outside work. Four short paragraphs is the ceiling. A fifth beat belongs on the work page.
+- **The beats that work**, in order: what he builds now; how he ended up in front of a classroom; what teaching changed in how he works; one line about life outside work. Four short paragraphs and 120 words is the ceiling, set in `DESIGN.md`. A fifth beat belongs on the work page. Each beat gets at most one marker (`**words**`), on a fact.
 - **Dates must survive a sceptic.** Every "before that", "after" or "during" has to agree with the dates on the work and education pages. Two reviewers caught a beat that did not.
 - **The story does not repeat the work entries** below it. If a beat and a work entry say the same thing, shorten the beat.
 - Finish with `pnpm run lint:prose`.

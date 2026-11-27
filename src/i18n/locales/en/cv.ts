@@ -3,13 +3,13 @@ import { CvTranslations } from "../../types";
 export const enCv: CvTranslations = {
   title: "CV",
   headline: "Full-stack software engineer",
-  subtitle: "One page, in English or Dutch. The same content is below as a web version.",
+  subtitle: "One page, in English or Dutch.",
   openPdf: "Open PDF",
   downloadPdf: "Download PDF",
   otherLanguagePdf: "Dutch version (PDF)",
   profileHeading: "Profile",
   profile:
-    "Full-stack software engineer at Tikkie Business (ABN AMRO), working in TypeScript, React, Node.js and AWS. I hold two master's degrees from TU Delft, in computer science and in science education, and taught computer science at two secondary schools for a year.",
+    "Full-stack software engineer at Tikkie Business (ABN AMRO), working in TypeScript, React, Node.js and AWS. I hold two master's degrees from TU Delft, in computer science and in science education, and taught computer science at two secondary schools in 2025.",
   experienceHeading: "Experience",
   educationHeading: "Education",
   skillsHeading: "Skills",

@@ -121,7 +121,7 @@ export default function SettingsMenu() {
             exit={{ opacity: 0, scale: 0.96, y: -4 }}
             transition={{ duration: 0.12, ease: [0.16, 1, 0.3, 1] }}
             style={{ willChange: "transform, opacity" }}
-            className="absolute right-0 top-full mt-2 z-50 w-56 rounded-squircle-sm bg-surface/95 backdrop-blur-lg border border-border-subtle shadow-xl dark:shadow-[0_12px_40px_rgba(0,0,0,0.6)] p-2 space-y-1.5 transform-gpu"
+            className="absolute right-0 top-full mt-2 z-50 w-56 rounded-squircle-sm bg-surface border border-border-subtle shadow-xl dark:shadow-[0_12px_40px_rgba(0,0,0,0.6)] p-2 space-y-1.5 transform-gpu"
           >
             {/* Language Row */}
             <div className="flex items-center justify-between px-2 py-1.5 rounded-[8px] hover:bg-surface-subtle/60 transition-colors">

@@ -30,6 +30,8 @@
   --brand-subtle: rgb(var(--brand-subtle-rgb));
   --brand-border-rgb: 184 201 189;
   --brand-border: rgb(var(--brand-border-rgb));
+  --marker-rgb: 242 183 5;
+  --marker-alpha: 0.4;
   --scrollbar-track: #fafaf7;
   --scrollbar-thumb: #d0dad2;
   --scrollbar-thumb-hover: #a8b8ac;
@@ -63,12 +65,24 @@
   --brand-subtle: rgb(var(--brand-subtle-rgb));
   --brand-border-rgb: 46 66 53;
   --brand-border: rgb(var(--brand-border-rgb));
+  --marker-alpha: 0.32;
   --scrollbar-track: #0c100e;
   --scrollbar-thumb: #222c25;
   --scrollbar-thumb-hover: #334238;
 }
 
 @layer base {
+  /* The one emphasis on the site. See DESIGN.md, "Mark what matters". */
+  mark.marker {
+    background-color: rgb(var(--marker-rgb) / var(--marker-alpha));
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.05em 0.2em;
+    border-radius: 3px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
   html {
     scroll-behavior: smooth;
   }

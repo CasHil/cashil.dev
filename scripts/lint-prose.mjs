@@ -36,7 +36,7 @@ for (const [language, dictionary] of Object.entries(translations)) {
     lines.push(`<!-- ${section} -->`, "");
     for (const text of strings) {
       // Timeline text stores one bullet per line.
-      for (const part of text.split("\n")) lines.push(part, "");
+      for (const part of text.split("\n")) lines.push(part.replace(/\*\*(.+?)\*\*/g, "$1"), "");
     }
   }
   // Relative paths: the per-language sections in .vale.ini match on them.

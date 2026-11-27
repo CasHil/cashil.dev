@@ -59,10 +59,26 @@ One source also files "cream background, serif headings, one muted accent" under
 | Colour tokens ignored opacity modifiers, so bullets were invisible and dark borders fell back to light grey | Tokens stored as RGB channels |
 | Bullets in gerunds | First-person sentences in the past or present tense |
 | Thesis as a reworded title and a dead link | Exact title, what he measured, what he found, working link |
-| Teaching 2018 to 2025 | Teacher at two named schools, August 2024 to July 2025 |
+| Teaching 2018 to 2025 | Teacher at two named schools, February to July 2025 |
 | No metadata | Title, description, Open Graph tags and a `Person` record |
 
 The story on the home page uses facts from his own notes: the school that had gone months without a teacher, the hackathon, the workshops, the technical debt plan. Nothing in it is invented. If a detail should not be public, remove the sentence instead of softening it.
+
+## Third pass: less text, and a design language
+
+Casper read the result and said it was still far too much text. He also corrected the dates: teaching ran from February to July 2025, Tikkie started in March 2026, and Bexter and Netcompany were part-time at about two days a week.
+
+`DESIGN.md` is now a design language with three rules: clarity, keep it simple, and mark what matters. It sets a word limit for every text and allows one sunflower marker per paragraph, on a fact. `src/design-language.test.tsx` reads the limits from `DESIGN.md` and fails when copy exceeds them.
+
+| Text | Limit | English copy now |
+| --- | --- | --- |
+| Hero headline | 15 words | 14 |
+| Home story | 4 paragraphs, 120 words | 4 paragraphs, 114 words |
+| Work highlight | 45 words | 41 and 40 |
+| Bullets per role | 3 | 3 at most (the Tikkie role had 5) |
+| Thesis summary | 45 words | 37 (was two paragraphs) |
+
+Also changed in this pass: the photo sits beside the facts line, the work and education pages have email and CV links under their title, the thesis is no longer told twice on the education page, the header monogram and the dropdown blur are gone, and Bitsized is in the past tense everywhere.
 
 ## Linting
 

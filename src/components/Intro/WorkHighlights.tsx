@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import Marked from "../common/Marked";
 import { textLink } from "../common/links";
 
 export default function WorkHighlights() {
@@ -18,7 +19,7 @@ export default function WorkHighlights() {
         {t.intro.work.map((item) => (
           <article
             key={item.title}
-            className="py-8 sm:py-10 grid gap-3 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
+            className="py-8 grid gap-3 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
           >
             <div className="space-y-1">
               <h3 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
@@ -27,13 +28,10 @@ export default function WorkHighlights() {
               <p className="text-base text-text-secondary">{item.role}</p>
               <p className="text-sm text-text-muted tabular-nums">{item.period}</p>
             </div>
-            <div className="space-y-4 max-w-[62ch]">
+            <div className="space-y-3 max-w-[62ch]">
               {item.paragraphs.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="text-base text-text-secondary leading-relaxed"
-                >
-                  {paragraph}
+                <p key={paragraph} className="text-base text-text-secondary leading-relaxed">
+                  <Marked text={paragraph} />
                 </p>
               ))}
               <p className="text-sm text-text-muted">{item.stack.join(", ")}</p>

@@ -50,14 +50,6 @@ export default function Masthead() {
           className="flex items-center gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-squircle-sm group py-1 select-none"
           aria-label={t.sidebar.name}
         >
-          {/* Monogram Badge */}
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-squircle-sm bg-surface-subtle border border-border-subtle group-hover:border-brand/40 group-hover:bg-surface group-hover:shadow-xs transition-all duration-200 flex items-center justify-center shrink-0">
-            <span className="font-sans font-bold text-xs sm:text-[13px] tracking-tight text-text-primary group-hover:text-brand transition-colors">
-              CH
-            </span>
-          </div>
-
-          {/* Typographic Identity & Location / Craft Descriptor */}
           <div className="flex flex-col text-left">
             <span className="font-sans font-semibold text-sm sm:text-base text-text-primary tracking-tight leading-none group-hover:text-brand transition-colors whitespace-nowrap">
               {t.sidebar.name}
@@ -175,7 +167,6 @@ export default function Masthead() {
                     >
                       EN
                     </button>
-                    <span className="text-text-muted/40 font-light select-none">/</span>
                     <button
                       type="button"
                       onClick={() => setLanguage("nl")}
