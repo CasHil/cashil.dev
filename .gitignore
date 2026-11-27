@@ -32,3 +32,4 @@ scripts/tools/
 *.aux
 *.log
 *.out
+.vale-copy/

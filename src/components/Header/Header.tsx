@@ -15,7 +15,6 @@ export default function Header({
 
   const navItems = [
     { to: "/", label: t.nav.overview },
-    { to: "/cv", label: t.nav.cv },
     {
       to: "/work-experience",
       label: (
@@ -26,6 +25,7 @@ export default function Header({
       ),
     },
     { to: "/education", label: t.nav.education },
+    { to: "/cv", label: t.nav.cv },
   ];
 
   const isVertical = orientation === "vertical";

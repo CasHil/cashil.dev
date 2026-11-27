@@ -100,11 +100,40 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
   compareKeys(translations.en, translations.nl);
 });
 
-test("renders featured work showcases for Tikkie Business and Bitsized", () => {
+test("home page tells the story and offers email and CV actions", () => {
+  window.history.pushState({}, "", "/");
   render(<App />);
-  expect(screen.getByText(/Featured Work|Uitgelicht Werk/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/Tikkie Business|Tikkie Zakelijk/i).length).toBeGreaterThan(0);
+
+  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/Tikkie/);
+  expect(screen.getByRole("heading", { name: /selected work|uitgelicht werk/i })).toBeInTheDocument();
   expect(screen.getAllByText(/Bitsized/i).length).toBeGreaterThan(0);
+
+  const emailLinks = screen.getAllByRole("link", { name: /email me|mail mij/i });
+  expect(emailLinks.length).toBeGreaterThan(0);
+  expect(emailLinks[0]).toHaveAttribute("href", "mailto:casperhildebrand@gmail.com");
+
+  const cvLinks = screen.getAllByRole("link", { name: /download cv/i });
+  expect(cvLinks[0]).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+});
+
+test("every page ends with a contact call to action", () => {
+  for (const route of ["/", "/work-experience", "/education", "/cv"]) {
+    window.history.pushState({}, "", route);
+    const { unmount } = render(<App />);
+    expect(screen.getByRole("heading", { name: /get in touch|neem contact op/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /email me|mail mij/i }).length).toBeGreaterThan(0);
+    unmount();
+  }
+});
+
+test("education page links to the published thesis record", () => {
+  window.history.pushState({}, "", "/education");
+  render(<App />);
+  const link = screen.getByRole("link", { name: /thesis|scriptie/i });
+  expect(link).toHaveAttribute(
+    "href",
+    "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a"
+  );
 });
 
 test("links to Dutch CV PDF when site language is Dutch", () => {
@@ -189,19 +218,10 @@ test("allows toggling mobile menu in header to access routes and preferences", (
   expect(themeBtn).toBeInTheDocument();
 });
 
-test("renders core technology experience and authentic mentorship section", () => {
+test("home page lists the stack and keeps hobbies plain", () => {
   window.history.pushState({}, "", "/");
   render(<App />);
 
-  // Core Technologies section
-  expect(screen.getByText(/Core Technologies|Kerntechnologieën/i)).toBeInTheDocument();
-  expect(screen.getByText(/Production & Academic|Productie & Onderwijs/i)).toBeInTheDocument();
-  expect(screen.getByText(/TypeScript & JavaScript/i)).toBeInTheDocument();
-  expect(screen.getByText(/Vue\.js & Meteor/i)).toBeInTheDocument();
-  expect(screen.getByText(/AWS Cloud/i)).toBeInTheDocument();
-
-  // Authentic mentorship & outside engineering
-  expect(screen.getByText(/Teaching & Helping Teammates Thrive|Onderwijs & Teamgenoten Helpen Floreren/i)).toBeInTheDocument();
-  expect(screen.getByText(/electric bass guitar|elektrische basgitaar/i)).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /^stack$/i })).toBeInTheDocument();
+  expect(screen.getByText(/bass guitar and chess|basgitaar en schaak/i)).toBeInTheDocument();
 });
-

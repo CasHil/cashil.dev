@@ -1,25 +1,20 @@
 import { EducationTranslations } from "../../types";
 
 export const nlEducation: EducationTranslations = {
-  title: "Opleiding & Onderzoek",
+  title: "Opleiding",
   intro:
-    "Universitaire basis van de Technische Universiteit Delft en KTH Royal Institute of Technology, een combinatie van computer science met wetenschapsonderwijs en didactische scholing.",
-  thesisTitle: "Academische Graden",
-  publication: {
-    badge: "Masterthesis Publicatie, TU Delft 2024",
-    title: "Debugging the Divide: Leerdersmotivaties & Betrokkenheid in CS MOOCs",
-    subtitle: "Onderzoek naar leerdersmotivaties en onderwijsbetrokkenheid in online informaticacursussen",
-    datasetStat: "175.000",
-    datasetLabel: "Cursusinschrijvingen",
-    runsStat: "14",
-    runsLabel: "Cursusedities",
-    gapStat: "+16,7%",
-    gapLabel: "Loopbaantransitie-intentie",
-    abstract:
-      "Onderzoek gedaan naar motivaties en betrokkenheidspatronen over 14 Open edX informaticacursusedities, met empirische inzichten in intenties van deelnemers ter ondersteuning van didactisch ontwerp en online informaticaonderwijs.",
-    methods: ["Informaticaonderwijs", "Didactisch Ontwerp", "Leerdersmotivaties", "Python"],
-    repositoryLink: "https://repository.tudelft.nl/islandora/object/uuid%3A021fa315-bb8a-4db3-97ea-e8a0fa2c1a5b",
-    repositoryText: "Lees de gepubliceerde thesis in het TU Delft Repository",
+    "Twee masters aan de TU Delft, één in informatica en één in het lesgeven ervan, met een semester aan de KTH in Stockholm.",
+  thesis: {
+    title:
+      "Debugging the Divide: Exploring Men's and Women's Motivations and Engagement in Computer Science MOOCs",
+    meta: "Masterscriptie, TU Delft, 2024",
+    paragraphs: [
+      "Ik wilde weten waarom mensen zich inschrijven voor online informaticacursussen, en of die reden voorspelt hoe ver ze komen. Ik combineerde inschrijfenquêtes met clickstreamdata van vier inleidende cursussen die de TU Delft tussen 2015 en 2022 gaf. Met k-means-clustering zocht ik naar patronen in hoe deelnemers meededen.",
+      "Vrouwen schreven zich vaker in voor hun carrière en mannen vaker uit interesse. Mannen maakten de cursus vaker af. De reden die iemand opgaf voor de inschrijving voorspelde niet hoe actief diegene meedeed.",
+    ],
+    repositoryLink:
+      "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a",
+    repositoryText: "Lees de scriptie in de repository van de TU Delft",
   },
   items: [
     {
@@ -27,35 +22,35 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Gespecialiseerd in softwarearchitectuur, gedistribueerde systemen en software engineering principes.\nMasterthesis voltooid naar betrokkenheid van leerders in online informaticaonderwijs.",
-      skills: ["Softwarearchitectuur", "Gedistribueerde Systemen", "Algoritmen", "Software Engineering"],
+      text: "Vakken in softwarearchitectuur en gedistribueerde systemen.\nScriptie over motivatie en betrokkenheid in online informaticacursussen.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
-        alt: "TU Delft logo",
+        alt: "Logo van de TU Delft",
       },
     },
     {
       title: "Technische Universiteit Delft",
-      subtitle: "MSc Science Education & Communication — Informatica",
+      subtitle: "MSc Science Education and Communication, richting informatica",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Formele Nederlandse eerstegraads onderwijsbevoegdheid behaald in de Informatica voor alle onderwijsniveaus.\nScholing in curriculumontwerp, cognitieve belastingstheorie, didactische helderheid en technische communicatie.",
-      skills: ["Informaticadidactiek", "Cognitieve Belastingstheorie", "Technische Communicatie", "Curriculumontwerp"],
+      text: "Met de eerstegraads onderwijsbevoegdheid informatica, geldig op elk niveau van het voortgezet onderwijs.\nScholing in curriculumontwerp en cognitieve belastingstheorie.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
-        alt: "TU Delft logo",
+        alt: "Logo van de TU Delft",
       },
     },
     {
       title: "KTH Royal Institute of Technology",
-      subtitle: "Exchange Studies — Computer Science",
+      subtitle: "Uitwisselingssemester, Computer Science",
       startDate: "aug 2022",
       endDate: "jan 2023",
-      text: "Vakken afgerond in Human-Computer Interaction, Information Visualization en UX Design in Stockholm, Zweden.",
-      skills: ["Human-Computer Interaction", "Information Visualization", "UX Design"],
+      text: "Vakken in human-computer interaction, informatievisualisatie en UX-design in Stockholm.",
+      skills: [],
       image: {
         uri: "kth.webp",
-        alt: "KTH logo",
+        alt: "Logo van de KTH",
       },
     },
     {
@@ -63,11 +58,11 @@ export const nlEducation: EducationTranslations = {
       subtitle: "BSc Technische Informatica",
       startDate: "sep 2018",
       endDate: "jul 2021",
-      text: "Gedegen basis in datastructuren, algoritmen, besturingssystemen, computernetwerken en software engineering.\nVerkozen studentvertegenwoordiger in de Opleidingscommissie Technische Informatica.",
-      skills: ["Datastructuren", "Algoritmen", "Besturingssystemen", "Netwerken", "Software Engineering"],
+      text: "Datastructuren, algoritmen, besturingssystemen en netwerken.\nStudentlid van de opleidingscommissie.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
-        alt: "TU Delft logo",
+        alt: "Logo van de TU Delft",
       },
     },
   ],

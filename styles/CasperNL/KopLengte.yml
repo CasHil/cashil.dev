@@ -1,0 +1,7 @@
+# Slides only: the headline is one sentence of at most 10 words (two lines at 42px).
+extends: occurrence
+message: "Headline van meer dan 10 woorden. Hij moet in twee regels passen."
+level: error
+scope: heading
+max: 10
+token: '[\p{L}\p{N}][\p{L}\p{N}''’-]*'

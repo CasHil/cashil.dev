@@ -1,0 +1,7 @@
+# Scripts and notes: one dash per paragraph is a choice, two is a habit.
+extends: occurrence
+message: "Meer dan één gedachtestreepje in deze alinea. Gebruik een punt, komma of haakjes."
+level: warning
+scope: paragraph
+max: 1
+token: '—|\s–\s'

@@ -67,6 +67,11 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await mPage.waitForTimeout(400);
   await mPage.screenshot({ path: path.join(OUT, '12_cv_mobile_light.png'), fullPage: true });
 
+  // Mobile Work light
+  await mPage.goto(BASE + '/work-experience', { waitUntil: 'networkidle' });
+  await mPage.waitForTimeout(400);
+  await mPage.screenshot({ path: path.join(OUT, '17_work_mobile_light.png'), fullPage: true });
+
   // Mobile Education light
   await mPage.goto(BASE + '/education', { waitUntil: 'networkidle' });
   await mPage.waitForTimeout(400);

@@ -1,0 +1,9 @@
+# Slides only: no em or en dash anywhere in slide copy.
+extends: existence
+message: "Gedachtestreepje op een slide. Maak er twee regels van, of gebruik een punt of komma."
+level: error
+nonword: true
+scope: text
+tokens:
+  - '—'
+  - '\s–\s'

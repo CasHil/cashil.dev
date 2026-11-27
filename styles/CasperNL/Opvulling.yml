@@ -1,0 +1,31 @@
+# Filler: words you can delete without changing the sentence.
+extends: existence
+message: "'%s' is opvulling. Werkt de zin zonder?"
+level: suggestion
+ignorecase: true
+tokens:
+  - eigenlijk
+  - gewoon
+  - uiteraard
+  - natuurlijk
+  - simpelweg
+  - zeg maar
+  - als het ware
+  - in principe
+  - in feite
+  - feitelijk
+  - daadwerkelijk
+  - op zich
+  - sowieso
+  - best wel
+  - toch wel
+  - wel even
+  - een soort van
+  - heel erg
+  - echt heel
+  - ontzettend
+  - absoluut
+  - volledig
+  - totaal
+  - op dit moment
+  - op een gegeven moment

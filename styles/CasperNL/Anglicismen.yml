@@ -1,0 +1,54 @@
+# English where a plain Dutch word exists. Established loans (feedback, team, deadline, coach) are left alone.
+extends: substitution
+message: "Anglicisme: '%[2]s'. Gewoon Nederlands: %[1]s."
+level: suggestion
+ignorecase: true
+swap:
+  learnings?: les, inzicht
+  takeaways?: wat je onthoudt, les
+  insights?: inzicht(en)
+  challenges?: uitdaging, lastig punt
+  issues?: probleem, kwestie
+  skills: vaardigheden
+  skill: vaardigheid
+  mindset: houding, instelling
+  commitment: toezegging, inzet
+  committen: toezeggen, vastleggen
+  ownership: eigenaarschap, verantwoordelijkheid
+  awareness: bewustzijn
+  stakeholders?: betrokkene(n), belanghebbende(n)
+  meetings?: overleg, vergadering
+  calls?: gesprek, belletje
+  targets?: doel
+  goals?: doel
+  purpose: doel, drijfveer
+  impact: effect, invloed, gevolg
+  approach: aanpak
+  performance: prestatie(s)
+  experience: ervaring
+  growth: groei
+  journey: weg, reis
+  next steps?: volgende stap(pen)
+  key: belangrijkste
+  level: niveau
+  random: willekeurig
+  basically: eigenlijk (of schrappen)
+  anyway: hoe dan ook
+  sharen: delen
+  alignen: afstemmen
+  aligned: afgestemd, op één lijn
+  alignment: afstemming
+  checken: nagaan, controleren
+  fixen: oplossen, regelen
+  updaten: bijwerken
+  managen: leiden, regelen
+  pushen: aansporen, doorzetten
+  triggeren: uitlokken, prikkelen
+  focussen: richten, aandacht geven
+  to the point: bondig, ter zake
+  at the end of the day: uiteindelijk
+  out of the box: anders, eigenzinnig
+  hands-on: praktisch
+  no-brainer: vanzelfsprekend
+  quick wins?: snel resultaat
+  low-hanging fruit: makkelijke winst

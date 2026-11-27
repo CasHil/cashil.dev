@@ -11,7 +11,7 @@ export type {
   IntroTranslations,
   WorkExperienceTranslations,
   EducationTranslations,
-  OutreachTranslations,
+  ContactTranslations,
 } from "./types";
 
 export const translations: Record<Language, TranslationDictionary> = {

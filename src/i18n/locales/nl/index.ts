@@ -4,7 +4,7 @@ import { nlCv } from "./cv";
 import { nlIntro } from "./intro";
 import { nlExperience } from "./experience";
 import { nlEducation } from "./education";
-import { nlOutreach } from "./outreach";
+import { nlContact } from "./contact";
 
 export const nlLocale = {
   nav: nlNav,
@@ -13,5 +13,5 @@ export const nlLocale = {
   intro: nlIntro,
   workExperience: nlExperience,
   education: nlEducation,
-  outreach: nlOutreach,
+  contact: nlContact,
 };

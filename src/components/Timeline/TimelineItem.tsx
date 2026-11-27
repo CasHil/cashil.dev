@@ -10,61 +10,29 @@ export default function TimelineItem({ data }: TimelineItemProps) {
   const { t } = useLanguage();
 
   return (
-    <article className="space-y-3">
-      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-        {/* Role Title & Organization with Inline Logo */}
-        <div className="flex items-start gap-3">
-          {data.image && (
-            <img
-              src={`/images/${data.image.uri}`}
-              alt={data.image.alt}
-              className="h-8 w-8 rounded object-contain bg-white p-1 ring-1 ring-border-subtle shrink-0 mt-0.5"
-              loading="lazy"
-            />
-          )}
-          <div>
-            <h3 className="text-base sm:text-lg font-medium text-text-primary leading-tight">
-              {data.title}
-            </h3>
-            <p className="text-sm text-text-muted">
-              {data.subtitle}
-            </p>
-          </div>
-        </div>
-
-        {/* Date & Status Meta */}
-        <div className="text-xs sm:text-sm text-text-muted sm:text-right shrink-0 tabular-nums">
-          <span>
-            {data.startDate} {t.workExperience.to} {data.endDate}
-          </span>
-          {data.current && (
-            <span className="text-brand font-medium ml-2">
-              · {t.workExperience.currentBadge}
-            </span>
-          )}
-        </div>
+    <article className="py-8 sm:py-10 grid gap-4 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+      <div className="space-y-1">
+        <h2 className="text-lg font-medium text-text-primary leading-snug">
+          {data.title}
+        </h2>
+        <p className="text-base text-text-secondary">{data.subtitle}</p>
+        <p className="text-sm text-text-muted tabular-nums">
+          {data.startDate} {t.workExperience.to} {data.endDate}
+        </p>
       </div>
 
-      {/* Narrative / Achievements */}
-      {data.text && (
-        <ul className="space-y-1.5 text-sm sm:text-base text-text-secondary max-w-[70ch]">
-          {data.text.split("\n").map((line, idx) => (
-            <FormattedBullet key={idx} text={line} />
-          ))}
-        </ul>
-      )}
-
-      {/* Tech Stack in clean proportional text without nested cards/chips */}
-      {data.skills && data.skills.length > 0 && (
-        <div className="pt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-muted">
-          {data.skills.map((skill, idx) => (
-            <span key={idx} className="text-text-secondary">
-              {idx > 0 && <span className="text-border-hover mr-2 select-none" aria-hidden="true">·</span>}
-              {skill}
-            </span>
-          ))}
-        </div>
-      )}
+      <div className="space-y-3 max-w-[62ch]">
+        {data.text && (
+          <ul className="space-y-2">
+            {data.text.split("\n").map((line) => (
+              <FormattedBullet key={line} text={line} />
+            ))}
+          </ul>
+        )}
+        {data.skills && data.skills.length > 0 && (
+          <p className="text-sm text-text-muted">{data.skills.join(", ")}</p>
+        )}
+      </div>
     </article>
   );
 }

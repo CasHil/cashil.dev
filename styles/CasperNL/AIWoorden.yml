@@ -1,0 +1,65 @@
+# Words that Dutch chatbot prose leans on. One hit proves nothing; two in a paragraph is a pattern.
+# Sources: welingelichtekringen.nl (woorden die AI verraden), howmanywords.app (ChatGPT-schrijfstijl),
+# VU ALP-gids AI-teksten herkennen, Wikipedia "Signs of AI writing" (translated).
+extends: existence
+message: "'%s' is een AI-woord. Zeg wat er concreet gebeurt."
+level: warning
+ignorecase: true
+tokens:
+  - cruciaal
+  - cruciale
+  - essentieel
+  - essentiële
+  - naadloos
+  - naadloze
+  - baanbrekend
+  - baanbrekende
+  - revolutionair
+  - revolutionaire
+  - transformatief
+  - transformatieve
+  - ongekend
+  - ongekende
+  - robuust
+  - robuuste
+  - veelzijdig
+  - veelzijdige
+  - dynamisch
+  - dynamische
+  - holistisch
+  - holistische
+  - genuanceerd
+  - genuanceerde
+  - waardevol
+  - waardevolle
+  - opmerkelijk
+  - opmerkelijke
+  - aanzienlijk
+  - aanzienlijke
+  - wandtapijt
+  - rijk tapijt
+  - symfonie van
+  - benutten
+  - benut
+  - ontgrendel
+  - ontgrendelen
+  - omarmen
+  - omarm
+  - gamechanger
+  - game changer
+  - state-of-the-art
+  - breed scala
+  - duik in
+  - duiken in
+  - duiken we
+  - laten we duiken
+  - verdiepen in
+  - verdiep je in
+  - navigeren door
+  - steeds veranderend
+  - steeds veranderende
+  - naar een hoger niveau
+  - speelt een (?:belangrijke|cruciale|grote|centrale) rol
+  - spelen een (?:belangrijke|cruciale|grote|centrale) rol
+  - de kracht van
+  - reis naar

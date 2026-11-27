@@ -1,0 +1,22 @@
+# Written-language connectors. Fine on paper, stiff when spoken, and a chatbot habit at the start of a sentence.
+extends: existence
+message: "'%s' is schrijftaal. Zeg in een talk 'en', 'ook', 'maar' of 'dus', of begin gewoon een nieuwe zin."
+level: suggestion
+ignorecase: true
+tokens:
+  - bovendien
+  - daarnaast
+  - echter
+  - tevens
+  - derhalve
+  - voorts
+  - immers
+  - desalniettemin
+  - niettemin
+  - tegelijkertijd
+  - doorgaans
+  - middels
+  - ten behoeve van
+  - met betrekking tot
+  - ten aanzien van
+  - teneinde

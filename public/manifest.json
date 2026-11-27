@@ -1,9 +1,15 @@
 {
-  "short_name": "Casper Hildebrand's Portfolio",
-  "name": "Casper Hildebrand's portfolio",
-  "icons": [],
+  "short_name": "Casper Hildebrand",
+  "name": "Casper Hildebrand, software engineer",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "browser",
+  "theme_color": "#fafaf7",
+  "background_color": "#fafaf7"
 }

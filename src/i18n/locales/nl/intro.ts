@@ -1,56 +1,50 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  heroTitle:
-    "Software engineer bij Tikkie Zakelijk en docent informatica.",
-  bioParagraph1:
-    "Bij Tikkie Zakelijk (ABN AMRO via Harvest) ontwikkel ik zakelijke webapplicaties in TypeScript en React, samen met cloud-backendservices op AWS voor merchant-onboarding en uitbetalingsprocessen.",
-  bioParagraph2:
-    "Met dubbele Mastertitels in Computer Science en Science Education van de TU Delft combineer ik technische diepgang met didactische helderheid: onderhoudbare software bouwen, heldere interfaces ontwerpen en teamgenoten helpen floreren.",
-  viewCv: "Curriculum Vitae",
-  exploreWork: "Bekijk Werkervaring",
-  featuredHeading: "Uitgelicht Werk",
-  featuredSubtitle:
-    "Geselecteerde productie- en onderwijsprojecten.",
-
-  // Tikkie Business Flagship
-  tikkieTag: "feb 2025 – Heden",
-  tikkieTitle: "Tikkie Zakelijk",
-  tikkieSubtitle: "Software Engineer · ABN AMRO (via Harvest)",
-  tikkieDescription:
-    "Ontwikkeling van zakelijke webapplicaties en cloud-backendservices die Nederlandse bedrijven ondersteunen met betaalverzoeken en geautomatiseerde administratie.",
-  tikkiePoints: [
-    "Bouwen en onderhouden van webapplicaties in TypeScript en React voor zakelijke betaalverzoeken, transactiebeheer en accountinstellingen.",
-    "Ontwikkelen van backend-onboardingworkflows en services op AWS voor verificatie van bedrijfsgegevens en automatische activatie.",
-    "Ondersteunen van uitbetalingsprocessen en transactiereconciliatie zodat zakelijke uitbetalingen accuraat en tijdig verlopen.",
+  heroTitle: "Software engineer bij Tikkie, opgeleid als docent informatica.",
+  heroFacts:
+    "Full-stack in TypeScript, React, Node.js en AWS. Ik woon in Amsterdam en werk in het Nederlands en Engels.",
+  story: [
+    "Bij Tikkie Zakelijk, onderdeel van ABN AMRO, werk ik aan het portaal waarmee bedrijven betaalverzoeken versturen. Ik bouw ook de AWS-services die deze bedrijven aanmelden en uitbetalen. Ik begon in februari 2025 via het talentprogramma van Harvest en leid nu mijn eerste grotere project in het team.",
+    "De dag na mijn afstuderen aan de TU Delft kreeg ik een mail van een middelbare school. De leerlingen hadden al maanden geen informaticadocent. Ik nam de baan aan en gaf dat schooljaar les aan ongeveer 200 leerlingen in tien klassen. Daarvoor was ik medeoprichter van Bitsized. Leerlingen schreven en draaiden daar code in de browser, zodat een les kon beginnen zonder iets te installeren.",
+    "Lesgeven heeft veranderd hoe ik software schrijf. Ik schrijf code en documentatie voor degene die ze na mij moet begrijpen. Bij Tikkie ging ik daardoor ook dingen organiseren: een AI-hackathon voor heel Tikkie en workshops over werken met coding agents.",
+    "Buiten mijn werk speel ik basgitaar en schaak ik.",
   ],
-  tikkieStack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
-  tikkieLink: "Bekijk in Werkervaring",
+  emailCta: "Mail mij",
+  cvCta: "Download cv (pdf)",
 
-  // Bitsized Flagship
-  bitsizedTag: "jan 2023 – feb 2025",
-  bitsizedTitle: "Bitsized",
-  bitsizedSubtitle: "Medeoprichter & Frontend Engineer",
-  bitsizedDescription:
-    "Medeoprichter van een educatief platform voor informaticaonderwijs op Nederlandse middelbare scholen, gericht op programmeren zonder installatiegedoe.",
-  bitsizedPoints: [
-    "Directe samenwerking met informaticadocenten op middelbare scholen om praktische behoeften in de lesruimte te vertalen naar effectieve software.",
-    "Bouwen van een toegankelijke webapplicatie met Vue.js en het Meteor-framework waarmee leerlingen direct in de browser programmeren.",
-    "Ontwerpen van heldere opdrachtdistributie en begrijpelijke feedback voor leerlingen zonder intimiderende foutmeldingen.",
+  workHeading: "Uitgelicht werk",
+  work: [
+    {
+      title: "Tikkie Zakelijk",
+      meta: "Software engineer bij ABN AMRO, via Harvest. Februari 2025 tot nu.",
+      paragraphs: [
+        "Met Tikkie Zakelijk sturen bedrijven betaalverzoeken naar hun klanten via WhatsApp, e-mail of een QR-code. Ik bouw het portaal voor ondernemers in TypeScript en React. Ik bouw ook de AWS-services die een nieuw bedrijf controleren en het account activeren, en ik werk aan de pipeline die ondernemers uitbetaalt.",
+        "Naast het bouwen van features heb ik onze technical debt in de retrospective van het team ingebracht, met een plan om die af te bouwen. Eenvoudige, terugkerende taken laten we nu door AI-agents doen.",
+      ],
+      stack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
+    },
+    {
+      title: "Bitsized",
+      meta: "Medeoprichter en lead frontend engineer. Januari 2023 tot februari 2025.",
+      paragraphs: [
+        "Bitsized was een webplatform voor informaticalessen op Nederlandse middelbare scholen. Leerlingen schreven en draaiden code in de browser, dus er hoefde niets op schoolcomputers te worden geïnstalleerd.",
+        "Ik bouwde de frontend in Vue.js op Meteor. Met de docenten die het gebruikten bepaalde ik hoe opdrachten werden uitgedeeld. We zochten ook uit hoe je een foutmelding schrijft waar een beginner iets mee kan.",
+      ],
+      stack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
+    },
   ],
-  bitsizedStack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
-  bitsizedLink: "Bekijk in Werkervaring",
+  workLink: "Alle werkervaring",
 
-  // Technology Experience
-  techHeading: "Kerntechnologieën",
-  techSubtitle: "Productie- en onderwijservaring met webapplicaties, clouddiensten en relationele data.",
-  techLiveBadge: "Productie & Onderwijs",
-
-  // Teaching & Mentorship
-  mentorshipHeading: "Onderwijs & Teamgenoten Helpen Floreren",
-  mentorshipDescription:
-    "Met een formele eerstegraads onderwijsbevoegdheid in de informatica beschouw ik heldere communicatie en mentorschap als fundamentele engineeringvaardigheden. Schone code, constructieve code-reviews en duidelijke documentatie verhogen de teamsnelheid en helpen iedereen het beste uit zichzelf te halen.",
-  outsideTitle: "Buiten Software Engineering",
-  outsideDescription:
-    "Speel ik elektrische basgitaar en schaak ik.",
+  stackHeading: "Stack",
+  stack: [
+    {
+      category: "Dagelijks",
+      items: "TypeScript, React, Node.js, AWS (Lambda, DynamoDB, S3), PostgreSQL, Vitest",
+    },
+    {
+      category: "Eerder",
+      items: "Vue.js, Meteor, MongoDB, C# en .NET, SQL Server, Python",
+    },
+  ],
 };

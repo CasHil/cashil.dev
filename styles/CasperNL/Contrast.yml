@@ -1,0 +1,13 @@
+# "Niet alleen X, maar ook Y" and "het is niet X, het is Y": a contrast that adds weight, not a claim.
+extends: existence
+message: "Contrastformule ('%s'). Zeg het punt direct, tenzij iemand het tegendeel echt denkt."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bniet alleen\b[^.!?\n]{1,90}\bmaar ook\b'
+  - '\bniet (?:zomaar|slechts|enkel|gewoon|louter) [^.!?\n]{1,60}[,;] maar\b'
+  - '\b(?:is|was|zijn|gaat|draait) (?:het |dit |dat )?(?:niet|geen) [^.!?\n]{1,60}[.,;] (?:het|dit|dat) (?:is|was|zijn|gaat|draait)\b'
+  - '\bzowel\b[^.!?\n]{1,60}\bals\b'
+  - '\benerzijds\b'
+  - '\banderzijds\b'

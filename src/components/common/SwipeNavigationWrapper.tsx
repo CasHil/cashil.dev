@@ -5,7 +5,7 @@ interface SwipeNavigationWrapperProps {
   children: ReactNode;
 }
 
-const ROUTES = ["/", "/cv", "/work-experience", "/education"];
+const ROUTES = ["/", "/work-experience", "/education", "/cv"];
 
 export default function SwipeNavigationWrapper({ children }: SwipeNavigationWrapperProps) {
   const navigate = useNavigate();
