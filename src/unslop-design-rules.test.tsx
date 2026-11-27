@@ -173,7 +173,7 @@ describe("Anti-slop design guardrails", () => {
     for (const group of [...translations.en.cv.skills, ...translations.nl.cv.skills]) {
       expect(group.category).not.toMatch(/:$/);
     }
-    expect(screen.getByText(/^(Languages|Talen)$/)).toBeDefined();
+    expect(screen.getByText(/^(Programming languages|Programmeertalen)$/)).toBeDefined();
     expect(screen.getByText(/^Frontend$/)).toBeDefined();
   });
 

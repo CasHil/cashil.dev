@@ -14,10 +14,11 @@ export const enCv: CvTranslations = {
   educationHeading: "Education",
   skillsHeading: "Skills",
   skills: [
-    { category: "Languages", items: "TypeScript, JavaScript, Python, SQL, C#, HTML and CSS" },
+    { category: "Programming languages", items: "TypeScript, JavaScript, Python, SQL, C#, HTML and CSS" },
     { category: "Frontend", items: "React, Vue.js, Vite, Tailwind CSS" },
     { category: "Backend and cloud", items: "Node.js, Express, Meteor, AWS (Lambda, DynamoDB, S3), REST APIs, Docker" },
     { category: "Data", items: "PostgreSQL, MySQL, SQL Server, MongoDB" },
     { category: "Practices", items: "Git, GitHub Actions, CI/CD, unit testing with Vitest and Jest" },
+    { category: "Spoken languages", items: "Dutch, English" },
   ],
 };

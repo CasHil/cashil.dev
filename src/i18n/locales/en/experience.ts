@@ -28,7 +28,7 @@ export const enExperience: WorkExperienceTranslations = {
       subtitle: "Co-founder and lead frontend engineer",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
-      text: "I co-founded a web platform where secondary-school students **wrote and ran code in the browser**.\nI built the frontend in Vue.js on Meteor.\nWith teachers I designed how assignments were handed out and how errors were explained to beginners.",
+      text: "I co-founded a web platform where secondary-school students **wrote and ran code in the browser**.\nI built the frontend in Vue.js on Meteor.\nI designed with teachers how assignments were handed out and how errors were explained to beginners.",
       skills: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
     },
     {

@@ -66,13 +66,13 @@ If removing something loses no information, remove it.
 
 Someone who reads only the marked words should still get the story.
 
-- The marker is a sunflower-yellow highlight behind a word or short phrase. It is the only emphasis on the site. No bold, no italics, no coloured words.
+- The marker is a sunflower-yellow highlight behind a word or short phrase, in the same weight as the text around it. It is the only emphasis on the site. No bold, no italics, no coloured words.
 - At most one marker per paragraph or bullet, and at most eight words long.
 - Mark a fact: an employer, a product, a number, a technology, a finding. Never an adjective, and never a claim about quality.
 - Most bullets have no marker. It works because it is rare.
 - Write a marker in the copy as `**words**`. The `Marked` component renders it. The PDF and the web CV sheet show the same text without the marker.
 
-Read the marked words on the home page in order. They should be: where he works, what the product does, why he taught, and what he built.
+Read the marked words on the home page in order. They should be: where he works, what the product does, why he taught, what he organised, and what he built.
 
 ## Colour
 

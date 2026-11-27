@@ -28,7 +28,7 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Medeoprichter en lead frontend engineer",
       startDate: "jan 2023",
       endDate: "feb 2025",
-      text: "Ik richtte een webplatform mee op waarop middelbare scholieren **code schreven en draaiden in de browser**.\nIk bouwde de frontend in Vue.js op Meteor.\nMet docenten ontwierp ik hoe opdrachten werden uitgedeeld en hoe fouten aan beginners werden uitgelegd.",
+      text: "Ik richtte een webplatform mee op waarop middelbare scholieren **code schreven en draaiden in de browser**.\nIk bouwde de frontend in Vue.js op Meteor.\nIk ontwierp met docenten hoe opdrachten werden uitgedeeld en hoe fouten aan beginners werden uitgelegd.",
       skills: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
     },
     {
@@ -44,7 +44,7 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Softwareontwikkelaar, parttime (ongeveer twee dagen per week)",
       startDate: "sep 2019",
       endDate: "mei 2021",
-      text: "Ik bouwde REST-API's en achtergrondservices voor TrackOnline, dat herbruikbare transportverpakkingen volgt door de keten.\nIk onderhield en moderniseerde de webinterface voor klanten in TypeScript.",
+      text: "Ik bouwde REST-API's en achtergrondservices voor TrackOnline, dat herbruikbare transportverpakkingen door de hele keten volgt.\nIk onderhield en moderniseerde de webinterface voor klanten in TypeScript.",
       skills: ["TypeScript", "JavaScript", "REST-API's", "SQL"],
     },
   ],

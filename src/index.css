@@ -76,8 +76,7 @@
   mark.marker {
     background-color: rgb(var(--marker-rgb) / var(--marker-alpha));
     color: var(--text-primary);
-    font-weight: 500;
-    padding: 0.05em 0.2em;
+    padding: 0.05em 0.1em;
     border-radius: 3px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;

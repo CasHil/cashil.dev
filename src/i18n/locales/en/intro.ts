@@ -3,11 +3,11 @@ import { IntroTranslations } from "../../types";
 export const enIntro: IntroTranslations = {
   heroTitle:
     "Software engineer at **Tikkie**, with master's degrees in computer science and in teaching it.",
-  heroFacts: "Full-stack in **TypeScript, React, Node.js and AWS**. Amsterdam. Dutch and English.",
+  heroFacts: "Full-stack in TypeScript, React, Node.js and AWS. Amsterdam. Dutch and English.",
   story: [
     "At Tikkie Business, part of ABN AMRO, I build the software companies use to **send payment requests and get paid**. I joined in March 2026 through Harvest, a programme that places engineers at companies and trains them alongside the job.",
-    "The day after I finished my studies, a secondary school emailed me. Its students had gone **months without a computer science teacher**. I took the job and taught about 200 students until the summer.",
-    "Teaching still shapes how I work. At Tikkie I wrote a **glossary that explains our internal terms** to new colleagues. I also organised an AI hackathon and give workshops on coding agents.",
+    "The day after I finished my studies, a secondary school emailed me. Its students had gone **months without a computer science teacher**. I took the job and taught about 200 students at two schools until the summer.",
+    "At Tikkie I wrote a glossary that explains our internal terms to new colleagues. I also organised an **AI hackathon** and give workshops on coding agents.",
     "Outside work I play bass guitar and chess.",
   ],
   emailCta: "Email me",
@@ -17,10 +17,10 @@ export const enIntro: IntroTranslations = {
   work: [
     {
       title: "Tikkie Business",
-      role: "Software engineer at ABN AMRO, via Harvest",
+      role: "Software engineer, via the Harvest talent programme",
       period: "Mar 2026 to now",
       paragraphs: [
-        "I build the **merchant portal** in TypeScript and React, and the AWS services that verify a new business and activate its account. Alongside feature work I lead my first larger project, and we have started handing repetitive tasks to AI agents.",
+        "I build the **merchant portal** and the AWS services that verify a new business and activate its account. I also work on payouts and reconciliation, and lead my first larger project.",
       ],
       stack: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL"],
     },

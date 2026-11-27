@@ -3,11 +3,11 @@ import { IntroTranslations } from "../../types";
 export const nlIntro: IntroTranslations = {
   heroTitle:
     "Software engineer bij **Tikkie**, met twee masters: informatica en de lerarenopleiding informatica.",
-  heroFacts: "Full-stack in **TypeScript, React, Node.js en AWS**. Amsterdam. Nederlands en Engels.",
+  heroFacts: "Full-stack in TypeScript, React, Node.js en AWS. Amsterdam. Nederlands en Engels.",
   story: [
     "Bij Tikkie Zakelijk, onderdeel van ABN AMRO, bouw ik de software waarmee bedrijven **betaalverzoeken versturen en hun geld ontvangen**. Ik begon in maart 2026 via Harvest, een programma dat engineers bij bedrijven plaatst en ze naast hun werk opleidt.",
-    "De dag na mijn afstuderen kreeg ik een mail van een middelbare school. De leerlingen hadden **al maanden geen informaticadocent**. Ik nam de baan aan en gaf tot de zomer les aan ongeveer 200 leerlingen.",
-    "Lesgeven bepaalt nog steeds hoe ik werk. Bij Tikkie schreef ik een **woordenlijst die onze interne begrippen uitlegt** aan nieuwe collega's. Ik organiseerde ook een AI-hackathon en geef workshops over coding agents.",
+    "De dag na mijn afstuderen kreeg ik een mail van een middelbare school. De leerlingen hadden **al maanden geen informaticadocent**. Ik nam de baan aan en gaf tot de zomer les aan ongeveer 200 leerlingen op twee scholen.",
+    "Bij Tikkie schreef ik een woordenlijst die onze interne begrippen uitlegt aan nieuwe collega's. Ik organiseerde ook een **AI-hackathon** en geef workshops over coding agents.",
     "Buiten mijn werk speel ik basgitaar en schaak ik.",
   ],
   emailCta: "Mail me",
@@ -17,10 +17,10 @@ export const nlIntro: IntroTranslations = {
   work: [
     {
       title: "Tikkie Zakelijk",
-      role: "Software engineer bij ABN AMRO, via Harvest",
+      role: "Software engineer, via het talentprogramma van Harvest",
       period: "mrt 2026 tot nu",
       paragraphs: [
-        "Ik bouw het **portaal voor ondernemers** in TypeScript en React, en de AWS-services die een nieuw bedrijf controleren en het account activeren. Naast featurewerk leid ik mijn eerste grotere project, en we zijn begonnen terugkerende taken aan AI-agents over te laten.",
+        "Ik bouw het **portaal voor ondernemers** en de AWS-services die een nieuw bedrijf controleren en het account activeren. Ik werk ook aan uitbetalingen en reconciliatie, en leid mijn eerste grotere project.",
       ],
       stack: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL"],
     },
