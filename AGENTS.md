@@ -39,6 +39,14 @@
 - No Trailing Colons on Categories (Rule 30): Omit trailing colons (`Languages:`, `Frontend:`) on CV skill categories; use typographic weight instead.
 - Authentic Monospace Configuration (Rule 31): Never map `font-mono` to `system-ui` to bypass unit tests. Maintain true monospace fonts for code and enforce sans-serif on editorial prose.
 
+## Project skills
+Skills live in `.claude/skills/`. Each one from the home repo carries an "In this repository" section that says how it applies here.
+- `humanizer`: rewrite AI-sounding copy. Extended with résumé tells, Dutch tells and the Vale workflow.
+- `writing-beats`: build the home page story beat by beat. Extended with the reader, the source pile and the date check.
+- `redesign-existing-projects`: design audit. Extended with the parts that conflict with these guardrails and the bugs found on this site.
+- `recruiter-review`: the four-reviewer panel (recruiter, hiring manager, Dutch reader, design critic). Run it before merging any change to copy, layout or the CV.
+- `impeccable`, `frontend-design`, `interaction-design`, `swiss-editorial`: design guidance already in the repo.
+
 ## Safety and file system guardrails
 - Permitted File Modification & Deletion Whitelist: File writes, mutations, and deletions (`Remove-Item`, `del`, `rmdir`, `rm`, `git rm`) are strictly prohibited outside:
   1. `F:\Projects\` (project repositories)
