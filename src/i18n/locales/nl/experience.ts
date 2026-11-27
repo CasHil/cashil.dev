@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const nlExperience: WorkExperienceTranslations = {
   title: "Werkervaring",
   intro:
-    "Betalingen bij Tikkie, een programmeerplatform voor in de klas dat ik mee oprichtte, en een jaar voor de klas. Daarvoor bouwde ik software bij een consultancy en in de logistiek.",
+    "Nu werk ik aan betalingen bij Tikkie. Daarvoor richtte ik een programmeerplatform voor scholen mee op en stond ik een jaar voor de klas. Nog eerder bouwde ik software bij een consultancy en in de logistiek.",
   to: "tot",
   items: [
     {
@@ -32,7 +32,7 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Medeoprichter en lead frontend engineer",
       startDate: "jan 2023",
       endDate: "feb 2025",
-      text: "Ik richtte mee een webplatform op waar middelbare scholieren code schrijven en draaien in de browser, zonder iets te installeren.\nIk bouwde de frontend in Vue.js op Meteor.\nSamen met informaticadocenten ontwierp ik hoe opdrachten worden uitgedeeld, hoe voortgang wordt bijgehouden en hoe fouten aan beginners worden uitgelegd.",
+      text: "Ik richtte mee een webplatform op waar middelbare scholieren code schrijven en draaien in de browser, zonder iets te installeren.\nIk bouwde de frontend in Vue.js op Meteor.\nIk ontwierp samen met informaticadocenten hoe opdrachten worden uitgedeeld, hoe voortgang wordt bijgehouden en hoe fouten aan beginners worden uitgelegd.",
       skills: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
       image: {
         uri: "bitsized.webp",
@@ -41,7 +41,7 @@ export const nlExperience: WorkExperienceTranslations = {
     },
     {
       title: "Netcompany",
-      subtitle: "Software analist en consultant",
+      subtitle: "Softwareanalist en consultant",
       startDate: "sep 2021",
       endDate: "jun 2022",
       text: "Ik ontwikkelde en onderhield applicaties voor twee Nederlandse onderwijsfondsen: het Vervangingsfonds en het Participatiefonds.\nIk bouwde een webtool die beoordeelt hoe duurzaam een woning of bedrijfspand is volgens de Nederlandse regels.",

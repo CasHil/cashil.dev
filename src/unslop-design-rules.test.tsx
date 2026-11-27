@@ -69,15 +69,15 @@ describe("Anti-slop design guardrails", () => {
   test("Rule 14: concentric corner radius, R_inner = max(0, R_outer - padding)", () => {
     const inner = (rOuter: number, padding: number) => Math.max(0, rOuter - padding);
 
-    // Header nav pill and CV language switch: rounded-squircle (18px) with p-1 (4px)
+    // Header nav pill: rounded-squircle (18px) with p-1 (4px) holds 12-14px pills
     expect(inner(18, 4)).toBe(14);
 
-    const cvContent = fs.readFileSync(
-      path.resolve(__dirname, "../src/components/Cv/Cv.tsx"),
+    const headerContent = fs.readFileSync(
+      path.resolve(__dirname, "../src/components/Header/Header.tsx"),
       "utf-8"
     );
-    expect(cvContent).toContain("rounded-squircle bg-surface-subtle p-1");
-    expect(cvContent).toContain("rounded-[14px]");
+    expect(headerContent).toContain("p-1 rounded-squircle");
+    expect(headerContent).toContain("rounded-squircle-sm");
   });
 
   test("Rule 15: minimum 12px font size", () => {
@@ -98,7 +98,7 @@ describe("Anti-slop design guardrails", () => {
   test("Rule 10 & 20: the primary CTA is a contact action with press feedback", () => {
     window.history.pushState({}, "", "/");
     render(<App />);
-    const emailLinks = screen.getAllByRole("link", { name: /email me|mail mij/i });
+    const emailLinks = screen.getAllByRole("link", { name: /email me|mail me/i });
     expect(emailLinks.length).toBeGreaterThan(0);
 
     const primaryBtn = emailLinks[0];
@@ -177,6 +177,12 @@ describe("Anti-slop design guardrails", () => {
     expect(screen.getByText(/^Frontend$/)).toBeDefined();
   });
 
+  test("Colour tokens accept opacity modifiers", () => {
+    const content = fs.readFileSync(path.resolve(__dirname, "../tailwind.config.js"), "utf-8");
+    expect(content).toContain("<alpha-value>");
+    expect(content).not.toMatch(/"var\(--/);
+  });
+
   test("Rule 31: genuine monospace configuration in tailwind.config.js", () => {
     const content = fs.readFileSync(path.resolve(__dirname, "../tailwind.config.js"), "utf-8");
     expect(content).not.toMatch(/mono:\s*\[\s*["']system-ui["']/);
@@ -187,7 +193,6 @@ describe("Anti-slop design guardrails", () => {
   test("Headings in site copy use sentence case", () => {
     const headings = [translations.en, translations.nl].flatMap((t) => [
       t.intro.workHeading,
-      t.intro.stackHeading,
       t.workExperience.title,
       t.education.title,
       t.contact.heading,

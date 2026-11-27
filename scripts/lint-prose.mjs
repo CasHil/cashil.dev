@@ -4,31 +4,12 @@
 //   English -> styles/Tropes   (the tropes.fyi rules, same as the home repo)
 //   Dutch   -> styles/CasperNL (the Dutch rules from the home repo)
 // Usage: node scripts/lint-prose.mjs
-import { build } from "vite";
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { loadTranslations, root } from "./load-translations.mjs";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outDir = path.join(root, ".vale-copy");
-fs.rmSync(outDir, { recursive: true, force: true });
-fs.mkdirSync(outDir, { recursive: true });
-
-// Vite is already a dependency, so use it to compile the dictionaries to plain ESM.
-await build({
-  configFile: false,
-  logLevel: "silent",
-  publicDir: false,
-  build: {
-    ssr: path.join(root, "src", "i18n", "translations.ts"),
-    outDir,
-    emptyOutDir: false,
-    rollupOptions: { output: { entryFileNames: "translations.mjs" } },
-  },
-});
-const bundle = path.join(outDir, "translations.mjs");
-const { translations } = await import(pathToFileURL(bundle).href);
+const translations = await loadTranslations();
 
 // Strings that are not prose: URLs, file names, asset paths and tech lists.
 const SKIP_KEYS = new Set(["repositoryLink", "uri", "stack", "skills", "items", "year"]);

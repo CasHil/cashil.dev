@@ -22,7 +22,7 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Vakken in softwarearchitectuur en gedistribueerde systemen.\nScriptie over motivatie en betrokkenheid in online informaticacursussen.",
+      text: "Vakken in softwarearchitectuur en gedistribueerde systemen.\nScriptie: Debugging the Divide, over motivatie en betrokkenheid in online informaticacursussen.",
       skills: [],
       image: {
         uri: "tudelft.webp",
@@ -34,7 +34,7 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Science Education and Communication, richting informatica",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Met de eerstegraads onderwijsbevoegdheid informatica, geldig op elk niveau van het voortgezet onderwijs.\nScholing in curriculumontwerp en cognitieve belastingstheorie.",
+      text: "Inclusief de eerstegraads lesbevoegdheid informatica, geldig op elk niveau van het voortgezet onderwijs.\nVakken in curriculumontwerp en cognitive load theory.",
       skills: [],
       image: {
         uri: "tudelft.webp",

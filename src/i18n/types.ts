@@ -24,12 +24,11 @@ export interface SidebarTranslations {
 
 export interface CvTranslations {
   title: string;
+  headline: string;
   subtitle: string;
   openPdf: string;
   downloadPdf: string;
-  pdfLanguageLabel: string;
-  englishPdf: string;
-  dutchPdf: string;
+  otherLanguagePdf: string;
   profileHeading: string;
   profile: string;
   experienceHeading: string;
@@ -45,7 +44,8 @@ export interface SkillGroup {
 
 export interface WorkHighlight {
   title: string;
-  meta: string;
+  role: string;
+  period: string;
   paragraphs: string[];
   stack: string[];
 }
@@ -59,8 +59,6 @@ export interface IntroTranslations {
   workHeading: string;
   work: WorkHighlight[];
   workLink: string;
-  stackHeading: string;
-  stack: SkillGroup[];
 }
 
 export interface WorkRole {

@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const enExperience: WorkExperienceTranslations = {
   title: "Work experience",
   intro:
-    "Payments at Tikkie, a classroom coding platform I co-founded, and a year of teaching. Before that I built consultancy and logistics software.",
+    "I work on payments at Tikkie. Before that I co-founded a coding platform for schools and taught for a year. Earlier I built software at a consultancy and for a logistics company.",
   to: "to",
   items: [
     {
@@ -32,7 +32,7 @@ export const enExperience: WorkExperienceTranslations = {
       subtitle: "Co-founder and lead frontend engineer",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
-      text: "I co-founded a web platform where secondary-school students write and run code in the browser, with nothing to install.\nI built the frontend in Vue.js on Meteor.\nTogether with computer science teachers I designed how assignments are handed out, how progress is tracked and how errors are explained to beginners.",
+      text: "I co-founded a web platform where secondary-school students write and run code in the browser, with nothing to install.\nI built the frontend in Vue.js on Meteor.\nI worked with computer science teachers on how assignments are handed out, how progress is tracked and how errors are explained to beginners.",
       skills: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
       image: {
         uri: "bitsized.webp",

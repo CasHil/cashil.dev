@@ -22,7 +22,7 @@ export const enEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Courses in software architecture and distributed systems.\nThesis on motivation and engagement in online computer science courses.",
+      text: "Courses in software architecture and distributed systems.\nThesis: Debugging the Divide, on motivation and engagement in online computer science courses.",
       skills: [],
       image: {
         uri: "tudelft.webp",
@@ -34,7 +34,7 @@ export const enEducation: EducationTranslations = {
       subtitle: "MSc Science Education and Communication, Computer Science track",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Includes the Dutch first-degree (eerstegraads) teaching qualification for computer science, valid at every level of secondary education.\nTraining in curriculum design and cognitive load theory.",
+      text: "Includes the Dutch first-degree (eerstegraads) teaching qualification for computer science, valid at every level of secondary education.\nCourses in curriculum design and cognitive load theory.",
       skills: [],
       image: {
         uri: "tudelft.webp",

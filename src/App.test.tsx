@@ -108,7 +108,7 @@ test("home page tells the story and offers email and CV actions", () => {
   expect(screen.getByRole("heading", { name: /selected work|uitgelicht werk/i })).toBeInTheDocument();
   expect(screen.getAllByText(/Bitsized/i).length).toBeGreaterThan(0);
 
-  const emailLinks = screen.getAllByRole("link", { name: /email me|mail mij/i });
+  const emailLinks = screen.getAllByRole("link", { name: /email me|mail me/i });
   expect(emailLinks.length).toBeGreaterThan(0);
   expect(emailLinks[0]).toHaveAttribute("href", "mailto:casperhildebrand@gmail.com");
 
@@ -121,7 +121,7 @@ test("every page ends with a contact call to action", () => {
     window.history.pushState({}, "", route);
     const { unmount } = render(<App />);
     expect(screen.getByRole("heading", { name: /get in touch|neem contact op/i })).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: /email me|mail mij/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /email me|mail me/i }).length).toBeGreaterThan(0);
     unmount();
   }
 });
@@ -136,41 +136,29 @@ test("education page links to the published thesis record", () => {
   );
 });
 
-test("links to Dutch CV PDF when site language is Dutch", () => {
+test("CV page offers the PDF in the site language and links the other language", () => {
+  localStorage.setItem("lang", "en");
   window.history.pushState({}, "", "/cv");
+  const { unmount } = render(<App />);
+
+  const downloadEn = screen.getByRole("link", { name: /^download pdf$/i });
+  expect(downloadEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+  expect(downloadEn).toHaveAttribute("download", "Casper_Hildebrand_CV.pdf");
+  expect(screen.getByRole("link", { name: /dutch version/i })).toHaveAttribute(
+    "href",
+    "/cv/Casper_Hildebrand_CV_NL.pdf"
+  );
+  unmount();
+
+  localStorage.setItem("lang", "nl");
   render(<App />);
-
-  // Open settings and switch to Dutch
-  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
-  fireEvent.click(settingsButton);
-
-  const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
-  if (nlButtons.length > 0) {
-    fireEvent.click(nlButtons[0]);
-  }
-
-  const downloadLink = screen.getByRole("link", { name: /download pdf \(nl\)/i });
-  expect(downloadLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
-  expect(downloadLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
-});
-
-test("allows switching CV PDF language via dedicated toggle", () => {
-  window.history.pushState({}, "", "/cv");
-  render(<App />);
-
-  // Switch CV PDF to NL
-  const nlToggle = screen.getByRole("button", { name: /dutch \(nl\)|nederlands \(nl\)/i });
-  fireEvent.click(nlToggle);
-
-  const downloadLinkNl = screen.getByRole("link", { name: /download pdf \(nl\)/i });
-  expect(downloadLinkNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
-
-  // Switch CV PDF back to EN
-  const enToggle = screen.getByRole("button", { name: /english \(en\)|engels \(en\)/i });
-  fireEvent.click(enToggle);
-
-  const downloadLinkEn = screen.getByRole("link", { name: /download pdf \(en\)/i });
-  expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+  const downloadNl = screen.getByRole("link", { name: /^pdf downloaden$/i });
+  expect(downloadNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+  expect(screen.getByRole("link", { name: /engelse versie/i })).toHaveAttribute(
+    "href",
+    "/cv/Casper_Hildebrand_CV.pdf"
+  );
+  localStorage.setItem("lang", "en");
 });
 
 test("renders primary navigation header with candidate branding and accessible routes", () => {
@@ -218,10 +206,11 @@ test("allows toggling mobile menu in header to access routes and preferences", (
   expect(themeBtn).toBeInTheDocument();
 });
 
-test("home page lists the stack and keeps hobbies plain", () => {
+test("home page keeps hobbies plain and shows no stack counters", () => {
+  localStorage.setItem("lang", "en");
   window.history.pushState({}, "", "/");
-  render(<App />);
+  const { container } = render(<App />);
 
-  expect(screen.getByRole("heading", { name: /^stack$/i })).toBeInTheDocument();
-  expect(screen.getByText(/bass guitar and chess|basgitaar en schaak/i)).toBeInTheDocument();
+  expect(screen.getByText(/bass guitar and chess/i)).toBeInTheDocument();
+  expect(container.textContent).not.toMatch(/\d+\+\s*yrs/);
 });

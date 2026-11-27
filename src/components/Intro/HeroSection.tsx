@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section aria-labelledby="hero-title" className="pt-4 sm:pt-8">
       <h1
         id="hero-title"
-        className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-text-primary leading-[1.08] max-w-[22ch]"
+        className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-text-primary leading-[1.08] max-w-[26ch]"
       >
         {t.intro.heroTitle}
       </h1>
@@ -27,13 +27,13 @@ export default function HeroSection() {
         </a>
       </div>
 
-      <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row gap-5 sm:gap-8 items-start">
+      <div className="mt-12 sm:mt-16 sm:flex sm:gap-8 sm:items-start">
         <img
           src="/images/profile.webp"
           alt="Casper Hildebrand"
           width={96}
           height={96}
-          className="h-20 w-20 sm:h-24 sm:w-24 rounded-full object-cover shrink-0"
+          className="float-left mr-4 mb-1 h-16 w-16 sm:float-none sm:m-0 sm:h-24 sm:w-24 rounded-full object-cover shrink-0"
         />
         <div className="space-y-4 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[62ch]">
           {t.intro.story.map((paragraph) => (

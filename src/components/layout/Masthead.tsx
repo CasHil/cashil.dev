@@ -42,7 +42,7 @@ export default function Masthead() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-canvas/80 dark:bg-canvas/80 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/75 border-b border-border-subtle/80 transition-colors relative">
+    <header className="sticky top-0 z-40 w-full bg-canvas border-b border-border-subtle transition-colors">
       <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between gap-4">
         {/* Candidate Typographic Identity & Agency Studio Mark */}
         <Link

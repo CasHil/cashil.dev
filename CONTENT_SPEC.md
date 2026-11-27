@@ -19,8 +19,7 @@ Question: who is this, and is he worth a call?
 2. One line of facts a recruiter filters on: stack, city, languages.
 3. Two actions: email him, download the CV.
 4. The story in four short paragraphs: what he does now, how he got there, what teaching changed, one line about life outside work.
-5. Selected work: Tikkie Business and Bitsized, two paragraphs each. No bullets here.
-6. Stack: what he uses daily and what he used earlier.
+5. Selected work: Tikkie Business and Bitsized, two paragraphs each, with the stack on one line. No bullets here.
 
 ## Work experience (`/work-experience`)
 
@@ -38,4 +37,4 @@ The four programmes with one or two lines each. Then the thesis: exact title, wh
 
 Question: can I have this as a file?
 
-Download and open buttons, a language switch for the PDF, and a web version with the same content. The PDFs are built from `cv/*.tex` with `pnpm run build:cv` and must stay on one page.
+Download and open buttons, a link to the PDF in the other language, and a web version with the same roles and degrees. `pnpm run build:cv` generates `cv/*.tex` from the site copy and compiles the PDFs. They must stay on one page.

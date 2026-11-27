@@ -2,7 +2,7 @@
 
 ## Architecture and data navigation
 - Resume & Profile Copy: `src/i18n/translations.ts` combines the bilingual (EN/NL) copy in `src/i18n/locales/{en,nl}/`: the home story, work roles, degrees and the thesis summary. There are no separate `TimelineJobs.ts` or `TimelineEducation.ts` files.
-- Curriculum Vitae (LaTeX): `cv/Casper_Hildebrand_CV.tex` and `cv/Casper_Hildebrand_CV_NL.tex` are compiled to `public/cv/Casper_Hildebrand_CV.pdf` and `public/cv/Casper_Hildebrand_CV_NL.pdf` using `pnpm run build:cv`. Must strictly adhere to a **1-page budget**.
+- Curriculum Vitae (LaTeX): `cv/Casper_Hildebrand_CV.tex` and `cv/Casper_Hildebrand_CV_NL.tex` are generated from the site copy by `scripts/generate-cv-tex.mjs` (do not edit them by hand) and compiled to `public/cv/Casper_Hildebrand_CV.pdf` and `public/cv/Casper_Hildebrand_CV_NL.pdf` using `pnpm run build:cv`. Must strictly adhere to a **1-page budget**.
 - Research Publication: Master's thesis telemetry and publication citation are presented under `/education` linking to the official TU Delft repository.
 
 ## Tooling and environment constraints

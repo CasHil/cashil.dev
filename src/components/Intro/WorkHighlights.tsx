@@ -20,11 +20,12 @@ export default function WorkHighlights() {
             key={item.title}
             className="py-8 sm:py-10 grid gap-3 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
           >
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <h3 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
                 {item.title}
               </h3>
-              <p className="text-sm text-text-muted max-w-[32ch]">{item.meta}</p>
+              <p className="text-base text-text-secondary">{item.role}</p>
+              <p className="text-sm text-text-muted tabular-nums">{item.period}</p>
             </div>
             <div className="space-y-4 max-w-[62ch]">
               {item.paragraphs.map((paragraph) => (

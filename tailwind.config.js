@@ -7,26 +7,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        canvas: "var(--canvas)",
+        canvas: "rgb(var(--canvas-rgb) / <alpha-value>)",
         surface: {
-          DEFAULT: "var(--surface)",
-          hover: "var(--surface-hover)",
-          subtle: "var(--surface-subtle)",
+          DEFAULT: "rgb(var(--surface-rgb) / <alpha-value>)",
+          hover: "rgb(var(--surface-hover-rgb) / <alpha-value>)",
+          subtle: "rgb(var(--surface-subtle-rgb) / <alpha-value>)",
         },
         border: {
-          subtle: "var(--border-subtle)",
-          hover: "var(--border-hover)",
+          subtle: "rgb(var(--border-subtle-rgb) / <alpha-value>)",
+          hover: "rgb(var(--border-hover-rgb) / <alpha-value>)",
         },
         text: {
-          primary: "var(--text-primary)",
-          secondary: "var(--text-secondary)",
-          muted: "var(--text-muted)",
+          primary: "rgb(var(--text-primary-rgb) / <alpha-value>)",
+          secondary: "rgb(var(--text-secondary-rgb) / <alpha-value>)",
+          muted: "rgb(var(--text-muted-rgb) / <alpha-value>)",
         },
         brand: {
-          DEFAULT: "var(--brand)",
-          hover: "var(--brand-hover)",
-          subtle: "var(--brand-subtle)",
-          border: "var(--brand-border)",
+          DEFAULT: "rgb(var(--brand-rgb) / <alpha-value>)",
+          hover: "rgb(var(--brand-hover-rgb) / <alpha-value>)",
+          subtle: "rgb(var(--brand-subtle-rgb) / <alpha-value>)",
+          border: "rgb(var(--brand-border-rgb) / <alpha-value>)",
         },
       },
       borderRadius: {

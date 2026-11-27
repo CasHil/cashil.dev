@@ -37,7 +37,7 @@ export default function Header({
         className={
           isVertical
             ? "flex flex-col space-y-1"
-            : "flex items-center gap-0.5 p-1 rounded-squircle bg-surface-subtle/80 dark:bg-surface-subtle/40 border border-border-subtle/80 shadow-2xs backdrop-blur-md"
+            : "flex items-center gap-0.5 p-1 rounded-squircle bg-surface-subtle border border-border-subtle"
         }
       >
         {navItems.map((item) => (

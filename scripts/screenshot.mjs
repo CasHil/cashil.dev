@@ -81,10 +81,9 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   const mobile360 = await browser.newContext({ viewport: { width: 360, height: 780 } });
   const nlPage = await mobile360.newPage();
 
-  // Switch to Dutch
+  // Switch to Dutch through the stored language preference
+  await mobile360.addInitScript(() => localStorage.setItem('lang', 'nl'));
   await nlPage.goto(BASE + '/cv', { waitUntil: 'networkidle' });
-  const nlBtn = await nlPage.$('button[aria-label*="Nederlands"], button:has-text("NL")');
-  if (nlBtn) await nlBtn.click();
   await nlPage.waitForTimeout(400);
   await nlPage.screenshot({ path: path.join(OUT, '14_cv_mobile_nl_360.png'), fullPage: true });
   console.log('Saved: 14_cv_mobile_nl_360.png');
@@ -94,6 +93,11 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await nlPage.waitForTimeout(400);
   await nlPage.screenshot({ path: path.join(OUT, '15_education_mobile_nl_360.png'), fullPage: true });
   console.log('Saved: 15_education_mobile_nl_360.png');
+
+  // Dutch Work on 360px
+  await nlPage.goto(BASE + '/work-experience', { waitUntil: 'networkidle' });
+  await nlPage.waitForTimeout(400);
+  await nlPage.screenshot({ path: path.join(OUT, '18_work_mobile_nl_360.png'), fullPage: true });
 
   // Dutch Overview on 360px
   await nlPage.goto(BASE + '/', { waitUntil: 'networkidle' });

@@ -1,6 +1,7 @@
 import { useLanguage } from "../../context/LanguageContext";
 import {
   EMAIL,
+  GITHUB_URL,
   LINKEDIN_URL,
   cvPdf,
   primaryButton,
@@ -29,9 +30,9 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
           {t.contact.heading}
         </h2>
         <p className="text-base text-text-secondary leading-relaxed max-w-[60ch]">
-          {t.contact.body}{" "}
-          <span className="select-all whitespace-nowrap text-text-primary">{EMAIL}</span>
+          {t.contact.body}
         </p>
+        <p className="text-base text-text-primary select-all">{EMAIL}</p>
       </div>
 
       <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
@@ -50,6 +51,14 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
           className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
         >
           LinkedIn
+        </a>
+        <a
+          href={GITHUB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
+        >
+          GitHub
         </a>
       </div>
     </section>

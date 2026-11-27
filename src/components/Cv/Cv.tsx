@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { Language } from "../../i18n/types";
 import FormattedBullet from "../common/FormattedBullet";
 import ContactCta from "../common/ContactCta";
 import {
@@ -10,6 +8,7 @@ import {
   cvPdf,
   primaryButton,
   secondaryButton,
+  textLink,
 } from "../common/links";
 
 const sectionHeading =
@@ -20,30 +19,8 @@ const bulletClass =
 
 export default function Cv() {
   const { t, language } = useLanguage();
-  const [pdfLang, setPdfLang] = useState<Language>(language);
-
-  useEffect(() => {
-    setPdfLang(language);
-  }, [language]);
-
-  const pdf = cvPdf(pdfLang);
-  const langLabel = pdfLang.toUpperCase();
-
-  const langButton = (lang: Language, label: string) => (
-    <button
-      type="button"
-      onClick={() => setPdfLang(lang)}
-      className={`px-4 min-h-[36px] rounded-[14px] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
-        pdfLang === lang
-          ? "bg-surface text-text-primary font-semibold shadow-xs"
-          : "text-text-muted hover:text-text-primary"
-      }`}
-      aria-pressed={pdfLang === lang}
-      aria-label={label}
-    >
-      {lang.toUpperCase()}
-    </button>
-  );
+  const pdf = cvPdf(language);
+  const otherPdf = cvPdf(language === "nl" ? "en" : "nl");
 
   return (
     <div className="space-y-10 sm:space-y-12">
@@ -58,12 +35,7 @@ export default function Cv() {
         </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-          <a
-            href={pdf.url}
-            download={pdf.fileName}
-            className={primaryButton}
-            aria-label={`${t.cv.downloadPdf} (${langLabel})`}
-          >
+          <a href={pdf.url} download={pdf.fileName} className={primaryButton}>
             {t.cv.downloadPdf}
           </a>
           <a
@@ -71,18 +43,16 @@ export default function Cv() {
             target="_blank"
             rel="noopener noreferrer"
             className={secondaryButton}
-            aria-label={`${t.cv.openPdf} (${langLabel})`}
           >
             {t.cv.openPdf}
           </a>
-          <div
-            role="group"
-            aria-label={t.cv.pdfLanguageLabel}
-            className="inline-flex self-start sm:self-auto items-center text-sm font-medium rounded-squircle bg-surface-subtle p-1 border border-border-subtle"
+          <a
+            href={otherPdf.url}
+            download={otherPdf.fileName}
+            className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
           >
-            {langButton("en", t.cv.englishPdf)}
-            {langButton("nl", t.cv.dutchPdf)}
-          </div>
+            {t.cv.otherLanguagePdf}
+          </a>
         </div>
       </div>
 
@@ -96,7 +66,7 @@ export default function Cv() {
             {t.sidebar.name}
           </h2>
           <p className="text-base text-text-secondary">
-            {t.sidebar.role}, {t.sidebar.location}
+            {t.cv.headline}, {t.sidebar.location}
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 text-sm text-text-muted">
             <a

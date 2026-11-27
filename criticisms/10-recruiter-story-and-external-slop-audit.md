@@ -51,10 +51,12 @@ One source also files "cream background, serif headings, one muted accent" under
 | --- | --- |
 | Headline was a job title | Headline names his employer and his teaching background |
 | Two résumé cards on the home page | A four-paragraph story, then two short case descriptions that say what the product is and what he built |
-| Computed "7+ yrs" counters | Two plain lines: what he uses daily and what he used earlier |
+| Computed "7+ yrs" counters | Removed. The stack is named once in the facts line and once per role |
 | Three pages ending in navigation buttons | Every page ends with the same contact block: email, CV download, LinkedIn |
 | Home actions led to other pages | Home actions are "Email me" and "Download CV (PDF)" |
-| Five controls on the CV page | Download, open, and a language switch |
+| Five controls on the CV page | Download, open, and a link to the other language |
+| PDF CV written separately from the site | PDF generated from the site copy by `scripts/generate-cv-tex.mjs` |
+| Colour tokens ignored opacity modifiers, so bullets were invisible and dark borders fell back to light grey | Tokens stored as RGB channels |
 | Bullets in gerunds | First-person sentences in the past or present tense |
 | Thesis as a reworded title and a dead link | Exact title, what he measured, what he found, working link |
 | Teaching 2018 to 2025 | Teacher at two named schools, August 2024 to July 2025 |

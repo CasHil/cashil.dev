@@ -18,7 +18,7 @@
     "lint:copy": "node scripts/lint-copy.js",
     "lint:prose": "node scripts/lint-prose.mjs",
     "lint:docs": "vale --glob=\"!{node_modules,dist,styles,.claude,.cursor,.vale-copy}/**\" .",
-    "build:cv": "powershell -ExecutionPolicy Bypass -File scripts/build-cv.ps1",
+    "build:cv": "node scripts/generate-cv-tex.mjs && powershell -ExecutionPolicy Bypass -File scripts/build-cv.ps1",
     "audit:ux": "npx -y impeccable detect dist",
     "screenshot": "node scripts/screenshot.mjs",
     "test:perf": "node scripts/measure-menu-fps.mjs",
