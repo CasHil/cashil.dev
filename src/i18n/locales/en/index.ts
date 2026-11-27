@@ -4,7 +4,7 @@ import { enCv } from "./cv";
 import { enIntro } from "./intro";
 import { enExperience } from "./experience";
 import { enEducation } from "./education";
-import { enOutreach } from "./outreach";
+import { enContact } from "./contact";
 
 export const enLocale = {
   nav: enNav,
@@ -13,5 +13,5 @@ export const enLocale = {
   intro: enIntro,
   workExperience: enExperience,
   education: enEducation,
-  outreach: enOutreach,
+  contact: enContact,
 };

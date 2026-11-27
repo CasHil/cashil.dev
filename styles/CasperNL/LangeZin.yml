@@ -1,0 +1,7 @@
+# A listener cannot re-read. Past about 20 words a spoken sentence loses the room.
+extends: occurrence
+message: "Zin van meer dan 20 woorden. Knip hem in tweeën."
+level: warning
+scope: sentence
+max: 20
+token: '[\p{L}\p{N}][\p{L}\p{N}''’-]*'

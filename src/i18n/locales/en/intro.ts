@@ -2,55 +2,47 @@ import { IntroTranslations } from "../../types";
 
 export const enIntro: IntroTranslations = {
   heroTitle:
-    "Software engineer at Tikkie Business and computer science educator.",
-  bioParagraph1:
-    "At Tikkie Business (ABN AMRO via Harvest), I engineer customer-facing web applications in TypeScript and React, alongside cloud backend services on AWS for merchant onboarding and payout workflows.",
-  bioParagraph2:
-    "Holding double Master's degrees in Computer Science and Science Education from Delft University of Technology, I bring an educator's clarity and empathy to engineering: writing maintainable software, crafting clean interfaces, and helping teammates thrive.",
-  viewCv: "Curriculum Vitae",
-  exploreWork: "Explore Work Experience",
-  featuredHeading: "Featured Work",
-  featuredSubtitle:
-    "Selected production and educational projects.",
-
-  // Tikkie Business Flagship
-  tikkieTag: "Feb 2025 – Present",
-  tikkieTitle: "Tikkie Business",
-  tikkieSubtitle: "Software Engineer · ABN AMRO (via Harvest)",
-  tikkieDescription:
-    "Developing merchant-facing web applications and cloud backend services supporting Dutch businesses with payment requests and financial operations.",
-  tikkiePoints: [
-    "Developing customer-facing web applications in TypeScript and React for payment requests, transaction management, and business operations.",
-    "Building backend onboarding workflows and services on AWS to automate business client verification and activation.",
-    "Supporting payout processing pipelines to ensure merchant settlements flow accurately and on schedule.",
+    "Software engineer at Tikkie, with master's degrees in computer science and in teaching it.",
+  heroFacts:
+    "Full-stack in TypeScript, React, Node.js and AWS. Based in Amsterdam. I work in Dutch and English.",
+  story: [
+    "At Tikkie Business, part of ABN AMRO, I build the software companies use to send payment requests and get paid. I joined in February 2025 through Harvest, a programme that places engineers at companies such as ABN AMRO and trains them alongside the job. I now lead my first larger project in the team.",
+    "Right after I finished my thesis at TU Delft in 2024, a secondary school emailed me. Its students had gone months without a computer science teacher. I took the job and, across two schools, taught about 200 students in ten classes that school year. During my master's I had co-founded Bitsized, where students wrote and ran code in the browser so that a lesson could start without installing anything.",
+    "Teaching changed how I write software. I write code and documentation for the person who has to understand them next. At Tikkie it also got me organising: an AI hackathon for all of Tikkie, and workshops on working with coding agents.",
+    "Outside work I play bass guitar and chess.",
   ],
-  tikkieStack: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
-  tikkieLink: "View in Work Timeline",
+  emailCta: "Email me",
+  cvCta: "Download CV (PDF)",
 
-  // Bitsized Flagship
-  bitsizedTag: "Jan 2023 – Feb 2025",
-  bitsizedTitle: "Bitsized",
-  bitsizedSubtitle: "Co-Founder & Frontend Engineer",
-  bitsizedDescription:
-    "Co-founded an educational platform for Dutch secondary schools to make programming accessible in the classroom without local installation hurdles.",
-  bitsizedPoints: [
-    "Collaborated directly with computer science teachers in Dutch secondary schools to understand classroom workflows and assignment needs.",
-    "Built an accessible web application with Vue.js and the Meteor framework, enabling students to write and execute code directly in the browser.",
-    "Designed straightforward assignment distribution and friendly student feedback to keep beginners engaged without cryptic error messages.",
+  workHeading: "Selected work",
+  work: [
+    {
+      title: "Tikkie Business",
+      role: "Software engineer at ABN AMRO, via Harvest",
+      period: "Feb 2025 to now",
+      paragraphs: [
+        "Tikkie Business lets companies send payment requests to their customers by WhatsApp, email or QR code. I build the merchant portal in TypeScript and React, and the AWS services that verify a new business and activate its account. I also work on the pipeline that pays merchants out.",
+        "Next to feature work I brought our technical debt to the team retrospective with a plan to reduce it. We have started handing simple, repetitive tasks to AI agents.",
+      ],
+      stack: [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "AWS (Lambda, DynamoDB, S3)",
+        "PostgreSQL",
+        "Vitest",
+      ],
+    },
+    {
+      title: "Bitsized",
+      role: "Co-founder and lead frontend engineer",
+      period: "Jan 2023 to Feb 2025",
+      paragraphs: [
+        "Bitsized was a web platform for computer science classes at Dutch secondary schools. Students wrote and ran code in the browser, so nothing had to be installed on school computers.",
+        "I built the frontend in Vue.js on Meteor. With the teachers who used it I worked out how assignments were handed out, and how to word an error message so a beginner could act on it.",
+      ],
+      stack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
+    },
   ],
-  bitsizedStack: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
-  bitsizedLink: "View in Work Timeline",
-
-  // Technology Experience
-  techHeading: "Core Technologies",
-  techSubtitle: "Production and educational experience across web applications, cloud services, and relational data.",
-  techLiveBadge: "Production & Academic",
-
-  // Teaching & Mentorship
-  mentorshipHeading: "Teaching & Helping Teammates Thrive",
-  mentorshipDescription:
-    "With a formal first-degree computer science teaching qualification, I consider clear communication and mentorship fundamental engineering skills. Clear code, high-signal reviews, and accessible documentation support team velocity and help everyone do their best work.",
-  outsideTitle: "Outside of Engineering",
-  outsideDescription:
-    "I play electric bass guitar and play chess.",
+  workLink: "Full work experience",
 };

@@ -15,7 +15,6 @@ export default function Header({
 
   const navItems = [
     { to: "/", label: t.nav.overview },
-    { to: "/cv", label: t.nav.cv },
     {
       to: "/work-experience",
       label: (
@@ -26,6 +25,7 @@ export default function Header({
       ),
     },
     { to: "/education", label: t.nav.education },
+    { to: "/cv", label: t.nav.cv },
   ];
 
   const isVertical = orientation === "vertical";
@@ -37,11 +37,11 @@ export default function Header({
         className={
           isVertical
             ? "flex flex-col space-y-1"
-            : "flex items-center gap-0.5 p-1 rounded-squircle bg-surface-subtle/80 dark:bg-surface-subtle/40 border border-border-subtle/80 shadow-2xs backdrop-blur-md"
+            : "flex items-center gap-0.5 p-1 rounded-squircle bg-surface-subtle border border-border-subtle"
         }
       >
         {navItems.map((item) => (
-          <li key={item.to} className="relative shrink-0">
+          <li key={item.to} className="relative isolate shrink-0">
             <NavLink
               to={item.to}
               end={item.to === "/"}

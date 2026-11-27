@@ -36,13 +36,13 @@ export default function Masthead() {
 
   const navItems = [
     { to: "/", label: t.nav.overview },
-    { to: "/cv", label: t.nav.cv },
     { to: "/work-experience", label: t.nav.workExperience },
     { to: "/education", label: t.nav.education },
+    { to: "/cv", label: t.nav.cv },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-canvas/80 dark:bg-canvas/80 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/75 border-b border-border-subtle/80 transition-colors relative">
+    <header className="sticky top-0 z-40 w-full bg-canvas border-b border-border-subtle transition-colors">
       <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between gap-4">
         {/* Candidate Typographic Identity & Agency Studio Mark */}
         <Link
@@ -62,13 +62,8 @@ export default function Masthead() {
             <span className="font-sans font-semibold text-sm sm:text-base text-text-primary tracking-tight leading-none group-hover:text-brand transition-colors whitespace-nowrap">
               {t.sidebar.name}
             </span>
-            <span className="hidden sm:flex items-center gap-1.5 text-xs font-normal text-text-muted leading-tight mt-1 whitespace-nowrap">
-              <span>Software Engineer</span>
-              <span className="inline-block w-1 h-1 rounded-full bg-border-subtle" aria-hidden="true" />
-              <span>Amsterdam</span>
-            </span>
-            <span className="sm:hidden text-xs font-normal text-text-muted leading-tight mt-0.5">
-              Amsterdam
+            <span className="text-xs font-normal text-text-muted leading-tight mt-0.5 sm:mt-1 whitespace-nowrap">
+              {t.sidebar.role}, {t.sidebar.location}
             </span>
           </div>
         </Link>
@@ -89,7 +84,7 @@ export default function Masthead() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="md:hidden inline-flex items-center justify-center h-10 w-10 min-h-[40px] min-w-[40px] rounded-squircle-sm border border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 shadow-2xs touch-manipulation"
+            className="md:hidden inline-flex items-center justify-center h-11 w-11 min-h-[44px] min-w-[44px] rounded-squircle-sm border border-border-subtle bg-surface-subtle hover:bg-surface text-text-muted hover:text-text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand active:scale-95 shadow-2xs touch-manipulation"
             aria-label={mobileMenuOpen ? t.nav.close : t.nav.menu}
             aria-expanded={mobileMenuOpen}
           >
@@ -172,7 +167,7 @@ export default function Masthead() {
                     <button
                       type="button"
                       onClick={() => setLanguage("en")}
-                      className={`px-3 py-1.5 min-h-[36px] rounded-squircle-sm transition-colors touch-manipulation active:scale-95 ${
+                      className={`px-3 py-1.5 min-h-[44px] min-w-[44px] rounded-squircle-sm transition-colors touch-manipulation active:scale-95 ${
                         language === "en" ? "bg-surface-subtle text-text-primary font-semibold shadow-2xs border border-border-subtle/80" : "text-text-muted hover:text-text-primary"
                       }`}
                       aria-pressed={language === "en"}
@@ -184,7 +179,7 @@ export default function Masthead() {
                     <button
                       type="button"
                       onClick={() => setLanguage("nl")}
-                      className={`px-3 py-1.5 min-h-[36px] rounded-squircle-sm transition-colors touch-manipulation active:scale-95 ${
+                      className={`px-3 py-1.5 min-h-[44px] min-w-[44px] rounded-squircle-sm transition-colors touch-manipulation active:scale-95 ${
                         language === "nl" ? "bg-surface-subtle text-text-primary font-semibold shadow-2xs border border-border-subtle/80" : "text-text-muted hover:text-text-primary"
                       }`}
                       aria-pressed={language === "nl"}
@@ -199,7 +194,7 @@ export default function Masthead() {
                 <button
                   type="button"
                   onClick={toggleTheme}
-                  className="px-3 py-2 rounded-squircle-sm text-xs font-medium bg-surface-subtle hover:bg-surface border border-border-subtle text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand shadow-2xs active:scale-95 touch-manipulation min-h-[36px]"
+                  className="px-3 py-2 rounded-squircle-sm text-xs font-medium bg-surface-subtle hover:bg-surface border border-border-subtle text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand shadow-2xs active:scale-95 touch-manipulation min-h-[44px]"
                   aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
                 >
                   {isDark ? (

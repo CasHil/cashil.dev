@@ -1,0 +1,39 @@
+# Stock phrases: staged openers, announcements, closers and chat leftovers.
+extends: existence
+message: "'%s' is een standaardzin van een chatbot. Schrap hem of zeg het punt direct."
+level: warning
+ignorecase: true
+tokens:
+  - in het huidige (?:\w+ )?landschap
+  - in het (?:digitale|moderne) (?:landschap|tijdperk)
+  - in het digitale tijdperk van vandaag
+  - in de (?:huidige|hedendaagse|moderne) (?:wereld|maatschappij|samenleving)
+  - in de wereld van
+  - in een (?:wereld|tijd) waarin
+  - het is (?:belangrijk|goed|van belang) om (?:op te merken|te benadrukken|te vermelden|te onthouden|te weten)
+  - het is vermeldenswaard
+  - het is geen geheim dat
+  - het mag duidelijk zijn
+  - zoals eerder (?:genoemd|vermeld|gezegd)
+  - kan bijdragen aan
+  - draagt bij aan
+  - als het gaat om
+  - als het aankomt op
+  - of je nu
+  - laten we eerlijk zijn
+  - de waarheid is
+  - en dat is precies
+  - dat is waar het om draait
+  - dit onderstreept
+  - dit benadrukt het belang
+  - kortom
+  - al met al
+  - tot slot
+  - samenvattend
+  - concluderend
+  - ter afsluiting
+  - ik hoop dat dit helpt
+  - laat het me weten
+  - zeker!
+  - natuurlijk!
+  - absoluut!

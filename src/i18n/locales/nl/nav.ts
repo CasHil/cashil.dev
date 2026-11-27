@@ -2,16 +2,12 @@ import { NavTranslations } from "../../types";
 
 export const nlNav: NavTranslations = {
   overview: "Overzicht",
-  cv: "CV",
+  cv: "Cv",
   workExperience: "Werkervaring",
   workShort: "Werk",
   education: "Opleiding",
   menu: "Menu",
   close: "Sluiten",
-  quickActions: "Snelle acties",
-  preferences: "Voorkeuren",
-  swipeNav: "Veeg om van pagina te wisselen",
-  downloadCv: "Download CV (PDF)",
   settings: "Instellingen",
   language: "Taal",
   theme: "Thema",

@@ -1,0 +1,7 @@
+# Slides only: at most 7 words per list item (the 7x7 ceiling; the brand allows 4 items).
+extends: occurrence
+message: "Lijstregel van meer dan 7 woorden. Kort hem in of zeg het hardop."
+level: error
+scope: list
+max: 7
+token: '[\p{L}\p{N}][\p{L}\p{N}''’-]*'

@@ -1,95 +1,40 @@
-# Content specification and information architecture guide
+# Content specification
 
-## Golden rule of content
-> **Be complete, but ruthlessly eliminate any information that is duplicate, generic, or fails to give a technical recruiter or engineering lead immediate, high-signal context.**
-> *Every card must have an elevated shadow, clear boundaries, and purposeful information hierarchy that builds trust.*
+The reader is a tech recruiter or hiring manager who gives the site under a minute. Each page answers one question and ends with the same way to get in touch.
 
----
+## Shared rules
 
-## 1. Global navigation and masthead
+- Write in the first person, in plain sentences. Say what the product is, then what Casper built.
+- State a fact once. The home page tells the story. The work page lists the roles. The CV page is the one-page document.
+- No claim without a source: his CV, his thesis record, or his own notes. No computed years of experience.
+- Headings use sentence case in both languages.
+- Every page ends with the contact block: email, CV download, LinkedIn.
+- English and Dutch stay in step. Run `pnpm run lint:prose` after any copy change.
 
-### 1.1 Identity and masthead
-- Avatar:
-  - *Goal*: Provide immediate human authenticity with a refined double-ring photographic frame.
-  - *Rule*: Never use pulsing green dots or artificial "live" indicators. Professional posture is established through clean typography and verified engineering accomplishments.
-- Name (`Casper Hildebrand`):
-  - *Goal*: Establish candidate identity in bold Instrument Sans.
-- Role (`Full-Stack & Agentic Software Engineer · Tikkie Business`):
-  - *Goal*: Instant headline indexing for recruiters in 2 seconds.
-  - *Typographic Rule*: Use `font-sans` with medium weight and muted tone (`text-zinc-500`). Never use monospace terminal fonts for executive titles.
-- Social Profiles (GitHub, LinkedIn, Email):
-  - *Goal*: Provide direct, frictionless communication channels with accessible touch targets (44px mobile hit area).
-- Controls (Language Toggle `EN/NL`, Theme Toggle):
-  - *Goal*: Allow bilingual recruiters (Dutch tech/fintech market + international tech hubs) and light/dark preference switching.
-  - *Typographic Rule*: Use `font-sans` for language labels (`EN`, `NL`), matching top-level navigation aesthetics.
+## Home (`/`)
 
-### 1.2 Primary navigation
-- Routes: `Overview` (`/`), `CV` (`/cv`), `Work Experience` (`/work-experience`), `Education` (`/education`).
-- *Goal*: Direct access to specialized views without burying credentials or repeating copy.
+Question: who is this, and is he worth a call?
 
----
+1. Headline: his role and the one thing that sets him apart. Currently "Software engineer at Tikkie, trained as a computer science teacher."
+2. One line of facts a recruiter filters on: stack, city, languages.
+3. Two actions: email him, download the CV.
+4. The story in four short paragraphs: what he does now, how he got there, what teaching changed, one line about life outside work.
+5. Selected work: Tikkie Business and Bitsized, two paragraphs each, with the stack on one line. No bullets here.
 
-## 2. Overview page (`/`)
+## Work experience (`/work-experience`)
 
-### 2.1 Hero statement and value proposition
-- H1 Headline:
-  - *Goal*: Clearly position Casper's core engineering specialty: *"Shipping resilient web applications with agentic workflows and high code standards."*
-- Bio Paragraph 1 (Current Production Scope):
-  - *Goal*: Establish technical ownership and scale at Tikkie Business (merchant web portal in React/TypeScript, AWS serverless onboarding services).
-- Bio Paragraph 2 (Foundations & Code Quality Standards):
-  - *Goal*: Highlight the double Master's foundation (Computer Science & Science Education) and prioritize code quality, automated testing, and clear technical communication.
-- CTAs (Strict 2-CTA Hierarchy):
-  - *Primary*: Direct access to CV (`Curriculum Vitae ->`).
-  - *Secondary*: Deep dive into production systems (`Explore Work Experience ->`).
+Question: what did he do, where, and when?
 
-### 2.2 Core engineering pillars (elevated shadowed cards)
-- Three foundational pillars in distinct, shadowed cards:
-  1. **Agentic Software Development**: Spec-driven workflows, automated test generation, and AI-accelerated delivery with strict human verification.
-  2. **Code Quality & Testing Rigor**: Strict type boundaries in TypeScript, deterministic state handling, automated CI test suites, and clean component architecture.
-  3. **Didactics & Pedagogical Clarity**: Trained as a certified computer science teacher. Applying pedagogical clarity to write clean documentation, conduct thorough code reviews, and accelerate team onboarding.
-- Outside the Terminal: Grounded, authentic hobbies (Electric bass guitar and chess) without pretentious pseudo-intellectual commentary.
+One reverse-chronological list. Each role has the employer, the title, the dates, two to four sentences, and the stack where it applies. Teaching is a role in this list, at its real dates.
 
-### 2.3 Selected work showcases
-- Tikkie Business (`ABN AMRO · 2026 – Present`):
-  - Elevated card with shadow: merchant portal, onboarding services, automated test coverage on AWS.
-- Bitsized Sandbox Engine (`Co-Founder & Lead Engineer · 2023 – 2025`):
-  - Compact case study with shadow: in-browser client-side Web Worker execution, script timeouts, and exercise feedback for Dutch secondary schools.
+## Education (`/education`)
 
----
+Question: what did he study, and is the thesis real?
 
-## 3. Work experience page (`/work-experience`)
+The four programmes with one or two lines each. Then the thesis: exact title, what he measured, what he found, and the link to the TU Delft repository record.
 
-### 3.1 Overview and structure
-- Production Systems (Always Visible Cards):
-  - Tikkie Business (ABN AMRO): Merchant portal, onboarding backend, automated testing, agentic workflows.
-  - Harvest: Technical development traineeship, masterclasses in cloud systems, Temporal workflows, and event-driven architecture.
-  - Bitsized: Platform architecture, in-browser Web Worker execution engine, teacher tooling.
-  - Netcompany: Public sector enterprise applications and sustainability assessment tools.
-- Foundational Engineering (Progressive Disclosure):
-  - Bexter (2019–2021): TrackOnline asset logistics platform APIs and frontend development.
-- Computer Science Teaching & Academic Leadership (Direct Visibility):
-  - CS Teaching & Board of Studies (2018–2025): Teaching ~200 secondary school students across 10 classes in algorithms, computer architecture, digital logic, and web development; PTA examination design; TU Delft Board of Studies curriculum governance.
-- Card Hierarchy:
-  - Every role is rendered as a distinct, tactile card with a shadow (`shadow-sm hover:shadow-md`) and clean border on both desktop and mobile.
+## CV (`/cv`)
 
----
+Question: can I have this as a file?
 
-## 4. Education and research page (`/education`)
-
-### 4.1 Academic degrees
-- All degrees presented in elevated shadowed cards:
-  - *MSc Computer Science* · TU Delft (Distributed systems, software architecture, algorithms).
-  - *MSc Science Education & Communication* · TU Delft (First-degree teaching qualification, didactics, curriculum design).
-  - *Exchange Studies in CS* · KTH Stockholm (HCI, Information Visualization, UX Design).
-  - *BSc Computer Science & Engineering* · TU Delft (Data structures, algorithms, operating systems, networking).
-
-### 4.2 Research publication card
-- Elegant shadowed card featuring the Master's thesis (*Debugging the Divide*) with a concise abstract and direct link to the TU Delft repository.
-- No oversized data science telemetry grids or ML methodology jargon.
-
----
-
-## 5. Curriculum vitae page (`/cv`)
-
-- Clean in-browser viewing and 1-click download of the 1-page ATS-compliant PDF resume in English and Dutch.
-- Title and summary aligned with Agentic Software Developer positioning and code quality focus.
+Download and open buttons, a link to the PDF in the other language, and a web version with the same roles and degrees. `pnpm run build:cv` generates `cv/*.tex` from the site copy and compiles the PDFs. They must stay on one page.

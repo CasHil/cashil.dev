@@ -1,0 +1,27 @@
+# Hedging: a claim that hides behind a maybe. On a slide, say it or cut it.
+extends: existence
+message: "'%s' is een voorbehoud. Durf je de zin zonder te zeggen?"
+level: suggestion
+ignorecase: true
+tokens:
+  - misschien
+  - wellicht
+  - mogelijk
+  - mogelijkerwijs
+  - enigszins
+  - min of meer
+  - een beetje
+  - tot op zekere hoogte
+  - in zekere zin
+  - zou kunnen
+  - zouden kunnen
+  - zou je kunnen zeggen
+  - men zou kunnen
+  - zou betoogd kunnen worden
+  - het lijkt erop dat
+  - lijkt het erop dat
+  - ik denk dat
+  - volgens mij
+  - naar mijn mening
+  - sommige experts
+  - over het algemeen

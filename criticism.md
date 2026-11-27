@@ -31,6 +31,8 @@ The audits are arranged chronologically in the [`criticisms/`](./criticisms/) di
 - [**`criticisms/08-twenty-ways-to-unslop-ai-designs.md`**](./criticisms/08-twenty-ways-to-unslop-ai-designs.md): Systematic enforcement of the 20 anti-slop rules: filler badge elimination, redundant label removal, unitalicized text, strict monospace boundaries, design system tokens, showing actual products, prominent CTAs, consistent icons, R_inner = R_outer - P concentricity, WCAG AA text contrast, headline wrapping, tabular nums, loading states, and useful feedback animation.
 - [**`criticisms/09-systemic-ai-slop-audit-and-immutable-design-rules.md`**](./criticisms/09-systemic-ai-slop-audit-and-immutable-design-rules.md): Systemic AI slop audit and immutable design rules (Rules 21–33): fake live countdown elimination, absolute ban on card-in-card and cardocalypse, absolute ban on eyebrows and kickers, ban on bento grid monoculture, ban on border accents on rounded containers, ban on em-dash bullet epidemic, quadruple introduction pruning, navigation deduplication, artificial zero-padded number elimination, mobile $\ge 44$px touch targets, colon label removal, responsive wrapping, and honest monospace configuration.
 
+- [**`criticisms/10-recruiter-story-and-external-slop-audit.md`**](./criticisms/10-recruiter-story-and-external-slop-audit.md): Audit against outside sources on AI tells and recruiter needs. The home page became a story, every page got a contact block, computed experience counters and duplicated résumé cards were removed, and site copy is now linted with Vale.
+
 ---
 
 ## 2. The taxonomy of AI slop: 8 core anti-patterns
@@ -105,9 +107,10 @@ Run this checklist before finalizing any changes:
 - Current Role: Full-Stack Software Engineer at **Tikkie Business (ABN AMRO)** via **Harvest Young Talent Program** (2025 – Present).
 - Core Stack & Focus: Agentic software engineering, AWS Lambda, DynamoDB, EventBridge, TypeScript, automated test verification, and code quality.
 - Previous Startup: Co-Founder & Lead Engineer at **Bitsized** (2023 – 2025), building in-browser sandboxed Python execution with Web Workers and AST analysis.
-- Earlier Engineering: Software Engineering Consultant at **Netcompany** (2024), full-stack intern at **Muziekweb** (2020), engineering intern at **Bexter** (2019).
+- Teaching: Computer science teacher at **CSG De Lage Waard** and **Stanislascollege** (August 2024 to July 2025).
+- Earlier Engineering: Software analyst and consultant at **Netcompany** (September 2021 to June 2022), software developer at **Bexter** (September 2019 to May 2021).
 - Academic Degrees (TU Delft):
   * **MSc Computer Science** (2021 – 2024)
   * **MSc Science Education & Communication** (2021 – 2024; ~200 high school students taught across 10 cohorts)
-  * **BSc Computer Science & Engineering** (2017 – 2021)
+  * **BSc Computer Science & Engineering** (2018 – 2021)
 - Authentic Hobbies: Electric Bass Guitar and Chess.

@@ -1,13 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import TechExperienceTracker from "./components/common/TechExperienceTracker";
-import TikkieShowcase from "./components/Intro/TikkieShowcase";
-import BitsizedShowcase from "./components/Intro/BitsizedShowcase";
+import Intro from "./components/Intro/Intro";
 import Cv from "./components/Cv/Cv";
 import Masthead from "./components/layout/Masthead";
 import { BrowserRouter } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import { translations } from "./i18n/translations";
 import fs from "fs";
 import path from "path";
 
@@ -21,228 +20,192 @@ function renderWithProviders(ui: React.ReactElement) {
   );
 }
 
-describe("20 Ways to Unslop AI Designs Guardrails", () => {
-  test("Rule 1 & 2: Drop redundant labels and filler badges in showcases", () => {
-    renderWithProviders(<TikkieShowcase />);
+function componentSources(): { file: string; content: string }[] {
+  const srcDir = path.resolve(__dirname, "../src");
+  const files: string[] = [];
+
+  function walk(dir: string) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (entry.name.endsWith(".tsx") && !entry.name.endsWith(".test.tsx")) {
+        files.push(fullPath);
+      }
+    }
+  }
+
+  walk(srcDir);
+  return files.map((file) => ({ file, content: fs.readFileSync(file, "utf-8") }));
+}
+
+function allStrings(value: unknown): string[] {
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.flatMap(allStrings);
+  if (value && typeof value === "object") return Object.values(value).flatMap(allStrings);
+  return [];
+}
+
+describe("Anti-slop design guardrails", () => {
+  test("Rule 1 & 2: no filler badges or redundant field labels on the home page", () => {
+    const { container } = renderWithProviders(<Intro />);
     expect(screen.queryByText(/^Stack:/i)).toBeNull();
-
-    renderWithProviders(<BitsizedShowcase />);
-    expect(screen.queryByText(/^Stack:/i)).toBeNull();
+    expect(container.querySelector(".animate-ping, .animate-pulse")).toBeNull();
+    expect(container.textContent).not.toMatch(/\bCURRENT\b|\bHUIDIG\b/);
   });
 
-  test("Rule 4: Monospace is not used for editorial text or navigation", () => {
-    const srcDir = path.resolve(__dirname, "../src");
-    const componentFiles: string[] = [];
-
-    function findTsx(dir: string) {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-          findTsx(fullPath);
-        } else if (entry.name.endsWith(".tsx") && !entry.name.endsWith(".test.tsx")) {
-          componentFiles.push(fullPath);
-        }
-      }
-    }
-
-    findTsx(srcDir);
-
-    for (const file of componentFiles) {
-      const content = fs.readFileSync(file, "utf-8");
-      const hasFontMono = /\bfont-mono\b/.test(content);
-      expect(hasFontMono).toBe(false);
+  test("Rule 4: monospace is not used for editorial text or navigation", () => {
+    for (const { content } of componentSources()) {
+      expect(/\bfont-mono\b/.test(content)).toBe(false);
     }
   });
 
-  test("Rule 3: No arbitrary italic classes in UI components", () => {
-    const srcDir = path.resolve(__dirname, "../src");
-    const componentFiles: string[] = [];
-
-    function findTsx(dir: string) {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-          findTsx(fullPath);
-        } else if (entry.name.endsWith(".tsx") && !entry.name.endsWith(".test.tsx")) {
-          componentFiles.push(fullPath);
-        }
-      }
-    }
-
-    findTsx(srcDir);
-
-    for (const file of componentFiles) {
-      const content = fs.readFileSync(file, "utf-8");
-      const hasArbitraryItalic = /className="[^"]*\bitalic\b[^"]*"/.test(content);
-      expect(hasArbitraryItalic).toBe(false);
+  test("Rule 3: no arbitrary italic classes in UI components", () => {
+    for (const { content } of componentSources()) {
+      expect(/className="[^"]*\bitalic\b[^"]*"/.test(content)).toBe(false);
     }
   });
 
-  test("Rule 14: Concentric corner radius mathematical law: R_inner = max(0, R_outer - Padding)", () => {
-    function calculateConcentricInnerRadius(rOuter: number, padding: number): number {
-      return Math.max(0, rOuter - padding);
-    }
+  test("Rule 14: concentric corner radius, R_inner = max(0, R_outer - padding)", () => {
+    const inner = (rOuter: number, padding: number) => Math.max(0, rOuter - padding);
 
-    // Header nav pill: outer container has rounded-squircle (18px) and p-1 (4px padding)
-    expect(calculateConcentricInnerRadius(18, 4)).toBe(14);
+    // Header nav pill: rounded-squircle (18px) with p-1 (4px) holds 12-14px pills
+    expect(inner(18, 4)).toBe(14);
 
-    // CV mode switcher: outer container has rounded-squircle (18px) and p-1 (4px padding) -> inner 14px
-    expect(calculateConcentricInnerRadius(18, 4)).toBe(14);
-
-    // Card with 18px radius and 16px padding (p-4)
-    expect(calculateConcentricInnerRadius(18, 16)).toBe(2);
+    const headerContent = fs.readFileSync(
+      path.resolve(__dirname, "../src/components/Header/Header.tsx"),
+      "utf-8"
+    );
+    expect(headerContent).toContain("p-1 rounded-squircle");
+    expect(headerContent).toContain("rounded-squircle-sm");
   });
 
-  test("Rule 15: Minimum text-xs (12px) font size to prevent [tiny-text]", () => {
-    const srcDir = path.resolve(__dirname, "../src");
-    const componentFiles: string[] = [];
-
-    function findTsx(dir: string) {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-          findTsx(fullPath);
-        } else if (entry.name.endsWith(".tsx") && !entry.name.endsWith(".test.tsx")) {
-          componentFiles.push(fullPath);
-        }
-      }
-    }
-
-    findTsx(srcDir);
-
-    for (const file of componentFiles) {
-      const content = fs.readFileSync(file, "utf-8");
+  test("Rule 15: minimum 12px font size", () => {
+    for (const { content } of componentSources()) {
       const matches = content.match(/text-\[(\d+)px\]/g) || [];
       for (const m of matches) {
-        const px = parseInt(m.replace(/\D/g, ""), 10);
-        expect(px).toBeGreaterThanOrEqual(12);
+        expect(parseInt(m.replace(/\D/g, ""), 10)).toBeGreaterThanOrEqual(12);
       }
     }
   });
 
-  test("Rule 18: Tabular nums applied to duration counters and timeline dates", () => {
-    const { container } = renderWithProviders(<TechExperienceTracker />);
-    const tabularElements = container.querySelectorAll(".tabular-nums");
-    expect(tabularElements.length).toBeGreaterThan(0);
+  test("Rule 18: tabular numbers on timeline dates", () => {
+    window.history.pushState({}, "", "/work-experience");
+    const { container } = render(<App />);
+    expect(container.querySelectorAll(".tabular-nums").length).toBeGreaterThan(0);
   });
 
-  test("Rule 10 & 20: Emphasize primary CTA with active micro-interactions", () => {
+  test("Rule 10 & 20: the primary CTA is a contact action with press feedback", () => {
+    window.history.pushState({}, "", "/");
     render(<App />);
-    const exploreButtons = screen.getAllByRole("link", { name: /explore work experience|ervaring verkennen/i });
-    expect(exploreButtons.length).toBeGreaterThan(0);
+    const emailLinks = screen.getAllByRole("link", { name: /email me|mail me/i });
+    expect(emailLinks.length).toBeGreaterThan(0);
 
-    const primaryBtn = exploreButtons[0];
+    const primaryBtn = emailLinks[0];
     expect(primaryBtn.className).toContain("active:scale-");
     expect(primaryBtn.className).toContain("shadow-sm");
+    expect(primaryBtn.className).toContain("min-h-[44px]");
   });
 
-  // --- New Immutable Rules (Rules 21 - 30) ---
-
-  test("Rule 21: Ban fake telemetry and live countdown clocks", () => {
-    const trackerFile = path.resolve(__dirname, "../src/components/common/TechExperienceTracker.tsx");
-    const content = fs.readFileSync(trackerFile, "utf-8");
-
-    // No setInterval in component
-    expect(content).not.toContain("setInterval");
-
-    // No minute/hour live countdown calculation
-    expect(content).not.toContain("Updates live every minute");
-    expect(content).not.toContain("Werkt live per minuut bij");
-
-    const { container } = renderWithProviders(<TechExperienceTracker />);
-    expect(container.textContent).not.toMatch(/\d+d\s*·\s*\d+h/);
+  test("Rule 21: no live counters, tickers or computed years of experience", () => {
+    for (const { content } of componentSources()) {
+      expect(content).not.toContain("setInterval");
+      expect(content).not.toContain("new Date(");
+    }
+    const { container } = renderWithProviders(<Intro />);
+    expect(container.textContent).not.toMatch(/\d+\+\s*(yrs|jr)/);
   });
 
-  test("Rule 22: Ban card-in-card and cardocalypse ('Cards are the lazy container; nested cards are always wrong')", () => {
-    // 1. TimelineItem must be clean unboxed typography, NOT a card
-    const timelineFile = path.resolve(__dirname, "../src/components/Timeline/TimelineItem.tsx");
-    const timelineContent = fs.readFileSync(timelineFile, "utf-8");
+  test("Rule 22: no cards on the home page and no boxed timeline entries", () => {
+    const timelineContent = fs.readFileSync(
+      path.resolve(__dirname, "../src/components/Timeline/TimelineItem.tsx"),
+      "utf-8"
+    );
     expect(timelineContent).not.toContain("bg-surface");
     expect(timelineContent).not.toContain("shadow-sm");
 
-    // 2. Showcases must NOT contain nested chip cards with borders
-    const { container: tikkieContainer } = renderWithProviders(<TikkieShowcase />);
-    const tikkieArticle = tikkieContainer.querySelector("article");
-    expect(tikkieArticle).not.toBeNull();
-    // Inner stack elements must not be bordered chips
-    const tikkieNestedBorders = tikkieArticle?.querySelectorAll("div span.border");
-    expect(tikkieNestedBorders?.length ?? 0).toBe(0);
-
-    const { container: bitsizedContainer } = renderWithProviders(<BitsizedShowcase />);
-    const bitsizedArticle = bitsizedContainer.querySelector("article");
-    expect(bitsizedArticle).not.toBeNull();
-    const bitsizedNestedBorders = bitsizedArticle?.querySelectorAll("div span.border");
-    expect(bitsizedNestedBorders?.length ?? 0).toBe(0);
-
-    // 3. TechExperienceTracker must NOT be a 6-card bento grid
-    const trackerFile = path.resolve(__dirname, "../src/components/common/TechExperienceTracker.tsx");
-    const trackerContent = fs.readFileSync(trackerFile, "utf-8");
-    expect(trackerContent).not.toContain("grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4");
-    expect(trackerContent).not.toMatch(/className="[^"]*rounded-squircle[^"]*border[^"]*bg-surface[^"]*p-4[^"]*shadow-sm/);
+    const { container } = renderWithProviders(<Intro />);
+    expect(container.querySelectorAll("[data-ui], .bg-surface").length).toBe(0);
+    expect(container.querySelectorAll("span.border").length).toBe(0);
   });
 
-  test("Rule 23: Ban eyebrows and kickers above headings ('Headings carry their own weight; delete the label')", () => {
-    const heroFile = path.resolve(__dirname, "../src/components/Intro/HeroSection.tsx");
-    const heroContent = fs.readFileSync(heroFile, "utf-8");
-
-    // HeroSection must not have an avatar/kicker block preceding the H1
-    const beforeH1 = heroContent.split("<h1")[0];
-    expect(beforeH1).not.toContain("img");
-    expect(beforeH1).not.toContain("t.sidebar.name");
-    expect(beforeH1).not.toContain("t.sidebar.role");
+  test("Card elevation: the one card on the site keeps its border and shadow", () => {
+    const { container } = renderWithProviders(<Cv />);
+    const card = container.querySelector("article[data-ui]");
+    expect(card).not.toBeNull();
+    expect(card?.className).toContain("border");
+    expect(card?.className).toContain("shadow-sm");
+    expect(card?.className).not.toMatch(/sm:border-none|sm:shadow-none/);
   });
 
-  test("Rule 25: Ban thick accent borders on rounded containers (border-accent-on-rounded)", () => {
-    const cvFile = path.resolve(__dirname, "../src/components/Cv/Cv.tsx");
-    const cvContent = fs.readFileSync(cvFile, "utf-8");
-
-    // No thick accent border inside rounded cards/containers
-    const bannedAccentBorder = ["border", "b", "2"].join("-");
-    expect(cvContent).not.toContain(bannedAccentBorder);
+  test("Rule 23: no eyebrow or kicker above the hero heading", () => {
+    const heroContent = fs.readFileSync(
+      path.resolve(__dirname, "../src/components/Intro/HeroSection.tsx"),
+      "utf-8"
+    );
+    const beforeH1 = heroContent.split("<h1")[0].split("return (")[1];
+    expect(beforeH1).not.toContain("<img");
+    expect(beforeH1).not.toContain("<p");
+    expect(beforeH1).not.toContain("<span");
   });
 
-  test("Rule 26: Ban em dash (—) bullets in showcases", () => {
-    const { container: tikkieContainer } = renderWithProviders(<TikkieShowcase />);
-    expect(tikkieContainer.textContent).not.toMatch(/—\s*Developing/);
-
-    const { container: bitsizedContainer } = renderWithProviders(<BitsizedShowcase />);
-    expect(bitsizedContainer.textContent).not.toMatch(/—\s*Collaborated/);
+  test("Rule 25: no thick accent borders on rounded containers", () => {
+    const banned = ["border", "b", "2"].join("-");
+    for (const { content } of componentSources()) {
+      expect(content).not.toContain(banned);
+    }
   });
 
-  test("Rule 24 & 25: Navigation deduplication and no artificial numbering", () => {
+  test("Rule 26: no dashes in site copy, as bullets or as punctuation", () => {
+    for (const text of [...allStrings(translations.en), ...allStrings(translations.nl)]) {
+      expect(text).not.toMatch(/[—–]/);
+    }
+  });
+
+  test("Rule 27 & 28: navigation is not duplicated or numbered", () => {
     const { container } = renderWithProviders(<Masthead />);
-
-    // No duplicate CV action button outside the primary nav Header
-    const cvButtons = container.querySelectorAll("header a[href='/cv']");
-    expect(cvButtons.length).toBeLessThanOrEqual(1);
-
-    // No 01, 02 artificial numbering in nav
-    expect(container.textContent).not.toMatch(/\b01\s+Overview\b/i);
-    expect(container.textContent).not.toMatch(/\b02\s+CV\b/i);
+    expect(container.querySelectorAll("header a[href='/cv']").length).toBeLessThanOrEqual(1);
+    expect(container.textContent).not.toMatch(/\b0\d\s+(Overview|CV|Work|Education)\b/i);
   });
 
-  test("Rule 27: Ban trailing colons on CV technical competency categories", () => {
+  test("Rule 30: no trailing colons on CV skill categories", () => {
     renderWithProviders(<Cv />);
-    expect(screen.queryByText(/^Languages:$/i)).toBeNull();
-    expect(screen.queryByText(/^Frontend:$/i)).toBeNull();
-    expect(screen.queryByText(/^Backend & Cloud:$/i)).toBeNull();
-    expect(screen.queryByText(/^Databases & Architecture:$/i)).toBeNull();
-    expect(screen.queryByText(/^Practices:$/i)).toBeNull();
-
-    // Verify categories render without colon
-    expect(screen.getByText(/^Languages$/i)).toBeDefined();
-    expect(screen.getByText(/^Frontend$/i)).toBeDefined();
+    for (const group of [...translations.en.cv.skills, ...translations.nl.cv.skills]) {
+      expect(group.category).not.toMatch(/:$/);
+    }
+    expect(screen.getByText(/^(Languages|Talen)$/)).toBeDefined();
+    expect(screen.getByText(/^Frontend$/)).toBeDefined();
   });
 
-  test("Rule 30: Genuine monospace configuration in tailwind.config.js", () => {
-    const tailwindConfigPath = path.resolve(__dirname, "../tailwind.config.js");
-    const content = fs.readFileSync(tailwindConfigPath, "utf-8");
+  test("Colour tokens accept opacity modifiers", () => {
+    const content = fs.readFileSync(path.resolve(__dirname, "../tailwind.config.js"), "utf-8");
+    expect(content).toContain("<alpha-value>");
+    expect(content).not.toMatch(/"var\(--/);
+  });
 
-    // mono must NOT be mapped to system-ui
+  test("Rule 31: genuine monospace configuration in tailwind.config.js", () => {
+    const content = fs.readFileSync(path.resolve(__dirname, "../tailwind.config.js"), "utf-8");
     expect(content).not.toMatch(/mono:\s*\[\s*["']system-ui["']/);
-
-    // mono must contain genuine monospace typefaces
     expect(content).toContain("ui-monospace");
     expect(content).toContain("monospace");
+  });
+
+  test("Headings in site copy use sentence case", () => {
+    const headings = [translations.en, translations.nl].flatMap((t) => [
+      t.intro.workHeading,
+      t.workExperience.title,
+      t.education.title,
+      t.contact.heading,
+      t.cv.profileHeading,
+      t.cv.experienceHeading,
+      t.cv.educationHeading,
+      t.cv.skillsHeading,
+    ]);
+    for (const heading of headings) {
+      const laterWords = heading.split(" ").slice(1);
+      for (const word of laterWords) {
+        expect(word[0]).toBe(word[0].toLowerCase());
+      }
+    }
   });
 });

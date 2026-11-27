@@ -1,0 +1,7 @@
+# "X, Y en Z": the reflex triad. Often two items are real and the third is rhythm.
+extends: existence
+message: "Drieslag ('%s'). Zijn het er echt drie, of is de derde voor het ritme?"
+level: suggestion
+nonword: true
+tokens:
+  - '\b[\p{L}-]+, [\p{L}-]+(?: [\p{L}-]+)? en [\p{L}-]+\b'

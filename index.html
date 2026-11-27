@@ -4,13 +4,45 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/webp" href="/images/profile.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Casper Hildebrand's portfolio" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c100e" media="(prefers-color-scheme: dark)" />
+    <title>Casper Hildebrand, software engineer in Amsterdam</title>
+    <meta
+      name="description"
+      content="Full-stack software engineer at Tikkie Business (ABN AMRO), trained as a computer science teacher. TypeScript, React, Node.js and AWS. Work experience, education and CV."
+    />
+    <link rel="canonical" href="https://cashil.dev/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Casper Hildebrand" />
+    <meta property="og:title" content="Casper Hildebrand, software engineer in Amsterdam" />
+    <meta
+      property="og:description"
+      content="Full-stack software engineer at Tikkie Business (ABN AMRO), trained as a computer science teacher. TypeScript, React, Node.js and AWS."
+    />
+    <meta property="og:url" content="https://cashil.dev/" />
+    <meta property="og:image" content="https://cashil.dev/images/profile.jpg" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+    <meta name="twitter:card" content="summary" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Portfolio Casper Hildebrand</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Casper Hildebrand",
+        "jobTitle": "Software Engineer",
+        "url": "https://cashil.dev/",
+        "image": "https://cashil.dev/images/profile.jpg",
+        "email": "mailto:casperhildebrand@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+        "worksFor": { "@type": "Organization", "name": "Tikkie (ABN AMRO)" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Delft University of Technology" },
+        "knowsLanguage": ["nl", "en"],
+        "sameAs": ["https://github.com/CasHil", "https://www.linkedin.com/in/casper-hildebrand/"]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +51,10 @@
     />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      Casper Hildebrand, software engineer in Amsterdam. This site needs JavaScript. You can reach me at
+      casperhildebrand@gmail.com or download my CV at https://cashil.dev/cv/Casper_Hildebrand_CV.pdf.
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>

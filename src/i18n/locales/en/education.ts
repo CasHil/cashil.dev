@@ -1,25 +1,20 @@
 import { EducationTranslations } from "../../types";
 
 export const enEducation: EducationTranslations = {
-  title: "Education & Research",
+  title: "Education",
   intro:
-    "Academic foundation from Delft University of Technology and KTH Royal Institute of Technology, combining computer science with science education and pedagogical training.",
-  thesisTitle: "Academic Degrees",
-  publication: {
-    badge: "Master's Thesis Publication, TU Delft 2024",
-    title: "Debugging the Divide: Learner Motivations & Engagement in CS MOOCs",
-    subtitle: "Research on learner motivations and educational engagement in online CS courses",
-    datasetStat: "175,000",
-    datasetLabel: "Course Enrollments",
-    runsStat: "14",
-    runsLabel: "Course Runs",
-    gapStat: "+16.7%",
-    gapLabel: "Career Transition Intent",
-    abstract:
-      "Investigated learner motivations and engagement patterns across 14 Open edX computer science course runs, providing empirical findings on learner intentions to inform instructional design and online computer science education.",
-    methods: ["Computer Science Education", "Instructional Design", "Student Motivation Research", "Python"],
-    repositoryLink: "https://repository.tudelft.nl/islandora/object/uuid%3A021fa315-bb8a-4db3-97ea-e8a0fa2c1a5b",
-    repositoryText: "Read published thesis in TU Delft Repository",
+    "Two master's degrees from TU Delft, one in computer science and one in teaching it, with a semester at KTH in Stockholm.",
+  thesis: {
+    title:
+      "Debugging the Divide: Exploring Men's and Women's Motivations and Engagement in Computer Science MOOCs",
+    meta: "Master's thesis, TU Delft, 2024",
+    paragraphs: [
+      "I wanted to know why people enrol in online computer science courses and whether that reason predicts how far they get. I combined enrolment surveys with clickstream data from four introductory courses that TU Delft ran between 2015 and 2022, and used k-means clustering to find patterns in how learners engaged.",
+      "Women more often enrolled for their career and men more often out of interest. Men were more likely to finish. The reason someone gave for enrolling did not predict how engaged they were.",
+    ],
+    repositoryLink:
+      "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a",
+    repositoryText: "Read the thesis in the TU Delft repository",
   },
   items: [
     {
@@ -27,8 +22,8 @@ export const enEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Specialized in software architecture, distributed systems, and software engineering principles.\nCompleted Master's Thesis investigating student engagement in computer science education.",
-      skills: ["Software Architecture", "Distributed Systems", "Algorithms", "Software Engineering"],
+      text: "Courses in software architecture and distributed systems.\nThesis: Debugging the Divide, on motivation and engagement in online computer science courses, using k-means clustering on survey and clickstream data.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
         alt: "TU Delft logo",
@@ -36,11 +31,11 @@ export const enEducation: EducationTranslations = {
     },
     {
       title: "Delft University of Technology",
-      subtitle: "MSc Science Education & Communication — Computer Science",
+      subtitle: "MSc Science Education and Communication, Computer Science track",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Obtained formal Dutch first-degree (eerstegraads) teaching credential in Computer Science for all educational levels.\nTrained in curriculum design, cognitive load theory, instructional clarity, and technical communication.",
-      skills: ["Computer Science Pedagogy", "Cognitive Load Theory", "Technical Communication", "Curriculum Design"],
+      text: "Includes the Dutch first-degree (eerstegraads) teaching qualification for computer science, valid at every level of secondary education.\nCourses in curriculum design and cognitive load theory.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
         alt: "TU Delft logo",
@@ -48,11 +43,11 @@ export const enEducation: EducationTranslations = {
     },
     {
       title: "KTH Royal Institute of Technology",
-      subtitle: "Exchange Studies — Computer Science",
+      subtitle: "Exchange semester, Computer Science",
       startDate: "Aug 2022",
       endDate: "Jan 2023",
-      text: "Completed coursework in Human-Computer Interaction, Information Visualization, and UX Design in Stockholm, Sweden.",
-      skills: ["Human-Computer Interaction", "Information Visualization", "UX Design"],
+      text: "Courses in human-computer interaction, information visualisation and UX design in Stockholm.",
+      skills: [],
       image: {
         uri: "kth.webp",
         alt: "KTH logo",
@@ -60,11 +55,11 @@ export const enEducation: EducationTranslations = {
     },
     {
       title: "Delft University of Technology",
-      subtitle: "BSc Computer Science & Engineering",
+      subtitle: "BSc Computer Science and Engineering",
       startDate: "Sep 2018",
       endDate: "Jul 2021",
-      text: "Solid grounding in data structures, algorithms, operating systems, networking, and software engineering.\nServed as elected student representative on the BSc Computer Science & Engineering Board of Studies.",
-      skills: ["Data Structures", "Algorithms", "Operating Systems", "Networking", "Software Engineering"],
+      text: "Data structures, algorithms, operating systems and networking.\nStudent representative on the programme's Board of Studies.",
+      skills: [],
       image: {
         uri: "tudelft.webp",
         alt: "TU Delft logo",

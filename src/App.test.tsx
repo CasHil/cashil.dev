@@ -100,48 +100,65 @@ test("maintains 100% bilingual parity across all domains in translations", () =>
   compareKeys(translations.en, translations.nl);
 });
 
-test("renders featured work showcases for Tikkie Business and Bitsized", () => {
+test("home page tells the story and offers email and CV actions", () => {
+  window.history.pushState({}, "", "/");
   render(<App />);
-  expect(screen.getByText(/Featured Work|Uitgelicht Werk/i)).toBeInTheDocument();
-  expect(screen.getAllByText(/Tikkie Business|Tikkie Zakelijk/i).length).toBeGreaterThan(0);
+
+  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/Tikkie/);
+  expect(screen.getByRole("heading", { name: /selected work|uitgelicht werk/i })).toBeInTheDocument();
   expect(screen.getAllByText(/Bitsized/i).length).toBeGreaterThan(0);
+
+  const emailLinks = screen.getAllByRole("link", { name: /email me|mail me/i });
+  expect(emailLinks.length).toBeGreaterThan(0);
+  expect(emailLinks[0]).toHaveAttribute("href", "mailto:casperhildebrand@gmail.com");
+
+  const cvLinks = screen.getAllByRole("link", { name: /download cv/i });
+  expect(cvLinks[0]).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
 
-test("links to Dutch CV PDF when site language is Dutch", () => {
-  window.history.pushState({}, "", "/cv");
-  render(<App />);
-
-  // Open settings and switch to Dutch
-  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
-  fireEvent.click(settingsButton);
-
-  const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
-  if (nlButtons.length > 0) {
-    fireEvent.click(nlButtons[0]);
+test("every page ends with a contact call to action", () => {
+  for (const route of ["/", "/work-experience", "/education", "/cv"]) {
+    window.history.pushState({}, "", route);
+    const { unmount } = render(<App />);
+    expect(screen.getByRole("heading", { name: /get in touch|neem contact op/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /email me|mail me/i }).length).toBeGreaterThan(0);
+    unmount();
   }
-
-  const downloadLink = screen.getByRole("link", { name: /download pdf \(nl\)/i });
-  expect(downloadLink).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
-  expect(downloadLink).toHaveAttribute("download", "Casper_Hildebrand_CV_NL.pdf");
 });
 
-test("allows switching CV PDF language via dedicated toggle", () => {
-  window.history.pushState({}, "", "/cv");
+test("education page links to the published thesis record", () => {
+  window.history.pushState({}, "", "/education");
   render(<App />);
+  const link = screen.getByRole("link", { name: /thesis|scriptie/i });
+  expect(link).toHaveAttribute(
+    "href",
+    "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a"
+  );
+});
 
-  // Switch CV PDF to NL
-  const nlToggle = screen.getByRole("button", { name: /dutch \(nl\)|nederlands \(nl\)/i });
-  fireEvent.click(nlToggle);
+test("CV page offers the PDF in the site language and links the other language", () => {
+  localStorage.setItem("lang", "en");
+  window.history.pushState({}, "", "/cv");
+  const { unmount } = render(<App />);
 
-  const downloadLinkNl = screen.getByRole("link", { name: /download pdf \(nl\)/i });
-  expect(downloadLinkNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+  const downloadEn = screen.getByRole("link", { name: /^download pdf$/i });
+  expect(downloadEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+  expect(downloadEn).toHaveAttribute("download", "Casper_Hildebrand_CV.pdf");
+  expect(screen.getByRole("link", { name: /dutch version/i })).toHaveAttribute(
+    "href",
+    "/cv/Casper_Hildebrand_CV_NL.pdf"
+  );
+  unmount();
 
-  // Switch CV PDF back to EN
-  const enToggle = screen.getByRole("button", { name: /english \(en\)|engels \(en\)/i });
-  fireEvent.click(enToggle);
-
-  const downloadLinkEn = screen.getByRole("link", { name: /download pdf \(en\)/i });
-  expect(downloadLinkEn).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
+  localStorage.setItem("lang", "nl");
+  render(<App />);
+  const downloadNl = screen.getByRole("link", { name: /^pdf downloaden$/i });
+  expect(downloadNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
+  expect(screen.getByRole("link", { name: /engelse versie/i })).toHaveAttribute(
+    "href",
+    "/cv/Casper_Hildebrand_CV.pdf"
+  );
+  localStorage.setItem("lang", "en");
 });
 
 test("renders primary navigation header with candidate branding and accessible routes", () => {
@@ -189,19 +206,11 @@ test("allows toggling mobile menu in header to access routes and preferences", (
   expect(themeBtn).toBeInTheDocument();
 });
 
-test("renders core technology experience and authentic mentorship section", () => {
+test("home page keeps hobbies plain and shows no stack counters", () => {
+  localStorage.setItem("lang", "en");
   window.history.pushState({}, "", "/");
-  render(<App />);
+  const { container } = render(<App />);
 
-  // Core Technologies section
-  expect(screen.getByText(/Core Technologies|Kerntechnologieën/i)).toBeInTheDocument();
-  expect(screen.getByText(/Production & Academic|Productie & Onderwijs/i)).toBeInTheDocument();
-  expect(screen.getByText(/TypeScript & JavaScript/i)).toBeInTheDocument();
-  expect(screen.getByText(/Vue\.js & Meteor/i)).toBeInTheDocument();
-  expect(screen.getByText(/AWS Cloud/i)).toBeInTheDocument();
-
-  // Authentic mentorship & outside engineering
-  expect(screen.getByText(/Teaching & Helping Teammates Thrive|Onderwijs & Teamgenoten Helpen Floreren/i)).toBeInTheDocument();
-  expect(screen.getByText(/electric bass guitar|elektrische basgitaar/i)).toBeInTheDocument();
+  expect(screen.getByText(/bass guitar and chess/i)).toBeInTheDocument();
+  expect(container.textContent).not.toMatch(/\d+\+\s*yrs/);
 });
-

@@ -12,8 +12,4 @@ export interface TimelineItemData {
   endDate: string;
   skills?: string[];
   current?: boolean;
-  location?: string;
-  link?: string;
-  category?: "engineering" | "education";
-  tier?: "featured" | "foundational";
 }

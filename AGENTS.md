@@ -1,8 +1,8 @@
 # Agent guidelines
 
 ## Architecture and data navigation
-- Resume & Profile Copy: `src/i18n/translations.ts` contains all bilingual (EN/NL) copy, including work milestones, degrees, thesis telemetry, and principles. There are no separate `TimelineJobs.ts` or `TimelineEducation.ts` files.
-- Curriculum Vitae (LaTeX): `cv/Casper_Hildebrand_CV.tex` and `cv/Casper_Hildebrand_CV_NL.tex` are compiled to `public/cv/Casper_Hildebrand_CV.pdf` and `public/cv/Casper_Hildebrand_CV_NL.pdf` using `pnpm run build:cv`. Must strictly adhere to a **1-page budget**.
+- Resume & Profile Copy: `src/i18n/translations.ts` combines the bilingual (EN/NL) copy in `src/i18n/locales/{en,nl}/`: the home story, work roles, degrees and the thesis summary. There are no separate `TimelineJobs.ts` or `TimelineEducation.ts` files.
+- Curriculum Vitae (LaTeX): `cv/Casper_Hildebrand_CV.tex` and `cv/Casper_Hildebrand_CV_NL.tex` are generated from the site copy by `scripts/generate-cv-tex.mjs` (do not edit them by hand) and compiled to `public/cv/Casper_Hildebrand_CV.pdf` and `public/cv/Casper_Hildebrand_CV_NL.pdf` using `pnpm run build:cv`. Must strictly adhere to a **1-page budget**.
 - Research Publication: Master's thesis telemetry and publication citation are presented under `/education` linking to the official TU Delft repository.
 
 ## Tooling and environment constraints
@@ -22,6 +22,9 @@
 - Anti-Slop Knowledge Base: Before proposing copy, styling, or architecture changes, review `criticism.md`, `criticisms/README.md`, and `criticisms/08-twenty-ways-to-unslop-ai-designs.md`. Adhere strictly to the **20-point Anti-Slop Prevention Checklist**.
 - Card Elevation: Every card must feature a visible border and drop shadow (`shadow-sm hover:shadow-md`) on both mobile and desktop. Never strip borders or shadows on desktop (`sm:border-none sm:shadow-none`).
 - Concentric Corner Radius ($R_{\text{inner}} = R_{\text{outer}} - P$): Always ensure nested corner radii follow $R_{\text{inner}} = \max(0, R_{\text{outer}} - P)$ to prevent pinched gaps and mismatched curves.
+- Prose Linting: Site copy is linted with Vale through `pnpm run lint:prose` (`Tropes` for English, `CasperNL` for Dutch, both from the home repo). Run it after any change in `src/i18n/`. Warnings fail the run.
+- Story First: The home page is a first-person story, not a résumé. Do not copy work-page bullets onto it, and do not add computed years of experience. See `CONTENT_SPEC.md` and `criticisms/10-recruiter-story-and-external-slop-audit.md`.
+- Contact on Every Page: Every route ends with the shared `ContactCta` block.
 - Bilingual Parity: Any copy added or modified in `src/i18n/` must maintain 100% symmetry between `en` and `nl`.
 - Typography & Accessibility: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` violations. Reserve `font-mono` strictly for code, syntax, paths, and stack chips.
 - ATS Single-Page CV: Never allow `cv/Casper_Hildebrand_CV.tex` or `cv/Casper_Hildebrand_CV_NL.tex` to spill onto page 2.
