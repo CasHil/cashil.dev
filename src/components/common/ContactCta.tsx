@@ -44,22 +44,24 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
             {t.contact.cvBtn}
           </a>
         )}
-        <a
-          href={LINKEDIN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
-        >
-          LinkedIn
-        </a>
-        <a
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
-        >
-          GitHub
-        </a>
+        <div className="flex items-center gap-6 sm:gap-4 text-sm">
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${textLink} inline-flex items-center min-h-[44px] px-1`}
+          >
+            LinkedIn
+          </a>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${textLink} inline-flex items-center min-h-[44px] px-1`}
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
   );

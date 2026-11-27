@@ -22,7 +22,7 @@ export const enEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Courses in software architecture and distributed systems.\nThesis: Debugging the Divide, on motivation and engagement in online computer science courses.",
+      text: "Courses in software architecture and distributed systems.\nThesis: Debugging the Divide, on motivation and engagement in online computer science courses, using k-means clustering on survey and clickstream data.",
       skills: [],
       image: {
         uri: "tudelft.webp",

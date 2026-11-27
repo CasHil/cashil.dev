@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const enExperience: WorkExperienceTranslations = {
   title: "Work experience",
   intro:
-    "I work on payments at Tikkie. Before that I co-founded a coding platform for schools and taught for a year. Earlier I built software at a consultancy and for a logistics company.",
+    "I work on payments at Tikkie. During my master's I co-founded a coding platform for schools, and I taught computer science for a school year. Earlier I built software at a consultancy and for a logistics company.",
   to: "to",
   items: [
     {
@@ -12,8 +12,8 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Feb 2025",
       endDate: "now",
       current: true,
-      text: "I build the merchant portal in TypeScript and React: payment requests, transaction overviews and account settings.\nI build the AWS services that verify a new business and activate its account.\nI work on the payout pipeline and the reconciliation that checks merchants are paid the right amount on time.\nI lead my first larger project in the team, organised an AI hackathon for all of Tikkie and give workshops on working with coding agents.",
-      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
+      text: "I build the merchant portal in TypeScript and React: payment requests, transaction overviews and account settings.\nI build the AWS services that verify a new business and activate its account.\nI work on the payout pipeline and the reconciliation that checks merchants are paid the right amount on time.\nI lead my first larger project in the team.\nI organised an AI hackathon for all of Tikkie and give workshops on working with coding agents.",
+      skills: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL", "Vitest"],
       image: {
         uri: "tikkie.svg",
         alt: "Tikkie logo",

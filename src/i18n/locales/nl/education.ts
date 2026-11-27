@@ -22,7 +22,7 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Computer Science",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Vakken in softwarearchitectuur en gedistribueerde systemen.\nScriptie: Debugging the Divide, over motivatie en betrokkenheid in online informaticacursussen.",
+      text: "Vakken in softwarearchitectuur en gedistribueerde systemen.\nScriptie: Debugging the Divide, over motivatie en betrokkenheid in online informaticacursussen, met k-means-clustering op enquête- en clickstreamdata.",
       skills: [],
       image: {
         uri: "tudelft.webp",

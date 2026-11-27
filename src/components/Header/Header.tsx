@@ -41,7 +41,7 @@ export default function Header({
         }
       >
         {navItems.map((item) => (
-          <li key={item.to} className="relative shrink-0">
+          <li key={item.to} className="relative isolate shrink-0">
             <NavLink
               to={item.to}
               end={item.to === "/"}

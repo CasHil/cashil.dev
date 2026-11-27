@@ -3,7 +3,7 @@ import { CvTranslations } from "../../types";
 export const enCv: CvTranslations = {
   title: "CV",
   headline: "Full-stack software engineer",
-  subtitle: "One page, in English or Dutch. The web version below lists the same roles and degrees.",
+  subtitle: "One page, in English or Dutch. The same content is below as a web version.",
   openPdf: "Open PDF",
   downloadPdf: "Download PDF",
   otherLanguagePdf: "Dutch version (PDF)",

@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const nlExperience: WorkExperienceTranslations = {
   title: "Werkervaring",
   intro:
-    "Nu werk ik aan betalingen bij Tikkie. Daarvoor richtte ik een programmeerplatform voor scholen mee op en stond ik een jaar voor de klas. Nog eerder bouwde ik software bij een consultancy en in de logistiek.",
+    "Nu werk ik aan betalingen bij Tikkie. Tijdens mijn master heb ik een programmeerplatform voor scholen mee opgericht, en ik stond een schooljaar voor de klas. Nog eerder bouwde ik software bij een consultancy en in de logistiek.",
   to: "tot",
   items: [
     {
@@ -12,8 +12,8 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "feb 2025",
       endDate: "nu",
       current: true,
-      text: "Ik bouw het portaal voor ondernemers in TypeScript en React: betaalverzoeken, transactieoverzichten en accountinstellingen.\nIk bouw de AWS-services die een nieuw bedrijf controleren en het account activeren.\nIk werk aan de uitbetalingen en aan de reconciliatie die controleert of ondernemers op tijd het juiste bedrag krijgen.\nIk leid mijn eerste grotere project in het team, organiseerde een AI-hackathon voor heel Tikkie en geef workshops over werken met coding agents.",
-      skills: ["TypeScript", "React", "Node.js", "AWS", "PostgreSQL", "Vitest"],
+      text: "Ik bouw het portaal voor ondernemers in TypeScript en React: betaalverzoeken, transactieoverzichten en accountinstellingen.\nIk bouw de AWS-services die een nieuw bedrijf controleren en het account activeren.\nIk werk aan de uitbetalingen en aan de reconciliatie die controleert of ondernemers op tijd het juiste bedrag krijgen.\nIk leid mijn eerste grotere project in het team.\nIk organiseerde een AI-hackathon voor heel Tikkie en geef workshops over werken met coding agents.",
+      skills: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL", "Vitest"],
       image: {
         uri: "tikkie.svg",
         alt: "Logo van Tikkie",
@@ -32,7 +32,7 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Medeoprichter en lead frontend engineer",
       startDate: "jan 2023",
       endDate: "feb 2025",
-      text: "Ik richtte mee een webplatform op waar middelbare scholieren code schrijven en draaien in de browser, zonder iets te installeren.\nIk bouwde de frontend in Vue.js op Meteor.\nIk ontwierp samen met informaticadocenten hoe opdrachten worden uitgedeeld, hoe voortgang wordt bijgehouden en hoe fouten aan beginners worden uitgelegd.",
+      text: "Ik heb een webplatform mee opgericht waarop middelbare scholieren code schrijven en draaien in de browser, zonder iets te installeren.\nIk bouwde de frontend in Vue.js op Meteor.\nIk ontwierp samen met informaticadocenten hoe opdrachten worden uitgedeeld, hoe voortgang wordt bijgehouden en hoe fouten aan beginners worden uitgelegd.",
       skills: ["Vue.js", "Meteor", "JavaScript", "Node.js", "MongoDB"],
       image: {
         uri: "bitsized.webp",

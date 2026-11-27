@@ -2,7 +2,7 @@ import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
   heroTitle:
-    "Software engineer bij Tikkie, met een master in informatica en een lesbevoegdheid erbij.",
+    "Software engineer bij Tikkie, met masters in informatica en in het lesgeven ervan.",
   heroFacts:
     "Full-stack in TypeScript, React, Node.js en AWS. Ik woon in Amsterdam en werk in het Nederlands en Engels.",
   story: [
@@ -22,7 +22,7 @@ export const nlIntro: IntroTranslations = {
       period: "feb 2025 tot nu",
       paragraphs: [
         "Met Tikkie Zakelijk sturen bedrijven betaalverzoeken naar hun klanten via WhatsApp, e-mail of een QR-code. Ik bouw het portaal voor ondernemers in TypeScript en React. Ik bouw ook de AWS-services die een nieuw bedrijf controleren en het account activeren, en ik werk aan de pipeline die ondernemers uitbetaalt.",
-        "Naast het bouwen van features heb ik onze technical debt in de retrospective van het team ingebracht, met een plan om die af te bouwen. We zijn begonnen eenvoudige, terugkerende taken aan AI-agents over te laten.",
+        "Naast featurewerk heb ik onze technical debt op de retrospective van het team gezet, met een plan om die af te bouwen. We zijn begonnen eenvoudige, terugkerende taken aan AI-agents over te laten.",
       ],
       stack: [
         "TypeScript",
