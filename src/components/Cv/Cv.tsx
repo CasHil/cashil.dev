@@ -120,7 +120,7 @@ export default function Cv() {
               </div>
               <ul className="space-y-1 max-w-[75ch]">
                 {role.text.split("\n").map((line) => (
-                  <FormattedBullet key={line} text={line} className={bulletClass} />
+                  <FormattedBullet key={line} text={line} plain className={bulletClass} />
                 ))}
               </ul>
             </div>
@@ -131,7 +131,7 @@ export default function Cv() {
           <h3 id="cv-education-heading" className={sectionHeading}>
             {t.cv.educationHeading}
           </h3>
-          {t.education.items.map((edu) => (
+          {t.education.items.map((edu, index) => (
             <div key={edu.subtitle} className="space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-4">
                 <div>
@@ -143,8 +143,11 @@ export default function Cv() {
                 </span>
               </div>
               <ul className="space-y-1 max-w-[75ch]">
-                {edu.text.split("\n").map((line) => (
-                  <FormattedBullet key={line} text={line} className={bulletClass} />
+                {[
+                  ...edu.text.split("\n"),
+                  ...(index === 0 ? [t.education.thesis.cvLine] : []),
+                ].map((line) => (
+                  <FormattedBullet key={line} text={line} plain className={bulletClass} />
                 ))}
               </ul>
             </div>

@@ -152,7 +152,7 @@ test("CV page offers the PDF in the site language and links the other language",
 
   localStorage.setItem("lang", "nl");
   render(<App />);
-  const downloadNl = screen.getByRole("link", { name: /^pdf downloaden$/i });
+  const downloadNl = screen.getByRole("link", { name: /^download pdf$/i });
   expect(downloadNl).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV_NL.pdf");
   expect(screen.getByRole("link", { name: /engelse versie/i })).toHaveAttribute(
     "href",

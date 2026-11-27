@@ -400,6 +400,8 @@ Added for cashil.dev. The upstream skill lives in the home repo under `skills/hu
 
 **Check with Vale, not by eye.** After every copy change run `pnpm run lint:prose`. It extracts the strings and runs the `Tropes` style on English and the `CasperNL` style on Dutch. Warnings fail the run. A suggestion needs a decision: a list of four school subjects is a list, a third adjective added for rhythm is a triad.
 
+**Word limits and the marker.** `DESIGN.md` sets a word limit for every text and allows one `**marker**` per paragraph or bullet, on a fact. `src/design-language.test.tsx` enforces both. When a rewrite runs long, cut it. Do not use bold or italics for emphasis.
+
 **No new facts.** The sources are Casper's CV, his thesis record and his own notes. If a sentence needs a number, a date or a name that is not in one of those, write the simpler sentence and note the gap for him.
 
 **Résumé tells.** These are the forms §15 and §6 take on a CV, and they were all on this site before:

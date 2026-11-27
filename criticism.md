@@ -104,11 +104,11 @@ Run this checklist before finalizing any changes:
 
 ## 4. Casper'S authentic profile and ground truth
 
-- Current Role: Full-Stack Software Engineer at **Tikkie Business (ABN AMRO)** via **Harvest Young Talent Program** (2025 – Present).
+- Current Role: Full-Stack Software Engineer at **Tikkie Business (ABN AMRO)** via the **Harvest** talent programme (March 2026 to now). Harvest places engineers at companies and trains them alongside the job.
 - Core Stack & Focus: Agentic software engineering, AWS Lambda, DynamoDB, EventBridge, TypeScript, automated test verification, and code quality.
 - Previous Startup: Co-Founder & Lead Engineer at **Bitsized** (2023 – 2025), building in-browser sandboxed Python execution with Web Workers and AST analysis.
-- Teaching: Computer science teacher at **CSG De Lage Waard** and **Stanislascollege** (August 2024 to July 2025).
-- Earlier Engineering: Software analyst and consultant at **Netcompany** (September 2021 to June 2022), software developer at **Bexter** (September 2019 to May 2021).
+- Teaching: Computer science teacher at **CSG De Lage Waard** and **Stanislascollege** (February 2025 to July 2025).
+- Earlier Engineering: Software analyst and consultant at **Netcompany** (September 2021 to June 2022), software developer at **Bexter** (September 2019 to May 2021). Both were part-time, about two days a week.
 - Academic Degrees (TU Delft):
   * **MSc Computer Science** (2021 – 2024)
   * **MSc Science Education & Communication** (2021 – 2024; ~200 high school students taught across 10 cohorts)

@@ -18,7 +18,7 @@ const tex = (text) =>
 // The site writes in the first person ("I build ..."). A CV drops the pronoun.
 function cvLine(line, language) {
   const pronoun = language === "nl" ? /^Ik\s+/ : /^I\s+/;
-  const stripped = line.replace(pronoun, "");
+  const stripped = line.replace(/\*\*(.+?)\*\*/g, "$1").replace(pronoun, "");
   return tex(stripped.charAt(0).toUpperCase() + stripped.slice(1));
 }
 
@@ -42,7 +42,11 @@ function document(t, language) {
     .join("\n\n");
 
   const education = t.education.items
-    .map((item) => entry(item.subtitle, dates(item), item.title, item.text.split("\n"), language))
+    .map((item, index) => {
+      const lines = item.text.split("\n");
+      if (index === 0) lines.push(t.education.thesis.cvLine);
+      return entry(item.subtitle, dates(item), item.title, lines, language);
+    })
     .join("\n\n");
 
   const skills = t.cv.skills

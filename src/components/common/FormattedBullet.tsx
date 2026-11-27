@@ -1,27 +1,22 @@
+import Marked from "./Marked";
+
 interface FormattedBulletProps {
   text: string;
-  bulletColor?: string;
+  plain?: boolean;
   className?: string;
 }
 
 export default function FormattedBullet({
   text,
-  bulletColor = "bg-brand/70",
-  className = "flex items-start gap-2.5 leading-relaxed text-sm sm:text-base text-text-secondary",
+  plain = false,
+  className = "flex items-start gap-2.5 leading-relaxed text-base text-text-secondary",
 }: FormattedBulletProps) {
-  // Strip leading list bullet or hyphen prefix and any markdown bold markers
-  const clean = text
-    .replace(/^(?:[•\u2013\u2014]|\-(?!\*))\s*/, "")
-    .replace(/\*\*/g, "")
-    .trim();
-
   return (
     <li className={className}>
-      <span
-        className={`w-1.5 h-1.5 rounded-full ${bulletColor} mt-2 shrink-0`}
-        aria-hidden="true"
-      />
-      <span>{clean}</span>
+      <span className="w-1.5 h-1.5 rounded-full bg-brand/70 mt-[0.6em] shrink-0" aria-hidden="true" />
+      <span>
+        <Marked text={text} plain={plain} />
+      </span>
     </li>
   );
 }

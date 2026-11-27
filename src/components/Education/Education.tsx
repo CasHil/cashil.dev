@@ -1,5 +1,7 @@
 import Timeline from "../Timeline/Timeline";
 import ContactCta from "../common/ContactCta";
+import PageHeader from "../common/PageHeader";
+import Marked from "../common/Marked";
 import { useLanguage } from "../../context/LanguageContext";
 import { textLink } from "../common/links";
 
@@ -8,21 +10,14 @@ export default function Education() {
   const thesis = t.education.thesis;
 
   return (
-    <div className="space-y-12 sm:space-y-16">
-      <div className="space-y-3 pt-4 sm:pt-8">
-        <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-text-primary">
-          {t.education.title}
-        </h1>
-        <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">
-          {t.education.intro}
-        </p>
-      </div>
+    <div className="space-y-10 sm:space-y-12">
+      <PageHeader title={t.education.title} intro={t.education.intro} />
 
       <Timeline data={t.education.items} />
 
       <section
         aria-labelledby="thesis-title"
-        className="border-t border-border-subtle pt-10 sm:pt-12 space-y-4"
+        className="border-t border-border-subtle pt-10 space-y-4"
       >
         <div className="space-y-2">
           <h2
@@ -36,11 +31,8 @@ export default function Education() {
         </div>
         <div className="space-y-4 max-w-[62ch]">
           {thesis.paragraphs.map((paragraph) => (
-            <p
-              key={paragraph}
-              className="text-base text-text-secondary leading-relaxed"
-            >
-              {paragraph}
+            <p key={paragraph} className="text-base text-text-secondary leading-relaxed">
+              <Marked text={paragraph} />
             </p>
           ))}
         </div>

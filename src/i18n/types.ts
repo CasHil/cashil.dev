@@ -69,10 +69,6 @@ export interface WorkRole {
   current?: boolean;
   text: string;
   skills: string[];
-  image?: {
-    uri: string;
-    alt: string;
-  };
 }
 
 export interface WorkExperienceTranslations {
@@ -89,15 +85,12 @@ export interface EducationItem {
   endDate: string;
   text: string;
   skills: string[];
-  image?: {
-    uri: string;
-    alt: string;
-  };
 }
 
 export interface ThesisTranslations {
   title: string;
   meta: string;
+  cvLine: string;
   paragraphs: string[];
   repositoryLink: string;
   repositoryText: string;

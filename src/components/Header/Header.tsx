@@ -47,7 +47,7 @@ export default function Header({
               end={item.to === "/"}
               onClick={handleClick}
               className={({ isActive }) =>
-                `relative px-3.5 py-1.5 text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
+                `relative px-3.5 min-h-[40px] text-xs sm:text-[13px] font-medium tracking-tight transition-colors duration-150 inline-flex items-center justify-center rounded-squircle-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
                   isActive
                     ? "text-text-primary font-semibold"
                     : "text-text-muted hover:text-text-primary hover:bg-surface/50"
