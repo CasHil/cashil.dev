@@ -13,7 +13,7 @@ export const enEducation: EducationTranslations = {
       "I combined enrolment surveys with clickstream data from four TU Delft online courses. Women more often enrolled **for their career, men out of interest**, and men finished more often. The reason for enrolling did not predict engagement.",
     ],
     repositoryLink: "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a",
-    repositoryText: "Read the thesis in the TU Delft repository",
+    repositoryText: "Read the thesis at TU Delft",
   },
   items: [
     {

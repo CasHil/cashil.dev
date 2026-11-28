@@ -13,7 +13,7 @@ export const nlEducation: EducationTranslations = {
       "Ik combineerde inschrijfenquêtes met clickstreamdata van vier online cursussen van de TU Delft. Vrouwen schreven zich vaker in **voor hun carrière, mannen uit interesse**, en mannen maakten de cursus vaker af. De reden van inschrijving voorspelde niet hoe actief iemand meedeed.",
     ],
     repositoryLink: "https://repository.tudelft.nl/record/uuid:f4aceeec-5947-4578-834c-4bb43288c91a",
-    repositoryText: "Lees de scriptie in de repository van de TU Delft",
+    repositoryText: "Lees de scriptie bij de TU Delft",
   },
   items: [
     {
@@ -29,7 +29,7 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Science Education and Communication, richting informatica",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Inclusief de **eerstegraads lesbevoegdheid** informatica.\nAls onderdeel van de opleiding gaf ik les aan ongeveer 125 leerlingen op het Stanislascollege.",
+      text: "Inclusief de **eerstegraads lesbevoegdheid** informatica.\nIk gaf als onderdeel van de opleiding les aan ongeveer 125 leerlingen op het Stanislascollege.",
       skills: [],
     },
     {
