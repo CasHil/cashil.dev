@@ -79,7 +79,7 @@ test("home page tells the story and offers email and CV actions", () => {
   render(<App />);
 
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/Tikkie/);
-  expect(screen.getByRole("heading", { name: /the short version|de korte versie/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /the short version|in het kort/i })).toBeInTheDocument();
   expect(screen.getAllByText(/Bitsized/i).length).toBeGreaterThan(0);
 
   const emailLinks = screen.getAllByRole("link", { name: /email me|mail me/i });

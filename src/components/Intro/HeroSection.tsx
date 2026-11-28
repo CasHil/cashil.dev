@@ -12,7 +12,7 @@ export default function HeroSection() {
         <div>
           <h1
             id="hero-title"
-            className="font-display font-extrabold text-[2.5rem] sm:text-6xl leading-[1.04] text-on-ink max-w-[17ch]"
+            className="font-display font-extrabold text-4xl sm:text-6xl leading-[1.04] text-on-ink max-w-[17ch]"
           >
             <Marked text={t.intro.heroTitle} />
           </h1>

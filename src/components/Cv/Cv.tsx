@@ -24,7 +24,7 @@ export default function Cv() {
     <div className="space-y-10 sm:space-y-12">
       <div className="space-y-6 pt-4 sm:pt-8">
         <div className="space-y-3">
-          <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-text-primary">
+          <h1 className="font-display text-5xl sm:text-6xl font-extrabold text-text-primary">
             {t.cv.title}
           </h1>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">

@@ -36,11 +36,11 @@ export default function Masthead() {
 
         <nav
           aria-label="Main navigation"
-          className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-40 md:static md:inset-auto md:ml-auto"
+          className="fixed inset-x-0 bottom-0 z-40 px-3 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-canvas md:static md:inset-auto md:ml-auto md:p-0 md:bg-transparent"
         >
           <ul
             role="list"
-            className="flex items-center gap-1 p-1.5 rounded-full bg-ink shadow-lg md:p-0 md:bg-transparent md:shadow-none"
+            className="flex items-center gap-1 p-1.5 rounded-full bg-ink md:p-0 md:bg-transparent"
           >
             {navItems.map((item) => (
               <li key={item.to} className="flex-1 md:flex-none">
@@ -48,7 +48,7 @@ export default function Masthead() {
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
-                    `flex items-center justify-center min-h-[44px] px-3 md:px-4 rounded-full text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
+                    `flex items-center justify-center min-h-[44px] px-3 md:px-4 rounded-full text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-ink md:focus-visible:ring-brand touch-manipulation ${
                       isActive
                         ? "bg-accent text-ink-fixed"
                         : "text-on-ink md:text-text-secondary md:hover:text-text-primary md:hover:bg-surface-subtle"

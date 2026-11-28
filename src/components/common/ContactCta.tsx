@@ -25,7 +25,7 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
       <div className="space-y-3">
         <h2
           id="contact-heading"
-          className="font-display text-3xl sm:text-5xl font-extrabold text-on-ink"
+          className="font-display text-3xl sm:text-4xl font-extrabold text-on-ink"
         >
           {t.contact.heading}
         </h2>
@@ -39,7 +39,7 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
         <a href={`mailto:${EMAIL}`} className={primaryButton}>
           {t.contact.emailBtn}
         </a>
-        <div className="flex items-center gap-x-6 w-full sm:w-auto">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-1 w-full sm:w-auto">
           {showCv && (
             <a href={pdf.url} download={pdf.fileName} className={link}>
               {t.contact.cvBtn}

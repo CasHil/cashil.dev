@@ -10,7 +10,7 @@ export default function WorkHighlights() {
     <section aria-labelledby="work-heading" className="space-y-6">
       <h2
         id="work-heading"
-        className="font-display text-3xl sm:text-5xl font-extrabold text-text-primary"
+        className="font-display text-3xl sm:text-4xl font-extrabold text-text-primary"
       >
         {t.intro.workHeading}
       </h2>

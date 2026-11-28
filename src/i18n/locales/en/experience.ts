@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const enExperience: WorkExperienceTranslations = {
   title: "Work experience",
   intro:
-    "I work on payments now. Before that I co-founded a classroom coding platform, taught, and worked part-time as a developer during my studies.",
+    "I build Tikkie Business. Before that I taught computer science, co-founded Bitsized, and worked part-time as a developer during my studies.",
   to: "to",
   items: [
     {

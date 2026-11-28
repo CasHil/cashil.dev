@@ -3,7 +3,7 @@ import { WorkExperienceTranslations } from "../../types";
 export const nlExperience: WorkExperienceTranslations = {
   title: "Werkervaring",
   intro:
-    "Nu werk ik aan betalingen. Daarvoor heb ik een programmeerplatform voor scholen mee opgericht, lesgegeven en tijdens mijn studie parttime als developer gewerkt.",
+    "Ik bouw Tikkie Zakelijk. Daarvoor gaf ik informatica, richtte ik Bitsized mee op en werkte ik tijdens mijn studie parttime als developer.",
   to: "tot",
   items: [
     {

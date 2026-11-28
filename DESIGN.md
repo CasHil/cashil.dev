@@ -91,7 +91,7 @@ The copy is Casper talking, not a résumé and not a brand.
 
 - First person, short sentences, one thing per sentence.
 - Tell the story in the order that makes someone curious: the school that emailed him, the classroom before that, Tikkie now.
-- One dry observation per page is welcome ("Teenagers tell you at once when an explanation is bad"). Two is a routine.
+- One dry observation per page is welcome ("Teenagers tell you at once when an explanation is bad"). Two is a routine. Never add the tidy lesson after it.
 - Plain words. If a sentence could appear on anyone's site, cut it.
 - Dutch is written as Dutch, not translated. "200 pubers", not "200 tieners".
 - About Tikkie, say only that he builds Tikkie Business and trains colleagues in working with AI.
@@ -100,7 +100,7 @@ The copy is Casper talking, not a résumé and not a brand.
 
 - **Cream** `#FBF7EC`: the page.
 - **Indigo** `#1F1D52`: text, the two panels, the phone navigation bar.
-- **Sunflower** `#F2B705`: the button, the current page in the navigation, markers, link underlines, the ring around the photo.
+- **Sunflower** `#F2B705`: the button, the current page in the navigation, markers, link underlines, bullets, the ring around the photo.
 - **Body** `#383664` and **muted** `#5F5D84`: paragraphs and dates. Both pass WCAG AA on cream.
 - **Rule** `#E6DEC9`: hairlines.
 - In dark mode the page is a darker indigo `#12112B`, the panels are a step lighter, and text is cream.
@@ -109,7 +109,7 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 
 ## Type
 
-- Headings: Bricolage Grotesque at weight 800, tight tracking, sentence case. The hero is 40px on phones and 60px on desktop.
+- Headings: Bricolage Grotesque at weight 800, sentence case. The hero is 36px on phones and 60px on desktop. Section headings stay at 36px so they do not compete with it.
 - Everything else: Figtree. Body copy is 18px on phones and 20px on larger screens.
 - Nothing under 12px. Monospace is for code only, and the site shows no code.
 - Numbers in dates use tabular figures.
@@ -125,7 +125,7 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 ## Components
 
 - **Header:** his name, the navigation, the other language by name and one theme icon.
-- **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar at the bottom of the screen. From 768px it sits in the sticky header.
+- **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar on a cream strip at the bottom of the screen. From 768px it sits in the sticky header.
 - **Hero panel:** indigo, with the headline, the facts line, the button, the CV link and the photo.
 - **Contact panel:** the same indigo panel at the end of every page. Email, CV, LinkedIn, GitHub.
 - **Button:** sunflower with indigo text. It only appears on an indigo panel, and it is always "Email me".

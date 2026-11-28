@@ -13,7 +13,7 @@ export default function FormattedBullet({
 }: FormattedBulletProps) {
   return (
     <li className={className}>
-      <span className="w-1.5 h-1.5 rounded-full bg-brand/70 mt-[0.6em] shrink-0" aria-hidden="true" />
+      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-[0.6em] shrink-0" aria-hidden="true" />
       <span>
         <Marked text={text} plain={plain} />
       </span>

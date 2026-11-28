@@ -17,10 +17,10 @@ const button =
 export const primaryButton = `${button} bg-accent text-ink-fixed focus-visible:ring-accent focus-visible:ring-offset-ink`;
 
 const link =
-  "font-semibold underline underline-offset-4 decoration-2 decoration-accent transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand";
+  "font-semibold whitespace-nowrap underline underline-offset-4 decoration-2 decoration-accent transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2";
 
 /** A link on the cream page. */
-export const textLink = `${link} text-text-primary hover:decoration-text-primary`;
+export const textLink = `${link} text-text-primary hover:decoration-text-primary focus-visible:ring-brand`;
 
 /** A link on an indigo panel. */
-export const panelLink = `${link} text-on-ink hover:decoration-on-ink`;
+export const panelLink = `${link} text-on-ink hover:decoration-on-ink focus-visible:ring-accent`;
