@@ -72,7 +72,7 @@ If removing something loses no information, remove it.
 - Every text has a word limit, listed above. When copy does not fit, cut the copy. Do not raise the limit.
 - A role has at most three bullets. An action row has one filled button.
 - Nothing opens. No menus, dropdowns, drawers or tabs.
-- No gradients, blur, glow, texture or animation. Hover and press change colour or opacity only.
+- No gradients, blur, glow or texture. One thing moves: on phones the sunflower pill in the navigation slides to the page you pick. Everything else changes colour or opacity only.
 - Three colours carry the site: cream, indigo and sunflower. Nothing else is added for decoration.
 
 ### 3. Mark what matters
@@ -127,7 +127,7 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 ## Components
 
 - **Header:** his name, the navigation, the other language by name and one theme icon.
-- **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar on a cream strip at the bottom of the screen. From 768px it sits in the sticky header.
+- **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar on a cream strip at the bottom of the screen, and the pill slides between items in 300ms (not at all with reduced motion). From 768px it sits in the sticky header.
 - **Hero panel:** indigo, with the headline, the facts line, the button, the CV link and the photo.
 - **Page panel:** the work and education pages open with an indigo panel that holds the title, one line and two links.
 - **Contact panel:** the same indigo panel at the end of every page except the CV. Email, CV, LinkedIn, GitHub.

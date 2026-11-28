@@ -117,6 +117,12 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await mPage.evaluate(() => window.scrollTo(0, 900));
   await mPage.waitForTimeout(300);
   await mPage.screenshot({ path: path.join(OUT, '22_mobile_scrolled.png') });
+  // The pill slides to the page you pick: one frame mid-slide, one at rest
+  await mPage.click('nav a[href="/education"]');
+  await mPage.waitForTimeout(120);
+  await mPage.screenshot({ path: path.join(OUT, '23_mobile_nav_sliding.png'), clip: { x: 0, y: 744, width: 390, height: 100 } });
+  await mPage.waitForTimeout(500);
+  await mPage.screenshot({ path: path.join(OUT, '24_mobile_nav_rest.png'), clip: { x: 0, y: 744, width: 390, height: 100 } });
 
   await browser.close();
   server.httpServer.close();

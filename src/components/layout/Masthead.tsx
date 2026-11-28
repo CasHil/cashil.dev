@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -6,11 +6,13 @@ const quiet =
   "font-semibold text-text-secondary hover:text-text-primary transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation";
 
 // One navigation, always within reach. On a phone it is a bar at the bottom of
-// the screen, where the thumb is. From 768px it sits in the header, which sticks.
+// the screen, where the thumb is, and the sunflower pill slides to the page you
+// pick. From 768px it sits in the header, which sticks.
 export default function Masthead() {
   const { t, language, setLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
+  const { pathname } = useLocation();
 
   const other =
     language === "en"
@@ -23,6 +25,9 @@ export default function Masthead() {
     { to: "/education", label: t.nav.education },
     { to: "/cv", label: t.nav.cv },
   ];
+  const activeIndex = navItems.findIndex((item) =>
+    item.to === "/" ? pathname === "/" : pathname.startsWith(item.to)
+  );
 
   return (
     <header className="w-full bg-canvas md:sticky md:top-0 z-40 md:border-b md:border-border-subtle">
@@ -40,17 +45,25 @@ export default function Masthead() {
         >
           <ul
             role="list"
-            className="flex items-center gap-1 p-1.5 rounded-full bg-ink md:p-0 md:bg-transparent"
+            className="relative grid grid-cols-4 p-1.5 rounded-full bg-ink md:flex md:items-center md:gap-1 md:p-0 md:bg-transparent"
           >
+            {activeIndex >= 0 && (
+              <li
+                role="presentation"
+                aria-hidden="true"
+                className="md:hidden pointer-events-none absolute top-1.5 bottom-1.5 left-1.5 w-[calc((100%-0.75rem)/4)] rounded-full bg-accent transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(${activeIndex * 100}%)` }}
+              />
+            )}
             {navItems.map((item) => (
-              <li key={item.to} className="flex-1 md:flex-none">
+              <li key={item.to}>
                 <NavLink
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
-                    `flex items-center justify-center min-h-[44px] px-3 md:px-4 rounded-full text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-ink md:focus-visible:ring-brand touch-manipulation ${
+                    `relative flex items-center justify-center min-h-[44px] px-3 md:px-4 rounded-full text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-ink md:focus-visible:ring-brand touch-manipulation ${
                       isActive
-                        ? "bg-accent text-ink-fixed"
+                        ? "text-ink-fixed md:bg-accent"
                         : "text-on-ink md:text-text-secondary md:hover:text-text-primary md:hover:bg-surface-subtle"
                     }`
                   }
