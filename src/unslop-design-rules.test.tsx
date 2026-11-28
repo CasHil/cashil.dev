@@ -66,7 +66,7 @@ describe("Anti-slop design guardrails", () => {
     }
   });
 
-  test("Navigation never opens or animates: no dropdown, drawer or sliding indicator", () => {
+  test("Navigation never opens: no dropdown, drawer or animation library", () => {
     const masthead = fs.readFileSync(
       path.resolve(__dirname, "../src/components/layout/Masthead.tsx"),
       "utf-8"

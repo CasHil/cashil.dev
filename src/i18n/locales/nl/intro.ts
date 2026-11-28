@@ -1,7 +1,7 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  heroTitle: "Ik bouw Tikkie Zakelijk. Daarvoor gaf ik informatica aan **200 leerlingen**.",
+  heroTitle: "Ik bouw Tikkie Zakelijk. Eerder gaf ik informatica aan **200 leerlingen**.",
   heroFacts: "Software engineer in Amsterdam. TypeScript, React, Node.js en AWS. Nederlands en Engels.",
   story: [
     "De dag na mijn afstuderen mailde een middelbare school me. De leerlingen hadden **al maanden geen informaticadocent**. Ik zei ja en gaf er tot de zomer les.",
