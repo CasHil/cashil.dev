@@ -20,7 +20,7 @@ export const nlExperience: WorkExperienceTranslations = {
       subtitle: "Docent informatica",
       startDate: "feb 2025",
       endDate: "jul 2025",
-      text: "Ik gaf les in algoritmen, digitale logica, computerarchitectuur en webontwikkeling.\nIk begeleidde eindprojecten en ontwierp het programma van toetsing en afsluiting (PTA).",
+      text: "Ik gaf les aan **ongeveer 200 leerlingen**: algoritmen, digitale logica, computerarchitectuur en webontwikkeling.\nIk begeleidde eindprojecten en ontwierp het programma van toetsing en afsluiting (PTA).",
       skills: [],
     },
     {

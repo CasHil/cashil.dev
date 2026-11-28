@@ -20,7 +20,7 @@ export const enExperience: WorkExperienceTranslations = {
       subtitle: "Computer science teacher",
       startDate: "Feb 2025",
       endDate: "Jul 2025",
-      text: "I taught algorithms, digital logic, computer architecture and web development.\nI supervised final-year projects and designed the programme of tests and examinations (PTA).",
+      text: "I taught **about 200 students**: algorithms, digital logic, computer architecture and web development.\nI supervised final-year projects and designed the programme of tests and examinations (PTA).",
       skills: [],
     },
     {
