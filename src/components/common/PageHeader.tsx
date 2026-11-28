@@ -21,7 +21,7 @@ export default function PageHeader({ title, intro }: PageHeaderProps) {
       <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">
         <Marked text={intro} />
       </p>
-      <div className="flex items-center gap-6">
+      <div className="flex flex-wrap items-center gap-x-6">
         <a href={`mailto:${EMAIL}`} className={link}>
           {t.contact.emailBtn}
         </a>
