@@ -1,31 +1,29 @@
 ---
-version: 1.1.0
+version: 2.0.0
 name: Casper, web
 description: >-
-  Design language for cashil.dev. The brand is thoughtful, calm and clear.
-  Three rules: say it clearly, keep it simple, and mark the few words that matter. A sibling of the slide brand in the home
-  repo (projects/slidev-brand/DESIGN.md), from which it takes the single
-  sunflower marker and the word limits.
+  Design language for cashil.dev. Clear, warm and a little playful. It borrows
+  the confidence of the Tikkie brand (heavy friendly type, deep indigo, big
+  round shapes, short sentences) and keeps Casper's own sunflower.
 colors:
-  canvas: "#fafaf7"
-  canvas-dark: "#0c100e"
-  ink: "#141715"
-  ink-dark: "#f2f5f3"
-  body: "#3b443e"
-  muted: "#54635a"
-  rule: "#e1e7e2"
-  sage: "#4a6b56"
+  cream: "#FBF7EC"
+  indigo: "#1F1D52"
   sunflower: "#F2B705"
+  body: "#383664"
+  muted: "#5F5D84"
+  rule: "#E6DEC9"
+  canvas-dark: "#12112B"
 typography:
-  heading: { fontFamily: Newsreader, fontWeight: 400 }
-  body: { fontFamily: system-ui, fontSize: 16px to 18px, lineHeight: 1.6 }
+  display: { fontFamily: Bricolage Grotesque, fontWeight: 800 }
+  body: { fontFamily: Figtree, fontSize: 18px to 20px, lineHeight: 1.6 }
   min-font-size: 12px
 content:
   hero-headline-max-words: 15
   hero-facts-max-words: 14
   story-max-paragraphs: 4
   story-max-words: 120
-  work-highlight-max-words: 45
+  timeline-max-rows: 5
+  timeline-row-max-words: 12
   page-intro-max-words: 24
   role-max-bullets: 3
   bullet-max-words: 20
@@ -41,87 +39,99 @@ How cashil.dev looks and reads, for people and for agents that change it. The li
 
 ## The brand
 
-Thoughtful, calm and clear. The site should feel like a well-set page of text, and a visitor should notice the care before they notice the design.
+Clear, warm and a little playful. A recruiter should know who Casper is in five seconds and remember the site an hour later.
 
-- **Thoughtful:** every element has a reason a recruiter would recognise. If the reason is "it looks designed", it goes.
-- **Calm:** nothing moves, floats, glows or asks for attention. One filled button per page section. Everything else is text.
-- **Clear:** the name, the role and the way to reach him are readable in five seconds, on a phone, without opening anything.
+The site nods to Tikkie, where he works, without wearing its uniform.
 
-Quality shows in the details that are easy to skip: text that lines up on one left edge, the same spacing between the same things, touch targets that are large without looking large, and Dutch that was written as Dutch.
+| Tikkie does | This site does |
+| --- | --- |
+| Museo Sans Rounded, weight 900 | Bricolage Grotesque, weight 800. Friendly and heavy, with its own quirks |
+| Deep indigo with teal buttons | A deeper indigo with sunflower, which was already Casper's colour |
+| Sections with big, soft, tilted corners | Two indigo panels with 40px corners, and a photo tilted three degrees |
+| Pill buttons | Pill buttons and a pill navigation |
+| "Ping! Geld binnen." | Short sentences that say one thing, in his voice |
+
+Never use Tikkie's logo, teal, illustrations or typeface. The nod is in the attitude.
 
 ## The three rules
 
 ### 1. Clarity
 
-A recruiter gives the site under a minute. Each page answers one question, and the answer is in the first screen.
+Each page answers one question, and the answer is in the first screen.
 
-- One idea per paragraph. A second idea gets its own paragraph or goes.
-- Say what the thing is before saying what Casper did with it. "A platform where students wrote and ran code in the browser" comes before "I built the frontend".
-- Facts that people filter on go where they look first: role, employer, stack, city, languages.
+- Say what the thing is before saying what Casper did with it.
+- Facts that people filter on go where they look first: role, city, stack, languages.
 - Dates, titles and order agree on every page and in the PDF. The PDF is generated from the site copy for that reason.
-- Text is left-aligned and no wider than about 62 characters.
+- Text is left-aligned and no wider than about 60 characters.
+- The navigation is always within reach: a bar at the bottom of a phone screen, a sticky header from 768px.
 
 ### 2. Keep it simple
 
 If removing something loses no information, remove it.
 
 - Every text has a word limit, listed above. When copy does not fit, cut the copy. Do not raise the limit.
-- A role has at most three bullets. A page has one primary action.
-- Nothing opens. No menus, dropdowns, drawers or tabs. If it does not fit on the page, it does not belong on the page.
-- No cards, except the one sheet that holds the web CV. No badges, chips, eyebrow labels, icons next to points, or logos next to roles.
-- No decoration: no gradients, blur, glow, texture or ambient animation. Nothing moves. Hover and press change colour or opacity only.
-- One list style, one rule style (a 1px hairline), one button shape.
-- Group with whitespace first and a hairline second. Never a box.
+- A role has at most three bullets. An action row has one filled button.
+- Nothing opens. No menus, dropdowns, drawers or tabs.
+- No gradients, blur, glow, texture or animation. Hover and press change colour or opacity only.
+- Three colours carry the site: cream, indigo and sunflower. Nothing else is added for decoration.
 
 ### 3. Mark what matters
 
 Someone who reads only the marked words should still get the story.
 
-- The marker is a sunflower-yellow highlight behind a word or short phrase, in the same weight as the text around it. It is the only emphasis on the site. No bold, no italics, no coloured words.
+- On cream, the marker is a sunflower highlight behind the words. On an indigo panel, the marked words turn sunflower.
 - At most one marker per paragraph or bullet, and at most eight words long.
-- Mark a fact: an employer, a product, a number, a technology, a finding. Never an adjective, and never a claim about quality.
-- Most bullets have no marker. It works because it is rare.
-- Headings and the facts line are never marked. A heading is already the loudest thing near it.
-- Write a marker in the copy as `**words**`. The `Marked` component renders it. The PDF and the web CV sheet show the same text without the marker.
+- Mark a fact: an employer, a product, a number, a finding. Never an adjective.
+- The hero headline may carry one marker. Section headings and the facts line never do.
+- Write a marker in the copy as `**words**`. The `Marked` component renders it. The PDF and the web CV sheet show the same text without it.
 
-Read the marked words in the home page story in order. They should be: what he builds, why he taught, and what he teaches now.
+## Voice
+
+The copy is Casper talking, not a résumé and not a brand.
+
+- First person, short sentences, one thing per sentence.
+- Tell the story in the order that makes someone curious: the school that emailed him, the classroom before that, Tikkie now.
+- One dry observation per page is welcome ("Teenagers tell you at once when an explanation is bad"). Two is a routine. Never add the tidy lesson after it.
+- Plain words. If a sentence could appear on anyone's site, cut it.
+- Dutch is written as Dutch, not translated. "200 pubers", not "200 tieners".
+- About Tikkie, say only that he builds Tikkie Business and trains colleagues in working with AI.
 
 ## Colour
 
-- **Canvas** `#fafaf7`, dark `#0c100e`: the page.
-- **Ink** `#141715`, dark `#f2f5f3`: headings, marked words, the primary button, the current page in the navigation.
-- **Body** `#3b443e` and **muted** `#54635a`: paragraphs and dates. Both pass WCAG AA on the canvas.
-- **Rule** `#e1e7e2`: hairlines.
-- **Sage** `#4a6b56`: links and focus rings only.
-- **Sunflower** `#F2B705`: the marker only, as a tint behind ink text. Never a background for a section, never a button, never text.
+- **Cream** `#FBF7EC`: the page.
+- **Indigo** `#1F1D52`: text, the two panels, the phone navigation bar.
+- **Sunflower** `#F2B705`: the button, the current page in the navigation, markers, link underlines, bullets, the ring around the photo.
+- **Body** `#383664` and **muted** `#5F5D84`: paragraphs and dates. Both pass WCAG AA on cream.
+- **Rule** `#E6DEC9`: hairlines.
+- In dark mode the page is a darker indigo `#12112B`, the panels are a step lighter, and text is cream.
 
 The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity modifiers work.
 
 ## Type
 
-- Headings: Newsreader, regular weight, sentence case, no full stop except the hero.
-- Everything else: the system sans.
-- Nothing under 12px. Body copy is 16px on phones and 18px on larger screens.
-- Monospace is for code only, and the site shows no code.
+- Headings: Bricolage Grotesque at weight 800, sentence case. The hero is 36px on phones and 60px on desktop. Section headings stay at 36px so they do not compete with it.
+- Everything else: Figtree. Body copy is 18px on phones and 20px on larger screens.
+- Nothing under 12px. Monospace is for code only, and the site shows no code.
 - Numbers in dates use tabular figures.
 
-## Layout
+## Shape
 
-- One column of content, at most 72rem wide, with 16px gutters on phones.
-- Lists of roles and degrees use two columns from 640px: who and when on the left, what on the right.
-- Sections are 64px to 96px apart.
-- Touch targets are at least 44px.
+- Panels: 32px corners on phones, 40px from 640px.
+- Buttons and navigation items: full pills.
+- The CV sheet: 24px corners, a border and a shadow. It is the one card.
+- The photo: a rounded square, tilted three degrees, with a sunflower ring. It is the only tilted thing.
+- Lists are divided by 1px hairlines.
 
 ## Components
 
-- `Marked` renders `**words**` as the marker.
-- The header holds his name, four text links, the other language by name and one theme icon. It is not sticky. The current page is ink with a 1px underline. The rest is muted.
-- On a phone the four links sit in a row under the name. There is no menu button.
-- The primary button has an ink fill, canvas text, an 8px radius and no shadow. One per action row, and it is always "Email me".
-- Every other action is a text link: sage, underlined and 15px. Email comes first, then the CV.
-- The timeline lists roles or degrees separated by hairlines.
-- The contact block is the same on every page. Email, CV, LinkedIn, GitHub.
-- The CV sheet is the one card. It keeps its border and shadow, with the same 8px radius as the button.
+- **Header:** his name, the navigation, the other language by name and one theme icon.
+- **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar on a cream strip at the bottom of the screen. From 768px it sits in the sticky header.
+- **Hero panel:** indigo, with the headline, the facts line, the button, the CV link and the photo.
+- **Contact panel:** the same indigo panel at the end of every page. Email, CV, LinkedIn, GitHub.
+- **Button:** sunflower with indigo text. It only appears on an indigo panel, and it is always "Email me".
+- **Links:** bold, with a 2px sunflower underline.
+- **The short version:** five rows on the home page, a period and a line each.
+- **Timeline:** roles or degrees separated by hairlines.
 
 ## Things the site does not do
 
@@ -130,7 +140,6 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 - Put a label above a heading or a subtitle under it that restates it.
 - Use a middle dot between facts, an arrow on a link, or a dash in copy.
 - Use more than one filled button in a row.
-- Share details of his work at Tikkie beyond the product he builds and that he trains colleagues in working with AI.
 - Invent anything. Sources are Casper's CV, his thesis record and his own notes.
 
 ## Agent checklist

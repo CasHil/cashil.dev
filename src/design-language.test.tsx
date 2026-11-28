@@ -35,9 +35,10 @@ describe.each(Object.entries(translations))("design language limits (%s)", (_lan
     expect(total).toBeLessThanOrEqual(limit("story-max-words"));
   });
 
-  test("keep it simple: work highlights and page intros are short", () => {
-    for (const item of t.intro.work) {
-      expect(words(item.paragraphs.join(" "))).toBeLessThanOrEqual(limit("work-highlight-max-words"));
+  test("keep it simple: the short version and page intros are short", () => {
+    expect(t.intro.timeline.length).toBeLessThanOrEqual(limit("timeline-max-rows"));
+    for (const row of t.intro.timeline) {
+      expect(words(row.what)).toBeLessThanOrEqual(limit("timeline-row-max-words"));
     }
     for (const intro of [t.workExperience.intro, t.education.intro]) {
       expect(words(intro)).toBeLessThanOrEqual(limit("page-intro-max-words"));
@@ -71,12 +72,11 @@ describe.each(Object.entries(translations))("design language limits (%s)", (_lan
   test("mark what matters: the home page markers alone carry the story", () => {
     const home = t.intro.story.flatMap(markers);
     expect(home.length).toBeGreaterThanOrEqual(3);
-    expect(home[0]).toMatch(/Tikkie/);
+    expect(home.some((marker) => /Tikkie/.test(marker))).toBe(true);
   });
 
-  test("mark what matters: headings and the facts line carry no marker", () => {
+  test("mark what matters: section headings and the facts line carry no marker", () => {
     const unmarked = [
-      t.intro.heroTitle,
       t.intro.heroFacts,
       t.intro.workHeading,
       t.workExperience.title,

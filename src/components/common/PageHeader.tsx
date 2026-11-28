@@ -15,7 +15,7 @@ export default function PageHeader({ title, intro }: PageHeaderProps) {
 
   return (
     <div className="space-y-3 pt-4 sm:pt-8">
-      <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-text-primary">
+      <h1 className="font-display text-5xl sm:text-6xl font-extrabold text-text-primary">
         {title}
       </h1>
       <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">

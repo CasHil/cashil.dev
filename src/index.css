@@ -4,71 +4,74 @@
 
 :root {
   color-scheme: light;
-  --canvas-rgb: 250 250 247;
+  --canvas-rgb: 251 247 236;
   --canvas: rgb(var(--canvas-rgb));
   --surface-rgb: 255 255 255;
   --surface: rgb(var(--surface-rgb));
-  --surface-hover-rgb: 243 246 244;
+  --surface-hover-rgb: 245 240 226;
   --surface-hover: rgb(var(--surface-hover-rgb));
-  --surface-subtle-rgb: 237 242 238;
+  --surface-subtle-rgb: 243 237 221;
   --surface-subtle: rgb(var(--surface-subtle-rgb));
-  --border-subtle-rgb: 225 231 226;
+  --border-subtle-rgb: 230 222 201;
   --border-subtle: rgb(var(--border-subtle-rgb));
-  --border-hover-rgb: 196 205 198;
+  --border-hover-rgb: 203 194 170;
   --border-hover: rgb(var(--border-hover-rgb));
-  --text-primary-rgb: 20 23 21;
+  --text-primary-rgb: 31 29 82;
   --text-primary: rgb(var(--text-primary-rgb));
-  --text-secondary-rgb: 59 68 62;
+  --text-secondary-rgb: 56 54 100;
   --text-secondary: rgb(var(--text-secondary-rgb));
-  --text-muted-rgb: 84 99 90;
+  --text-muted-rgb: 95 93 132;
   --text-muted: rgb(var(--text-muted-rgb));
-  --brand-rgb: 74 107 86;
+  --brand-rgb: 31 29 82;
   --brand: rgb(var(--brand-rgb));
-  --brand-hover-rgb: 59 87 69;
+  --brand-hover-rgb: 56 54 100;
   --brand-hover: rgb(var(--brand-hover-rgb));
-  --brand-subtle-rgb: 234 241 236;
+  --brand-subtle-rgb: 243 237 221;
   --brand-subtle: rgb(var(--brand-subtle-rgb));
-  --brand-border-rgb: 184 201 189;
+  --brand-border-rgb: 242 183 5;
   --brand-border: rgb(var(--brand-border-rgb));
+  --ink-rgb: 31 29 82;
+  --ink-fixed-rgb: 31 29 82;
+  --on-ink-rgb: 251 247 236;
+  --accent-rgb: 242 183 5;
   --marker-rgb: 242 183 5;
-  --marker-alpha: 0.4;
-  --scrollbar-track: #fafaf7;
-  --scrollbar-thumb: #d0dad2;
-  --scrollbar-thumb-hover: #a8b8ac;
+  --marker-alpha: 0.5;
+  --scrollbar-track: #fbf7ec;
+  --scrollbar-thumb: #d9d0b8;
+  --scrollbar-thumb-hover: #b9af93;
 }
 
 .dark {
   color-scheme: dark;
-  --canvas-rgb: 12 16 14;
+  --canvas-rgb: 18 17 43;
   --canvas: rgb(var(--canvas-rgb));
-  --surface-rgb: 18 23 20;
+  --surface-rgb: 27 26 61;
   --surface: rgb(var(--surface-rgb));
-  --surface-hover-rgb: 24 32 27;
+  --surface-hover-rgb: 35 33 77;
   --surface-hover: rgb(var(--surface-hover-rgb));
-  --surface-subtle-rgb: 26 36 30;
+  --surface-subtle-rgb: 30 28 66;
   --surface-subtle: rgb(var(--surface-subtle-rgb));
-  --border-subtle-rgb: 34 44 37;
+  --border-subtle-rgb: 46 44 92;
   --border-subtle: rgb(var(--border-subtle-rgb));
-  --border-hover-rgb: 51 66 56;
+  --border-hover-rgb: 70 67 125;
   --border-hover: rgb(var(--border-hover-rgb));
-  --text-primary-rgb: 242 245 243;
+  --text-primary-rgb: 251 247 236;
   --text-primary: rgb(var(--text-primary-rgb));
-  --text-secondary-rgb: 201 212 205;
+  --text-secondary-rgb: 214 211 232;
   --text-secondary: rgb(var(--text-secondary-rgb));
-  --text-muted-rgb: 121 138 128;
+  --text-muted-rgb: 160 157 196;
   --text-muted: rgb(var(--text-muted-rgb));
-  --brand-rgb: 141 168 150;
+  --brand-rgb: 251 247 236;
   --brand: rgb(var(--brand-rgb));
-  --brand-hover-rgb: 163 190 169;
+  --brand-hover-rgb: 214 211 232;
   --brand-hover: rgb(var(--brand-hover-rgb));
-  --brand-subtle-rgb: 25 38 30;
+  --brand-subtle-rgb: 33 31 80;
   --brand-subtle: rgb(var(--brand-subtle-rgb));
-  --brand-border-rgb: 46 66 53;
-  --brand-border: rgb(var(--brand-border-rgb));
-  --marker-alpha: 0.32;
-  --scrollbar-track: #0c100e;
-  --scrollbar-thumb: #222c25;
-  --scrollbar-thumb-hover: #334238;
+  --ink-rgb: 36 34 92;
+  --marker-alpha: 0.4;
+  --scrollbar-track: #12112b;
+  --scrollbar-thumb: #2e2c5c;
+  --scrollbar-thumb-hover: #46437d;
 }
 
 @layer base {
@@ -82,6 +85,13 @@
     box-decoration-break: clone;
   }
 
+  /* On the indigo panels the marker is sunflower text, not a tint. */
+  .bg-ink mark.marker {
+    background: none;
+    color: rgb(var(--accent-rgb));
+    padding: 0;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -90,7 +100,7 @@
     margin: 0;
     background-color: var(--canvas);
     color: var(--text-primary);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    font-family: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -107,9 +117,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Newsreader", Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     text-wrap: balance;
     overflow-wrap: break-word;
@@ -129,7 +139,7 @@
 
   code,
   [data-tabular] {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    font-family: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, sans-serif;
     font-feature-settings: "tnum" 1;
     font-variant-numeric: tabular-nums;

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
-import Marked from "../common/Marked";
 import { textLink } from "../common/links";
 
+/** The same story as above, as five rows for someone who only has ten seconds. */
 export default function WorkHighlights() {
   const { t } = useLanguage();
 
@@ -10,35 +10,22 @@ export default function WorkHighlights() {
     <section aria-labelledby="work-heading" className="space-y-6">
       <h2
         id="work-heading"
-        className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary"
+        className="font-display text-3xl sm:text-4xl font-extrabold text-text-primary"
       >
         {t.intro.workHeading}
       </h2>
 
-      <div className="border-t border-border-subtle divide-y divide-border-subtle">
-        {t.intro.work.map((item) => (
-          <article
-            key={item.title}
-            className="py-8 grid gap-3 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
+      <dl className="border-t border-border-subtle divide-y divide-border-subtle">
+        {t.intro.timeline.map((row) => (
+          <div
+            key={row.what}
+            className="py-4 grid gap-1 sm:gap-10 sm:grid-cols-[9rem_minmax(0,1fr)] sm:items-baseline"
           >
-            <div className="space-y-1">
-              <h3 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-text-primary">
-                {item.title}
-              </h3>
-              <p className="text-base text-text-secondary">{item.role}</p>
-              <p className="text-sm text-text-muted tabular-nums">{item.period}</p>
-            </div>
-            <div className="space-y-3 max-w-[62ch]">
-              {item.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-base text-text-secondary leading-relaxed">
-                  <Marked text={paragraph} />
-                </p>
-              ))}
-              <p className="text-sm text-text-muted">{item.stack.join(", ")}</p>
-            </div>
-          </article>
+            <dt className="text-base text-text-muted tabular-nums">{row.period}</dt>
+            <dd className="text-lg sm:text-xl font-semibold text-text-primary">{row.what}</dd>
+          </div>
         ))}
-      </div>
+      </dl>
 
       <Link
         to="/work-experience"

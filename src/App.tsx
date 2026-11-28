@@ -9,7 +9,7 @@ import "./App.css";
 
 function AppContent() {
   return (
-    <div className="relative min-h-[100dvh] bg-canvas text-zinc-900 dark:text-gray-100 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 selection:text-zinc-950 dark:selection:text-white transition-colors pb-12 sm:pb-0">
+    <div className="relative min-h-[100dvh] bg-canvas text-text-primary antialiased selection:bg-accent selection:text-ink-fixed transition-colors pb-28 md:pb-0">
       <BrowserRouter>
         <a
           href="#main-content"
@@ -18,10 +18,8 @@ function AppContent() {
           Skip to main content
         </a>
 
-        {/* Sticky Header with Frosted Glass */}
         <Masthead />
 
-        {/* Responsive High-Craft Canvas: Mobile-Ergonomic & Desktop-Anchored */}
         <div className="relative z-10 max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-8">
           <SwipeNavigationWrapper>
             <Body />

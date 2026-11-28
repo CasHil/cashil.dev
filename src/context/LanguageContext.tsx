@@ -9,10 +9,13 @@ interface LanguageContextType {
 }
 
 // The copy files keep straight apostrophes, which the prose linter requires.
-// The page shows typographic ones: master's becomes master’s.
+// The page shows typographic ones: master's becomes master’s. "ABN AMRO" never
+// breaks across two lines.
 function typeset<T>(value: T): T {
   if (typeof value === "string") {
-    return value.replace(/(?<=\p{L})'(?=\p{L})/gu, "’") as T;
+    return value
+      .replace(/(?<=\p{L})'(?=\p{L})/gu, "’")
+      .replace(/ABN AMRO/g, "ABN AMRO") as T;
   }
   if (Array.isArray(value)) return value.map(typeset) as T;
   if (value && typeof value === "object") {

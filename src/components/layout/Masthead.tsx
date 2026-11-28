@@ -3,9 +3,10 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 
 const quiet =
-  "text-text-muted hover:text-text-primary transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation";
+  "font-semibold text-text-secondary hover:text-text-primary transition-colors rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation";
 
-// The header is a name, four links and two preferences. Nothing opens or slides.
+// One navigation, always within reach. On a phone it is a bar at the bottom of
+// the screen, where the thumb is. From 768px it sits in the header, which sticks.
 export default function Masthead() {
   const { t, language, setLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -24,16 +25,44 @@ export default function Masthead() {
   ];
 
   return (
-    <header className="w-full border-b border-border-subtle">
-      <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 pt-2 pb-1 md:py-4 flex flex-wrap items-center justify-between gap-x-10">
+    <header className="w-full bg-canvas md:sticky md:top-0 z-40 md:border-b md:border-border-subtle">
+      <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-2 md:py-3 flex items-center justify-between gap-x-6">
         <Link
           to="/"
-          className="inline-flex items-center min-h-[44px] font-serif text-xl tracking-tight text-text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          className="inline-flex items-center min-h-[44px] font-display text-xl font-extrabold text-text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           {t.sidebar.name}
         </Link>
 
-        <div className="flex items-center -mr-3 md:order-3">
+        <nav
+          aria-label="Main navigation"
+          className="fixed inset-x-0 bottom-0 z-40 px-3 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-canvas md:static md:inset-auto md:ml-auto md:p-0 md:bg-transparent"
+        >
+          <ul
+            role="list"
+            className="flex items-center gap-1 p-1.5 rounded-full bg-ink md:p-0 md:bg-transparent"
+          >
+            {navItems.map((item) => (
+              <li key={item.to} className="flex-1 md:flex-none">
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    `flex items-center justify-center min-h-[44px] px-3 md:px-4 rounded-full text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-ink md:focus-visible:ring-brand touch-manipulation ${
+                      isActive
+                        ? "bg-accent text-ink-fixed"
+                        : "text-on-ink md:text-text-secondary md:hover:text-text-primary md:hover:bg-surface-subtle"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center -mr-3">
           <button
             type="button"
             lang={other.code}
@@ -49,11 +78,11 @@ export default function Masthead() {
             className={`inline-flex items-center justify-center h-11 w-11 ${quiet}`}
           >
             <svg
-              className="h-[18px] w-[18px]"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={1.5}
+              strokeWidth={2}
               aria-hidden="true"
             >
               {isDark ? (
@@ -72,28 +101,6 @@ export default function Masthead() {
             </svg>
           </button>
         </div>
-
-        <nav aria-label="Main navigation" className="w-full md:w-auto md:order-2 md:ml-auto">
-          <ul role="list" className="flex items-center -mx-3">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  end={item.to === "/"}
-                  className={({ isActive }) =>
-                    `inline-flex items-center min-h-[44px] px-3 text-[15px] rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand touch-manipulation ${
-                      isActive
-                        ? "text-text-primary underline decoration-1 underline-offset-[6px]"
-                        : "text-text-muted hover:text-text-primary"
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
     </header>
   );

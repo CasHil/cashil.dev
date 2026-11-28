@@ -1,38 +1,24 @@
 import { IntroTranslations } from "../../types";
 
 export const nlIntro: IntroTranslations = {
-  heroTitle:
-    "Software engineer bij Tikkie, met masters in informatica en in het lesgeven ervan.",
-  heroFacts: "Full-stack in TypeScript, React, Node.js en AWS. Amsterdam. Nederlands en Engels.",
+  heroTitle: "Ik bouw Tikkie Zakelijk. Daarvoor gaf ik informatica aan **200 pubers**.",
+  heroFacts: "Software engineer in Amsterdam. TypeScript, React, Node.js en AWS. Nederlands en Engels.",
   story: [
-    "Ik bouw **Tikkie Zakelijk**, het deel van Tikkie waarmee bedrijven betaalverzoeken versturen en hun geld ontvangen. Ik begon in maart 2026 via Harvest, een programma dat engineers bij bedrijven plaatst en ze naast hun werk opleidt.",
-    "De dag na mijn afstuderen kreeg ik een mail van een middelbare school. De leerlingen hadden **al maanden geen informaticadocent**. Ik nam de baan aan en gaf tot de zomer les aan ongeveer 200 leerlingen op twee scholen.",
-    "Lesgeven doe ik nog steeds. Bij Tikkie train ik collega's in het **werken met AI**.",
-    "Buiten mijn werk speel ik basgitaar en schaak ik.",
+    "De dag na mijn afstuderen mailde een middelbare school. De leerlingen hadden **al maanden geen informaticadocent**. Ik zei ja en gaf tot de zomer les aan tien klassen. Pubers laten meteen merken wanneer je uitleg niet deugt.",
+    "Onderwijs was niet nieuw voor me. Tijdens mijn master richtte ik **Bitsized** mee op, waar leerlingen code schreven en draaiden in de browser, zonder iets te installeren.",
+    "Nu bouw ik **Tikkie Zakelijk**, het deel van Tikkie waarmee bedrijven betaald krijgen. Ik begon in maart 2026 via Harvest, een talentprogramma voor engineers.",
+    "Helemaal gestopt met lesgeven ben ik niet. Bij Tikkie train ik collega's in het **werken met AI**. Na het werk speel ik basgitaar en schaak ik.",
   ],
   emailCta: "Mail me",
   cvCta: "Download CV (pdf)",
 
-  workHeading: "Uitgelicht werk",
-  work: [
-    {
-      title: "Tikkie Zakelijk (ABN AMRO)",
-      role: "Software engineer, via het talentprogramma van Harvest",
-      period: "mrt 2026 tot nu",
-      paragraphs: [
-        "Ik werk aan de React-schermen die bedrijven gebruiken en aan de Node.js-services op AWS daarachter.",
-      ],
-      stack: ["TypeScript", "React", "Node.js", "AWS"],
-    },
-    {
-      title: "Bitsized",
-      role: "Medeoprichter",
-      period: "jan 2023 tot feb 2025",
-      paragraphs: [
-        "Een webplatform voor informaticalessen op Nederlandse middelbare scholen. Leerlingen **schreven en draaiden code in de browser**, dus er hoefde niets te worden geïnstalleerd. Ik bouwde de frontend in Vue.js op Meteor en ontwierp die samen met de docenten die het gebruikten.",
-      ],
-      stack: ["Vue.js", "Meteor", "Node.js", "MongoDB"],
-    },
+  workHeading: "In het kort",
+  timeline: [
+    { period: "Sinds 2026", what: "Software engineer bij Tikkie Zakelijk (ABN AMRO)" },
+    { period: "2025", what: "Docent informatica op twee middelbare scholen" },
+    { period: "2023 tot 2025", what: "Medeoprichter van Bitsized" },
+    { period: "2021 tot 2025", what: "Twee masters aan de TU Delft: informatica en de lerarenopleiding" },
+    { period: "2019 tot 2022", what: "Parttime developer bij Bexter en Netcompany" },
   ],
   workLink: "Alle werkervaring",
 };

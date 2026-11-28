@@ -23,7 +23,7 @@ export default function Education() {
           <h2
             id="thesis-title"
             lang="en"
-            className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary max-w-[34ch]"
+            className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary max-w-[34ch]"
           >
             {thesis.title}
           </h2>

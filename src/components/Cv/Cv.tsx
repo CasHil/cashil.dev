@@ -10,7 +10,7 @@ import {
 } from "../common/links";
 
 const sectionHeading =
-  "text-sm font-semibold text-text-primary border-b border-border-subtle pb-1.5";
+  "font-display text-lg font-extrabold text-text-primary border-b border-border-subtle pb-1.5";
 
 const bulletClass =
   "flex items-start gap-2.5 leading-relaxed text-sm text-text-secondary";
@@ -24,7 +24,7 @@ export default function Cv() {
     <div className="space-y-10 sm:space-y-12">
       <div className="space-y-6 pt-4 sm:pt-8">
         <div className="space-y-3">
-          <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-text-primary">
+          <h1 className="font-display text-5xl sm:text-6xl font-extrabold text-text-primary">
             {t.cv.title}
           </h1>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">
@@ -53,10 +53,10 @@ export default function Cv() {
       <article
         data-ui
         aria-label={t.cv.title}
-        className="rounded-lg p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
+        className="rounded-3xl p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
       >
         <header className="space-y-2">
-          <h2 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary">
+          <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
             {t.sidebar.name}
           </h2>
           <p className="text-base text-text-secondary">
