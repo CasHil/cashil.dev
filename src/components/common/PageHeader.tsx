@@ -11,7 +11,7 @@ interface PageHeaderProps {
 export default function PageHeader({ title, intro }: PageHeaderProps) {
   const { t, language } = useLanguage();
   const pdf = cvPdf(language);
-  const link = `${textLink} text-base inline-flex items-center min-h-[44px]`;
+  const link = `${textLink} text-[15px] inline-flex items-center min-h-[44px]`;
 
   return (
     <div className="space-y-3 pt-4 sm:pt-8">
@@ -21,12 +21,12 @@ export default function PageHeader({ title, intro }: PageHeaderProps) {
       <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">
         <Marked text={intro} />
       </p>
-      <div className="flex items-center gap-6">
-        <a href={pdf.url} download={pdf.fileName} className={link}>
-          {t.contact.cvBtn}
-        </a>
+      <div className="flex flex-wrap items-center gap-x-6">
         <a href={`mailto:${EMAIL}`} className={link}>
           {t.contact.emailBtn}
+        </a>
+        <a href={pdf.url} download={pdf.fileName} className={link}>
+          {t.contact.cvBtn}
         </a>
       </div>
     </div>

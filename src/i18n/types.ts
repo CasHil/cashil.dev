@@ -2,17 +2,11 @@ export type Language = "en" | "nl";
 
 export interface NavTranslations {
   overview: string;
-  cv: string;
-  workExperience: string;
-  workShort: string;
+  work: string;
   education: string;
-  menu: string;
-  close: string;
-  settings: string;
-  language: string;
-  theme: string;
-  lightTheme: string;
-  darkTheme: string;
+  cv: string;
+  toDark: string;
+  toLight: string;
 }
 
 export interface SidebarTranslations {
@@ -26,7 +20,6 @@ export interface CvTranslations {
   title: string;
   headline: string;
   subtitle: string;
-  openPdf: string;
   downloadPdf: string;
   otherLanguagePdf: string;
   profileHeading: string;

@@ -8,6 +8,26 @@ interface LanguageContextType {
   t: TranslationDictionary;
 }
 
+// The copy files keep straight apostrophes, which the prose linter requires.
+// The page shows typographic ones: master's becomes master’s.
+function typeset<T>(value: T): T {
+  if (typeof value === "string") {
+    return value.replace(/(?<=\p{L})'(?=\p{L})/gu, "’") as T;
+  }
+  if (Array.isArray(value)) return value.map(typeset) as T;
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, entry]) => [key, typeset(entry)])
+    ) as T;
+  }
+  return value;
+}
+
+const typesetTranslations: Record<Language, TranslationDictionary> = {
+  en: typeset(translations.en),
+  nl: typeset(translations.nl),
+};
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -34,7 +54,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguageState((prev) => (prev === "en" ? "nl" : "en"));
   };
 
-  const t = translations[language];
+  const t = typesetTranslations[language];
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>

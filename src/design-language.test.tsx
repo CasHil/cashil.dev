@@ -69,19 +69,31 @@ describe.each(Object.entries(translations))("design language limits (%s)", (_lan
   });
 
   test("mark what matters: the home page markers alone carry the story", () => {
-    const home = [t.intro.heroTitle, t.intro.heroFacts, ...t.intro.story].flatMap(markers);
-    expect(home.length).toBeGreaterThanOrEqual(4);
+    const home = t.intro.story.flatMap(markers);
+    expect(home.length).toBeGreaterThanOrEqual(3);
     expect(home[0]).toMatch(/Tikkie/);
+  });
+
+  test("mark what matters: headings and the facts line carry no marker", () => {
+    const unmarked = [
+      t.intro.heroTitle,
+      t.intro.heroFacts,
+      t.intro.workHeading,
+      t.workExperience.title,
+      t.education.title,
+      t.contact.heading,
+    ];
+    for (const text of unmarked) expect(markers(text).length).toBe(0);
   });
 });
 
 describe("the marker", () => {
   test("renders **words** as a mark element and nothing else as emphasis", () => {
-    const { container } = render(<Marked text="I build the **merchant portal** in React." />);
+    const { container } = render(<Marked text="I built the **frontend** in Vue.js." />);
     const marks = container.querySelectorAll("mark.marker");
     expect(marks.length).toBe(1);
-    expect(marks[0].textContent).toBe("merchant portal");
-    expect(container.textContent).toBe("I build the merchant portal in React.");
+    expect(marks[0].textContent).toBe("frontend");
+    expect(container.textContent).toBe("I built the frontend in Vue.js.");
     expect(container.querySelector("strong, b, em, i")).toBeNull();
   });
 

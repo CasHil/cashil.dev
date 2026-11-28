@@ -4,7 +4,6 @@ export const enCv: CvTranslations = {
   title: "CV",
   headline: "Full-stack software engineer",
   subtitle: "One page, in English or Dutch.",
-  openPdf: "Open PDF",
   downloadPdf: "Download PDF",
   otherLanguagePdf: "Dutch version (PDF)",
   profileHeading: "Profile",
