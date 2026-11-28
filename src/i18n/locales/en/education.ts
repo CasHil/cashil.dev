@@ -29,7 +29,7 @@ export const enEducation: EducationTranslations = {
       subtitle: "MSc Science Education and Communication, Computer Science track",
       startDate: "Sep 2021",
       endDate: "Jan 2025",
-      text: "Includes the Dutch **first-degree (eerstegraads) teaching qualification** for computer science.",
+      text: "Includes the Dutch **first-degree (eerstegraads) teaching qualification** for computer science.\nI taught about 125 students at Stanislascollege as part of the degree.",
       skills: [],
     },
     {

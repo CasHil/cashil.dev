@@ -29,7 +29,7 @@ export const nlEducation: EducationTranslations = {
       subtitle: "MSc Science Education and Communication, richting informatica",
       startDate: "sep 2021",
       endDate: "jan 2025",
-      text: "Inclusief de **eerstegraads lesbevoegdheid** informatica.",
+      text: "Inclusief de **eerstegraads lesbevoegdheid** informatica.\nAls onderdeel van de opleiding gaf ik les aan ongeveer 125 leerlingen op het Stanislascollege.",
       skills: [],
     },
     {
