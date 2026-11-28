@@ -91,9 +91,11 @@ The copy is Casper talking, not a résumé and not a brand.
 
 - First person, short sentences, one thing per sentence.
 - Tell the story in the order that makes someone curious: the school that emailed him, the classroom before that, Tikkie now.
-- One dry observation per page is welcome ("Teenagers tell you at once when an explanation is bad"). Two is a routine. Never add the tidy lesson after it.
+- Character comes from what happened, told plainly. Do not add observations or lessons he did not write himself.
 - Plain words. If a sentence could appear on anyone's site, cut it.
-- Dutch is written as Dutch, not translated. "200 pubers", not "200 tieners".
+- Dutch is written as Dutch, not translated.
+- Stay professional. No nicknames for people ("pubers") and no jokes at anyone's expense.
+- Do not explain what a recruiter can see. No "one page, in English or Dutch".
 - About Tikkie, say only that he builds Tikkie Business and trains colleagues in working with AI.
 
 ## Colour
@@ -127,7 +129,9 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 - **Header:** his name, the navigation, the other language by name and one theme icon.
 - **Navigation:** four links. The current page is a sunflower pill. On phones it is a fixed indigo bar on a cream strip at the bottom of the screen. From 768px it sits in the sticky header.
 - **Hero panel:** indigo, with the headline, the facts line, the button, the CV link and the photo.
-- **Contact panel:** the same indigo panel at the end of every page. Email, CV, LinkedIn, GitHub.
+- **Page panel:** the work and education pages open with an indigo panel that holds the title, one line and two links.
+- **Contact panel:** the same indigo panel at the end of every page except the CV. Email, CV, LinkedIn, GitHub.
+- **CV page:** the title, two download links and the sheet. Nothing else.
 - **Button:** sunflower with indigo text. It only appears on an indigo panel, and it is always "Email me".
 - **Links:** bold, with a 2px sunflower underline.
 - **The short version:** five rows on the home page, a period and a line each.

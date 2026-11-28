@@ -90,8 +90,8 @@ test("home page tells the story and offers email and CV actions", () => {
   expect(cvLinks[0]).toHaveAttribute("href", "/cv/Casper_Hildebrand_CV.pdf");
 });
 
-test("every page ends with a contact call to action", () => {
-  for (const route of ["/", "/work-experience", "/education", "/cv"]) {
+test("every page except the CV ends with a contact call to action", () => {
+  for (const route of ["/", "/work-experience", "/education"]) {
     window.history.pushState({}, "", route);
     const { unmount } = render(<App />);
     expect(screen.getByRole("heading", { name: /get in touch|neem contact op/i })).toBeInTheDocument();

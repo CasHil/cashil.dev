@@ -1,27 +1,27 @@
 import { useLanguage } from "../../context/LanguageContext";
 import Marked from "./Marked";
-import { EMAIL, cvPdf, textLink } from "./links";
+import { EMAIL, cvPdf, panelLink } from "./links";
 
 interface PageHeaderProps {
   title: string;
   intro: string;
 }
 
-/** Page title, one line of introduction, and the two actions a recruiter needs. */
+/** The indigo panel that opens the work and education pages. */
 export default function PageHeader({ title, intro }: PageHeaderProps) {
   const { t, language } = useLanguage();
   const pdf = cvPdf(language);
-  const link = `${textLink} text-[15px] inline-flex items-center min-h-[44px]`;
+  const link = `${panelLink} inline-flex items-center min-h-[44px]`;
 
   return (
-    <div className="space-y-3 pt-4 sm:pt-8">
-      <h1 className="font-display text-5xl sm:text-6xl font-extrabold text-text-primary">
+    <div className="bg-ink rounded-[2rem] sm:rounded-[2.5rem] px-6 py-10 sm:p-12 lg:p-16">
+      <h1 className="font-display text-5xl sm:text-6xl font-extrabold leading-[1.04] text-on-ink">
         {title}
       </h1>
-      <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch]">
+      <p className="mt-5 text-lg sm:text-xl leading-snug text-on-ink/80 max-w-[44ch]">
         <Marked text={intro} />
       </p>
-      <div className="flex flex-wrap items-center gap-x-6">
+      <div className="mt-6 flex flex-wrap items-center gap-x-6">
         <a href={`mailto:${EMAIL}`} className={link}>
           {t.contact.emailBtn}
         </a>

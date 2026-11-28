@@ -16,11 +16,11 @@ export const nlExperience: WorkExperienceTranslations = {
       skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {
-      title: "CSG De Lage Waard en Stanislascollege",
+      title: "CSG De Lage Waard",
       subtitle: "Docent informatica",
       startDate: "feb 2025",
       endDate: "jul 2025",
-      text: "Ik gaf les aan **ongeveer 200 leerlingen in tien klassen**: algoritmen, digitale logica, computerarchitectuur en webontwikkeling.\nIk begeleidde eindprojecten en ontwierp het programma van toetsing en afsluiting (PTA).",
+      text: "Ik gaf les in algoritmen, digitale logica, computerarchitectuur en webontwikkeling.\nIk begeleidde eindprojecten en ontwierp het programma van toetsing en afsluiting (PTA).",
       skills: [],
     },
     {

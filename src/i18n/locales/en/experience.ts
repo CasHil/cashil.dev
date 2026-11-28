@@ -16,11 +16,11 @@ export const enExperience: WorkExperienceTranslations = {
       skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {
-      title: "CSG De Lage Waard and Stanislascollege",
+      title: "CSG De Lage Waard",
       subtitle: "Computer science teacher",
       startDate: "Feb 2025",
       endDate: "Jul 2025",
-      text: "I taught **about 200 students in ten classes**: algorithms, digital logic, computer architecture and web development.\nI supervised final-year projects and designed the programme of tests and examinations (PTA).",
+      text: "I taught algorithms, digital logic, computer architecture and web development.\nI supervised final-year projects and designed the programme of tests and examinations (PTA).",
       skills: [],
     },
     {

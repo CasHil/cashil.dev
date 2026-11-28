@@ -8,11 +8,7 @@ import {
   primaryButton,
 } from "./links";
 
-interface ContactCtaProps {
-  showCv?: boolean;
-}
-
-export default function ContactCta({ showCv = true }: ContactCtaProps) {
+export default function ContactCta() {
   const { t, language } = useLanguage();
   const pdf = cvPdf(language);
   const link = `${panelLink} inline-flex items-center min-h-[44px]`;
@@ -40,11 +36,9 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
           {t.contact.emailBtn}
         </a>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-1 w-full sm:w-auto">
-          {showCv && (
-            <a href={pdf.url} download={pdf.fileName} className={link}>
-              {t.contact.cvBtn}
-            </a>
-          )}
+          <a href={pdf.url} download={pdf.fileName} className={link}>
+            {t.contact.cvBtn}
+          </a>
           <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={link}>
             LinkedIn
           </a>

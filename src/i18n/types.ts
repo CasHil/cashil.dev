@@ -19,7 +19,6 @@ export interface SidebarTranslations {
 export interface CvTranslations {
   title: string;
   headline: string;
-  subtitle: string;
   downloadPdf: string;
   otherLanguagePdf: string;
   profileHeading: string;

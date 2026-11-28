@@ -25,7 +25,7 @@
 - Prose Linting: Site copy is linted with Vale through `pnpm run lint:prose` (`Tropes` for English, `CasperNL` for Dutch, both from the home repo). Run it after any change in `src/i18n/`. Warnings fail the run.
 - Design Language: `DESIGN.md` has three rules (clarity, keep it simple, mark what matters), a word limit per text, and one sunflower marker per paragraph written as `**words**`. `src/design-language.test.tsx` enforces the limits. When copy does not fit, cut the copy.
 - Story First: The home page is a first-person story, not a résumé. Do not copy work-page bullets onto it, and do not add computed years of experience. See `CONTENT_SPEC.md` and `criticisms/10-recruiter-story-and-external-slop-audit.md`.
-- Contact on Every Page: Every route ends with the shared `ContactCta` block.
+- Contact on Every Page: Every route ends with the shared `ContactCta` block, except `/cv`, which shows only the CV and its downloads.
 - Bilingual Parity: Any copy added or modified in `src/i18n/` must maintain 100% symmetry between `en` and `nl`.
 - Typography & Accessibility: Maintain minimum `text-xs` (12px) for UI copy to prevent `[tiny-text]` violations. Reserve `font-mono` strictly for code, syntax, paths, and stack chips.
 - ATS Single-Page CV: Never allow `cv/Casper_Hildebrand_CV.tex` or `cv/Casper_Hildebrand_CV_NL.tex` to spill onto page 2.
