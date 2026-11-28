@@ -12,8 +12,8 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "mrt 2026",
       endDate: "nu",
       current: true,
-      text: "Ik bouw het **portaal voor ondernemers** in TypeScript en React.\nIk bouw de AWS-services die een nieuw bedrijf controleren en het account activeren, en werk aan uitbetalingen en reconciliatie.\nIk leid mijn eerste grotere project, organiseerde een AI-hackathon voor heel Tikkie en geef workshops over coding agents.",
-      skills: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL", "Vitest"],
+      text: "Ik bouw **Tikkie Zakelijk**, waarmee bedrijven betaalverzoeken versturen en hun geld ontvangen.\nIk train collega's in het werken met AI.",
+      skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {
       title: "CSG De Lage Waard en Stanislascollege",
@@ -25,7 +25,7 @@ export const nlExperience: WorkExperienceTranslations = {
     },
     {
       title: "Bitsized",
-      subtitle: "Medeoprichter en lead frontend engineer",
+      subtitle: "Medeoprichter",
       startDate: "jan 2023",
       endDate: "feb 2025",
       text: "Ik richtte een webplatform mee op waarop middelbare scholieren **code schreven en draaiden in de browser**.\nIk bouwde de frontend in Vue.js op Meteor.\nIk ontwierp met docenten hoe opdrachten werden uitgedeeld en hoe fouten aan beginners werden uitgelegd.",

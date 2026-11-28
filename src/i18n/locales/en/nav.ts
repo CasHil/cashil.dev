@@ -2,15 +2,9 @@ import { NavTranslations } from "../../types";
 
 export const enNav: NavTranslations = {
   overview: "Overview",
-  cv: "CV",
-  workExperience: "Work experience",
-  workShort: "Work",
+  work: "Work",
   education: "Education",
-  menu: "Menu",
-  close: "Close",
-  settings: "Settings",
-  language: "Language",
-  theme: "Theme",
-  lightTheme: "Light",
-  darkTheme: "Dark",
+  cv: "CV",
+  toDark: "Switch to dark theme",
+  toLight: "Switch to light theme",
 };

@@ -5,7 +5,6 @@ import {
   LINKEDIN_URL,
   cvPdf,
   primaryButton,
-  secondaryButton,
   textLink,
 } from "./links";
 
@@ -35,21 +34,25 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
         <p className="text-base text-text-primary select-all">{EMAIL}</p>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
         <a href={`mailto:${EMAIL}`} className={primaryButton}>
           {t.contact.emailBtn}
         </a>
-        {showCv && (
-          <a href={pdf.url} download={pdf.fileName} className={secondaryButton}>
-            {t.contact.cvBtn}
-          </a>
-        )}
-        <div className="flex items-center gap-6 sm:gap-4 text-sm">
+        <div className="flex items-center gap-x-6 w-full sm:w-auto">
+          {showCv && (
+            <a
+              href={pdf.url}
+              download={pdf.fileName}
+              className={`${textLink} inline-flex items-center min-h-[44px]`}
+            >
+              {t.contact.cvBtn}
+            </a>
+          )}
           <a
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${textLink} inline-flex items-center min-h-[44px] px-1`}
+            className={`${textLink} inline-flex items-center min-h-[44px]`}
           >
             LinkedIn
           </a>
@@ -57,7 +60,7 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${textLink} inline-flex items-center min-h-[44px] px-1`}
+            className={`${textLink} inline-flex items-center min-h-[44px]`}
           >
             GitHub
           </a>

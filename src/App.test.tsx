@@ -8,35 +8,20 @@ test("renders navigation and portfolio content", () => {
   expect(overviewLinks.length).toBeGreaterThan(0);
 });
 
-test("toggles language between English and Dutch", () => {
+test("switches language with one button named after the other language", () => {
+  localStorage.setItem("lang", "en");
   render(<App />);
 
-  // Open settings menu
-  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
-  fireEvent.click(settingsButton);
+  fireEvent.click(screen.getByRole("button", { name: /^nederlands$/i }));
+  expect(screen.getAllByText(/Overzicht/i).length).toBeGreaterThan(0);
 
-  // Switch to Dutch
-  const nlButtons = screen.getAllByRole("button", { name: /nederlands/i });
-  if (nlButtons.length > 0) {
-    fireEvent.click(nlButtons[0]);
-    expect(screen.getAllByText(/Overzicht/i).length).toBeGreaterThan(0);
-  }
-
-  // Switch back to English
-  const enButtons = screen.getAllByRole("button", { name: /english/i });
-  if (enButtons.length > 0) {
-    fireEvent.click(enButtons[0]);
-    expect(screen.getAllByText(/Overview/i).length).toBeGreaterThan(0);
-  }
+  fireEvent.click(screen.getByRole("button", { name: /^english$/i }));
+  expect(screen.getAllByText(/Overview/i).length).toBeGreaterThan(0);
 });
 
 test("toggles theme between light and dark", () => {
   render(<App />);
-  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
-  fireEvent.click(settingsButton);
-
-  const themeToggle = screen.getAllByLabelText(/switch to/i)[0];
-  expect(themeToggle).toBeDefined();
+  const themeToggle = screen.getByRole("button", { name: /switch to (light|dark) theme/i });
   fireEvent.click(themeToggle);
   expect(document.documentElement.style.colorScheme).toMatch(/light|dark/);
 });
@@ -53,17 +38,6 @@ test("renders accessible main landmark with id", () => {
   const main = screen.getByRole("main");
   expect(main).toBeInTheDocument();
   expect(main).toHaveAttribute("id", "main-content");
-});
-
-test("renders theme toggle button in settings menu", () => {
-  render(<App />);
-  const settingsButton = screen.getByRole("button", { name: /settings|instellingen/i });
-  fireEvent.click(settingsButton);
-
-  const toggleButtons = screen.getAllByRole("button", {
-    name: /switch to (light|dark) theme/i,
-  });
-  expect(toggleButtons.length).toBeGreaterThan(0);
 });
 
 test("renders CV navigation link", () => {
@@ -184,26 +158,11 @@ test("renders primary navigation header with candidate branding and accessible r
   expect(nameLink).toBeInTheDocument();
 });
 
-test("allows toggling mobile menu in header to access routes and preferences", () => {
-  render(<App />);
-  const menuButton = screen.getByRole("button", { name: /menu|sluiten|close/i });
-  expect(menuButton).toBeInTheDocument();
-
-  // Open mobile menu
-  fireEvent.click(menuButton);
-
-  const dropdownNav = screen.getByRole("navigation", { name: /mobile dropdown navigation/i });
-  expect(dropdownNav).toBeInTheDocument();
-
-  // Language buttons inside mobile drawer
-  const enBtn = screen.getByRole("button", { name: /^english$/i });
-  const nlBtn = screen.getByRole("button", { name: /^nederlands$/i });
-  expect(enBtn).toBeInTheDocument();
-  expect(nlBtn).toBeInTheDocument();
-
-  // Theme toggle button
-  const themeBtn = screen.getByRole("button", { name: /switch to (light|dark) theme/i });
-  expect(themeBtn).toBeInTheDocument();
+test("the header has no menu to open: every route and preference is always visible", () => {
+  const { container } = render(<App />);
+  expect(container.querySelector("header [aria-expanded], header [aria-haspopup]")).toBeNull();
+  expect(container.querySelectorAll("header nav a").length).toBe(4);
+  expect(container.querySelectorAll("header button").length).toBe(2);
 });
 
 test("home page keeps hobbies plain and shows no stack counters", () => {

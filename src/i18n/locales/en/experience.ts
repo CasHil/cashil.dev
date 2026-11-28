@@ -12,8 +12,8 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Mar 2026",
       endDate: "now",
       current: true,
-      text: "I build the **merchant portal** in TypeScript and React.\nI build the AWS services that verify a new business and activate its account, and work on payouts and reconciliation.\nI lead my first larger project, organised an AI hackathon for all of Tikkie and give workshops on coding agents.",
-      skills: ["TypeScript", "React", "Node.js", "AWS (Lambda, DynamoDB, S3)", "PostgreSQL", "Vitest"],
+      text: "I build **Tikkie Business**, which companies use to send payment requests and get paid.\nI train colleagues in working with AI.",
+      skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {
       title: "CSG De Lage Waard and Stanislascollege",
@@ -25,7 +25,7 @@ export const enExperience: WorkExperienceTranslations = {
     },
     {
       title: "Bitsized",
-      subtitle: "Co-founder and lead frontend engineer",
+      subtitle: "Co-founder",
       startDate: "Jan 2023",
       endDate: "Feb 2025",
       text: "I co-founded a web platform where secondary-school students **wrote and ran code in the browser**.\nI built the frontend in Vue.js on Meteor.\nI designed with teachers how assignments were handed out and how errors were explained to beginners.",

@@ -66,18 +66,15 @@ describe("Anti-slop design guardrails", () => {
     }
   });
 
-  test("Rule 14: concentric corner radius, R_inner = max(0, R_outer - padding)", () => {
-    const inner = (rOuter: number, padding: number) => Math.max(0, rOuter - padding);
-
-    // Header nav pill: rounded-squircle (18px) with p-1 (4px) holds 12-14px pills
-    expect(inner(18, 4)).toBe(14);
-
-    const headerContent = fs.readFileSync(
-      path.resolve(__dirname, "../src/components/Header/Header.tsx"),
+  test("Navigation is plain text: no pill, no sliding indicator, no dropdown", () => {
+    const masthead = fs.readFileSync(
+      path.resolve(__dirname, "../src/components/layout/Masthead.tsx"),
       "utf-8"
     );
-    expect(headerContent).toContain("p-1 rounded-squircle");
-    expect(headerContent).toContain("rounded-squircle-sm");
+    expect(masthead).not.toContain("framer-motion");
+    expect(masthead).not.toContain("rounded-squircle");
+    expect(masthead).not.toContain("shadow");
+    expect(masthead).not.toContain("useState");
   });
 
   test("Rule 15: minimum 12px font size", () => {
@@ -103,7 +100,6 @@ describe("Anti-slop design guardrails", () => {
 
     const primaryBtn = emailLinks[0];
     expect(primaryBtn.className).toContain("active:scale-");
-    expect(primaryBtn.className).toContain("shadow-sm");
     expect(primaryBtn.className).toContain("min-h-[44px]");
   });
 

@@ -62,7 +62,7 @@ One source also files "cream background, serif headings, one muted accent" under
 | Teaching 2018 to 2025 | Teacher at two named schools, February to July 2025 |
 | No metadata | Title, description, Open Graph tags and a `Person` record |
 
-The story on the home page uses facts from his own notes: the school that had gone months without a teacher, the hackathon, the workshops, the technical debt plan. Nothing in it is invented. If a detail should not be public, remove the sentence instead of softening it.
+The story on the home page uses facts from his own notes, such as the school that had gone months without a teacher. Nothing in it is invented. If a detail should not be public, remove the sentence instead of softening it.
 
 ## Third pass: less text, and a design language
 
@@ -79,6 +79,17 @@ Casper read the result and said it was still far too much text. He also correcte
 | Thesis summary | 45 words | 37 (was two paragraphs) |
 
 Also changed in this pass: the photo sits beside the facts line, the work and education pages have email and CV links under their title, the thesis is no longer told twice on the education page, the header monogram and the dropdown blur are gone, and Bitsized is in the past tense everywhere.
+
+## Fourth pass: a calm brand and less about Tikkie
+
+Casper said the header, the menu and the hero did not show quality or attention to detail, and that the menu in particular looked generated. He was right about why. The desktop navigation was a grey capsule with a white pill that slid between links on a spring. Beside it sat a second capsule with "EN", a divider, an amber sun and a chevron, which opened a dropdown with two more icons and two more nested toggles. On a phone the same four links hid behind a boxed hamburger button, a scrim and an animated panel. Three components and about 450 lines existed to show four links and two preferences.
+
+- The header is now his name, four text links, the other language by name and one theme icon. Nothing opens. On a phone the links sit in a row under the name.
+- The hero headline is smaller and carries no marker. The second button became a text link, so each action row has one filled button.
+- Buttons lost their shadow and their 18px radius.
+- The brand is written down in `DESIGN.md`: thoughtful, calm and clear.
+
+He also asked to share less about his work at Tikkie. The site now says that he builds Tikkie Business and that he trains colleagues in working with AI. The portal, the services behind it, the hackathon, the glossary and the "first larger project" are gone. Bitsized lists him as co-founder.
 
 ## Linting
 
