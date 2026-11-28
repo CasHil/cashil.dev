@@ -5,9 +5,10 @@ export const nlIntro: IntroTranslations = {
   heroFacts: "Software engineer in Amsterdam. TypeScript, React, Node.js en AWS. Nederlands en Engels.",
   story: [
     "De dag na mijn afstuderen mailde een middelbare school me. De leerlingen hadden **al maanden geen informaticadocent**. Ik zei ja en gaf er tot de zomer les.",
-    "Onderwijs was niet nieuw voor me. Tijdens mijn master richtte ik **Bitsized** mee op, waar leerlingen code schreven en draaiden in de browser, zonder iets te installeren.",
-    "Nu bouw ik **Tikkie Zakelijk**, het deel van Tikkie waarmee bedrijven betaald krijgen. Ik begon in maart 2026 via Harvest, een talentprogramma voor engineers.",
-    "Helemaal gestopt met lesgeven ben ik niet. Bij Tikkie train ik collega's in het **werken met AI**. Na het werk speel ik basgitaar en schaak ik.",
+    "Onderwijs was niet nieuw voor me. Tijdens mijn master richtte ik **Bitsized** mee op, waar leerlingen code schreven en draaiden in de browser.",
+    "Nu bouw ik **Tikkie Zakelijk**, waarmee bedrijven betaald krijgen. Ik begon in maart 2026 via Harvest.",
+    "Ik ben nieuwsgierig naar **agentic engineering** en probeer bij te blijven: hoe coding agents mijn werk, dat van mijn team en dat van het bedrijf veranderen. Ik train collega's in het werken met AI en let op de kwaliteit van wat de agents opleveren.",
+    "Na het werk speel ik basgitaar en schaak ik.",
   ],
   emailCta: "Mail me",
   cvCta: "Download CV (pdf)",

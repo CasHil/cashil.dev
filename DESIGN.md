@@ -20,7 +20,7 @@ typography:
 content:
   hero-headline-max-words: 15
   hero-facts-max-words: 14
-  story-max-paragraphs: 4
+  story-max-paragraphs: 5
   story-max-words: 120
   timeline-max-rows: 5
   timeline-row-max-words: 12
@@ -90,7 +90,7 @@ Someone who reads only the marked words should still get the story.
 The copy is Casper talking, not a résumé and not a brand.
 
 - First person, short sentences, one thing per sentence.
-- Tell the story in the order that makes someone curious: the school that emailed him, the classroom before that, Tikkie now.
+- Tell the story in the order that makes someone curious: the school that emailed him, the classroom before that, Tikkie now, and what he is curious about next (agentic engineering and the quality of its output).
 - Character comes from what happened, told plainly. Do not add observations or lessons he did not write himself.
 - Plain words. If a sentence could appear on anyone's site, cut it.
 - Dutch is written as Dutch, not translated.
