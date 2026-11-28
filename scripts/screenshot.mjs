@@ -112,7 +112,11 @@ if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
   await dPage.screenshot({ path: path.join(OUT, '20_header_desktop.png'), clip: { x: 0, y: 0, width: 1280, height: 420 } });
   await mPage.goto(BASE + '/', { waitUntil: 'networkidle' });
   await mPage.waitForTimeout(300);
-  await mPage.screenshot({ path: path.join(OUT, '21_header_mobile.png'), clip: { x: 0, y: 0, width: 390, height: 520 } });
+  await mPage.screenshot({ path: path.join(OUT, '21_header_mobile.png') });
+  // Scrolled: the navigation has to stay within reach
+  await mPage.evaluate(() => window.scrollTo(0, 900));
+  await mPage.waitForTimeout(300);
+  await mPage.screenshot({ path: path.join(OUT, '22_mobile_scrolled.png') });
 
   await browser.close();
   server.httpServer.close();

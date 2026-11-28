@@ -10,8 +10,17 @@ export function cvPdf(language: Language) {
   return { fileName, url: `/cv/${fileName}` };
 }
 
-export const primaryButton =
-  "inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-lg bg-text-primary text-canvas font-medium text-sm hover:opacity-85 active:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-canvas";
+const button =
+  "inline-flex items-center justify-center px-6 min-h-[48px] rounded-full font-semibold text-base hover:opacity-90 active:opacity-75 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 
-export const textLink =
-  "font-medium text-brand underline underline-offset-4 decoration-brand-border hover:decoration-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-sm";
+/** The one filled button. Sunflower, because it only ever sits on an indigo panel. */
+export const primaryButton = `${button} bg-accent text-ink-fixed focus-visible:ring-accent focus-visible:ring-offset-ink`;
+
+const link =
+  "font-semibold underline underline-offset-4 decoration-2 decoration-accent transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand";
+
+/** A link on the cream page. */
+export const textLink = `${link} text-text-primary hover:decoration-text-primary`;
+
+/** A link on an indigo panel. */
+export const panelLink = `${link} text-on-ink hover:decoration-on-ink`;

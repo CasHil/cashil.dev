@@ -4,8 +4,8 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
   cvPdf,
+  panelLink,
   primaryButton,
-  textLink,
 } from "./links";
 
 interface ContactCtaProps {
@@ -15,53 +15,40 @@ interface ContactCtaProps {
 export default function ContactCta({ showCv = true }: ContactCtaProps) {
   const { t, language } = useLanguage();
   const pdf = cvPdf(language);
+  const link = `${panelLink} inline-flex items-center min-h-[44px]`;
 
   return (
     <section
       aria-labelledby="contact-heading"
-      className="border-t border-border-subtle pt-10 sm:pt-12 space-y-5"
+      className="bg-ink rounded-[2rem] sm:rounded-[2.5rem] px-6 py-10 sm:p-12 lg:p-16 space-y-6"
     >
-      <div className="space-y-2">
+      <div className="space-y-3">
         <h2
           id="contact-heading"
-          className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary"
+          className="font-display text-3xl sm:text-5xl font-extrabold text-on-ink"
         >
           {t.contact.heading}
         </h2>
-        <p className="text-base text-text-secondary leading-relaxed max-w-[60ch]">
+        <p className="text-lg sm:text-xl leading-snug text-on-ink/80 max-w-[44ch]">
           {t.contact.body}
         </p>
-        <p className="text-base text-text-primary select-all">{EMAIL}</p>
+        <p className="text-lg font-semibold text-on-ink select-all">{EMAIL}</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[15px]">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
         <a href={`mailto:${EMAIL}`} className={primaryButton}>
           {t.contact.emailBtn}
         </a>
         <div className="flex items-center gap-x-6 w-full sm:w-auto">
           {showCv && (
-            <a
-              href={pdf.url}
-              download={pdf.fileName}
-              className={`${textLink} inline-flex items-center min-h-[44px]`}
-            >
+            <a href={pdf.url} download={pdf.fileName} className={link}>
               {t.contact.cvBtn}
             </a>
           )}
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${textLink} inline-flex items-center min-h-[44px]`}
-          >
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={link}>
             LinkedIn
           </a>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${textLink} inline-flex items-center min-h-[44px]`}
-          >
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={link}>
             GitHub
           </a>
         </div>

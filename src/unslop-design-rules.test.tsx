@@ -66,14 +66,14 @@ describe("Anti-slop design guardrails", () => {
     }
   });
 
-  test("Navigation is plain text: no pill, no sliding indicator, no dropdown", () => {
+  test("Navigation never opens or animates: no dropdown, drawer or sliding indicator", () => {
     const masthead = fs.readFileSync(
       path.resolve(__dirname, "../src/components/layout/Masthead.tsx"),
       "utf-8"
     );
     expect(masthead).not.toContain("framer-motion");
     expect(masthead).not.toContain("rounded-squircle");
-    expect(masthead).not.toContain("shadow");
+    expect(masthead).not.toContain("aria-expanded");
     expect(masthead).not.toContain("useState");
   });
 
@@ -100,7 +100,7 @@ describe("Anti-slop design guardrails", () => {
 
     const primaryBtn = emailLinks[0];
     expect(primaryBtn.className).toContain("active:opacity-");
-    expect(primaryBtn.className).toContain("min-h-[44px]");
+    expect(primaryBtn.className).toMatch(/min-h-\[(4[4-9]|5\d)px\]/);
   });
 
   test("Rule 21: no live counters, tickers or computed years of experience", () => {

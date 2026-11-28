@@ -35,12 +35,9 @@ export interface SkillGroup {
   items: string;
 }
 
-export interface WorkHighlight {
-  title: string;
-  role: string;
+export interface TimelineRow {
   period: string;
-  paragraphs: string[];
-  stack: string[];
+  what: string;
 }
 
 export interface IntroTranslations {
@@ -50,7 +47,7 @@ export interface IntroTranslations {
   emailCta: string;
   cvCta: string;
   workHeading: string;
-  work: WorkHighlight[];
+  timeline: TimelineRow[];
   workLink: string;
 }
 

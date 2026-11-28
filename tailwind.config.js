@@ -8,6 +8,12 @@ module.exports = {
     extend: {
       colors: {
         canvas: "rgb(var(--canvas-rgb) / <alpha-value>)",
+        ink: {
+          DEFAULT: "rgb(var(--ink-rgb) / <alpha-value>)",
+          fixed: "rgb(var(--ink-fixed-rgb) / <alpha-value>)",
+        },
+        "on-ink": "rgb(var(--on-ink-rgb) / <alpha-value>)",
+        accent: "rgb(var(--accent-rgb) / <alpha-value>)",
         surface: {
           DEFAULT: "rgb(var(--surface-rgb) / <alpha-value>)",
           hover: "rgb(var(--surface-hover-rgb) / <alpha-value>)",
@@ -30,9 +36,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"Newsreader"', "Georgia", "serif"],
-        display: ['"Newsreader"', "Georgia", "serif"],
+        display: ['"Bricolage Grotesque"', '"Figtree"', "system-ui", "sans-serif"],
         sans: [
+          '"Figtree"',
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
