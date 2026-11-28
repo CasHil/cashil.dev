@@ -4,7 +4,6 @@ export const nlCv: CvTranslations = {
   title: "CV",
   headline: "Full-stack software engineer",
   subtitle: "Eén pagina, in het Nederlands of Engels.",
-  openPdf: "Open pdf",
   downloadPdf: "Download pdf",
   otherLanguagePdf: "Engelse versie (pdf)",
   profileHeading: "Profiel",

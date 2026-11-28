@@ -34,7 +34,7 @@ export default function ContactCta({ showCv = true }: ContactCtaProps) {
         <p className="text-base text-text-primary select-all">{EMAIL}</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[15px]">
         <a href={`mailto:${EMAIL}`} className={primaryButton}>
           {t.contact.emailBtn}
         </a>

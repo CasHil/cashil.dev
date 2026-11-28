@@ -6,8 +6,6 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
   cvPdf,
-  primaryButton,
-  secondaryButton,
   textLink,
 } from "../common/links";
 
@@ -34,22 +32,18 @@ export default function Cv() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-          <a href={pdf.url} download={pdf.fileName} className={primaryButton}>
-            {t.cv.downloadPdf}
-          </a>
+        <div className="flex flex-wrap items-center gap-x-6">
           <a
             href={pdf.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={secondaryButton}
+            download={pdf.fileName}
+            className={`${textLink} text-[15px] inline-flex items-center min-h-[44px]`}
           >
-            {t.cv.openPdf}
+            {t.cv.downloadPdf}
           </a>
           <a
             href={otherPdf.url}
             download={otherPdf.fileName}
-            className={`${textLink} text-sm inline-flex items-center justify-center min-h-[44px] px-1`}
+            className={`${textLink} text-[15px] inline-flex items-center min-h-[44px]`}
           >
             {t.cv.otherLanguagePdf}
           </a>
@@ -59,7 +53,7 @@ export default function Cv() {
       <article
         data-ui
         aria-label={t.cv.title}
-        className="rounded-squircle-lg p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
+        className="rounded-lg p-6 sm:p-10 bg-surface border border-border-subtle shadow-sm space-y-8 print:p-0 print:border-none print:shadow-none"
       >
         <header className="space-y-2">
           <h2 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-text-primary">

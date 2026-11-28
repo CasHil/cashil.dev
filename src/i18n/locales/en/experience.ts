@@ -12,7 +12,7 @@ export const enExperience: WorkExperienceTranslations = {
       startDate: "Mar 2026",
       endDate: "now",
       current: true,
-      text: "I build **Tikkie Business**, which companies use to send payment requests and get paid.\nI train colleagues in working with AI.",
+      text: "I build Tikkie Business, which companies use to send payment requests and get paid.\nI train colleagues in **working with AI**.",
       skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {

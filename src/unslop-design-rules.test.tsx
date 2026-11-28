@@ -99,7 +99,7 @@ describe("Anti-slop design guardrails", () => {
     expect(emailLinks.length).toBeGreaterThan(0);
 
     const primaryBtn = emailLinks[0];
-    expect(primaryBtn.className).toContain("active:scale-");
+    expect(primaryBtn.className).toContain("active:opacity-");
     expect(primaryBtn.className).toContain("min-h-[44px]");
   });
 

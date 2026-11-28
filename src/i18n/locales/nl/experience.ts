@@ -12,7 +12,7 @@ export const nlExperience: WorkExperienceTranslations = {
       startDate: "mrt 2026",
       endDate: "nu",
       current: true,
-      text: "Ik bouw **Tikkie Zakelijk**, waarmee bedrijven betaalverzoeken versturen en hun geld ontvangen.\nIk train collega's in het werken met AI.",
+      text: "Ik bouw Tikkie Zakelijk, waarmee bedrijven betaalverzoeken versturen en hun geld ontvangen.\nIk train collega's in het **werken met AI**.",
       skills: ["TypeScript", "React", "Node.js", "AWS"],
     },
     {

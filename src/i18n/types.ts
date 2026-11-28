@@ -20,7 +20,6 @@ export interface CvTranslations {
   title: string;
   headline: string;
   subtitle: string;
-  openPdf: string;
   downloadPdf: string;
   otherLanguagePdf: string;
   profileHeading: string;

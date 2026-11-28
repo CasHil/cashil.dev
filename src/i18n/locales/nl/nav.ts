@@ -5,6 +5,6 @@ export const nlNav: NavTranslations = {
   work: "Werk",
   education: "Opleiding",
   cv: "CV",
-  toDark: "Schakel naar donker thema",
-  toLight: "Schakel naar licht thema",
+  toDark: "Donkere modus aanzetten",
+  toLight: "Lichte modus aanzetten",
 };

@@ -10,7 +10,7 @@ export default function HeroSection() {
     <section aria-labelledby="hero-title" className="pt-6 sm:pt-12">
       <h1
         id="hero-title"
-        className="font-serif text-3xl sm:text-[2.75rem] lg:text-5xl font-normal tracking-tight text-text-primary leading-[1.15] max-w-[23ch] lg:max-w-[30ch]"
+        className="font-serif text-3xl sm:text-[2.75rem] lg:text-5xl font-normal tracking-tight text-text-primary leading-[1.15] max-w-[26ch] lg:max-w-[30ch]"
       >
         {t.intro.heroTitle}
       </h1>
@@ -35,13 +35,13 @@ export default function HeroSection() {
         <a
           href={pdf.url}
           download={pdf.fileName}
-          className={`${textLink} text-sm inline-flex items-center min-h-[44px]`}
+          className={`${textLink} text-[15px] inline-flex items-center min-h-[44px]`}
         >
           {t.intro.cvCta}
         </a>
       </div>
 
-      <div className="mt-14 sm:mt-20 space-y-5 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[62ch]">
+      <div className="mt-12 sm:mt-16 space-y-5 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[62ch]">
         {t.intro.story.map((paragraph) => (
           <p key={paragraph}>
             <Marked text={paragraph} />

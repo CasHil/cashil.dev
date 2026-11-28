@@ -16,11 +16,11 @@ export const enIntro: IntroTranslations = {
   workHeading: "Selected work",
   work: [
     {
-      title: "Tikkie Business",
+      title: "Tikkie Business (ABN AMRO)",
       role: "Software engineer, via the Harvest talent programme",
       period: "Mar 2026 to now",
       paragraphs: [
-        "I work across the whole stack, from the screens a company sees to the services behind them.",
+        "I work on both the React screens companies use and the Node.js services on AWS behind them.",
       ],
       stack: ["TypeScript", "React", "Node.js", "AWS"],
     },
@@ -29,7 +29,7 @@ export const enIntro: IntroTranslations = {
       role: "Co-founder",
       period: "Jan 2023 to Feb 2025",
       paragraphs: [
-        "A web platform for computer science classes at Dutch secondary schools. Students **wrote and ran code in the browser**, so nothing had to be installed. I built the frontend in Vue.js on Meteor, together with the teachers who used it.",
+        "A web platform for computer science classes at Dutch secondary schools. Students **wrote and ran code in the browser**, so nothing had to be installed. I built the frontend in Vue.js on Meteor and designed it with the teachers who used it.",
       ],
       stack: ["Vue.js", "Meteor", "Node.js", "MongoDB"],
     },

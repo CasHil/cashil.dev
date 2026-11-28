@@ -69,7 +69,7 @@ If removing something loses no information, remove it.
 - A role has at most three bullets. A page has one primary action.
 - Nothing opens. No menus, dropdowns, drawers or tabs. If it does not fit on the page, it does not belong on the page.
 - No cards, except the one sheet that holds the web CV. No badges, chips, eyebrow labels, icons next to points, or logos next to roles.
-- No decoration: no gradients, blur, glow, texture or ambient animation. Motion is press and hover feedback only.
+- No decoration: no gradients, blur, glow, texture or ambient animation. Nothing moves. Hover and press change colour or opacity only.
 - One list style, one rule style (a 1px hairline), one button shape.
 - Group with whitespace first and a hairline second. Never a box.
 
@@ -118,11 +118,10 @@ The CSS variables live in `src/index.css` as RGB channels so Tailwind opacity mo
 - The header holds his name, four text links, the other language by name and one theme icon. It is not sticky. The current page is ink with a 1px underline. The rest is muted.
 - On a phone the four links sit in a row under the name. There is no menu button.
 - The primary button has an ink fill, canvas text, an 8px radius and no shadow. One per action row, and it is always "Email me".
-- Every other action is a text link: sage and underlined.
-- The outlined button exists only on the CV page, for "Open PDF".
+- Every other action is a text link: sage, underlined and 15px. Email comes first, then the CV.
 - The timeline lists roles or degrees separated by hairlines.
 - The contact block is the same on every page. Email, CV, LinkedIn, GitHub.
-- The CV sheet is the one card. It keeps its border and shadow.
+- The CV sheet is the one card. It keeps its border and shadow, with the same 8px radius as the button.
 
 ## Things the site does not do
 

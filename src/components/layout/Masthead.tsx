@@ -38,7 +38,7 @@ export default function Masthead() {
             type="button"
             lang={other.code}
             onClick={() => setLanguage(other.code)}
-            className={`inline-flex items-center min-h-[44px] px-3 text-sm ${quiet}`}
+            className={`inline-flex items-center min-h-[44px] px-3 text-[15px] ${quiet}`}
           >
             {other.label}
           </button>
