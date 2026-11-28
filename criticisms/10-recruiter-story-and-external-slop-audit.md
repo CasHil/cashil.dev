@@ -91,6 +91,17 @@ Casper said the header, the menu and the hero did not show quality or attention 
 
 He also asked to share less about his work at Tikkie. The site now says that he builds Tikkie Business and that he trains colleagues in working with AI. The portal, the services behind it, the hackathon, the glossary and the "first larger project" are gone. Bitsized lists him as co-founder.
 
+## Fifth pass: character
+
+The calm version was correct and forgettable. Casper's words: he hated the font, it felt bland, the copy read like "AI acting like a human", there was no clear story, the menu disappeared on scroll on a phone, and the design language was boring. He asked to borrow from Tikkie, where he works, without copying it.
+
+- **Type:** Newsreader is gone. Headings are Bricolage Grotesque at weight 800 and the text is Figtree.
+- **Colour:** cream, a deep indigo and his own sunflower. Tikkie's teal is not used.
+- **Shape:** two indigo panels with large corners, a pill button, and a photo tilted three degrees.
+- **Navigation:** a fixed bar at the bottom of the screen on phones and a sticky header on desktop. It never opens and never leaves the screen.
+- **Story:** the home page opens on the school that emailed him the day after he graduated, goes back to Bitsized, and ends at Tikkie. Five rows under it give the short version.
+- **Voice:** first person, short sentences, one dry observation. Reviewers cut two more that read as generated.
+
 ## Linting
 
 Site copy lives in TypeScript, which Vale reads as code. `pnpm run lint:prose` extracts every string to Markdown and runs Vale on it: the `Tropes` style on English and the `CasperNL` style on Dutch. Both styles come from the home repo. Warnings fail the run. Suggestions print for the author to weigh, because a list of four school subjects is a list and not a rhetorical triad.
